@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Apple × Intel — GcTechAllies</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;background:#0c1b4a;color:#f2f8ff;min-height:100vh;padding:0}
+a{text-decoration:none;color:inherit}
+.card{background:#0c1b4a;border:1px solid #1c3070;border-radius:12px;overflow:hidden;max-width:780px;margin:12px auto;font-size:14px}
+.hdr{background:#050d28;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid #27a9bb}
+.pills{display:flex;gap:8px}
+.pill-cat{background:rgba(39,169,187,0.15);border:1px solid #27a9bb;color:#5bcfde;border-radius:20px;padding:3px 11px;font-size:11px;font-weight:700;font-family:monospace}
+.pill-reg{border:1px solid #1c3070;color:#27a9bb;border-radius:20px;padding:3px 11px;font-size:11px;font-family:monospace}
+.date-box{text-align:right}
+.date-label{font-size:10px;color:#6a96b8}
+.date-val{font-size:12px;font-weight:600;color:#27a9bb}
+.hero{padding:20px 18px 16px;text-align:center}
+.badges{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:14px}
+.badge{border:2px solid rgba(255,255,255,0.35);border-radius:8px;padding:9px 18px;font-family:monospace;font-size:12px;font-weight:bold;letter-spacing:.07em;cursor:pointer;transition:all .15s;display:inline-flex;align-items:center;gap:5px}
+.badge:hover{opacity:.82;border-color:rgba(255,255,255,.9)}
+.badge .arr{font-size:10px;opacity:0;transition:opacity .15s}
+.badge:hover .arr{opacity:1}
+.sep{font-size:24px;color:#3a5ea0;font-weight:300}
+.title{font-size:20px;font-weight:700;color:#f2f8ff;margin-bottom:8px;line-height:1.25}
+.subtitle{font-size:13px;color:#b8d4ee;line-height:1.5;max-width:600px;margin:0 auto}
+.band{background:#142468;border-top:1px solid #1c3070;border-bottom:1px solid #1c3070;padding:8px 18px;display:flex;align-items:center;gap:8px}
+.band-bar{width:4px;height:16px;background:#27a9bb;border-radius:2px;flex-shrink:0}
+.band-label{font-size:11px;font-weight:700;color:#f2f8ff;letter-spacing:.1em;text-transform:uppercase}
+.metrics{display:flex;gap:10px;padding:12px 18px 14px}
+.metric{background:#0a1840;border:1px solid #1c3070;border-radius:9px;padding:12px 14px 10px;flex:1;border-top:3px solid #27a9bb}
+.mv{font-size:22px;font-weight:700;font-family:monospace;color:#f2f8ff;letter-spacing:-.01em}
+.ml{font-size:11px;color:#b8d4ee;margin-top:5px;font-family:monospace}
+.gets{display:flex;padding:14px 18px 16px;gap:0}
+.col{flex:1}
+.col-hdr{border-radius:5px;padding:7px 10px;font-size:11px;font-weight:700;text-align:center;margin-bottom:12px}
+.divider{width:1px;background:#1c3070;margin:0 16px}
+.bullet{display:flex;gap:9px;margin-bottom:10px}
+.diamond{width:8px;height:8px;border-radius:2px;transform:rotate(45deg);flex-shrink:0;margin-top:4px;border:1px solid rgba(255,255,255,.25)}
+.bt{font-size:12px;color:#b8d4ee;line-height:1.5}
+.impl{padding:12px 18px 16px}
+.impl-row{display:flex;gap:10px;margin-bottom:12px}
+.impl-row:last-child{margin-bottom:0}
+.impl-diamond{width:9px;height:9px;background:#5bcfde;border-radius:2px;transform:rotate(45deg);flex-shrink:0;margin-top:4px}
+.impl-txt{font-size:13px;color:#b8d4ee;line-height:1.55}
+.people{background:#070c24;border-top:3px solid #27a9bb;padding:10px 18px 14px}
+.people-label{font-size:10px;font-weight:700;color:#27a9bb;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.people-row{display:flex;gap:20px;flex-wrap:wrap}
+.person{display:block}
+.person-inner{padding-left:12px;border-left:4px solid #27a9bb;transition:border-color .15s;cursor:pointer}
+.person:hover .person-inner{border-color:#5bcfde}
+.person-name{font-size:14px;font-weight:600;color:#f2f8ff;transition:color .15s;display:flex;align-items:center;gap:4px}
+.person:hover .person-name{color:#5bcfde}
+.li-icon{opacity:0;transition:opacity .15s;font-size:11px;color:#5bcfde}
+.person:hover .li-icon{opacity:1}
+.person-role{font-size:12px;color:#b8d4ee;margin-top:2px}
+.footer{background:#050d28;border-top:1px solid #1c3070;padding:12px 18px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{height:34px;width:auto;object-fit:contain}
+.brand-name{font-size:13px;font-weight:700;color:#f2f8ff}
+.brand-tag{font-size:11px;color:#27a9bb}
+.footer-url{font-size:11px;color:#6a96b8}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="hdr">
+    <div class="pills">
+      <span class="pill-cat">AI</span>
+      <span class="pill-reg">USA</span>
+    </div>
+    <div class="date-box">
+      <div class="date-label">Announced</div>
+      <div class="date-val">May 8, 2026</div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="badges">
+      <a href="https://www.apple.com" target="_blank" class="badge" style="background:#555555;color:#f2f8ff">
+        APPLE <span class="arr">↗</span>
+      </a>
+      <span class="sep">×</span>
+      <a href="https://www.intel.com" target="_blank" class="badge" style="background:#0071c5;color:#f2f8ff">
+        INTEL <span class="arr">↗</span>
+      </a>
+    </div>
+    <div class="title">Apple × Intel</div>
+    <div class="subtitle">Preliminary chip manufacturing deal — US govt facilitated, Intel foundry validated at Apple scale</div>
+  </div>
+
+  <div class="band"><div class="band-bar"></div><span class="band-label">Key Metrics</span></div>
+  <div class="metrics">
+    <div class="metric"><div class="mv">200M+</div><div class="ml">iPhones/year (Apple)</div></div>
+    <div class="metric"><div class="mv">~10%</div><div class="ml">US govt stake in Intel</div></div>
+    <div class="metric"><div class="mv">2027</div><div class="ml">Estimated production start</div></div>
+  </div>
+
+  <div class="band"><div class="band-bar"></div><span class="band-label">What Each Gets</span></div>
+  <div class="gets">
+    <div class="col">
+      <div class="col-hdr" style="background:#555555;color:#f2f8ff">Apple</div>
+      <div class="bullet"><div class="diamond" style="background:#555555"></div><span class="bt">Supply chain diversification away from exclusive TSMC dependency</span></div>
+      <div class="bullet"><div class="diamond" style="background:#555555"></div><span class="bt">US-based fab capacity supporting $400B US manufacturing commitment</span></div>
+    </div>
+    <div class="divider"></div>
+    <div class="col">
+      <div class="col-hdr" style="background:#0071c5;color:#f2f8ff">Intel</div>
+      <div class="bullet"><div class="diamond" style="background:#0071c5"></div><span class="bt">Apple contract is the most powerful validation for Intel Foundry Services</span></div>
+      <div class="bullet"><div class="diamond" style="background:#0071c5"></div><span class="bt">Steady high-volume demand as Intel rebuilds under CEO Lip-Bu Tan</span></div>
+    </div>
+  </div>
+
+  <div class="band"><div class="band-bar"></div><span class="band-label">Strategic Implications</span></div>
+  <div class="impl">
+    <div class="impl-row"><div class="impl-diamond"></div><span class="impl-txt">US government converting $9B in grants into a 10% Intel stake and facilitating an Apple deal is industrial policy producing tangible results</span></div>
+    <div class="impl-row"><div class="impl-diamond"></div><span class="impl-txt">TSMC's dominance is structurally challenged by geopolitical pressure reshaping where the world's most valuable company sources its chips</span></div>
+  </div>
+
+  <div class="people">
+    <div class="people-label">Key People</div>
+    <div class="people-row"><span style="font-size:12px;color:#6a96b8;font-style:italic">No named executive cited in official press release</span></div>
+  </div>
+
+  <div class="footer">
+    <div class="brand">
+      <img src="data:image/png;base64,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" alt="GcTechAllies" class="logo">
+      <div>
+        <div class="brand-name">GcTechAllies</div>
+        <div class="brand-tag">Weekly Partnership Digest</div>
+      </div>
+    </div>
+    <a href="https://www.gctechallies.com/partnerships" target="_blank" class="footer-url">gctechallies.com/partnerships ↗</a>
+  </div>
+</div>
+</body>
+</html>
