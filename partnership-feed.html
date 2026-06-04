@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'IBM Plex Sans', sans-serif; background: #f9f9f7; color: #1a1a1a; }
+  .feed-header { background: #1a1a1a; padding: 24px 28px 20px; }
+  .feed-header h1 { font-size: 22px; font-weight: 600; color: #fff; letter-spacing: -0.3px; }
+  .feed-header p { color: #888; font-size: 13px; margin-top: 5px; font-family: 'IBM Plex Mono', monospace; }
+  .stats-strip { display: flex; gap: 0; background: #fff; border-bottom: 1px solid #e8e8e4; }
+  .stat-cell { flex: 1; padding: 12px 16px; border-right: 1px solid #e8e8e4; }
+  .stat-cell:last-child { border-right: none; }
+  .stat-num { font-size: 22px; font-weight: 600; font-family: 'IBM Plex Mono', monospace; }
+  .stat-lbl { font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 0.07em; margin-top: 2px; }
+  .stat-eu .stat-num { color: #1d4ed8; }
+  .stat-na .stat-num { color: #166534; }
+  .stat-asia .stat-num { color: #c2410c; }
+  .stat-global .stat-num { color: #7c3aed; }
+  .region-nav { background: #fff; border-bottom: 2px solid #e8e8e4; padding: 0 16px; display: flex; overflow-x: auto; }
+  .rtab { padding: 11px 16px; font-size: 13px; font-weight: 500; cursor: pointer; border: none; background: none;
+    color: #888; border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap;
+    transition: all 0.15s; font-family: 'IBM Plex Sans', sans-serif; display: flex; align-items: center; gap: 6px; }
+  .rtab:hover { color: #1a1a1a; }
+  .rtab.active { color: #1a1a1a; border-bottom-color: #1a1a1a; }
+  .rtab .rc { background: #f0f0ee; color: #555; font-size: 10px; padding: 1px 5px; border-radius: 8px; font-family: 'IBM Plex Mono', monospace; }
+  .rtab.active .rc { background: #1a1a1a; color: #fff; }
+  .rtab.r-eu.active { border-bottom-color: #1d4ed8; color: #1d4ed8; }
+  .rtab.r-eu.active .rc { background: #1d4ed8; }
+  .rtab.r-na.active { border-bottom-color: #166534; color: #166534; }
+  .rtab.r-na.active .rc { background: #166534; }
+  .rtab.r-asia.active { border-bottom-color: #c2410c; color: #c2410c; }
+  .rtab.r-asia.active .rc { background: #c2410c; }
+  .rtab.r-global.active { border-bottom-color: #7c3aed; color: #7c3aed; }
+  .rtab.r-global.active .rc { background: #7c3aed; }
+  .cat-bar { display: flex; gap: 6px; flex-wrap: wrap; padding: 10px 16px; background: #f9f9f7; border-bottom: 1px solid #e8e8e4; }
+  .cbtn { padding: 4px 11px; border-radius: 20px; font-size: 11px; font-weight: 500; border: 1px solid #d4d4d0;
+    background: #fff; color: #555; cursor: pointer; transition: all 0.1s;
+    text-transform: uppercase; letter-spacing: 0.05em; font-family: 'IBM Plex Sans', sans-serif; }
+  .cbtn.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+  #grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; padding: 20px 16px; }
+  .card { background: #fff; border: 1px solid #e8e8e4; border-radius: 10px; overflow: hidden; transition: box-shadow 0.15s; }
+  .card:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.08); }
+  .card-top { padding: 10px 14px 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+  .card-top h3 { font-size: 13px; font-weight: 600; line-height: 1.4; flex: 1; }
+  .macro-badge { font-size: 9px; font-weight: 600; padding: 2px 6px; border-radius: 3px;
+    text-transform: uppercase; letter-spacing: 0.08em; font-family: 'IBM Plex Mono', monospace; flex-shrink: 0; }
+  .m-EU { background: #dbeafe; color: #1e40af; }
+  .m-NA { background: #dcfce7; color: #166534; }
+  .m-Asia { background: #ffedd5; color: #c2410c; }
+  .m-Global { background: #f3e8ff; color: #7c3aed; }
+  .chips { display: flex; flex-wrap: wrap; gap: 4px; padding: 8px 14px 0; }
+  .chip { background: #f5f5f3; border: 1px solid #e8e8e4; border-radius: 4px; padding: 2px 7px; font-size: 11px; font-weight: 500; color: #444; }
+  .card-body { padding: 8px 14px 12px; }
+  .summary { font-size: 12px; color: #555; line-height: 1.6; }
+  .meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+  .cat-tag { background: #f0f0ee; border-radius: 3px; padding: 1px 6px; font-size: 9px; font-weight: 600; color: #555;
+    text-transform: uppercase; letter-spacing: 0.06em; font-family: 'IBM Plex Mono', monospace; }
+  .meta-txt { font-size: 11px; color: #aaa; font-family: 'IBM Plex Mono', monospace; }
+  .src-link { display: inline-flex; align-items: center; gap: 3px; font-size: 11px; color: #1d4ed8; text-decoration: none; margin-top: 6px; }
+  .src-link:hover { text-decoration: underline; }
+  .eustack-badge { display: inline-flex; align-items: center; text-decoration: none;
+    border: 1px solid #c7d7f0; border-radius: 4px; padding: 2px 6px;
+    background: #eef4fc; flex-shrink: 0; vertical-align: middle;
+    font-size: 10px; font-weight: 600; color: #1e3a8a;
+    font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.02em; }
+  .eustack-badge:hover { background: #dbeafe; border-color: #93c5fd; }
+  #empty { text-align: center; padding: 60px 20px; display: none; }
+  #empty h2 { font-size: 15px; color: #999; font-weight: 400; }
+  .loading { text-align: center; padding: 50px; color: #bbb; font-size: 13px; font-family: 'IBM Plex Mono', monospace; }
+  .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #1a1a1a; animation: blink 1s infinite alternate; margin: 0 2px; }
+  .dot:nth-child(2) { animation-delay: 0.3s; }
+  .dot:nth-child(3) { animation-delay: 0.6s; }
+  @keyframes blink { from { opacity: 0.2; } to { opacity: 1; } }
+</style>
+</head>
+<body>
+<div class="feed-header">
+  <h1>Partnership Feed</h1>
+  <p>Tech &middot; AI &middot; Payments &middot; Ecommerce &middot; Energy &middot; Defence &middot; Automotive &mdash; EU / North America / Asia / Global</p>
+</div>
+<div class="stats-strip">
+  <div class="stat-cell"><div class="stat-num" id="s-total">-</div><div class="stat-lbl">Total</div></div>
+  <div class="stat-cell stat-eu"><div class="stat-num" id="s-eu">-</div><div class="stat-lbl">Europe</div></div>
+  <div class="stat-cell stat-na"><div class="stat-num" id="s-na">-</div><div class="stat-lbl">N. America</div></div>
+  <div class="stat-cell stat-asia"><div class="stat-num" id="s-asia">-</div><div class="stat-lbl">Asia</div></div>
+  <div class="stat-cell stat-global"><div class="stat-num" id="s-global">-</div><div class="stat-lbl">Global</div></div>
+</div>
+<div class="region-nav">
+  <button class="rtab active" onclick="filterRegion('all',this)">All <span class="rc" id="rc-all">-</span></button>
+  <button class="rtab r-eu" onclick="filterRegion('EU',this)">&#127466;&#127482; Europe <span class="rc" id="rc-eu">-</span></button>
+  <button class="rtab r-na" onclick="filterRegion('North America',this)">&#127758; N. America <span class="rc" id="rc-na">-</span></button>
+  <button class="rtab r-asia" onclick="filterRegion('Asia',this)">&#127759; Asia <span class="rc" id="rc-asia">-</span></button>
+  <button class="rtab r-global" onclick="filterRegion('Global',this)">&#127760; Global <span class="rc" id="rc-global">-</span></button>
+</div>
+<div class="cat-bar">
+  <button class="cbtn active" onclick="filterCat('all',this)">All</button>
+  <button class="cbtn" onclick="filterCat('AI',this)">AI</button>
+  <button class="cbtn" onclick="filterCat('Payments',this)">Payments</button>
+  <button class="cbtn" onclick="filterCat('Ecommerce',this)">Ecommerce</button>
+  <button class="cbtn" onclick="filterCat('Fintech',this)">Fintech</button>
+  <button class="cbtn" onclick="filterCat('SaaS',this)">SaaS</button>
+  <button class="cbtn" onclick="filterCat('Cloud',this)">Cloud</button>
+  <button class="cbtn" onclick="filterCat('Logistics',this)">Logistics</button>
+  <button class="cbtn" onclick="filterCat('Energy',this)">Energy</button>
+  <button class="cbtn" onclick="filterCat('Defence',this)">Defence</button>
+  <button class="cbtn" onclick="filterCat('Automotive',this)">Automotive</button>
+</div>
+<div id="grid"><div class="loading"><span class="dot"></span><span class="dot"></span><span class="dot"></span><br><br>Loading partnerships...</div></div>
+<div id="empty"><h2>No partnerships match this filter.</h2></div>
+<script>
+  var allItems = [];
+  var activeRegion = 'all';
+  var activeCat = 'all';
+
+  function getMacroClass(m) {
+    return {'EU':'m-EU','North America':'m-NA','Asia':'m-Asia'}[m] || 'm-Global';
+  }
+
+  function updateStats() {
+    document.getElementById('s-total').textContent = allItems.length;
+    document.getElementById('s-eu').textContent = allItems.filter(function(i){return i.macroRegion==='EU';}).length;
+    document.getElementById('s-na').textContent = allItems.filter(function(i){return i.macroRegion==='North America';}).length;
+    document.getElementById('s-asia').textContent = allItems.filter(function(i){return i.macroRegion==='Asia';}).length;
+    document.getElementById('s-global').textContent = allItems.filter(function(i){return i.macroRegion==='Global';}).length;
+    document.getElementById('rc-all').textContent = allItems.length;
+    document.getElementById('rc-eu').textContent = allItems.filter(function(i){return i.macroRegion==='EU';}).length;
+    document.getElementById('rc-na').textContent = allItems.filter(function(i){return i.macroRegion==='North America';}).length;
+    document.getElementById('rc-asia').textContent = allItems.filter(function(i){return i.macroRegion==='Asia';}).length;
+    document.getElementById('rc-global').textContent = allItems.filter(function(i){return i.macroRegion==='Global';}).length;
+  }
+
+  function filterRegion(r, btn) {
+    activeRegion = r;
+    document.querySelectorAll('.rtab').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');
+    render();
+  }
+
+  function filterCat(c, btn) {
+    activeCat = c;
+    document.querySelectorAll('.cbtn').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');
+    render();
+  }
+
+  function render() {
+    var grid = document.getElementById('grid');
+    var empty = document.getElementById('empty');
+    var filtered = allItems.filter(function(item) {
+      var rm = activeRegion === 'all' || item.macroRegion === activeRegion;
+      var cm = activeCat === 'all' || item.category === activeCat;
+      return rm && cm;
+    });
+    if (filtered.length === 0) { grid.innerHTML = ''; empty.style.display = 'block'; return; }
+    empty.style.display = 'none';
+    grid.innerHTML = filtered.map(function(item) {
+      var companies = (item.companies || '').split(',').map(function(c){return c.trim();}).filter(Boolean);
+      var chips = companies.map(function(c){return '<span class="chip">'+c+'</span>';}).join('');
+      var macroClass = getMacroClass(item.macroRegion);
+      var srcLink = item.sourceUrl ? '<a class="src-link" href="'+item.sourceUrl+'" target="_blank">&#8599; '+(item.sourceName||'Source')+'</a>' : '';
+      var euBadge = item.euTech ? '<a class="eustack-badge" href="/build-eustack">&#127466;&#127482; Build EUStack</a>' : '';
+      return '<div class="card"><div class="card-top"><h3>'+item.title+'</h3><span class="macro-badge '+macroClass+'">'+(item.macroRegion||'Global')+'</span></div><div class="chips">'+chips+'</div><div class="card-body"><p class="summary">'+item.summary+'</p><div class="meta">'+(item.category?'<span class="cat-tag">'+item.category+'</span>':'')+(item.announcedDate?'<span class="meta-txt">'+item.announcedDate+'</span>':'')+(item.region?'<span class="meta-txt">&middot; '+item.region+'</span>':'')+(euBadge?euBadge:'')+'</div>'+srcLink+'</div></div>';
+    }).join('');
+  }
+
+  // Load data from partnerships-data.json (same directory on GitHub Pages)
+  fetch('partnerships-data.json')
+    .then(function(r){ return r.json(); })
+    .then(function(data) {
+      allItems = data;
+      updateStats();
+      render();
+    })
+    .catch(function(err) {
+      document.getElementById('grid').innerHTML = '<div class="loading">Unable to load data. Please refresh.</div>';
+      console.error('Feed load error:', err);
+    });
+
+  // Also accept postMessage as fallback (keeps Velo compatibility if added later)
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'PARTNERSHIPS_DATA' && e.data.items) {
+      allItems = e.data.items;
+      updateStats();
+      render();
+    }
+  });
+</script>
+</body>
+</html>
