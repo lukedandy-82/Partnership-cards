@@ -145,6 +145,24 @@
     render();
   }
 
+  // EU tech deals — both companies must be European-headquartered
+  // Hardcoded so badges work regardless of euTech field in JSON
+  var EU_TECH_PAIRS = [
+    ['SAP','Prior Labs'],
+    ['EPH','TotalEnergies'],
+    ['Airbus','Mistral AI'],
+    ['Centrica','SAP SE'],
+    ['Checkout.com','BLIK']
+  ];
+
+  function isEuTech(item) {
+    if (item.euTech === true) return true;
+    var cos = (item.companies || '').toLowerCase();
+    return EU_TECH_PAIRS.some(function(pair) {
+      return pair.every(function(co) { return cos.indexOf(co.toLowerCase()) !== -1; });
+    });
+  }
+
   function render() {
     var grid = document.getElementById('grid');
     var empty = document.getElementById('empty');
@@ -160,7 +178,7 @@
       var chips = companies.map(function(c){return '<span class="chip">'+c+'</span>';}).join('');
       var macroClass = getMacroClass(item.macroRegion);
       var srcLink = item.sourceUrl ? '<a class="src-link" href="'+item.sourceUrl+'" target="_blank">&#8599; '+(item.sourceName||'Source')+'</a>' : '';
-      var euBadge = item.euTech ? '<a class="eustack-badge" href="https://www.gctechallies.com/build-eustack" target="_blank" rel="noopener">&#127466;&#127482; Build EUStack</a>' : '';
+      var euBadge = isEuTech(item) ? '<a class="eustack-badge" href="https://www.gctechallies.com/build-eustack" target="_blank" rel="noopener">&#127466;&#127482; Build EUStack</a>' : '';
       return '<div class="card"><div class="card-top"><h3>'+item.title+'</h3><span class="macro-badge '+macroClass+'">'+(item.macroRegion||'Global')+'</span></div><div class="chips">'+chips+'</div><div class="card-body"><p class="summary">'+item.summary+'</p><div class="meta">'+(item.category?'<span class="cat-tag">'+item.category+'</span>':'')+(item.announcedDate?'<span class="meta-txt">'+item.announcedDate+'</span>':'')+(item.region?'<span class="meta-txt">&middot; '+item.region+'</span>':'')+(euBadge?euBadge:'')+'</div>'+srcLink+'</div></div>';
     }).join('');
   }
