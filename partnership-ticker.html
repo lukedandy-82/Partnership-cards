@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GcTechAllies — Live Deal Ticker</title>
+<style>
+  :root{
+    --bg-deep:#050d28;
+    --bg:#0c1b4a;
+    --teal:#27a9bb;
+    --teal-hi:#5bcfde;
+    --eu-gold:#ffcc00;
+    --eu-blue:#003399;
+    --white:#f2f8ff;
+    --muted:#6a96b8;
+  }
+  html,body{margin:0;padding:0;background:transparent;overflow:hidden;font-family:'Helvetica Neue',Arial,sans-serif;}
+
+  .ticker-wrap{
+    position:relative;
+    width:100%;
+    background:linear-gradient(90deg,var(--bg-deep) 0%,var(--bg) 50%,var(--bg-deep) 100%);
+    border-top:1px solid rgba(91,207,222,0.25);
+    border-bottom:1px solid rgba(91,207,222,0.25);
+    overflow:hidden;
+    height:52px;
+    display:flex;
+    align-items:center;
+  }
+
+  .ticker-label{
+    flex:0 0 auto;
+    background:var(--eu-gold);
+    color:var(--bg-deep);
+    font-weight:800;
+    font-size:12px;
+    letter-spacing:1px;
+    padding:8px 16px;
+    height:100%;
+    display:flex;
+    align-items:center;
+    z-index:3;
+    box-shadow:6px 0 12px -4px rgba(0,0,0,0.5);
+    white-space:nowrap;
+    text-transform:uppercase;
+  }
+
+  .ticker-viewport{
+    flex:1 1 auto;
+    position:relative;
+    overflow:hidden;
+    height:100%;
+  }
+
+  .ticker-track{
+    position:absolute;
+    top:0;
+    left:0;
+    display:flex;
+    align-items:center;
+    height:100%;
+    white-space:nowrap;
+    will-change:transform;
+    animation:scroll-left 60s linear infinite;
+  }
+
+  .ticker-wrap.paused .ticker-track{
+    animation-play-state:paused;
+  }
+
+  @keyframes scroll-left{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+
+  .ticker-item{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:0 28px;
+    color:var(--white);
+    text-decoration:none;
+    font-size:14px;
+    border-right:1px solid rgba(106,150,184,0.35);
+    height:100%;
+  }
+  .ticker-item:hover{ color:var(--teal-hi); }
+
+  .pill{
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    padding:3px 8px;
+    border-radius:20px;
+    background:rgba(39,169,187,0.18);
+    color:var(--teal-hi);
+    border:1px solid rgba(39,169,187,0.4);
+    white-space:nowrap;
+  }
+
+  .eu-flag{
+    font-size:13px;
+  }
+
+  .companies{
+    font-weight:700;
+    color:var(--white);
+  }
+
+  .summary{
+    color:var(--muted);
+    font-weight:400;
+    max-width:360px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .ticker-loading{
+    color:var(--muted);
+    font-size:13px;
+    padding:0 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="ticker-wrap" id="tickerWrap">
+  <div class="ticker-label">🔴 Live Deals</div>
+  <div class="ticker-viewport">
+    <div class="ticker-track" id="tickerTrack">
+      <div class="ticker-loading">Loading latest partnership deals…</div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var DATA_URL = 'https://lukedandy-82.github.io/Partnership-cards/partnerships-data.json';
+  var track = document.getElementById('tickerTrack');
+  var wrap = document.getElementById('tickerWrap');
+
+  // Pause the scroll when hovered so people can read/click
+  wrap.addEventListener('mouseenter', function(){ wrap.classList.add('paused'); });
+  wrap.addEventListener('mouseleave', function(){ wrap.classList.remove('paused'); });
+
+  fetch(DATA_URL)
+    .then(function(res){ return res.json(); })
+    .then(function(deals){
+      if(!Array.isArray(deals) || deals.length === 0){
+        track.innerHTML = '<div class="ticker-loading">No deals available right now.</div>';
+        return;
+      }
+
+      // Most recent first, cap at 20 for a snappy loop
+      var items = deals.slice(0, 20);
+
+      function buildItem(d){
+        var flag = d.euTech ? '<span class="eu-flag">🇪🇺</span>' : '';
+        var summary = d.summary ? d.summary.substring(0, 90) + (d.summary.length > 90 ? '…' : '') : '';
+        var href = d.sourceUrl || '#';
+        return '<a class="ticker-item" href="' + href + '" target="_blank" rel="noopener">' +
+          flag +
+          '<span class="pill">' + (d.category || '') + '</span>' +
+          '<span class="companies">' + (d.companies || d.title || '') + '</span>' +
+          (summary ? '<span class="summary">' + summary + '</span>' : '') +
+        '</a>';
+      }
+
+      // Duplicate the sequence so the loop is seamless (translateX -50%)
+      var html = items.map(buildItem).join('') + items.map(buildItem).join('');
+      track.innerHTML = html;
+
+      // Scale animation duration to content length so speed feels consistent
+      var totalWidth = track.scrollWidth / 2;
+      var pxPerSecond = 60; // adjust for faster/slower scroll
+      var duration = Math.max(20, totalWidth / pxPerSecond);
+      track.style.animationDuration = duration + 's';
+    })
+    .catch(function(err){
+      track.innerHTML = '<div class="ticker-loading">Unable to load live deals.</div>';
+      console.error('Ticker fetch failed:', err);
+    });
+})();
+</script>
+
+</body>
+</html>
