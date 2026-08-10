@@ -20,7 +20,7 @@ import urllib.error
 WIX_API_KEY = os.environ["WIX_API_KEY"]
 WIX_SITE_ID = os.environ["WIX_SITE_ID"]
 COLLECTION_ID = "partnerships-feed"
-OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "..", "partnerships-data.json")
+OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "partnerships-data.json")
 QUERY_URL = "https://www.wixapis.com/wix-data/v2/items/query"
 
 FIELDS = [
@@ -93,7 +93,6 @@ def main():
 
     if new_content.strip() == old_content.strip():
         print("No changes — partnerships-data.json is already up to date.")
-        # Signal "no changes" to the workflow via an output file
         gh_output = os.environ.get("GITHUB_OUTPUT")
         if gh_output:
             with open(gh_output, "a") as f:
