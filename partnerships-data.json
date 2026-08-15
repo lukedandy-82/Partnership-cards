@@ -45,7 +45,7 @@
     "announcedDate": "2026-08-04",
     "sourceUrl": "https://www.finextra.com/newsarticle/48189/accenture-acquires-ibms-stake-in-technology-jv-with-unicredit",
     "sourceName": "Finextra",
-    "euTech": false
+    "euTech": true
   },
   {
     "title": "SEALSQ × GlobalFoundries — Post-Quantum Cryptography & Quantum Computing MoU",
