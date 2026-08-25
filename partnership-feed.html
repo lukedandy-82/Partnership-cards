@@ -9,15 +9,6 @@
   .feed-header { background: #1a1a1a; padding: 24px 28px 20px; }
   .feed-header h1 { font-size: 22px; font-weight: 600; color: #fff; letter-spacing: -0.3px; }
   .feed-header p { color: #888; font-size: 13px; margin-top: 5px; font-family: 'IBM Plex Mono', monospace; }
-  .stats-strip { display: flex; gap: 0; background: #fff; border-bottom: 1px solid #e8e8e4; }
-  .stat-cell { flex: 1; padding: 12px 16px; border-right: 1px solid #e8e8e4; }
-  .stat-cell:last-child { border-right: none; }
-  .stat-num { font-size: 22px; font-weight: 600; font-family: 'IBM Plex Mono', monospace; }
-  .stat-lbl { font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 0.07em; margin-top: 2px; }
-  .stat-eu .stat-num { color: #1d4ed8; }
-  .stat-na .stat-num { color: #166534; }
-  .stat-asia .stat-num { color: #c2410c; }
-  .stat-global .stat-num { color: #7c3aed; }
   .region-nav { background: #fff; border-bottom: 2px solid #e8e8e4; padding: 0 16px; display: flex; overflow-x: auto; }
   .rtab { padding: 11px 16px; font-size: 13px; font-weight: 500; cursor: pointer; border: none; background: none;
     color: #888; border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap;
@@ -39,6 +30,11 @@
     background: #fff; color: #555; cursor: pointer; transition: all 0.1s;
     text-transform: uppercase; letter-spacing: 0.05em; font-family: 'IBM Plex Sans', sans-serif; }
   .cbtn.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+  .date-bar { display: flex; gap: 6px; flex-wrap: wrap; padding: 10px 16px; background: #fff; border-bottom: 1px solid #e8e8e4; }
+  .dbtn { padding: 4px 11px; border-radius: 20px; font-size: 11px; font-weight: 500; border: 1px solid #d4d4d0;
+    background: #fff; color: #555; cursor: pointer; transition: all 0.1s;
+    font-family: 'IBM Plex Sans', sans-serif; }
+  .dbtn.active { background: #1d4ed8; color: #fff; border-color: #1d4ed8; }
   #grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; padding: 20px 16px; }
   .card { background: #fff; border: 1px solid #e8e8e4; border-radius: 10px; overflow: hidden; transition: box-shadow 0.15s; }
   .card:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.08); }
@@ -78,14 +74,7 @@
 <body>
 <div class="feed-header">
   <h1>Partnership Feed</h1>
-  <p>Tech &middot; AI &middot; Payments &middot; Ecommerce &middot; Energy &middot; Defence &middot; Automotive &mdash; EU / North America / Asia / Global</p>
-</div>
-<div class="stats-strip">
-  <div class="stat-cell"><div class="stat-num" id="s-total">-</div><div class="stat-lbl">Total</div></div>
-  <div class="stat-cell stat-eu"><div class="stat-num" id="s-eu">-</div><div class="stat-lbl">Europe</div></div>
-  <div class="stat-cell stat-na"><div class="stat-num" id="s-na">-</div><div class="stat-lbl">N. America</div></div>
-  <div class="stat-cell stat-asia"><div class="stat-num" id="s-asia">-</div><div class="stat-lbl">Asia</div></div>
-  <div class="stat-cell stat-global"><div class="stat-num" id="s-global">-</div><div class="stat-lbl">Global</div></div>
+  <p>Tracking the partnerships reshaping global industries</p>
 </div>
 <div class="region-nav">
   <button class="rtab active" onclick="filterRegion('all',this)">All <span class="rc" id="rc-all">-</span></button>
@@ -106,6 +95,15 @@
   <button class="cbtn" onclick="filterCat('Energy',this)">Energy</button>
   <button class="cbtn" onclick="filterCat('Defence',this)">Defence</button>
   <button class="cbtn" onclick="filterCat('Automotive',this)">Automotive</button>
+  <button class="cbtn" onclick="filterCat('Sport',this)">Sport</button>
+  <button class="cbtn" onclick="filterCat('Healthcare',this)">Healthcare</button>
+</div>
+<div class="date-bar">
+  <button class="dbtn active" onclick="filterDate('all',this)">All Time</button>
+  <button class="dbtn" onclick="filterDate('7d',this)">Last 7 Days</button>
+  <button class="dbtn" onclick="filterDate('30d',this)">Last 30 Days</button>
+  <button class="dbtn" onclick="filterDate('month',this)">This Month</button>
+  <button class="dbtn" onclick="filterDate('90d',this)">Last 3 Months</button>
 </div>
 <div id="grid"><div class="loading"><span class="dot"></span><span class="dot"></span><span class="dot"></span><br><br>Loading partnerships...</div></div>
 <div id="empty"><h2>No partnerships match this filter.</h2></div>
@@ -113,17 +111,13 @@
   var allItems = [];
   var activeRegion = 'all';
   var activeCat = 'all';
+  var activeDateRange = 'all';
 
   function getMacroClass(m) {
     return {'EU':'m-EU','North America':'m-NA','Asia':'m-Asia'}[m] || 'm-Global';
   }
 
   function updateStats() {
-    document.getElementById('s-total').textContent = allItems.length;
-    document.getElementById('s-eu').textContent = allItems.filter(function(i){return i.macroRegion==='EU';}).length;
-    document.getElementById('s-na').textContent = allItems.filter(function(i){return i.macroRegion==='North America';}).length;
-    document.getElementById('s-asia').textContent = allItems.filter(function(i){return i.macroRegion==='Asia';}).length;
-    document.getElementById('s-global').textContent = allItems.filter(function(i){return i.macroRegion==='Global';}).length;
     document.getElementById('rc-all').textContent = allItems.length;
     document.getElementById('rc-eu').textContent = allItems.filter(function(i){return i.macroRegion==='EU';}).length;
     document.getElementById('rc-na').textContent = allItems.filter(function(i){return i.macroRegion==='North America';}).length;
@@ -143,6 +137,34 @@
     document.querySelectorAll('.cbtn').forEach(function(b){b.classList.remove('active');});
     btn.classList.add('active');
     render();
+  }
+
+  function filterDate(range, btn) {
+    activeDateRange = range;
+    document.querySelectorAll('.dbtn').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');
+    render();
+  }
+
+  // Returns true if item.announcedDate falls within the selected preset range
+  function matchesDateRange(item) {
+    if (activeDateRange === 'all') return true;
+    if (!item.announcedDate) return false;
+    var itemDate = new Date(item.announcedDate);
+    var now = new Date();
+    var cutoff;
+    if (activeDateRange === '7d') {
+      cutoff = new Date(now); cutoff.setDate(cutoff.getDate() - 7);
+    } else if (activeDateRange === '30d') {
+      cutoff = new Date(now); cutoff.setDate(cutoff.getDate() - 30);
+    } else if (activeDateRange === '90d') {
+      cutoff = new Date(now); cutoff.setDate(cutoff.getDate() - 90);
+    } else if (activeDateRange === 'month') {
+      cutoff = new Date(now.getFullYear(), now.getMonth(), 1);
+    } else {
+      return true;
+    }
+    return itemDate >= cutoff;
   }
 
   // EU tech deals — both companies must be European-headquartered
@@ -173,7 +195,8 @@
     var filtered = allItems.filter(function(item) {
       var rm = activeRegion === 'all' || item.macroRegion === activeRegion;
       var cm = activeCat === 'all' || item.category === activeCat;
-      return rm && cm;
+      var dm = matchesDateRange(item);
+      return rm && cm && dm;
     });
     if (filtered.length === 0) { grid.innerHTML = ''; empty.style.display = 'block'; return; }
     empty.style.display = 'none';
