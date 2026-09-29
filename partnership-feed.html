@@ -88,7 +88,7 @@
 <div class="search-bar">
   <div class="search-wrap">
     <span class="search-icon">&#128269;</span>
-    <input type="text" id="search-input" placeholder="Search by company, category, region, or date..." oninput="handleSearch()">
+    <input type="text" id="search-input" placeholder="Search by deal or company name..." oninput="handleSearch()">
     <button id="search-clear" onclick="clearSearch()">&times;</button>
   </div>
 </div>
@@ -173,28 +173,11 @@
     input.focus();
   }
 
-  var MONTH_NAMES = ['january','february','march','april','may','june','july','august','september','october','november','december'];
-
-  // Expands an ISO date (2026-09-15) into a search-friendly string that also
-  // contains the month name and year, so "September" or "Sep 2026" both match.
-  function dateSearchText(isoDate) {
-    if (!isoDate) return '';
-    var d = new Date(isoDate);
-    if (isNaN(d.getTime())) return isoDate;
-    var month = MONTH_NAMES[d.getMonth()];
-    return isoDate + ' ' + month + ' ' + month.slice(0, 3) + ' ' + d.getFullYear();
-  }
-
-  // Matches search text against title, companies, summary, category, region, and date —
-  // a single search box that reaches every field the dedicated filter buttons already cover,
-  // so typing "payments", "asia", or "september" works just like clicking the matching filter.
+  // Matches search text against the deal name and the companies involved —
+  // a simple, reliable "find this deal" search rather than a broad field scan.
   function matchesSearch(item) {
     if (!activeSearch) return true;
-    var haystack = [
-      item.title, item.companies, item.summary,
-      item.category, item.region, item.macroRegion,
-      dateSearchText(item.announcedDate), item.sourceName
-    ].filter(Boolean).join(' ').toLowerCase();
+    var haystack = ((item.title || '') + ' ' + (item.companies || '')).toLowerCase();
     return haystack.indexOf(activeSearch) !== -1;
   }
 
