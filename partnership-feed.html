@@ -9,6 +9,15 @@
   .feed-header { background: #1a1a1a; padding: 24px 28px 20px; }
   .feed-header h1 { font-size: 22px; font-weight: 600; color: #fff; letter-spacing: -0.3px; }
   .feed-header p { color: #888; font-size: 13px; margin-top: 5px; font-family: 'IBM Plex Mono', monospace; }
+  .search-bar { background: #fff; border-bottom: 1px solid #e8e8e4; padding: 12px 16px; }
+  .search-wrap { position: relative; max-width: 480px; }
+  .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #aaa; font-size: 14px; pointer-events: none; }
+  #search-input { width: 100%; padding: 9px 34px 9px 34px; border: 1px solid #d4d4d0; border-radius: 8px;
+    font-size: 13px; font-family: 'IBM Plex Sans', sans-serif; background: #f9f9f7; color: #1a1a1a; }
+  #search-input:focus { outline: none; border-color: #1a1a1a; background: #fff; }
+  #search-clear { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;
+    color: #aaa; font-size: 15px; display: none; background: none; border: none; padding: 4px; line-height: 1; }
+  #search-clear:hover { color: #1a1a1a; }
   .region-nav { background: #fff; border-bottom: 2px solid #e8e8e4; padding: 0 16px; display: flex; overflow-x: auto; }
   .rtab { padding: 11px 16px; font-size: 13px; font-weight: 500; cursor: pointer; border: none; background: none;
     color: #888; border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap;
@@ -76,6 +85,13 @@
   <h1>Partnership Feed</h1>
   <p>Tracking the partnerships reshaping global industries</p>
 </div>
+<div class="search-bar">
+  <div class="search-wrap">
+    <span class="search-icon">&#128269;</span>
+    <input type="text" id="search-input" placeholder="Search by company, category, region, or date..." oninput="handleSearch()">
+    <button id="search-clear" onclick="clearSearch()">&times;</button>
+  </div>
+</div>
 <div class="region-nav">
   <button class="rtab active" onclick="filterRegion('all',this)">All <span class="rc" id="rc-all">-</span></button>
   <button class="rtab r-eu" onclick="filterRegion('EU',this)">&#127466;&#127482; Europe <span class="rc" id="rc-eu">-</span></button>
@@ -94,6 +110,7 @@
   <button class="cbtn" onclick="filterCat('Logistics',this)">Logistics</button>
   <button class="cbtn" onclick="filterCat('Energy',this)">Energy</button>
   <button class="cbtn" onclick="filterCat('Defence',this)">Defence</button>
+  <button class="cbtn" onclick="filterCat('Space',this)">Space</button>
   <button class="cbtn" onclick="filterCat('Automotive',this)">Automotive</button>
   <button class="cbtn" onclick="filterCat('Sport',this)">Sport</button>
   <button class="cbtn" onclick="filterCat('Healthcare',this)">Healthcare</button>
@@ -106,12 +123,13 @@
   <button class="dbtn" onclick="filterDate('90d',this)">Last 3 Months</button>
 </div>
 <div id="grid"><div class="loading"><span class="dot"></span><span class="dot"></span><span class="dot"></span><br><br>Loading partnerships...</div></div>
-<div id="empty"><h2>No partnerships match this filter.</h2></div>
+<div id="empty"><h2 id="empty-msg">No partnerships match this filter.</h2></div>
 <script>
   var allItems = [];
   var activeRegion = 'all';
   var activeCat = 'all';
   var activeDateRange = 'all';
+  var activeSearch = '';
 
   function getMacroClass(m) {
     return {'EU':'m-EU','North America':'m-NA','Asia':'m-Asia'}[m] || 'm-Global';
@@ -137,6 +155,47 @@
     document.querySelectorAll('.cbtn').forEach(function(b){b.classList.remove('active');});
     btn.classList.add('active');
     render();
+  }
+
+  function handleSearch() {
+    var input = document.getElementById('search-input');
+    activeSearch = input.value.trim().toLowerCase();
+    document.getElementById('search-clear').style.display = activeSearch ? 'block' : 'none';
+    render();
+  }
+
+  function clearSearch() {
+    var input = document.getElementById('search-input');
+    input.value = '';
+    activeSearch = '';
+    document.getElementById('search-clear').style.display = 'none';
+    render();
+    input.focus();
+  }
+
+  var MONTH_NAMES = ['january','february','march','april','may','june','july','august','september','october','november','december'];
+
+  // Expands an ISO date (2026-09-15) into a search-friendly string that also
+  // contains the month name and year, so "September" or "Sep 2026" both match.
+  function dateSearchText(isoDate) {
+    if (!isoDate) return '';
+    var d = new Date(isoDate);
+    if (isNaN(d.getTime())) return isoDate;
+    var month = MONTH_NAMES[d.getMonth()];
+    return isoDate + ' ' + month + ' ' + month.slice(0, 3) + ' ' + d.getFullYear();
+  }
+
+  // Matches search text against title, companies, summary, category, region, and date —
+  // a single search box that reaches every field the dedicated filter buttons already cover,
+  // so typing "payments", "asia", or "september" works just like clicking the matching filter.
+  function matchesSearch(item) {
+    if (!activeSearch) return true;
+    var haystack = [
+      item.title, item.companies, item.summary,
+      item.category, item.region, item.macroRegion,
+      dateSearchText(item.announcedDate), item.sourceName
+    ].filter(Boolean).join(' ').toLowerCase();
+    return haystack.indexOf(activeSearch) !== -1;
   }
 
   function filterDate(range, btn) {
@@ -196,9 +255,17 @@
       var rm = activeRegion === 'all' || item.macroRegion === activeRegion;
       var cm = activeCat === 'all' || item.category === activeCat;
       var dm = matchesDateRange(item);
-      return rm && cm && dm;
+      var sm = matchesSearch(item);
+      return rm && cm && dm && sm;
     });
-    if (filtered.length === 0) { grid.innerHTML = ''; empty.style.display = 'block'; return; }
+    if (filtered.length === 0) {
+      grid.innerHTML = '';
+      document.getElementById('empty-msg').textContent = activeSearch
+        ? 'No partnerships match "' + activeSearch + '".'
+        : 'No partnerships match this filter.';
+      empty.style.display = 'block';
+      return;
+    }
     empty.style.display = 'none';
     grid.innerHTML = filtered.map(function(item) {
       var companies = (item.companies || '').split(',').map(function(c){return c.trim();}).filter(Boolean);
