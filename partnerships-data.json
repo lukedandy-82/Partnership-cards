@@ -9,7 +9,8 @@
     "announcedDate": "2026-09-24",
     "sourceUrl": "https://www.theclearinghouse.org/payment-systems/Articles/2026/09/The-Clearing-House-Partners-with-Quant-to-Advance-the--On-Chain-Money-Initiative",
     "sourceName": "The Clearing House",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "nobilia × Coohom — AI-Powered Kitchen Visualization",
@@ -21,7 +22,8 @@
     "announcedDate": "2026-09-23",
     "sourceUrl": "https://blog.coohom.com/nobilia-and-coohom-forge-strategic-global-partnership-to-redefine-the-future-of-kitchen-planning-with-spatial-intelligence/",
     "sourceName": "Coohom",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "TotalEnergies × Mistral AI — Frontier AI for Energy Exploration",
@@ -33,7 +35,8 @@
     "announcedDate": "2026-09-15",
     "sourceUrl": "https://www.businesswire.com/",
     "sourceName": "Business Wire",
-    "euTech": true
+    "euTech": true,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_c019a5ac46b1409bae9d66e536d3e12d~mv2.png"
   },
   {
     "title": "NetBox Labs × Presidio — Enterprise Infrastructure Automation",
@@ -45,7 +48,8 @@
     "announcedDate": "2026-09-15",
     "sourceUrl": "https://netboxlabs.com/news/netbox-labs-and-presidio-announce-strategic-partnership/",
     "sourceName": "NetBox Labs",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "Eutelsat × Airbus Defence and Space — 229 More OneWeb Satellites",
@@ -57,7 +61,8 @@
     "announcedDate": "2026-09-10",
     "sourceUrl": "https://www.eutelsat.com/media-press/media-centre/news/eutelsat-procures-a-further-oneweb-229-leo-satellites-airbus",
     "sourceName": "Eutelsat",
-    "euTech": true
+    "euTech": true,
+    "cardImageUrl": ""
   },
   {
     "title": "Cloudera × Mistral — Sovereign Enterprise AI Integration",
@@ -69,7 +74,8 @@
     "announcedDate": "2026-09-10",
     "sourceUrl": "https://www.globenewswire.com/news-release/2026/09/10/3359391/31982/en/cloudera-and-mistral-partner-to-bring-specialized-sovereign-intelligence-to-enterprise-data.html",
     "sourceName": "GlobeNewswire",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "Eutelsat × OroraTech — Thermal Infrared Wildfire Detection Payloads",
@@ -81,7 +87,8 @@
     "announcedDate": "2026-09-09",
     "sourceUrl": "https://www.eutelsat.com/media-press/media-centre/news/eutelsat-and-ororatech-partner-scale-space-based-thermal-intelligence",
     "sourceName": "Eutelsat",
-    "euTech": true
+    "euTech": true,
+    "cardImageUrl": ""
   },
   {
     "title": "Schwarz Digits (STACKIT) × SAP — First European RISE Hyperscaler",
@@ -93,7 +100,8 @@
     "announcedDate": "2026-09-08",
     "sourceUrl": "https://www.schwarz-digits.de/en",
     "sourceName": "Schwarz Digits",
-    "euTech": true
+    "euTech": true,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_6fdbc509b5a646f4ae0a08c6ee9f7799~mv2.png"
   },
   {
     "title": "TKMS × Fincantieri — Joint Underwater Defence Framework",
@@ -105,7 +113,8 @@
     "announcedDate": "2026-09-01",
     "sourceUrl": "https://www.fincantieri.com/en/",
     "sourceName": "Fincantieri",
-    "euTech": true
+    "euTech": true,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_d75b92d86c064468bbf0f091ec85121e~mv2.png"
   },
   {
     "title": "Deliverect × Bounteous — Branded Digital Ordering Integration",
@@ -117,7 +126,8 @@
     "announcedDate": "2026-08-24",
     "sourceUrl": "https://www.qsrmagazine.com/news/deliverect-and-bounteous-announces-partnership-to-integrate-their-platforms/",
     "sourceName": "QSR Magazine",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_7e392cc03f754f89b4199c6ff672f08a~mv2.png"
   },
   {
     "title": "Google Cloud × Verizon — Enterprise AI Partnership Expansion",
@@ -129,7 +139,8 @@
     "announcedDate": "2026-08-24",
     "sourceUrl": "https://www.ciodive.com/news/verizon-google-cloud-partner-enterprise-AI/828648/",
     "sourceName": "CIO Dive",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_695b6485120245869dc7d5f2903824b5~mv2.png"
   },
   {
     "title": "TerraPay × Deutsche Bank — Cross-Border Payment Reach Expansion",
@@ -141,7 +152,8 @@
     "announcedDate": "2026-08-21",
     "sourceUrl": "https://fintech.global/2026/08/21/terrapay-taps-deutsche-bank-to-widen-cross-border-payment-reach/",
     "sourceName": "FinTech Global",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_65e7cb8a3fa94dfda648032756da84c0~mv2.png"
   },
   {
     "title": "Nvidia × Cloverleaf Infrastructure — AI Data Center Power Investment",
@@ -153,7 +165,8 @@
     "announcedDate": "2026-08-21",
     "sourceUrl": "https://techcrunch.com/2026/08/21/nvidia-partners-with-data-center-developer-cloverleaf/",
     "sourceName": "TechCrunch",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_2fcc58e402a14b41b1e862680cff4dec~mv2.png"
   },
   {
     "title": "BOCHK × Ant International — Cross-Border Payments Partnership Expansion",
@@ -165,7 +178,8 @@
     "announcedDate": "2026-08-20",
     "sourceUrl": "https://fintech.global/2026/08/20/bochk-and-ant-international-expand-cross-border-payments-partnership/",
     "sourceName": "FinTech Global",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_b8eac36d00a848968d45d0f8a63a255b~mv2.png"
   },
   {
     "title": "Pony.ai × Uber — 2,000+ Robotaxi European Expansion",
@@ -177,7 +191,8 @@
     "announcedDate": "2026-08-14",
     "sourceUrl": "https://techcrunch.com/2026/08/14/uber-and-pony-ai-plan-to-bring-2000-robotaxis-to-europe/",
     "sourceName": "TechCrunch",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_996c28f497ad4794a8b5b9867fbf084f~mv2.png"
   },
   {
     "title": "Innovaccer × Mastek — Agentic Healthcare AI Global Expansion",
@@ -189,7 +204,8 @@
     "announcedDate": "2026-08-13",
     "sourceUrl": "https://www.fiercehealthcare.com/health-tech/innovaccer-mastek-ink-strategic-partnership-accelerate-global-deployment-agentic",
     "sourceName": "FierceHealthcare",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_47fc383c2ba949fd99e0d99df23635ad~mv2.png"
   },
   {
     "title": "Sony × TSMC — $6.3B Image Sensor Joint Venture for Physical AI",
@@ -201,7 +217,8 @@
     "announcedDate": "2026-08-10",
     "sourceUrl": "https://asia.nikkei.com/business/tech/semiconductors/sony-tsmc-to-invest-6.3bn-in-advanced-image-sensor-plant-in-kumamoto",
     "sourceName": "Nikkei Asia",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_c12fc76fa8f847a8941b1621e5d3cc50~mv2.png"
   },
   {
     "title": "Great British Energy × Naked Energy — UK Solar-Thermal Manufacturing Scale-Up",
@@ -213,7 +230,8 @@
     "announcedDate": "2026-08-06",
     "sourceUrl": "https://www.eu-startups.com/2026/08/crawley-based-naked-energy-secures-e10-35-million-to-build-uk-solar-thermal-technology-manufacturing-facility",
     "sourceName": "EU-Startups",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_0cd37dc3bc45456caad86fd53f00aeaf~mv2.png"
   },
   {
     "title": "ABN AMRO × Mistral AI — Sovereign AI Banking Partnership",
@@ -225,7 +243,8 @@
     "announcedDate": "2026-08-06",
     "sourceUrl": "https://fintech.global/2026/08/06/dutch-banking-giant-taps-mistral-for-european-ai-push/",
     "sourceName": "FinTech Global",
-    "euTech": true
+    "euTech": true,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_a763f3827b17401d85a9ed48610d2639~mv2.png"
   },
   {
     "title": "UniCredit × Accenture × IBM — European Banking Technology Restructuring",
@@ -237,7 +256,8 @@
     "announcedDate": "2026-08-04",
     "sourceUrl": "https://www.finextra.com/newsarticle/48189/accenture-acquires-ibms-stake-in-technology-jv-with-unicredit",
     "sourceName": "Finextra",
-    "euTech": true
+    "euTech": true,
+    "cardImageUrl": ""
   },
   {
     "title": "SEALSQ × GlobalFoundries — Post-Quantum Cryptography & Quantum Computing MoU",
@@ -249,7 +269,8 @@
     "announcedDate": "2026-08-03",
     "sourceUrl": "https://www.globenewswire.com/news-release/2026/08/03/3324047/0/en/sealsq-and-globalfoundries-partner-to-accelerate-post-quantum-cryptography-and-quantum-computing-technologies.html",
     "sourceName": "GlobeNewswire",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_543b904844b94279b5372ac2690a74f8~mv2.png"
   },
   {
     "title": "Zscaler × Schwarz Digits — Sovereign Cloud Cybersecurity",
@@ -261,7 +282,8 @@
     "announcedDate": "2026-07-28",
     "sourceUrl": "https://www.stocktitan.net/news/ZS/zscaler-and-schwarz-digits-partner-to-deliver-sovereign-cloud-0nsn1ibrrbkm.html",
     "sourceName": "StockTitan",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_fac584198cbb46d6a04a9eba0ea19e48~mv2.png"
   },
   {
     "title": "Ford × Geely — Valencia Manufacturing JV: 500,000-Unit EV and Multi-Energy Production from 2027",
@@ -273,7 +295,8 @@
     "announcedDate": "2026-07-23",
     "sourceUrl": "https://media.ford.com/content/fordmedia/feu/en/news/2026/07/23/ford-geely-valencia-manufacturing-joint-venture.html",
     "sourceName": "Ford Motor Company / Geely",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "METLEN (M Technologies) × HOUTRIS — Military Land Vehicle Manufacturing JV in Cyprus",
@@ -285,7 +308,8 @@
     "announcedDate": "2026-07-23",
     "sourceUrl": "https://www.metlen.com/en/press-releases/2026/07/metlen-houtris-joint-venture-cyprus-defence",
     "sourceName": "METLEN Energy & Resources",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "Microsoft × Mistral AI — Multibillion-Dollar European Sovereign AI Expansion",
@@ -297,7 +321,8 @@
     "announcedDate": "2026-07-21",
     "sourceUrl": "https://news.microsoft.com/source/2026/07/21/microsoft-and-mistral-expand-strategic-partnership-to-give-enterprises-and-regulated-industries-frontier-ai-they-can-control/",
     "sourceName": "Microsoft Newsroom",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_9c42252aa723475089573604573f2a82~mv2.png"
   },
   {
     "title": "Humanoid × Schaeffler — Europe’s First Humanoid Robotics Unicorn: $152M Series A at $1.35B Valuation",
@@ -309,7 +334,8 @@
     "announcedDate": "2026-07-21",
     "sourceUrl": "https://thehumanoid.ai/humanoid-raises-152-million-at-1-35-billion-post-money-valuation-becoming-europes-first-pure-play-humanoid-robotics-unicorn/",
     "sourceName": "Humanoid Press Release",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_edc3b9c8621e45ae99940c11ca523559~mv2.png"
   },
   {
     "title": "Leonardo × Baykar — LBA Systems JV: European Manufacturing of Advanced Drone Platforms",
@@ -321,7 +347,8 @@
     "announcedDate": "2026-07-21",
     "sourceUrl": "https://www.leonardocompany.com/en/press-release-detail/-/detail/lba-systems-jv-farnborough-2026",
     "sourceName": "Leonardo / Farnborough Airshow 2026",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_11ba13347ba54aec834cfc980228a922~mv2.png"
   },
   {
     "title": "Saft (TotalEnergies) × Naval Group — Sovereign Lithium-Ion Batteries for Barracuda and Scorpene Submarines",
@@ -333,7 +360,8 @@
     "announcedDate": "2026-07-20",
     "sourceUrl": "https://www.saftbatteries.com/press-releases/saft-naval-group-submarine-li-ion-battery-contract-2026",
     "sourceName": "Saft / Naval Group",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "AMD × Microsoft — Helios Rack-Scale AI System Deployed at Scale Across Azure",
@@ -345,7 +373,8 @@
     "announcedDate": "2026-07-20",
     "sourceUrl": "https://www.amd.com/en/newsroom/press-releases/2026-7-20-microsoft-to-deploy-next-gen-amd-instinct-and-amd-.html",
     "sourceName": "AMD Newsroom",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "NOBA Bank × Tieto Banktech — Verification of Payee Payment Security Across Nordic Operations",
@@ -357,7 +386,8 @@
     "announcedDate": "2026-07-14",
     "sourceUrl": "https://fintech.global/2026/07/14/noba-bank-taps-tieto-banktech-to-bolster-payment-security/",
     "sourceName": "Fintech Global",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_8d660157cd504cc8a2af314ada753dcf~mv2.png"
   },
   {
     "title": "EWE AG × Verbund — EC-Approved Green Hydrogen JV: 320 MW Electrolyser Linked to Germany’s Hydrogen Grid",
@@ -369,7 +399,8 @@
     "announcedDate": "2026-07-09",
     "sourceUrl": "https://www.ewe.com/en/press/press-releases/2026/07/ewe-verbund-green-hydrogen-joint-venture-approved",
     "sourceName": "European Commission / EWE AG",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "ÆTHER Consortium — European AI Gigafactory in Strasbourg: SiPearl, 2CRSi, Dassault Systèmes, Nhood, SOCOMEC",
@@ -381,7 +412,8 @@
     "announcedDate": "2026-07-08",
     "sourceUrl": "https://www.hpcwire.com/off-the-wire/sipearl-2crsi-and-partners-launch-aether-ai-gigafactory-initiative/",
     "sourceName": "HPCwire / ÆTHER Consortium",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_104be8505eaf405095b3e1bc687742c9~mv2.png"
   },
   {
     "title": "Groupe BPCE × Nexity — Residential Real Estate Distribution Joint Venture in France",
@@ -393,7 +425,8 @@
     "announcedDate": "2026-07-02",
     "sourceUrl": "https://www.nexity.fr/presse/communiques/2026/07/bpce-nexity-joint-venture-immobilier",
     "sourceName": "Nexity / Groupe BPCE",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_9301f0f6176f4f06b225ae7973e66282~mv2.png"
   },
   {
     "title": "ielo × MIX (Milan Internet Exchange) — Direct France-Italy Fiber Peering Axis",
@@ -405,7 +438,8 @@
     "announcedDate": "2026-07-01",
     "sourceUrl": "https://www.ielo.net/en/press/ielo-mix-milan-internet-exchange-partnership",
     "sourceName": "ielo / MIX",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_cc9421b2f73f406890a541e9a3795a77~mv2.png"
   },
   {
     "title": "Altris × Draslovka — Europe’s First Industrial Sodium-Ion Cathode Supply Chain",
@@ -417,7 +451,8 @@
     "announcedDate": "2026-07-01",
     "sourceUrl": "https://www.altris.se/press/altris-draslovka-sodium-ion-cathode-strategic-partnership",
     "sourceName": "Altris AB / Draslovka",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_3cb28a45dd9348cfb7aac21fda7b284e~mv2.png"
   },
   {
     "title": "SoftBank × Schneider Electric — €75B AI Data Centre Infrastructure Hub in France",
@@ -429,7 +464,8 @@
     "announcedDate": "2026-05-30",
     "sourceUrl": "https://group.softbank/en/news/press/20260531_0",
     "sourceName": "SoftBank Group Corp.",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_eb7e6656792645d2bad61c5f91312764~mv2.png"
   },
   {
     "title": "Checkout.com × BLIK — Direct Scheme Integration Across Central & Eastern Europe",
@@ -441,7 +477,8 @@
     "announcedDate": "2026-05-29",
     "sourceUrl": "https://financialit.net/news/payments/checkoutcom-deepens-european-reach-blik",
     "sourceName": "Financial IT",
-    "euTech": true
+    "euTech": true,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_ed55d48fa79c428db6c536f1bb893014~mv2.png"
   },
   {
     "title": "AirPlus × Kresus Technologies × Mastercard — B2B Tail Spend Automation Alliance",
@@ -453,7 +490,8 @@
     "announcedDate": "2026-05-28",
     "sourceUrl": "https://ffnews.com/newsarticle/paytech/airplus-international-and-kresus-technologies-help-european-businesses-regain-control-of-their-indirect-purchasing-in-collaboration-with-mastercard/",
     "sourceName": "FF News",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_578a940890c140a4a868e527a095f610~mv2.png"
   },
   {
     "title": "Airbus × Mistral AI — European Sovereign Deep Tech AI Deployment",
@@ -465,7 +503,8 @@
     "announcedDate": "2026-05-28",
     "sourceUrl": "https://www.airbus.com/en/newsroom/press-releases/2026-05-airbus-partners-with-mistral-ai-to-strengthen-the-use-of-artificial-intelligence-in-sovereign",
     "sourceName": "Airbus Newsroom",
-    "euTech": true
+    "euTech": true,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_ae98c14d287e4f889510c2aec79aced5~mv2.png"
   },
   {
     "title": "Adyen × ROLLER — ROLLER Capital: Embedded Finance for Leisure & Entertainment Venues",
@@ -477,7 +516,8 @@
     "announcedDate": "2026-05-28",
     "sourceUrl": "https://www.prnewswire.com/news-releases/roller-partners-with-adyen-to-empower-over-3-000-venues-with-fast-embedded-financing-through-capital-302782875.html",
     "sourceName": "PR Newswire / Adyen",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_791dfeb7e4704145bc01f26a7b125290~mv2.png"
   },
   {
     "title": "Anthropic × Amazon & Google & Broadcom — Series H Infrastructure Alliances (10GW)",
@@ -489,7 +529,8 @@
     "announcedDate": "2026-05-28",
     "sourceUrl": "https://www.anthropic.com/news/series-h",
     "sourceName": "Anthropic",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "Snowflake × AWS — $6B Enterprise Agentic AI Strategic Collaboration",
@@ -501,7 +542,8 @@
     "announcedDate": "2026-05-27",
     "sourceUrl": "https://www.snowflake.com/en/news/press-releases/snowflake-expands-aws-collaboration-with-6b-commitment-to-accelerate-enterprise-agentic-ai-adoption/",
     "sourceName": "Snowflake Newsroom",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_a0889104ce544ea19070a8d9e1750029~mv2.png"
   },
   {
     "title": "Centrica × SAP SE — Enterprise AI for Green Energy Trading & Grid Forecasting",
@@ -513,7 +555,8 @@
     "announcedDate": "2026-05-27",
     "sourceUrl": "https://news.sap.com/uk/2026/05/centrica-adopts-rise-with-sap-to-support-ai-driven-transformation/",
     "sourceName": "SAP UK Newsroom",
-    "euTech": true
+    "euTech": true,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_bc60b6261e7e4fc2a89f4f86c1f607f0~mv2.png"
   },
   {
     "title": "Snowflake × Natoma — MCP Governance Platform Acquisition for Enterprise AI Agents",
@@ -525,7 +568,8 @@
     "announcedDate": "2026-05-27",
     "sourceUrl": "https://www.engineering.com/snowflake-eyes-natoma-extends-aws-deal/",
     "sourceName": "Engineering.com",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "EY × Microsoft — $1B+ Global Enterprise AI Initiative",
@@ -537,7 +581,8 @@
     "announcedDate": "2026-05-21",
     "sourceUrl": "https://news.microsoft.com/source/2026/05/21/ey-and-microsoft-announce-global-initiative-to-help-clients-scale-ai-enterprisewide-value-creation-and-move-beyond-experimentation/",
     "sourceName": "Microsoft Newsroom",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_9ce1bb47ee624d32a11a41bc0c830f3a~mv2.png"
   },
   {
     "title": "NextEra Energy × Caliber Resource Partners — $1.3B Acquisition + Shale JV with Quantum Capital",
@@ -549,7 +594,8 @@
     "announcedDate": "2026-05-20",
     "sourceUrl": "https://seekingalpha.com/news/4595522-nextera-energy-to-buy-caliber-resource-partners-set-up-shale-jv---reuters",
     "sourceName": "Reuters / Seeking Alpha",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "Anthropic × PwC — Expanded Strategic Alliance: Claude Across 364,000 Professionals",
@@ -561,7 +607,8 @@
     "announcedDate": "2026-05-14",
     "sourceUrl": "https://www.prnewswire.com/news-releases/anthropic-and-pwc-expand-alliance-driving-impact-across-client-work-and-the-firm-302772321.html",
     "sourceName": "PwC / Anthropic Press Release",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "Blackstone × Skroutz — €635M Acquisition of Greece’s Leading Online Marketplace",
@@ -573,7 +620,8 @@
     "announcedDate": "2026-05-11",
     "sourceUrl": "https://www.blackstone.com/news/press/blackstone-to-acquire-skroutz-greeces-leading-online-marketplace-from-cvc/",
     "sourceName": "Blackstone Newsroom",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_189eba04664347ed9b6149d0082e389a~mv2.png"
   },
   {
     "title": "OpenAI — The Development Company: $4B+ AI Professional Services Venture",
@@ -585,7 +633,8 @@
     "announcedDate": "2026-05-11",
     "sourceUrl": "https://techcrunch.com/2026/05/04/anthropic-and-openai-are-both-launching-joint-ventures-for-enterprise-ai-services/",
     "sourceName": "TechCrunch",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "Stellantis × Leapmotor — European EV Manufacturing at Zaragoza & Madrid: Chinese Tech, Spanish Production",
@@ -597,7 +646,8 @@
     "announcedDate": "2026-05-08",
     "sourceUrl": "https://www.stellantis.com/en/news/press-releases/2026/may/stellantis-and-leapmotor-announce-their-intention-to-take-their-strategic-partnership-to-the-next-level",
     "sourceName": "Stellantis Newsroom",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_59d24ca49f9a4a3faa637ad10c9f2e2c~mv2.png"
   },
   {
     "title": "Apple × Intel — Preliminary US Chip Manufacturing Agreement",
@@ -609,7 +659,8 @@
     "announcedDate": "2026-05-08",
     "sourceUrl": "https://9to5mac.com/2026/05/08/apple-and-intel-have-reached-a-deal-to-produce-future-chips-report/",
     "sourceName": "Wall Street Journal",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_01451a168d324f9592ce3425b8d640ad~mv2.png"
   },
   {
     "title": "KPMG × ServiceNow — $40M AI Agent Enterprise Transformation Partnership",
@@ -621,7 +672,8 @@
     "announcedDate": "2026-05-06",
     "sourceUrl": "https://kpmg.com/xx/en/media/press-releases/2026/05/kpmg-expands-global-alliance-partnership-with-service-now.html",
     "sourceName": "KPMG Newsroom",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_da3a0d9246674d70bd91129bb2343d27~mv2.png"
   },
   {
     "title": "IBM × Aramco — Industrial AI Collaboration for Saudi Arabia's Energy Sector",
@@ -633,7 +685,8 @@
     "announcedDate": "2026-05-05",
     "sourceUrl": "https://newsroom.ibm.com/2026-05-05-ibm-and-aramco-explore-collaboration-to-accelerate-ai-and-innovation-across-saudi-arabia",
     "sourceName": "IBM Newsroom",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_6df8933b0ffa46cf89058a890f8d6007~mv2.png"
   },
   {
     "title": "SAP × Prior Labs — €1B Acquisition to Build EU Frontier AI Lab for Structured Data",
@@ -645,7 +698,8 @@
     "announcedDate": "2026-05-04",
     "sourceUrl": "https://news.sap.com/2026/05/sap-to-acquire-prior-labs-establish-frontier-ai-lab-europe/",
     "sourceName": "SAP Newsroom",
-    "euTech": true
+    "euTech": true,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_7bf16e4fcd1e4a69830bd91fe5a9beed~mv2.png"
   },
   {
     "title": "Pentagon × OpenAI, Google, Microsoft, Nvidia, AWS, SpaceX, Oracle & Reflection AI — AI on Classified Military Networks",
@@ -657,7 +711,8 @@
     "announcedDate": "2026-05-01",
     "sourceUrl": "https://www.cnbc.com/2026/05/01/pentagon-ai-firms-classified-networks.html",
     "sourceName": "CNBC",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "EPH × TotalEnergies — TTEP: Europe's 2nd Largest Flexible Power Generation JV (14 GW)",
@@ -669,7 +724,8 @@
     "announcedDate": "2026-04-29",
     "sourceUrl": "https://totalenergies.com/news/press-releases/europe-totalenergies-finalizes-acquisition-50-portfolio-flexible-power",
     "sourceName": "TotalEnergies Newsroom",
-    "euTech": true
+    "euTech": true,
+    "cardImageUrl": ""
   },
   {
     "title": "Verda — €100M for European Sovereign AI Cloud Infrastructure",
@@ -681,7 +737,8 @@
     "announcedDate": "2026-04-24",
     "sourceUrl": "https://www.eu-startups.com/",
     "sourceName": "EU Startups",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "ECB × ECPC, Nexo Standards & Berlin Group — Digital Euro Open Standards Partnership",
@@ -693,7 +750,8 @@
     "announcedDate": "2026-04-24",
     "sourceUrl": "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.pr260424~202f9d832b.en.html",
     "sourceName": "ECB Press Release",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "Lyft × Gett — Acquiring London’s Leading Black Cab App for ~$55M",
@@ -705,7 +763,8 @@
     "announcedDate": "2026-04-23",
     "sourceUrl": "https://investor.lyft.com/news-events-presentations/press-releases/detail/195/lyft-expands-in-london-with-gett-uk-acquisition",
     "sourceName": "Lyft Investor Relations",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_7f1097902d72473d97523e2f1d91bd76~mv2.png"
   },
   {
     "title": "Nvidia × Google Cloud — AI Hypercomputer for Agentic & Physical AI Factories",
@@ -717,7 +776,8 @@
     "announcedDate": "2026-04-22",
     "sourceUrl": "https://blogs.nvidia.com/blog/google-cloud-agentic-physical-ai-factories/",
     "sourceName": "Nvidia Blog",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_f227e4bb948441d99adfae6282357eff~mv2.png"
   },
   {
     "title": "Merck × Google Cloud — $1B Agentic AI Enterprise Transformation",
@@ -729,7 +789,8 @@
     "announcedDate": "2026-04-22",
     "sourceUrl": "https://www.merck.com/news/merck-and-google-cloud-partner-to-accelerate-agentic-ai-enterprise-transformation/",
     "sourceName": "Merck Newsroom",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_28dd4bebd6604581874770544ca0845a~mv2.png"
   },
   {
     "title": "Google Cloud $750M Partner AI Fund — Accenture, Deloitte, McKinsey & BCG",
@@ -741,7 +802,8 @@
     "announcedDate": "2026-04-22",
     "sourceUrl": "https://www.googlecloudpresscorner.com/2026-04-22-Google-Cloud-Commits-750-Million-to-Accelerate-Partners-Agentic-AI-Development",
     "sourceName": "Google Cloud Press Corner",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_28b409b5ee8a494c9968b47019df4f3a~mv2.png"
   },
   {
     "title": "BANCOMAT × EPI × SIBS-MB WAY — Europe’s First Cross-Border QR Payment Interoperability PoC",
@@ -753,7 +815,8 @@
     "announcedDate": "2026-04-17",
     "sourceUrl": "https://bancomat.it/comunicati-stampa/successo-per-la-prima-prova-tecnica-congiunta-di-interoperabilita-europea-nei-pagamenti-poc-tra-bancomat-epi-e-sibs-mb-way",
     "sourceName": "BANCOMAT",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_64bbcffbaf254ce78b3246f2de8a60a0~mv2.png"
   },
   {
     "title": "Salesupply × BrandOn Group — End-to-End Solution for Italian Brands Going International",
@@ -765,7 +828,8 @@
     "announcedDate": "2026-04-17",
     "sourceUrl": "https://ecommercenews.eu/salesupply-and-brandon-group-announce-partnership/",
     "sourceName": "Ecommerce News EU",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_b12a0ea3548649f68ef01608bfa7c136~mv2.png"
   },
   {
     "title": "Stellantis × Microsoft — 5-Year AI & Cloud Partnership Across 100+ Global Initiatives",
@@ -777,7 +841,8 @@
     "announcedDate": "2026-04-16",
     "sourceUrl": "https://www.progressiverobot.com/2026/04/18/stellantis-microsoft-ai-partnership/",
     "sourceName": "Progressive Robot",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_81c5f9fea7f247528ad278973456564f~mv2.png"
   },
   {
     "title": "Rheinmetall × Bundeswehr — €298M Attack Drone Contract for the German Military",
@@ -789,7 +854,8 @@
     "announcedDate": "2026-04-15",
     "sourceUrl": "https://www.bssnews.net/international/378260",
     "sourceName": "AFP / BSS News",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_48947dc7f1054c91899a2596896d5659~mv2.png"
   },
   {
     "title": "Capacity × Widem Logistics — US Fulfillment Player Enters EU via Strategic Partnership",
@@ -801,7 +867,8 @@
     "announcedDate": "2026-04-15",
     "sourceUrl": "https://www.prnewswire.com/news-releases/capacity-expands-into-europe-through-strategic-partnership-with-widem-enabling-in-region-fulfillment-across-the-eu-302742555.html",
     "sourceName": "PRNewswire",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_c69e8a56eff84caba744ff4bcebfca6c~mv2.png"
   },
   {
     "title": "Thoma Bravo × Google Cloud — AI Transformation for $300B+ Enterprise Software Portfolio",
@@ -813,7 +880,8 @@
     "announcedDate": "2026-04-15",
     "sourceUrl": "https://www.prnewswire.com/news-releases/thoma-bravo-and-google-cloud-launch-strategic-partnership-to-deliver-on-the-promise-of-ai-for-enterprise-software-302742529.html",
     "sourceName": "PRNewswire",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_14c0bf7c3fc34e5b9982aad30839a29c~mv2.png"
   },
   {
     "title": "EU EDF — €1.07B Invested in 57 Collaborative Defence R&D Projects",
@@ -825,7 +893,8 @@
     "announcedDate": "2026-04-15",
     "sourceUrl": "https://www.defensenews.com/global/europe/2026/04/16/eu-pumps-over-1-billion-into-defense-rd-centered-around-ukraine-war-lessons/",
     "sourceName": "Defense News",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "Novo Nordisk × OpenAI — AI Across Drug Discovery to Commercial Operations",
@@ -837,7 +906,8 @@
     "announcedDate": "2026-04-14",
     "sourceUrl": "https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=916532",
     "sourceName": "Novo Nordisk Newsroom",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_c5aca9de358d4551a815ae1df1d33225~mv2.png"
   },
   {
     "title": "Meta × CoreWeave — $21B AI Cloud Capacity Deal Through 2032",
@@ -849,7 +919,8 @@
     "announcedDate": "2026-04-09",
     "sourceUrl": "https://money.usnews.com/investing/news/articles/2026-04-09/coreweave-signs-21-billion-ai-cloud-deal-with-meta",
     "sourceName": "Reuters",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_c60830e8f25a42699a1994f8c65f4ae6~mv2.png"
   },
   {
     "title": "Joybuy × Competera — AI Pricing Automation for JD.com’s New European Marketplace",
@@ -861,7 +932,8 @@
     "announcedDate": "2026-04-09",
     "sourceUrl": "https://retailtechinnovationhub.com/home/2026/4/8/jdcoms-joybuy-online-marketplace-taps-competera-pricing-platform-for-european-push",
     "sourceName": "Retail Technology Innovation Hub",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_efcc6095b13143228ecf71123091ca2c~mv2.png"
   },
   {
     "title": "Prologis × La Caisse — €1.6B Pan-European Logistics Joint Venture (PLIVE)",
@@ -873,7 +945,8 @@
     "announcedDate": "2026-04-09",
     "sourceUrl": "https://www.prnewswire.com/news-releases/la-caisse-and-prologis-launch-pan-european-logistics-joint-venture-302738109.html",
     "sourceName": "PRNewswire",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_696f061c7b524191a3690a345ee03a69~mv2.png"
   },
   {
     "title": "Tredence × Google Cloud — Enterprise Agentic AI at Scale",
@@ -885,7 +958,8 @@
     "announcedDate": "2026-04-06",
     "sourceUrl": "https://www.prnewswire.com/news-releases/tredence-expands-global-strategic-ai-partnership-with-google-cloud-to-accelerate-enterprise-grade-ai-adoption-302734619.html",
     "sourceName": "PRNewswire",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_cb59bb75311b4129bdad48fc26169205~mv2.png"
   },
   {
     "title": "IBM × Arm — Dual-Architecture Enterprise Computing for AI Workloads",
@@ -897,7 +971,8 @@
     "announcedDate": "2026-04-02",
     "sourceUrl": "https://newsroom.ibm.com/2026-04-02-ibm-announces-strategic-collaboration-with-arm-to-shape-the-future-of-enterprise-computing",
     "sourceName": "IBM Newsroom",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_3dcbcc6ac492437aaba1e6ffa7a9259e~mv2.png"
   },
   {
     "title": "Bain Capital × AQ Compute — Green AI Data Centre Buildout Across Europe",
@@ -909,7 +984,8 @@
     "announcedDate": "2026-04-01",
     "sourceUrl": "https://www.privsource.com/acquisitions/deal/ai-infrastructure-partnership-aip-consortium-acquires-aligned-data-centers-in-40b-deal-e4SjLG",
     "sourceName": "PrivSource",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_c6fc4c8c52874bf59b005802ee5512d0~mv2.png"
   },
   {
     "title": "LHV Bank × Gradient Labs — Europe’s First Agentic AI Banking Pilot",
@@ -921,7 +997,8 @@
     "announcedDate": "2026-04-01",
     "sourceUrl": "https://www.fintechfutures.com/ai-in-fintech/lhv-bank-agentic-ai-pilot-gradient-labs",
     "sourceName": "FinTech Futures",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_deff3b4e79744a77a7b728f5d198af49~mv2.png"
   },
   {
     "title": "EU Signs Space Connectivity Agreement with Norway and Iceland for IRIS² and GOVSATCOM",
@@ -933,7 +1010,8 @@
     "announcedDate": "2026-03-26",
     "sourceUrl": "https://defence-industry-space.ec.europa.eu/eu-boosts-space-cooperation-norway-and-iceland-secure-connectivity-agreement-2026-03-25_en",
     "sourceName": "European Commission",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "DHL eCommerce × Correios de Portugal — EU-Approved Joint Venture",
@@ -945,7 +1023,8 @@
     "announcedDate": "2026-03-26",
     "sourceUrl": "https://www.logisticsmanager.com/dhl-ecommerce-and-correios-de-portugal-joint-venture-partnership-approved/",
     "sourceName": "Logistics Manager",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_45ae7f2793de4d328142f25285a847ed~mv2.png"
   },
   {
     "title": "Solaris × SBI Group — Europe’s First AI-Native Bank Transformation",
@@ -957,7 +1036,8 @@
     "announcedDate": "2026-03-20",
     "sourceUrl": "https://thepaypers.com/fintech/news/solaris-repositions-as-a-european-ai-native-bank-backed-by-sbi-group",
     "sourceName": "The Paypers",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_eca9f8f64dc940eb923574a6c810c634~mv2.png"
   },
   {
     "title": "Barclays and Sage Launch Embedded Finance Partnership for UK SMEs",
@@ -969,7 +1049,8 @@
     "announcedDate": "2026-03-17",
     "sourceUrl": "https://www.prnewswire.co.uk/news-releases/barclays-and-sage-announce-strategic-partnership-to-simplify-business-admin-for-uk-small-businesses-302715929.html",
     "sourceName": "PR Newswire",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_543fdb056e23479ca2168af6eae1eda1~mv2.png"
   },
   {
     "title": "Visa Agentic Ready — 21 European Banks Launch AI Agent Payment Programme",
@@ -981,7 +1062,8 @@
     "announcedDate": "2026-03-17",
     "sourceUrl": "https://www.visa.co.uk/about-visa/newsroom/press-releases.3437886.html",
     "sourceName": "Visa Newsroom",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_53287f35c69e40c6899e4deab452ad60~mv2.png"
   },
   {
     "title": "JPMorgan Payments and Mastercard Launch B2B Virtual Card in Europe",
@@ -993,7 +1075,8 @@
     "announcedDate": "2026-03-17",
     "sourceUrl": "https://www.pymnts.com/partnerships/2026/jpmorgan-payments-and-mastercard-launch-virtual-card-partnership/",
     "sourceName": "PYMNTS",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "OpenAI and AWS Sign Deal to Supply AI to US Government",
@@ -1005,7 +1088,8 @@
     "announcedDate": "2026-03-17",
     "sourceUrl": "https://techcrunch.com/2026/03/17/openai-expands-government-footprint-with-aws-deal/",
     "sourceName": "TechCrunch",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "Mastercard Acquires London-Based BVNK for $1.8B to Bridge Stablecoin and Fiat Payments",
@@ -1017,7 +1101,8 @@
     "announcedDate": "2026-03-17",
     "sourceUrl": "https://www.mastercard.com/us/en/news-and-trends/press/2026/march/Mastercard-to-acquire-BVNK-to-connect-on-chain-payments-and-fiat-rails.html",
     "sourceName": "Mastercard",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_f25cee6b8cf54a97a03d5458b126d4a4~mv2.png"
   },
   {
     "title": "OpenAI and Booking.com Launch SME AI Accelerator Across 6 European Countries",
@@ -1029,7 +1114,8 @@
     "announcedDate": "2026-03-17",
     "sourceUrl": "https://openai.com/index/the-next-chapter-for-ai-in-the-eu/",
     "sourceName": "OpenAI",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "Visa and Fiserv Expand European Payments Platform Partnership",
@@ -1041,7 +1127,8 @@
     "announcedDate": "2026-03-16",
     "sourceUrl": "https://fintech.global/2026/03/16/visa-and-fiserv-expand-european-payments-partnership/",
     "sourceName": "Fintech Global",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_430aeb631c744deab7cc0257dd31dea4~mv2.png"
   },
   {
     "title": "Nvidia Agent Toolkit — 17 Enterprise Platforms Adopt Open AI Agent Infrastructure at GTC 2026",
@@ -1053,7 +1140,8 @@
     "announcedDate": "2026-03-16",
     "sourceUrl": "https://nvidianews.nvidia.com/news/ai-agents",
     "sourceName": "NVIDIA Newsroom",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_6999539ad3bf4c32ab107c905509da25~mv2.png"
   },
   {
     "title": "Meta Signs $27B GPU Cloud Deal with Nebius for Next-Gen AI Infrastructure",
@@ -1065,7 +1153,8 @@
     "announcedDate": "2026-03-16",
     "sourceUrl": "https://www.prismnews.com/news/meta-signed-a-27-billion-deal-to-lock-up-next-generation-ai",
     "sourceName": "Prism News",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_7867a5cc944a4be6b6904e2b2d2184e9~mv2.png"
   },
   {
     "title": "Telefónica Leads EURO-3C: 70+ Orgs Unite for Sovereign European Cloud & AI",
@@ -1077,7 +1166,8 @@
     "announcedDate": "2026-03-03",
     "sourceUrl": "https://www.euronews.com/next/2026/03/03/europe-unites-to-build-sovereign-cloud-and-ai-infrastructure-to-stop-reliance-on-us",
     "sourceName": "Euronews",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "EU and Switzerland Sign Landmark Bilateral Agreements Modernising Single Market Access",
@@ -1089,7 +1179,8 @@
     "announcedDate": "2026-03-02",
     "sourceUrl": "https://www.reneweuropegroup.eu/news/2026-03-02/eu-switzerland-a-landmark-partnership-deal",
     "sourceName": "Renew Europe",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "EPC Wero Expands Retail Payments Partnership to France and Belgium After Germany Launch",
@@ -1101,7 +1192,8 @@
     "announcedDate": "2026-03-01",
     "sourceUrl": "https://www.junto.space/en/post/sovereignty-of-payments-in-europe",
     "sourceName": "Junto",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "Amazon Invests $50B in OpenAI with $100B AWS Cloud Expansion",
@@ -1113,7 +1205,8 @@
     "announcedDate": "2026-02-27",
     "sourceUrl": "https://openai.com/index/amazon-partnership/",
     "sourceName": "OpenAI",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_bca72faeb35541fb97074d543fadbe6b~mv2.png"
   },
   {
     "title": "Tieto Signs Multi-Year Cloud Infrastructure Deal with Orange Business",
@@ -1125,7 +1218,8 @@
     "announcedDate": "2026-02-27",
     "sourceUrl": "https://fintech.global/2026/02/27/tieto-signs-frame-agreement-with-orange-business/",
     "sourceName": "Fintech Global",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "Accenture and Mistral AI Launch Multi-Year Enterprise AI Collaboration",
@@ -1137,7 +1231,8 @@
     "announcedDate": "2026-02-26",
     "sourceUrl": "https://newsroom.accenture.com/news/2026/accenture-and-mistral-ai-accelerate-enterprise-reinvention-with-scalable-ai-that-delivers-strategic-autonomy-for-customers",
     "sourceName": "Accenture Newsroom",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_745491936ddb43598d620c0f793dfe3a~mv2.png"
   },
   {
     "title": "Adyen Powers In-Store Payments Across 940+ Starbucks European Stores",
@@ -1149,7 +1244,8 @@
     "announcedDate": "2026-02-13",
     "sourceUrl": "https://retailtechinnovationhub.com/home/2026/2/12/starbucks-partners-with-adyen-for-in-store-payments-push-across-940-european-stores",
     "sourceName": "Retail Technology Innovation Hub",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   },
   {
     "title": "OpenAI and ServiceNow Expand Multi-Year AI Enterprise Partnership",
@@ -1161,6 +1257,7 @@
     "announcedDate": "2026-01-22",
     "sourceUrl": "https://aibusiness.com/generative-ai/openai-servicenow-enter-into-multiyear-partnership",
     "sourceName": "AI Business",
-    "euTech": false
+    "euTech": false,
+    "cardImageUrl": ""
   }
 ]
