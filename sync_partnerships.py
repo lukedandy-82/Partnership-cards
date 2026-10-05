@@ -26,6 +26,7 @@ QUERY_URL = "https://www.wixapis.com/wix-data/v2/items/query"
 FIELDS = [
     "title", "companies", "summary", "category", "region",
     "macroRegion", "announcedDate", "sourceUrl", "sourceName", "euTech",
+    "cardImageUrl",
 ]
 
 
