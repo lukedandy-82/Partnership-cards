@@ -65,6 +65,12 @@
   .meta-txt { font-size: 11px; color: #aaa; font-family: 'IBM Plex Mono', monospace; }
   .src-link { display: inline-flex; align-items: center; gap: 3px; font-size: 11px; color: #1d4ed8; text-decoration: none; margin-top: 6px; }
   .src-link:hover { text-decoration: underline; }
+  .card-actions { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 8px; }
+  .card-actions .src-link { margin-top: 0; }
+  .card-btn { display: inline-flex; align-items: center; gap: 4px; margin-left: auto; font-size: 11px; font-weight: 600;
+    color: #1a1a1a; text-decoration: none; border: 1px solid #d4d4d0; border-radius: 6px; padding: 3px 9px; background: #fff;
+    font-family: 'IBM Plex Sans', sans-serif; transition: all 0.1s; }
+  .card-btn:hover { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
   .eustack-badge { display: inline-flex; align-items: center; text-decoration: none;
     border: 1px solid #c7d7f0; border-radius: 4px; padding: 2px 6px;
     background: #eef4fc; flex-shrink: 0; vertical-align: middle;
@@ -255,8 +261,10 @@
       var chips = companies.map(function(c){return '<span class="chip">'+c+'</span>';}).join('');
       var macroClass = getMacroClass(item.macroRegion);
       var srcLink = item.sourceUrl ? '<a class="src-link" href="'+item.sourceUrl+'" target="_blank">&#8599; '+(item.sourceName||'Source')+'</a>' : '';
+      var cardBtn = (item.cardImageUrl && /^https:\/\//.test(item.cardImageUrl)) ? '<a class="card-btn" href="'+item.cardImageUrl+'" target="_blank" rel="noopener">View card &#8599;</a>' : '';
+      var actions = (srcLink || cardBtn) ? '<div class="card-actions">'+srcLink+cardBtn+'</div>' : '';
       var euBadge = isEuTech(item) ? '<a class="eustack-badge" href="https://www.gctechallies.com/build-eustack" target="_blank" rel="noopener">&#127466;&#127482; Build EUStack</a>' : '';
-      return '<div class="card"><div class="card-top"><h3>'+item.title+'</h3><span class="macro-badge '+macroClass+'">'+(item.macroRegion||'Global')+'</span></div><div class="chips">'+chips+'</div><div class="card-body"><p class="summary">'+item.summary+'</p><div class="meta">'+(item.category?'<span class="cat-tag">'+item.category+'</span>':'')+(item.announcedDate?'<span class="meta-txt">'+item.announcedDate+'</span>':'')+(item.region?'<span class="meta-txt">&middot; '+item.region+'</span>':'')+(euBadge?euBadge:'')+'</div>'+srcLink+'</div></div>';
+      return '<div class="card"><div class="card-top"><h3>'+item.title+'</h3><span class="macro-badge '+macroClass+'">'+(item.macroRegion||'Global')+'</span></div><div class="chips">'+chips+'</div><div class="card-body"><p class="summary">'+item.summary+'</p><div class="meta">'+(item.category?'<span class="cat-tag">'+item.category+'</span>':'')+(item.announcedDate?'<span class="meta-txt">'+item.announcedDate+'</span>':'')+(item.region?'<span class="meta-txt">&middot; '+item.region+'</span>':'')+(euBadge?euBadge:'')+'</div>'+actions+'</div></div>';
     }).join('');
   }
 
