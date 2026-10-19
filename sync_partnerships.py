@@ -32,6 +32,7 @@ SHARE_DIR = os.path.join(OUTPUT_DIR, "share")
 QUERY_URL = "https://www.wixapis.com/wix-data/v2/items/query"
 PAGES_BASE = "https://lukedandy-82.github.io/Partnership-cards/"
 SITE_URL = "https://www.gctechallies.com/partnerships"
+DEAL_BASE = "https://www.gctechallies.com/deal/"  # Wix dynamic item page (one per CMS item)
 
 FIELDS = [
     "title", "companies", "summary", "category", "region",
@@ -139,7 +140,7 @@ def main():
             n += 1
         used.add(slug)
         d["slug"] = slug
-        d["shareUrl"] = f"{PAGES_BASE}share/{slug}.html"
+        d["shareUrl"] = f"{DEAL_BASE}{slug}"
 
     new_content = json.dumps(deals, indent=2, ensure_ascii=False)
 
