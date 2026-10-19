@@ -94,10 +94,14 @@
   .card.hl { box-shadow:0 0 0 2px #1d4ed8, 0 3px 12px rgba(0,0,0,0.1); }
   .share-bar { display:flex; flex-wrap:wrap; align-items:center; gap:4px; margin-top:10px; padding-top:9px; border-top:1px dashed #e8e8e4; }
   .share-lbl { font-size:10px; color:#aaa; text-transform:uppercase; letter-spacing:.08em; font-family:'IBM Plex Mono', monospace; margin-right:2px; }
-  .sbtn { display:inline-flex; align-items:center; gap:4px; font-size:11px; font-weight:500; color:#444; text-decoration:none; border:1px solid #d4d4d0; border-radius:6px; padding:3px 7px; background:#fff; cursor:pointer; font-family:'IBM Plex Sans', sans-serif; transition:all .1s; }
-  .sbtn:hover { background:#1a1a1a; color:#fff; border-color:#1a1a1a; }
-  .sbtn.li:hover { background:#0a66c2; border-color:#0a66c2; }
-  .sbtn.wa:hover { background:#1faa59; border-color:#1faa59; }
+  .sbtn { display:inline-flex; align-items:center; gap:4px; font-size:11px; font-weight:600; color:#fff; text-decoration:none; border:1px solid transparent; border-radius:6px; padding:4px 9px; cursor:pointer; font-family:'IBM Plex Sans', sans-serif; transition:filter .12s, transform .12s; }
+  .sbtn:hover { filter:brightness(1.12); transform:translateY(-1px); }
+  .sbtn:active { transform:none; }
+  .sbtn.li { background:#0a66c2; }
+  .sbtn.x { background:#000; }
+  .sbtn.wa { background:#1faa59; }
+  .sbtn.lnk { background:#27a9bb; }
+  .sbtn.cap { background:#0c1b4a; }
   #toast { position:fixed; left:50%; bottom:22px; transform:translateX(-50%); background:#1a1a1a; color:#fff; padding:8px 14px; border-radius:8px; font-size:12px; opacity:0; pointer-events:none; transition:opacity .2s; z-index:9; }
   #toast.show { opacity:1; }
   #empty button { margin-top:14px; border:1px solid #1a1a1a; background:#1a1a1a; color:#fff; border-radius:6px; padding:6px 14px; font-size:12px; cursor:pointer; }
@@ -136,7 +140,7 @@
 <div id="toast"></div>
 <script>
   // ---------- configuration ----------
-  var SHARE_BASE = 'https://lukedandy-82.github.io/Partnership-cards/';
+  var SHARE_BASE = 'https://www.gctechallies.com/deal/';
   var CAT_ORDER = ['AI','Payments','Fintech','Ecommerce','Retail','SaaS','Cloud','Logistics','Energy','Defence','Space','Automotive','Sport','Healthcare'];
 
   // EU tech deals — both companies must be European-headquartered AND a tech deal.
@@ -285,8 +289,7 @@
 
   // ---------- sharing ----------
   function shareUrlOf(item) {
-    var u = safeUrl(item.shareUrl);
-    return u || (SHARE_BASE + 'partnership-feed.html?deal=' + encodeURIComponent(slugOf(item)));
+    return SHARE_BASE + encodeURIComponent(slugOf(item));
   }
   function captionOf(item) {
     var sum = item.summary || '';
@@ -343,10 +346,10 @@
       var euBadge = isEuTech(item) ? '<a class="eustack-badge" href="https://www.gctechallies.com/build-eustack" target="_blank" rel="noopener">&#127466;&#127482; Build EUStack</a>' : '';
       var sh = '<div class="share-bar">'
         + '<button class="sbtn li" onclick="doShare(\'li\',\'' + esc(slug) + '\')">LinkedIn</button>'
-        + '<button class="sbtn" onclick="doShare(\'x\',\'' + esc(slug) + '\')">X</button>'
+        + '<button class="sbtn x" onclick="doShare(\'x\',\'' + esc(slug) + '\')">X</button>'
         + '<button class="sbtn wa" onclick="doShare(\'wa\',\'' + esc(slug) + '\')">WhatsApp</button>'
-        + '<button class="sbtn" onclick="doShare(\'link\',\'' + esc(slug) + '\')">Copy link</button>'
-        + '<button class="sbtn" onclick="doShare(\'caption\',\'' + esc(slug) + '\')" title="Copy a ready-to-post caption">Caption</button></div>';
+        + '<button class="sbtn lnk" onclick="doShare(\'link\',\'' + esc(slug) + '\')">Copy link</button>'
+        + '<button class="sbtn cap" onclick="doShare(\'caption\',\'' + esc(slug) + '\')" title="Copy a ready-to-post caption">Caption</button></div>';
       return '<div class="card" id="deal-' + esc(slug) + '"><div class="card-top"><h3>' + esc(item.title) + '</h3><span class="macro-badge ' + getMacroClass(macro) + '">' + esc(macro) + '</span></div><div class="chips">' + chips + '</div><div class="card-body"><p class="summary">' + esc(item.summary) + '</p><div class="meta">' + (item.category ? '<span class="cat-tag">' + esc(item.category) + '</span>' : '') + (item.announcedDate ? '<span class="meta-txt">' + esc(item.announcedDate) + '</span>' : '') + (item.region ? '<span class="meta-txt">&middot; ' + esc(item.region) + '</span>' : '') + euBadge + '</div>' + actions + sh + '</div></div>';
     }).join('');
   }
