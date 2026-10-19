@@ -144,9 +144,18 @@
   wrap.addEventListener('mouseenter', function(){ wrap.classList.add('paused'); });
   wrap.addEventListener('mouseleave', function(){ wrap.classList.remove('paused'); });
 
-  fetch(DATA_URL)
-    .then(function(res){ return res.json(); })
+  function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+
+  // Cache-busted so the ticker always reflects the latest sync, then sorted newest-first
+  // here as well, so the order never depends on how the JSON file happened to be written.
+  fetch(DATA_URL + '?v=' + Date.now(), { cache: 'no-store' })
+    .then(function(res){ if(!res.ok){ throw new Error('HTTP ' + res.status); } return res.json(); })
     .then(function(deals){
+      if(Array.isArray(deals)){
+        deals = deals.slice().sort(function(a,b){
+          return (b.announcedDate||'').localeCompare(a.announcedDate||'') || (a.title||'').localeCompare(b.title||'');
+        });
+      }
       if(!Array.isArray(deals) || deals.length === 0){
         track.innerHTML = '<div class="ticker-loading">No deals available right now.</div>';
         return;
@@ -158,12 +167,12 @@
       function buildItem(d){
         var flag = d.euTech ? '<span class="eu-flag">🇪🇺</span>' : '';
         var summary = d.summary ? d.summary.substring(0, 90) + (d.summary.length > 90 ? '…' : '') : '';
-        var href = d.sourceUrl || '#';
-        return '<a class="ticker-item" href="' + href + '" target="_blank" rel="noopener">' +
+        var href = /^https?:\/\//i.test(d.shareUrl || '') ? d.shareUrl : (/^https?:\/\//i.test(d.sourceUrl || '') ? d.sourceUrl : '#');
+        return '<a class="ticker-item" href="' + esc(href) + '" target="_blank" rel="noopener">' +
           flag +
-          '<span class="pill">' + (d.category || '') + '</span>' +
-          '<span class="companies">' + (d.companies || d.title || '') + '</span>' +
-          (summary ? '<span class="summary">' + summary + '</span>' : '') +
+          '<span class="pill">' + esc(d.category || '') + '</span>' +
+          '<span class="companies">' + esc(d.companies || d.title || '') + '</span>' +
+          (summary ? '<span class="summary">' + esc(summary) + '</span>' : '') +
         '</a>';
       }
 
@@ -171,11 +180,20 @@
       var html = items.map(buildItem).join('') + items.map(buildItem).join('');
       track.innerHTML = html;
 
-      // Scale animation duration to content length so speed feels consistent
-      var totalWidth = track.scrollWidth / 2;
-      var pxPerSecond = 60; // adjust for faster/slower scroll
-      var duration = Math.max(20, totalWidth / pxPerSecond);
-      track.style.animationDuration = duration + 's';
+      // Scale animation duration to content length so speed feels consistent.
+      // Measuring scrollWidth must wait for the browser to actually lay out the
+      // injected HTML first — reading it synchronously right after innerHTML is
+      // set (especially inside a Wix iframe) can return an undersized value,
+      // which understates duration and makes the ticker race past too fast.
+      // Double rAF waits a full paint cycle to guarantee an accurate measurement.
+      requestAnimationFrame(function(){
+        requestAnimationFrame(function(){
+          var totalWidth = track.scrollWidth / 2;
+          var pxPerSecond = 45; // lower = calmer scroll
+          var duration = Math.max(40, totalWidth / pxPerSecond);
+          track.style.animationDuration = duration + 's';
+        });
+      });
     })
     .catch(function(err){
       track.innerHTML = '<div class="ticker-loading">Unable to load live deals.</div>';
