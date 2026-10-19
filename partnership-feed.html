@@ -84,6 +84,23 @@
   .dot:nth-child(2) { animation-delay: 0.3s; }
   .dot:nth-child(3) { animation-delay: 0.6s; }
   @keyframes blink { from { opacity: 0.2; } to { opacity: 1; } }
+
+  .result-bar { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:8px 16px; background:#fff; border-bottom:1px solid #e8e8e4; font-size:12px; color:#777; font-family:'IBM Plex Mono', monospace; }
+  .result-bar button { border:1px solid #d4d4d0; background:#fff; border-radius:6px; padding:3px 9px; font-size:11px; cursor:pointer; font-family:'IBM Plex Sans', sans-serif; color:#1a1a1a; display:none; }
+  .result-bar button:hover { background:#1a1a1a; color:#fff; }
+  .cbtn .cc { opacity:.6; font-size:10px; margin-left:3px; font-family:'IBM Plex Mono', monospace; }
+  .cbtn.dim { opacity:.4; }
+  .rtab.dim { opacity:.45; }
+  .card.hl { box-shadow:0 0 0 2px #1d4ed8, 0 3px 12px rgba(0,0,0,0.1); }
+  .share-bar { display:flex; flex-wrap:wrap; align-items:center; gap:4px; margin-top:10px; padding-top:9px; border-top:1px dashed #e8e8e4; }
+  .share-lbl { font-size:10px; color:#aaa; text-transform:uppercase; letter-spacing:.08em; font-family:'IBM Plex Mono', monospace; margin-right:2px; }
+  .sbtn { display:inline-flex; align-items:center; gap:4px; font-size:11px; font-weight:500; color:#444; text-decoration:none; border:1px solid #d4d4d0; border-radius:6px; padding:3px 7px; background:#fff; cursor:pointer; font-family:'IBM Plex Sans', sans-serif; transition:all .1s; }
+  .sbtn:hover { background:#1a1a1a; color:#fff; border-color:#1a1a1a; }
+  .sbtn.li:hover { background:#0a66c2; border-color:#0a66c2; }
+  .sbtn.wa:hover { background:#1faa59; border-color:#1faa59; }
+  #toast { position:fixed; left:50%; bottom:22px; transform:translateX(-50%); background:#1a1a1a; color:#fff; padding:8px 14px; border-radius:8px; font-size:12px; opacity:0; pointer-events:none; transition:opacity .2s; z-index:9; }
+  #toast.show { opacity:1; }
+  #empty button { margin-top:14px; border:1px solid #1a1a1a; background:#1a1a1a; color:#fff; border-radius:6px; padding:6px 14px; font-size:12px; cursor:pointer; }
 </style>
 </head>
 <body>
@@ -99,28 +116,13 @@
   </div>
 </div>
 <div class="region-nav">
-  <button class="rtab active" onclick="filterRegion('all',this)">All <span class="rc" id="rc-all">-</span></button>
-  <button class="rtab r-eu" onclick="filterRegion('EU',this)">&#127466;&#127482; Europe <span class="rc" id="rc-eu">-</span></button>
-  <button class="rtab r-na" onclick="filterRegion('North America',this)">&#127758; N. America <span class="rc" id="rc-na">-</span></button>
-  <button class="rtab r-asia" onclick="filterRegion('Asia',this)">&#127759; Asia <span class="rc" id="rc-asia">-</span></button>
-  <button class="rtab r-global" onclick="filterRegion('Global',this)">&#127760; Global <span class="rc" id="rc-global">-</span></button>
+  <button class="rtab active" data-r="all" onclick="filterRegion('all',this)">All <span class="rc" id="rc-all">-</span></button>
+  <button class="rtab r-eu" data-r="EU" onclick="filterRegion('EU',this)">&#127466;&#127482; Europe <span class="rc" id="rc-eu">-</span></button>
+  <button class="rtab r-na" data-r="North America" onclick="filterRegion('North America',this)">&#127758; N. America <span class="rc" id="rc-na">-</span></button>
+  <button class="rtab r-asia" data-r="Asia" onclick="filterRegion('Asia',this)">&#127759; Asia <span class="rc" id="rc-asia">-</span></button>
+  <button class="rtab r-global" data-r="Global" onclick="filterRegion('Global',this)">&#127760; Global <span class="rc" id="rc-global">-</span></button>
 </div>
-<div class="cat-bar">
-  <button class="cbtn active" onclick="filterCat('all',this)">All</button>
-  <button class="cbtn" onclick="filterCat('AI',this)">AI</button>
-  <button class="cbtn" onclick="filterCat('Payments',this)">Payments</button>
-  <button class="cbtn" onclick="filterCat('Ecommerce',this)">Ecommerce</button>
-  <button class="cbtn" onclick="filterCat('Fintech',this)">Fintech</button>
-  <button class="cbtn" onclick="filterCat('SaaS',this)">SaaS</button>
-  <button class="cbtn" onclick="filterCat('Cloud',this)">Cloud</button>
-  <button class="cbtn" onclick="filterCat('Logistics',this)">Logistics</button>
-  <button class="cbtn" onclick="filterCat('Energy',this)">Energy</button>
-  <button class="cbtn" onclick="filterCat('Defence',this)">Defence</button>
-  <button class="cbtn" onclick="filterCat('Space',this)">Space</button>
-  <button class="cbtn" onclick="filterCat('Automotive',this)">Automotive</button>
-  <button class="cbtn" onclick="filterCat('Sport',this)">Sport</button>
-  <button class="cbtn" onclick="filterCat('Healthcare',this)">Healthcare</button>
-</div>
+<div class="cat-bar" id="cat-bar"></div>
 <div class="date-bar">
   <button class="dbtn active" onclick="filterDate('all',this)">All Time</button>
   <button class="dbtn" onclick="filterDate('7d',this)">Last 7 Days</button>
@@ -128,166 +130,257 @@
   <button class="dbtn" onclick="filterDate('month',this)">This Month</button>
   <button class="dbtn" onclick="filterDate('90d',this)">Last 3 Months</button>
 </div>
+<div class="result-bar"><span id="result-count"></span><button id="reset-btn" onclick="resetFilters()">Clear filters</button></div>
 <div id="grid"><div class="loading"><span class="dot"></span><span class="dot"></span><span class="dot"></span><br><br>Loading partnerships...</div></div>
-<div id="empty"><h2 id="empty-msg">No partnerships match this filter.</h2></div>
+<div id="empty"><h2 id="empty-msg">No partnerships match this filter.</h2><button onclick="resetFilters()">Clear filters</button></div>
+<div id="toast"></div>
 <script>
-  var allItems = [];
-  var activeRegion = 'all';
-  var activeCat = 'all';
-  var activeDateRange = 'all';
-  var activeSearch = '';
+  // ---------- configuration ----------
+  var SHARE_BASE = 'https://lukedandy-82.github.io/Partnership-cards/';
+  var CAT_ORDER = ['AI','Payments','Fintech','Ecommerce','Retail','SaaS','Cloud','Logistics','Energy','Defence','Space','Automotive','Sport','Healthcare'];
 
-  function getMacroClass(m) {
-    return {'EU':'m-EU','North America':'m-NA','Asia':'m-Asia'}[m] || 'm-Global';
-  }
-
-  function updateStats() {
-    document.getElementById('rc-all').textContent = allItems.length;
-    document.getElementById('rc-eu').textContent = allItems.filter(function(i){return i.macroRegion==='EU';}).length;
-    document.getElementById('rc-na').textContent = allItems.filter(function(i){return i.macroRegion==='North America';}).length;
-    document.getElementById('rc-asia').textContent = allItems.filter(function(i){return i.macroRegion==='Asia';}).length;
-    document.getElementById('rc-global').textContent = allItems.filter(function(i){return i.macroRegion==='Global';}).length;
-  }
-
-  function filterRegion(r, btn) {
-    activeRegion = r;
-    document.querySelectorAll('.rtab').forEach(function(b){b.classList.remove('active');});
-    btn.classList.add('active');
-    render();
-  }
-
-  function filterCat(c, btn) {
-    activeCat = c;
-    document.querySelectorAll('.cbtn').forEach(function(b){b.classList.remove('active');});
-    btn.classList.add('active');
-    render();
-  }
-
-  function handleSearch() {
-    var input = document.getElementById('search-input');
-    activeSearch = input.value.trim().toLowerCase();
-    document.getElementById('search-clear').style.display = activeSearch ? 'block' : 'none';
-    render();
-  }
-
-  function clearSearch() {
-    var input = document.getElementById('search-input');
-    input.value = '';
-    activeSearch = '';
-    document.getElementById('search-clear').style.display = 'none';
-    render();
-    input.focus();
-  }
-
-  // Matches search text against the deal name and the companies involved —
-  // a simple, reliable "find this deal" search rather than a broad field scan.
-  function matchesSearch(item) {
-    if (!activeSearch) return true;
-    var haystack = ((item.title || '') + ' ' + (item.companies || '')).toLowerCase();
-    return haystack.indexOf(activeSearch) !== -1;
-  }
-
-  function filterDate(range, btn) {
-    activeDateRange = range;
-    document.querySelectorAll('.dbtn').forEach(function(b){b.classList.remove('active');});
-    btn.classList.add('active');
-    render();
-  }
-
-  // Returns true if item.announcedDate falls within the selected preset range
-  function matchesDateRange(item) {
-    if (activeDateRange === 'all') return true;
-    if (!item.announcedDate) return false;
-    var itemDate = new Date(item.announcedDate);
-    var now = new Date();
-    var cutoff;
-    if (activeDateRange === '7d') {
-      cutoff = new Date(now); cutoff.setDate(cutoff.getDate() - 7);
-    } else if (activeDateRange === '30d') {
-      cutoff = new Date(now); cutoff.setDate(cutoff.getDate() - 30);
-    } else if (activeDateRange === '90d') {
-      cutoff = new Date(now); cutoff.setDate(cutoff.getDate() - 90);
-    } else if (activeDateRange === 'month') {
-      cutoff = new Date(now.getFullYear(), now.getMonth(), 1);
-    } else {
-      return true;
-    }
-    return itemDate >= cutoff;
-  }
-
-  // EU tech deals — both companies must be European-headquartered
-  // Hardcoded so badges work regardless of euTech field in JSON
+  // EU tech deals — both companies must be European-headquartered AND a tech deal.
+  // Used only when the CMS euTech field is missing (older items). euTech true/false in the CMS always wins.
   var EU_TECH_PAIRS = [
-    // w/c 5 May 2026
     ['SAP','Prior Labs'],['EPH','TotalEnergies'],['Airbus','Mistral AI'],
     ['Centrica','SAP SE'],['Checkout.com','BLIK'],
-    // w/c 26 May 2026
     ['Adyen','ROLLER'],
-    // w/c 21 July 2026
     ['Humanoid','Schaeffler'],['NOBA','Tieto'],['SiPearl','2CRSi'],
     ['EWE','Verbund'],['Altris','Draslovka'],['Saft','Naval Group'],
-    ['ielo','MIX'],['METLEN','HOUTRIS'],['BPCE','Nexity']
+    ['ielo','MIX'],['METLEN','HOUTRIS'],['BPCE','Nexity'],
+    ['SUSS','Ignite Next']
   ];
+
+  var allItems = [];
+  var activeRegion = 'all', activeCat = 'all', activeDateRange = 'all', activeSearch = '';
+
+  // ---------- helpers ----------
+  function esc(s) { return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+  function safeUrl(u) { return /^https?:\/\//i.test(u || '') ? u : ''; }
+  function norm(s) { return String(s == null ? '' : s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); }
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function ymd(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+  function slugify(s) { return norm(s).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+  function slugOf(item) { return item.slug || slugify((item.companies || item.title || '') + ' ' + (item.announcedDate || '')); }
+  function toast(msg) { var t = document.getElementById('toast'); t.textContent = msg; t.className = 'show'; setTimeout(function(){ t.className = ''; }, 1800); }
+
+  // Region: always resolves to one of EU / North America / Asia / Global, so every card sits under exactly one tab.
+  function macroOf(item) {
+    var k = norm(item.macroRegion).trim();
+    if (k === 'eu' || k === 'europe') return 'EU';
+    if (k === 'north america' || k === 'na') return 'North America';
+    if (k === 'asia') return 'Asia';
+    if (k === 'global') return 'Global';
+    var r = norm(item.region);
+    if (/^(eu|europe|uk)\b/.test(r)) return 'EU';
+    if (/^(north america|us|usa|united states)\b/.test(r)) return 'North America';
+    if (/^asia\b/.test(r)) return 'Asia';
+    return 'Global';
+  }
+  function getMacroClass(m) { return {'EU':'m-EU','North America':'m-NA','Asia':'m-Asia'}[m] || 'm-Global'; }
 
   function isEuTech(item) {
     if (item.euTech === true) return true;
-    var cos = (item.companies || '').toLowerCase();
+    if (item.euTech === false) return false;
+    var cos = item.companies || '';
     return EU_TECH_PAIRS.some(function(pair) {
-      return pair.every(function(co) { return cos.indexOf(co.toLowerCase()) !== -1; });
+      return pair.every(function(co) {
+        var re = new RegExp('(^|[^A-Za-z0-9])' + co.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '($|[^A-Za-z0-9])', 'i');
+        return re.test(cos);
+      });
     });
   }
 
-  function render() {
-    var grid = document.getElementById('grid');
-    var empty = document.getElementById('empty');
-    var filtered = allItems.filter(function(item) {
-      var rm = activeRegion === 'all' || item.macroRegion === activeRegion;
-      var cm = activeCat === 'all' || item.category === activeCat;
-      var dm = matchesDateRange(item);
-      var sm = matchesSearch(item);
-      return rm && cm && dm && sm;
+  // Date range on plain YYYY-MM-DD strings: no timezone drift, today and the boundary day are included.
+  function matchesDateRange(item) {
+    if (activeDateRange === 'all') return true;
+    var d = (item.announcedDate || '').slice(0, 10);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) return false;
+    var now = new Date(), c;
+    if (activeDateRange === 'month') c = new Date(now.getFullYear(), now.getMonth(), 1);
+    else {
+      var days = { '7d': 6, '30d': 29, '90d': 89 }[activeDateRange];
+      c = new Date(now.getFullYear(), now.getMonth(), now.getDate() - days);
+    }
+    return d >= ymd(c);
+  }
+
+  // Search: every word must appear somewhere in title, companies, summary, category, region or source (accent-insensitive).
+  function matchesSearch(item) {
+    if (!activeSearch) return true;
+    var hay = norm([item.title, item.companies, item.summary, item.category, item.region, item.macroRegion, item.sourceName].join(' '));
+    return activeSearch.split(/\s+/).every(function(tok) { return tok.length < 2 || tok === '\u00d7' || hay.indexOf(tok) !== -1; });
+  }
+
+  function passes(item, skip) {
+    if (skip !== 'region' && activeRegion !== 'all' && macroOf(item) !== activeRegion) return false;
+    if (skip !== 'cat' && activeCat !== 'all' && item.category !== activeCat) return false;
+    return matchesDateRange(item) && matchesSearch(item);
+  }
+
+  // ---------- filter controls ----------
+  function filterRegion(r, btn) { activeRegion = r; render(); }
+  function filterCat(c) { activeCat = c; render(); }
+  function filterDate(range, btn) {
+    activeDateRange = range;
+    document.querySelectorAll('.dbtn').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    render();
+  }
+  function handleSearch() {
+    activeSearch = norm(document.getElementById('search-input').value).trim();
+    document.getElementById('search-clear').style.display = activeSearch ? 'block' : 'none';
+    render();
+  }
+  function clearSearch() {
+    var input = document.getElementById('search-input');
+    input.value = ''; activeSearch = '';
+    document.getElementById('search-clear').style.display = 'none';
+    render(); input.focus();
+  }
+  function resetFilters() {
+    activeRegion = 'all'; activeCat = 'all'; activeDateRange = 'all'; activeSearch = '';
+    document.getElementById('search-input').value = '';
+    document.getElementById('search-clear').style.display = 'none';
+    document.querySelectorAll('.dbtn').forEach(function(b, i){ b.classList.toggle('active', i === 0); });
+    render();
+  }
+
+  // Counts always reflect the OTHER active filters, so a tab showing 0 really means "nothing here with this combination".
+  function updateControls() {
+    var rc = { all: 0, 'EU': 0, 'North America': 0, 'Asia': 0, 'Global': 0 };
+    allItems.forEach(function(i){ if (passes(i, 'region')) { rc.all++; rc[macroOf(i)]++; } });
+    document.getElementById('rc-all').textContent = rc.all;
+    document.getElementById('rc-eu').textContent = rc['EU'];
+    document.getElementById('rc-na').textContent = rc['North America'];
+    document.getElementById('rc-asia').textContent = rc['Asia'];
+    document.getElementById('rc-global').textContent = rc['Global'];
+    document.querySelectorAll('.rtab').forEach(function(b){
+      var r = b.getAttribute('data-r');
+      b.classList.toggle('active', r === activeRegion);
+      b.classList.toggle('dim', r !== 'all' && rc[r] === 0);
     });
+    // category buttons are built from the data, so a new CMS category gets its filter automatically
+    var counts = {};
+    allItems.forEach(function(i){ if (i.category && passes(i, 'cat')) counts[i.category] = (counts[i.category] || 0) + 1; });
+    var cats = {};
+    allItems.forEach(function(i){ if (i.category) cats[i.category] = 1; });
+    // before the data arrives (or if it fails to load) show the standard categories so the bar is never empty
+    if (!Object.keys(cats).length) { CAT_ORDER.forEach(function(c){ cats[c] = 1; }); }
+    var list = Object.keys(cats).sort(function(a, b){
+      var ia = CAT_ORDER.indexOf(a), ib = CAT_ORDER.indexOf(b);
+      return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib) || a.localeCompare(b);
+    });
+    if (activeCat !== 'all' && !cats[activeCat]) activeCat = 'all';
+    var total = 0; Object.keys(counts).forEach(function(k){ total += counts[k]; });
+    var loaded = allItems.length > 0;
+    var html = '<button class="cbtn' + (activeCat === 'all' ? ' active' : '') + '" data-c="all">All' + (loaded ? '<span class="cc">' + total + '</span>' : '') + '</button>';
+    list.forEach(function(c){
+      var n = counts[c] || 0;
+      html += '<button class="cbtn' + (activeCat === c ? ' active' : '') + (loaded && n === 0 ? ' dim' : '') + '" data-c="' + esc(c) + '">' + esc(c) + (loaded ? '<span class="cc">' + n + '</span>' : '') + '</button>';
+    });
+    var bar = document.getElementById('cat-bar'); bar.innerHTML = html;
+    bar.querySelectorAll('.cbtn').forEach(function(b){ b.onclick = function(){ filterCat(b.getAttribute('data-c')); }; });
+  }
+
+  // ---------- sharing ----------
+  function shareUrlOf(item) {
+    var u = safeUrl(item.shareUrl);
+    return u || (SHARE_BASE + 'partnership-feed.html?deal=' + encodeURIComponent(slugOf(item)));
+  }
+  function captionOf(item) {
+    var sum = item.summary || '';
+    if (sum.length > 230) sum = sum.slice(0, 227).replace(/\s+\S*$/, '') + '...';
+    return item.title + '\n\n' + sum + '\n\n' + shareUrlOf(item) + '\n\n#Partnerships #GcTechAllies' + (isEuTech(item) ? ' #BuildEUStack' : '');
+  }
+  function copyText(text, okMsg) {
+    function fallback() {
+      var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); toast(okMsg); } catch (e) { toast('Copy failed - select and copy manually'); }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function(){ toast(okMsg); }, fallback);
+    else fallback();
+  }
+  function itemBySlug(slug) { return allItems.filter(function(i){ return slugOf(i) === slug; })[0]; }
+  function doShare(kind, slug) {
+    var item = itemBySlug(slug); if (!item) return;
+    var url = shareUrlOf(item), title = item.title;
+    if (kind === 'link') return copyText(url, 'Link copied');
+    if (kind === 'caption') return copyText(captionOf(item), 'Caption copied');
+    var target = null;
+    if (kind === 'li') target = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
+    if (kind === 'x') target = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(title.length > 200 ? title.slice(0, 197) + '...' : title) + '&url=' + encodeURIComponent(url);
+    if (kind === 'wa') target = 'https://wa.me/?text=' + encodeURIComponent(title + ' ' + url);
+    if (target) window.open(target, '_blank', 'noopener');
+  }
+
+  // ---------- rendering ----------
+  function render() {
+    updateControls();
+    var grid = document.getElementById('grid'), empty = document.getElementById('empty');
+    var filtered = allItems.filter(function(i){ return passes(i); });
+    filtered.sort(function(a, b){ return (b.announcedDate || '').localeCompare(a.announcedDate || '') || (a.title || '').localeCompare(b.title || ''); });
+    var anyFilter = activeRegion !== 'all' || activeCat !== 'all' || activeDateRange !== 'all' || activeSearch;
+    document.getElementById('result-count').textContent = 'Showing ' + filtered.length + ' of ' + allItems.length + ' partnerships';
+    document.getElementById('reset-btn').style.display = anyFilter ? 'inline-block' : 'none';
     if (filtered.length === 0) {
       grid.innerHTML = '';
-      document.getElementById('empty-msg').textContent = activeSearch
-        ? 'No partnerships match "' + activeSearch + '".'
-        : 'No partnerships match this filter.';
+      document.getElementById('empty-msg').textContent = activeSearch ? 'No partnerships match "' + document.getElementById('search-input').value.trim() + '" with the current filters.' : 'No partnerships match this combination of filters.';
       empty.style.display = 'block';
       return;
     }
     empty.style.display = 'none';
     grid.innerHTML = filtered.map(function(item) {
-      var companies = (item.companies || '').split(',').map(function(c){return c.trim();}).filter(Boolean);
-      var chips = companies.map(function(c){return '<span class="chip">'+c+'</span>';}).join('');
-      var macroClass = getMacroClass(item.macroRegion);
-      var srcLink = item.sourceUrl ? '<a class="src-link" href="'+item.sourceUrl+'" target="_blank">&#8599; '+(item.sourceName||'Source')+'</a>' : '';
-      var cardBtn = (item.cardImageUrl && /^https:\/\//.test(item.cardImageUrl)) ? '<a class="card-btn" href="'+item.cardImageUrl+'" target="_blank" rel="noopener">View card &#8599;</a>' : '';
-      var actions = (srcLink || cardBtn) ? '<div class="card-actions">'+srcLink+cardBtn+'</div>' : '';
+      var slug = slugOf(item), macro = macroOf(item);
+      var chips = (item.companies || '').split(',').map(function(c){ return c.trim(); }).filter(Boolean).map(function(c){ return '<span class="chip">' + esc(c) + '</span>'; }).join('');
+      var src = safeUrl(item.sourceUrl);
+      var srcLink = src ? '<a class="src-link" href="' + esc(src) + '" target="_blank" rel="noopener">&#8599; ' + esc(item.sourceName || 'Source') + '</a>' : '';
+      var img = safeUrl(item.cardImageUrl);
+      var cardBtn = img ? '<a class="card-btn" href="' + esc(img) + '" target="_blank" rel="noopener">View card &#8599;</a>' : '';
+      var actions = (srcLink || cardBtn) ? '<div class="card-actions">' + srcLink + cardBtn + '</div>' : '';
       var euBadge = isEuTech(item) ? '<a class="eustack-badge" href="https://www.gctechallies.com/build-eustack" target="_blank" rel="noopener">&#127466;&#127482; Build EUStack</a>' : '';
-      return '<div class="card"><div class="card-top"><h3>'+item.title+'</h3><span class="macro-badge '+macroClass+'">'+(item.macroRegion||'Global')+'</span></div><div class="chips">'+chips+'</div><div class="card-body"><p class="summary">'+item.summary+'</p><div class="meta">'+(item.category?'<span class="cat-tag">'+item.category+'</span>':'')+(item.announcedDate?'<span class="meta-txt">'+item.announcedDate+'</span>':'')+(item.region?'<span class="meta-txt">&middot; '+item.region+'</span>':'')+(euBadge?euBadge:'')+'</div>'+actions+'</div></div>';
+      var sh = '<div class="share-bar">'
+        + '<button class="sbtn li" onclick="doShare(\'li\',\'' + esc(slug) + '\')">LinkedIn</button>'
+        + '<button class="sbtn" onclick="doShare(\'x\',\'' + esc(slug) + '\')">X</button>'
+        + '<button class="sbtn wa" onclick="doShare(\'wa\',\'' + esc(slug) + '\')">WhatsApp</button>'
+        + '<button class="sbtn" onclick="doShare(\'link\',\'' + esc(slug) + '\')">Copy link</button>'
+        + '<button class="sbtn" onclick="doShare(\'caption\',\'' + esc(slug) + '\')" title="Copy a ready-to-post caption">Caption</button></div>';
+      return '<div class="card" id="deal-' + esc(slug) + '"><div class="card-top"><h3>' + esc(item.title) + '</h3><span class="macro-badge ' + getMacroClass(macro) + '">' + esc(macro) + '</span></div><div class="chips">' + chips + '</div><div class="card-body"><p class="summary">' + esc(item.summary) + '</p><div class="meta">' + (item.category ? '<span class="cat-tag">' + esc(item.category) + '</span>' : '') + (item.announcedDate ? '<span class="meta-txt">' + esc(item.announcedDate) + '</span>' : '') + (item.region ? '<span class="meta-txt">&middot; ' + esc(item.region) + '</span>' : '') + euBadge + '</div>' + actions + sh + '</div></div>';
     }).join('');
   }
 
-  // Load data from partnerships-data.json (same directory on GitHub Pages)
-  fetch('partnerships-data.json')
-    .then(function(r){ return r.json(); })
-    .then(function(data) {
-      allItems = data;
-      updateStats();
-      render();
-    })
+  // Deep link: ?deal=<slug> scrolls to and highlights one card (clears filters first if it would be hidden).
+  function openDeepLink() {
+    var m = /[?&]deal=([^&#]+)/.exec(location.search) || /#deal-(.+)$/.exec(location.hash);
+    if (!m) return;
+    var slug = decodeURIComponent(m[1]);
+    if (!itemBySlug(slug)) return;
+    resetFilters();
+    var el = document.getElementById('deal-' + slug);
+    if (el) { el.classList.add('hl'); setTimeout(function(){ el.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 100); }
+  }
+
+  function init(data) {
+    allItems = Array.isArray(data) ? data : [];
+    render();
+    openDeepLink();
+  }
+
+  updateControls();   // draw the filter bars immediately, before the data arrives
+
+  // Load data (cache-busted so the page always shows the latest sync)
+  fetch('partnerships-data.json?v=' + Date.now(), { cache: 'no-store' })
+    .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(init)
     .catch(function(err) {
-      document.getElementById('grid').innerHTML = '<div class="loading">Unable to load data. Please refresh.</div>';
+      document.getElementById('grid').innerHTML = '<div class="loading">Unable to load data. Please refresh. (If you opened this file straight from your computer, open it from the GitHub Pages address instead.)</div>';
       console.error('Feed load error:', err);
     });
 
-  // Also accept postMessage as fallback (keeps Velo compatibility if added later)
   window.addEventListener('message', function(e) {
-    if (e.data && e.data.type === 'PARTNERSHIPS_DATA' && e.data.items) {
-      allItems = e.data.items;
-      updateStats();
-      render();
-    }
+    if (e.data && e.data.type === 'PARTNERSHIPS_DATA' && e.data.items) init(e.data.items);
   });
 </script>
 </body>
