@@ -105,6 +105,52 @@
   #toast { position:fixed; left:50%; bottom:22px; transform:translateX(-50%); background:#1a1a1a; color:#fff; padding:8px 14px; border-radius:8px; font-size:12px; opacity:0; pointer-events:none; transition:opacity .2s; z-index:9; }
   #toast.show { opacity:1; }
   #empty button { margin-top:14px; border:1px solid #1a1a1a; background:#1a1a1a; color:#fff; border-radius:6px; padding:6px 14px; font-size:12px; cursor:pointer; }
+
+  /* ---- card layout v2: identical rows on every card ---- */
+  .card-v2 { }
+  :root {
+    --bg: #f9f9f7; --surface: #ffffff; --ink: #1a1a1a; --ink-2: #555550; --ink-3: #8a8a84;
+    --line: #e8e8e4; --line-2: #d4d4d0; --chip: #f5f5f3; --head: #1a1a1a; --head-ink: #ffffff; --head-sub: #9a9a94;
+    --link: #1d4ed8; --eu-bg: #eef4fc; --eu-line: #c7d7f0; --eu-ink: #1e3a8a;
+    --stage: #fff4d6; --stage-ink: #7a5300;
+    --m-eu-bg: #dbeafe; --m-eu: #1e40af; --m-na-bg: #dcfce7; --m-na: #166534; --m-asia-bg: #ffedd5; --m-asia: #c2410c; --m-gl-bg: #f3e8ff; --m-gl: #7c3aed;
+    --sans: 'IBM Plex Sans', system-ui, sans-serif; --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  #grid { align-items: stretch; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; display: flex; flex-direction: column; min-width: 0; }
+  .card:hover { box-shadow: 0 3px 12px rgba(0,0,0,.10); }
+  .r-head { display: flex; gap: 10px; justify-content: space-between; align-items: flex-start; padding: 12px 14px 0; min-height: 76px; }
+  .r-head h3 { font-size: 13px; font-weight: 600; line-height: 1.4; flex: 1; min-width: 0; }
+  .macro { font: 600 9px var(--mono); padding: 2px 6px; border-radius: 3px; text-transform: uppercase; letter-spacing: .08em; flex-shrink: 0; }
+  .m-EU { background: var(--m-eu-bg); color: var(--m-eu); } .m-NA { background: var(--m-na-bg); color: var(--m-na); }
+  .m-Asia { background: var(--m-asia-bg); color: var(--m-asia); } .m-Global { background: var(--m-gl-bg); color: var(--m-gl); }
+  .r-chips { display: flex; flex-wrap: wrap; gap: 4px; padding: 8px 14px 0; min-height: 34px; align-content: flex-start; }
+  .chip { background: var(--chip); border: 1px solid var(--line); border-radius: 4px; padding: 2px 7px; font-size: 11px; font-weight: 500; color: var(--ink-2); }
+  .r-sum { flex: 1; padding: 8px 14px 0; font-size: 12px; line-height: 1.6; color: var(--ink-2); }
+  .r-meta { display: flex; align-items: center; gap: 8px; padding: 10px 14px 0; font: 11px var(--mono); color: var(--ink-3); min-height: 30px; }
+  .cat { font: 600 9px var(--mono); text-transform: uppercase; letter-spacing: .06em; padding: 2px 7px; border-radius: 3px; color: color-mix(in srgb, var(--cat) 62%, var(--ink)); background: color-mix(in srgb, var(--cat) 14%, var(--surface)); white-space: nowrap; }
+  .r-region { padding: 0 14px; font: 11px var(--mono); color: var(--ink-3); min-height: 18px; line-height: 1.5; }
+  .r-badge { padding: 6px 14px 0; height: 32px; }
+  .eu { display: inline-flex; align-items: center; gap: 4px; text-decoration: none; border: 1px solid var(--eu-line); border-radius: 4px; padding: 2px 7px; background: var(--eu-bg); font: 600 10px var(--mono); color: var(--eu-ink); height: 22px; }
+  .r-ins { margin: 8px 14px 0; border-top: 1px solid var(--line); }
+  details.ins { border-bottom: 1px solid var(--line); }
+  details.ins summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 9px 0; font-size: 12px; font-weight: 600; color: var(--ink); }
+  details.ins summary::-webkit-details-marker { display: none; }
+  details.ins summary::after { content: '+'; font: 500 15px var(--mono); color: var(--ink-3); }
+  details.ins[open] summary::after { content: '\2212'; }
+  details.ins ul { padding: 0 0 10px 16px; display: grid; gap: 6px; }
+  details.ins li { font-size: 12px; line-height: 1.55; color: var(--ink-2); }
+  details.ins summary:focus-visible, .btn:focus-visible, .sbtn:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+  .r-act { display: flex; align-items: center; gap: 12px; padding: 12px 14px 0; min-height: 44px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 4px; font: 600 11px var(--sans); color: #fff; background: var(--cat); text-decoration: none; border-radius: 6px; padding: 5px 11px; border: 1px solid transparent; }
+  .btn:hover { filter: brightness(1.1); }
+  .src { font-size: 11px; color: var(--link); text-decoration: none; min-width: 0; overflow-wrap: anywhere; }
+  .src:hover { text-decoration: underline; }
+  .r-share { display: flex; flex-wrap: wrap; gap: 4px; margin: 12px 14px 14px; padding-top: 10px; border-top: 1px dashed var(--line); }
+  .sbtn { font: 600 11px var(--sans); color: #fff; border: 1px solid transparent; border-radius: 6px; padding: 5px 8px; cursor: pointer; text-align: center; }
+  .sbtn:hover { filter: brightness(1.12); }
+  .li { background: #0a66c2; } .x { background: #000; } .wa { background: #1c8f4d; } .lnk { background: #1f8a99; } .cap { background: #0c1b4a; border-color: #2b3a75; }
+  .sbtn.done { background: #1c8f4d; border-color: transparent; }
 </style>
 </head>
 <body>
@@ -167,6 +213,12 @@
   function ymd(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
   function slugify(s) { return norm(s).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
   function slugOf(item) { return item.slug || slugify((item.companies || item.title || '') + ' ' + (item.announcedDate || '')); }
+  var CAT_COLORS = {AI:'#6d28d9',Cloud:'#0369a1',Payments:'#0f766e',Fintech:'#0e7490',Energy:'#b45309',Automotive:'#be123c',Defence:'#475569',Retail:'#be185d',Space:'#4338ca',SaaS:'#1d4ed8',Ecommerce:'#a21caf',Logistics:'#4d7c0f',Healthcare:'#047857','Healthcare & Real Estate':'#047857',Sport:'#c2410c'};
+  function lines(v) { return Array.isArray(v) ? v : String(v || '').split('\n').map(function(x){ return x.trim(); }).filter(Boolean); }
+  function insight(title, arr) {
+    if (!arr.length) return '';
+    return '<details class="ins"><summary>' + title + '</summary><ul>' + arr.map(function(t){ return '<li>' + esc(t) + '</li>'; }).join('') + '</ul></details>';
+  }
   function toast(msg) { var t = document.getElementById('toast'); t.textContent = msg; t.className = 'show'; setTimeout(function(){ t.className = ''; }, 1800); }
 
   // Region: always resolves to one of EU / North America / Asia / Global, so every card sits under exactly one tab.
@@ -297,22 +349,23 @@
     if (sum.length > 230) sum = sum.slice(0, 227).replace(/\s+\S*$/, '') + '...';
     return item.title + '\n\n' + sum + '\n\n' + shareUrlOf(item) + '\n\n#Partnerships #GcTechAllies' + (isEuTech(item) ? ' #BuildEUStack' : '');
   }
-  function copyText(text, okMsg) {
+  function copyText(text, okMsg, btn) {
+    function ok() { toast(okMsg); if (btn) { var old = btn.getAttribute('data-l') || btn.textContent; btn.setAttribute('data-l', old); btn.textContent = 'Copied \u2713'; btn.classList.add('done'); setTimeout(function(){ btn.textContent = old; btn.classList.remove('done'); }, 1800); } }
     function fallback() {
       var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
       document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); toast(okMsg); } catch (e) { toast('Copy failed - select and copy manually'); }
+      try { document.execCommand('copy'); ok(); } catch (e) { toast('Copy failed - select and copy manually'); }
       document.body.removeChild(ta);
     }
-    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function(){ toast(okMsg); }, fallback);
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok, fallback);
     else fallback();
   }
   function itemBySlug(slug) { return allItems.filter(function(i){ return slugOf(i) === slug; })[0]; }
-  function doShare(kind, slug) {
+  function doShare(kind, slug, btn) {
     var item = itemBySlug(slug); if (!item) return;
     var url = shareUrlOf(item), title = item.title;
-    if (kind === 'link') return copyText(url, 'Link copied');
-    if (kind === 'caption') return copyText(captionOf(item), 'Caption copied');
+    if (kind === 'link') return copyText(url, 'Link copied', btn);
+    if (kind === 'caption') return copyText(captionOf(item), 'Caption copied', btn);
     var target = null;
     if (kind === 'li') target = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
     if (kind === 'x') target = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(title.length > 200 ? title.slice(0, 197) + '...' : title) + '&url=' + encodeURIComponent(url);
@@ -351,7 +404,21 @@
         + '<button class="sbtn wa" onclick="doShare(\'wa\',\'' + esc(slug) + '\')">WhatsApp</button>'
         + '<button class="sbtn lnk" onclick="doShare(\'link\',\'' + esc(slug) + '\')">Copy link</button>'
         + '<button class="sbtn cap" onclick="doShare(\'caption\',\'' + esc(slug) + '\')" title="Copy a ready-to-post caption">Caption</button></div>';
-      return '<div class="card" id="deal-' + esc(slug) + '"><div class="card-top"><h3>' + esc(item.title) + '</h3><span class="macro-badge ' + getMacroClass(macro) + '">' + esc(macro) + '</span></div><div class="chips">' + chips + '</div><div class="card-body"><p class="summary">' + esc(item.summary) + '</p><div class="meta">' + (item.category ? '<span class="cat-tag">' + esc(item.category) + '</span>' : '') + (item.announcedDate ? '<span class="meta-txt">' + esc(item.announcedDate) + '</span>' : '') + (item.region ? '<span class="meta-txt">&middot; ' + esc(item.region) + '</span>' : '') + euBadge + '</div>' + actions + sh + '</div></div>';
+      var color = CAT_COLORS[item.category] || '#475569';
+      var euSlot = isEuTech(item) ? '<a class="eu" href="https://www.gctechallies.com/build-eustack" target="_blank" rel="noopener">&#127466;&#127482; Build EUStack</a>' : '';
+      var ins = insight('Revenue Implications', lines(item.revenueImplications)) + insight('Who Is Impacted', lines(item.whoIsImpacted)) + insight('Who Can Replicate This Model', lines(item.whoCanReplicate));
+      var sl = esc(slug);
+      return '<article class="card" style="--cat:' + color + '" id="deal-' + sl + '">'
+        + '<div class="r-head"><h3>' + esc(item.title) + '</h3><span class="macro ' + getMacroClass(macro) + '">' + esc(macro) + '</span></div>'
+        + '<div class="r-chips">' + chips + '</div>'
+        + '<p class="r-sum">' + esc(item.summary) + '</p>'
+        + '<div class="r-meta">' + (item.category ? '<span class="cat">' + esc(item.category) + '</span>' : '') + '<span>' + esc(item.announcedDate || '') + '</span></div>'
+        + '<div class="r-region">' + esc(item.region || '') + '</div>'
+        + '<div class="r-badge">' + euSlot + '</div>'
+        + '<div class="r-ins">' + ins + '</div>'
+        + '<div class="r-act">' + (img ? '<a class="btn" href="' + esc(img) + '" target="_blank" rel="noopener">View card &#8599;</a>' : '') + (src ? '<a class="src" href="' + esc(src) + '" target="_blank" rel="noopener">&#8599; ' + esc(item.sourceName || 'Source') + '</a>' : '') + '</div>'
+        + '<div class="r-share"><button class="sbtn li" onclick="doShare(\'li\',\'' + sl + '\',this)">LinkedIn</button><button class="sbtn x" onclick="doShare(\'x\',\'' + sl + '\',this)">X</button><button class="sbtn wa" onclick="doShare(\'wa\',\'' + sl + '\',this)">WhatsApp</button><button class="sbtn lnk" onclick="doShare(\'link\',\'' + sl + '\',this)">Copy link</button><button class="sbtn cap" onclick="doShare(\'caption\',\'' + sl + '\',this)" title="Copies a ready-to-post caption with the link">Caption</button></div>'
+        + '</article>';
     }).join('');
   }
 

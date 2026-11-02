@@ -37,7 +37,7 @@ DEAL_BASE = "https://www.gctechallies.com/deal/"  # Wix dynamic item page (one p
 FIELDS = [
     "title", "companies", "summary", "category", "region",
     "macroRegion", "announcedDate", "sourceUrl", "sourceName", "euTech",
-    "cardImageUrl",
+    "cardImageUrl", "revenueImplications", "whoIsImpacted", "whoCanReplicate",
 ]
 
 
