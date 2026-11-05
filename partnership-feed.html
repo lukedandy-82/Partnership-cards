@@ -140,7 +140,8 @@
   .fl { display: inline-flex; }
   .fl img { width: 20px; height: 14px; border-radius: 2px; box-shadow: 0 0 0 1px var(--line-2); display: block; }
   .r-chips { align-items: flex-start; }
-  .r-meta > span:last-child { margin-left: auto; }
+  .ds { display: inline-flex; align-items: center; gap: 8px; flex: none; }
+  .dt { font: 12.5px var(--mono); color: var(--ink-3); white-space: nowrap; }
   .r-ctry { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; padding: 8px 14px 10px; min-height: 36px; font: 11px var(--mono); color: var(--ink-3); }
   .ct { display: inline-flex; align-items: center; gap: 5px; }
   .chip { display: inline-flex; align-items: center; gap: 5px; }
@@ -191,8 +192,9 @@
   .cbtn, .dbtn, .rtab { font-size: 13px; }
   .cbtn .cc, .rtab .rc { font-size: 11px; opacity: .85; }
   .result-bar { font-size: 13px; }
-  .r-ctry { justify-content: space-between; flex-wrap: nowrap; gap: 10px; }
-  .ctry-txt { min-width: 0; overflow-wrap: anywhere; }
+  .r-ctry { align-content: flex-start; min-height: 52px; gap: 4px 10px; }
+  .ctry-txt { min-width: 0; }
+  .ds { margin-left: auto; }
   .stage { flex: none; font: 700 11px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: #0f5f6b; background: #e3f4f6; border: 1px solid #9fd3da; border-radius: 999px; padding: 3px 10px; white-space: nowrap; }
   .eu-mark { width: 20px; height: 20px; border-radius: 5px; background: #fff; padding: 1px; flex: none; display: block; }
   .eu { padding-left: 5px; }
@@ -262,11 +264,12 @@
   var COUNTRIES = [['United Arab Emirates|UAE','ae','United Arab Emirates'],['United States|USA|US','us','United States'],['United Kingdom|UK','gb','United Kingdom'],['Germany','de','Germany'],['France','fr','France'],['Spain','es','Spain'],['Italy','it','Italy'],['Netherlands','nl','Netherlands'],['Denmark','dk','Denmark'],['Sweden','se','Sweden'],['Finland','fi','Finland'],['Norway','no','Norway'],['Iceland','is','Iceland'],['Ireland','ie','Ireland'],['Belgium','be','Belgium'],['Luxembourg','lu','Luxembourg'],['Switzerland','ch','Switzerland'],['Austria','at','Austria'],['Poland','pl','Poland'],['Czech Republic','cz','Czech Republic'],['Greece','gr','Greece'],['Cyprus','cy','Cyprus'],['Portugal','pt','Portugal'],['Estonia','ee','Estonia'],['Albania','al','Albania'],['Israel','il','Israel'],['India','in','India'],['Japan','jp','Japan'],['China','cn','China'],['Hong Kong','hk','Hong Kong'],['Taiwan','tw','Taiwan'],['Singapore','sg','Singapore'],['Saudi Arabia','sa','Saudi Arabia'],['Ukraine','ua','Ukraine']];
   var COUNTRY_RE = COUNTRIES.map(function(c){ return [new RegExp('\\b(?:' + c[0] + ')\\b'), c[1], c[2]]; });
   // Countries row: derived from the same company directory as the chip flags, so the two always agree.
+  var SHORT = { 'United Arab Emirates': 'UAE', 'United States': 'US', 'United Kingdom': 'UK', 'European Union': 'EU' };
   function countriesOf(item) {
     var out = [], seen = {};
     (item.companies || '').split(',').forEach(function(c){
       var i = DIR[c.trim()];
-      if (i && i.iso && !seen[i.iso]) { seen[i.iso] = 1; out.push(i.country || i.iso); }
+      if (i && i.iso && !seen[i.iso]) { seen[i.iso] = 1; out.push(SHORT[i.country] || i.country || i.iso); }
     });
     return out.map(esc).join(' &middot; ');
   }
@@ -493,8 +496,8 @@
         + '<div class="r-head"><h3>' + esc(item.title) + '</h3><span class="macro ' + getMacroClass(macro) + '">' + esc(macro) + '</span></div>'
         + '<div class="r-chips">' + chips + '</div>'
         + '<p class="r-sum">' + esc(item.summary) + '</p>'
-        + '<div class="r-meta">' + (item.category ? '<span class="cat">' + esc(item.category) + '</span>' : '') + euSlot + '<span>' + esc(item.announcedDate || '') + '</span></div>'
-        + '<div class="r-ctry"><span class="ctry-txt">' + countriesOf(item) + '</span>' + (item.dealStage ? '<span class="stage" title="Deal stage">' + esc(item.dealStage) + '</span>' : '') + '</div>'
+        + '<div class="r-meta">' + (item.category ? '<span class="cat">' + esc(item.category) + '</span>' : '') + euSlot + '</div>'
+        + '<div class="r-ctry"><span class="ctry-txt">' + countriesOf(item) + '</span><span class="ds"><span class="dt">' + esc(item.announcedDate || '') + '</span>' + (item.dealStage ? '<span class="stage" title="Deal stage">' + esc(item.dealStage) + '</span>' : '') + '</span></div>'
         + '<div class="r-ins">' + ins + '</div>'
         + '<div class="r-act">' + (img ? '<a class="btn" href="' + esc(shareUrlOf(item)) + '" target="_blank" rel="noopener">View card &#8599;</a>' : '') + (src ? '<a class="src" href="' + esc(src) + '" target="_blank" rel="noopener">&#8599; ' + esc(item.sourceName || 'Source') + '</a>' : '') + '</div>'
         + '<div class="r-share"><button class="sbtn li" onclick="doShare(\'li\',\'' + sl + '\',this)">LinkedIn</button><button class="sbtn x" onclick="doShare(\'x\',\'' + sl + '\',this)">X</button><button class="sbtn wa" onclick="doShare(\'wa\',\'' + sl + '\',this)">WhatsApp</button><button class="sbtn lnk" onclick="doShare(\'link\',\'' + sl + '\',this)">Copy link</button><button class="sbtn cap" onclick="doShare(\'caption\',\'' + sl + '\',this)" title="Copies a ready-to-post caption with the link">Caption</button></div>'
