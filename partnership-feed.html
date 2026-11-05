@@ -129,10 +129,10 @@
   .r-sum { flex: 1; padding: 8px 14px 0; font-size: 12px; line-height: 1.6; color: var(--ink-2); }
   .r-meta { display: flex; align-items: center; gap: 8px; padding: 10px 14px 0; font: 11px var(--mono); color: var(--ink-3); min-height: 30px; }
   .cat { font: 600 9px var(--mono); text-transform: uppercase; letter-spacing: .06em; padding: 2px 7px; border-radius: 3px; color: color-mix(in srgb, var(--cat) 62%, var(--ink)); background: color-mix(in srgb, var(--cat) 14%, var(--surface)); white-space: nowrap; }
-  .r-flags { display: flex; flex-wrap: wrap; gap: 4px 12px; padding: 8px 14px 0; min-height: 30px; align-content: flex-start; font: 11px var(--mono); color: var(--ink-3); }
-  .fl { display: inline-flex; align-items: center; gap: 5px; }
-  .fl img { width: 18px; height: 13px; border-radius: 2px; box-shadow: 0 0 0 1px var(--line-2); display: block; }
-  .r-badge { padding: 6px 14px 0; height: 32px; }
+  .flags { display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center; min-width: 0; }
+  .fl { display: inline-flex; }
+  .fl img { width: 20px; height: 14px; border-radius: 2px; box-shadow: 0 0 0 1px var(--line-2); display: block; }
+  .r-badge { padding: 6px 14px 0; min-height: 32px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
   .eu { display: inline-flex; align-items: center; gap: 4px; text-decoration: none; border: 1px solid var(--eu-line); border-radius: 4px; padding: 2px 7px; background: var(--eu-bg); font: 600 10px var(--mono); color: var(--eu-ink); height: 22px; }
   .r-ins { margin: 8px 14px 0; border-top: 1px solid var(--line); }
   details.ins { border-bottom: 1px solid var(--line); }
@@ -222,7 +222,7 @@
     COUNTRY_RE.forEach(function(c){ var m = c[0].exec(text); if (m) found.push({ pos: m.index, iso: c[1], name: c[2] }); });
     found.sort(function(a, b){ return a.pos - b.pos; });
     return found.map(function(f){
-      return '<span class="fl"><img src="https://flagcdn.com/w40/' + f.iso + '.png" srcset="https://flagcdn.com/w80/' + f.iso + '.png 2x" width="18" height="13" alt="' + esc(f.name) + ' flag" loading="lazy">' + esc(f.name) + '</span>';
+      return '<span class="fl"><img src="https://flagcdn.com/w40/' + f.iso + '.png" srcset="https://flagcdn.com/w80/' + f.iso + '.png 2x" width="20" height="14" alt="' + esc(f.name) + '" title="' + esc(f.name) + '" loading="lazy"></span>';
     }).join('');
   }
   var CAT_COLORS = {AI:'#6d28d9',Cloud:'#0369a1',Payments:'#0f766e',Fintech:'#0e7490',Energy:'#b45309',Automotive:'#be123c',Defence:'#475569',Retail:'#be185d',Space:'#4338ca',SaaS:'#1d4ed8',Ecommerce:'#a21caf',Logistics:'#4d7c0f',Healthcare:'#047857','Healthcare & Real Estate':'#047857',Sport:'#c2410c'};
@@ -423,10 +423,9 @@
       return '<article class="card" style="--cat:' + color + '" id="deal-' + sl + '">'
         + '<div class="r-head"><h3>' + esc(item.title) + '</h3><span class="macro ' + getMacroClass(macro) + '">' + esc(macro) + '</span></div>'
         + '<div class="r-chips">' + chips + '</div>'
-        + '<div class="r-flags">' + flagsFor(item.region) + '</div>'
         + '<p class="r-sum">' + esc(item.summary) + '</p>'
         + '<div class="r-meta">' + (item.category ? '<span class="cat">' + esc(item.category) + '</span>' : '') + '<span>' + esc(item.announcedDate || '') + '</span></div>'
-        + '<div class="r-badge">' + euSlot + '</div>'
+        + '<div class="r-badge"><span class="flags">' + flagsFor(item.region) + '</span>' + euSlot + '</div>'
         + '<div class="r-ins">' + ins + '</div>'
         + '<div class="r-act">' + (img ? '<a class="btn" href="' + esc(img) + '" target="_blank" rel="noopener">View card &#8599;</a>' : '') + (src ? '<a class="src" href="' + esc(src) + '" target="_blank" rel="noopener">&#8599; ' + esc(item.sourceName || 'Source') + '</a>' : '') + '</div>'
         + '<div class="r-share"><button class="sbtn li" onclick="doShare(\'li\',\'' + sl + '\',this)">LinkedIn</button><button class="sbtn x" onclick="doShare(\'x\',\'' + sl + '\',this)">X</button><button class="sbtn wa" onclick="doShare(\'wa\',\'' + sl + '\',this)">WhatsApp</button><button class="sbtn lnk" onclick="doShare(\'link\',\'' + sl + '\',this)">Copy link</button><button class="sbtn cap" onclick="doShare(\'caption\',\'' + sl + '\',this)" title="Copies a ready-to-post caption with the link">Caption</button></div>'
