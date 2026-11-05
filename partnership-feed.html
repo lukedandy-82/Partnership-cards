@@ -191,6 +191,8 @@
   .cbtn, .dbtn, .rtab { font-size: 13px; }
   .cbtn .cc, .rtab .rc { font-size: 11px; opacity: .85; }
   .result-bar { font-size: 13px; }
+  .r-chips .macro { margin-left: auto; align-self: center; }
+  .r-head { min-height: 56px; }
 </style>
 </head>
 <body>
@@ -484,8 +486,8 @@
       var ins = insight('Revenue Implications', lines(item.revenueImplications)) + insight('Who Is Impacted', lines(item.whoIsImpacted)) + insight('Who Can Replicate This Model', lines(item.whoCanReplicate));
       var sl = esc(slug);
       return '<article class="card" style="--cat:' + color + ';--cat-ink:' + mixHex(color, '#101010', 0.38) + ';--cat-bg:' + mixHex(color, '#ffffff', 0.88) + '" id="deal-' + sl + '">'
-        + '<div class="r-head"><h3>' + esc(item.title) + '</h3><span class="macro ' + getMacroClass(macro) + '">' + esc(macro) + '</span></div>'
-        + '<div class="r-chips">' + chips + '</div>'
+        + '<div class="r-head"><h3>' + esc(item.title) + '</h3></div>'
+        + '<div class="r-chips">' + chips + '<span class="macro ' + getMacroClass(macro) + '">' + esc(macro) + '</span></div>'
         + '<p class="r-sum">' + esc(item.summary) + '</p>'
         + '<div class="r-meta">' + (item.category ? '<span class="cat">' + esc(item.category) + '</span>' : '') + euSlot + '<span>' + esc(item.announcedDate || '') + '</span></div>'
         + '<div class="r-ctry">' + countriesOf(item) + '</div>'
