@@ -134,6 +134,8 @@
   .fl img { width: 20px; height: 14px; border-radius: 2px; box-shadow: 0 0 0 1px var(--line-2); display: block; }
   .r-chips { align-items: flex-start; }
   .r-chips .eu { margin-left: auto; }
+  .r-ctry { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; padding: 8px 14px 10px; min-height: 36px; font: 11px var(--mono); color: var(--ink-3); }
+  .ct { display: inline-flex; align-items: center; gap: 5px; }
   .chip { display: inline-flex; align-items: center; gap: 5px; }
   .chip .cf { width: 16px; height: 11px; border-radius: 2px; box-shadow: 0 0 0 1px var(--line-2); display: block; flex: none; }
   a.chip { text-decoration: none; color: var(--ink-2); }
@@ -223,6 +225,19 @@
   function slugOf(item) { return item.slug || slugify((item.companies || item.title || '') + ' ' + (item.announcedDate || '')); }
   var COUNTRIES = [['United Arab Emirates|UAE','ae','United Arab Emirates'],['United States|USA|US','us','United States'],['United Kingdom|UK','gb','United Kingdom'],['Germany','de','Germany'],['France','fr','France'],['Spain','es','Spain'],['Italy','it','Italy'],['Netherlands','nl','Netherlands'],['Denmark','dk','Denmark'],['Sweden','se','Sweden'],['Finland','fi','Finland'],['Norway','no','Norway'],['Iceland','is','Iceland'],['Ireland','ie','Ireland'],['Belgium','be','Belgium'],['Luxembourg','lu','Luxembourg'],['Switzerland','ch','Switzerland'],['Austria','at','Austria'],['Poland','pl','Poland'],['Czech Republic','cz','Czech Republic'],['Greece','gr','Greece'],['Cyprus','cy','Cyprus'],['Portugal','pt','Portugal'],['Estonia','ee','Estonia'],['Albania','al','Albania'],['Israel','il','Israel'],['India','in','India'],['Japan','jp','Japan'],['China','cn','China'],['Hong Kong','hk','Hong Kong'],['Taiwan','tw','Taiwan'],['Singapore','sg','Singapore'],['Saudi Arabia','sa','Saudi Arabia'],['Ukraine','ua','Ukraine']];
   var COUNTRY_RE = COUNTRIES.map(function(c){ return [new RegExp('\\b(?:' + c[0] + ')\\b'), c[1], c[2]]; });
+  function countriesOf(item) {
+    var out = [], seen = {};
+    (item.companies || '').split(',').forEach(function(c){
+      var i = DIR[c.trim()];
+      if (i && i.iso && !seen[i.iso]) { seen[i.iso] = 1; out.push({ iso: i.iso, name: i.country || i.iso }); }
+    });
+    var text = String(item.region || '').split(/\s[\u2014\u2013-]\s/)[0], found = [];
+    COUNTRY_RE.forEach(function(c){ var m = c[0].exec(text); if (m) found.push({ pos: m.index, iso: c[1], name: c[2] }); });
+    found.sort(function(a, b){ return a.pos - b.pos; }).forEach(function(f){ if (!seen[f.iso]) { seen[f.iso] = 1; out.push({ iso: f.iso, name: f.name }); } });
+    return out.map(function(f){
+      return '<span class="ct"><img class="cf" src="https://flagcdn.com/w40/' + esc(f.iso) + '.png" srcset="https://flagcdn.com/w80/' + esc(f.iso) + '.png 2x" width="16" height="11" alt="" loading="lazy">' + esc(f.name) + '</span>';
+    }).join('');
+  }
   function flagsFor(region) {
     var text = String(region || '').split(/\s[\u2014\u2013-]\s/)[0], found = [];
     COUNTRY_RE.forEach(function(c){ var m = c[0].exec(text); if (m) found.push({ pos: m.index, iso: c[1], name: c[2] }); });
@@ -435,6 +450,7 @@
         + '<div class="r-chips">' + chips + euSlot + '</div>'
         + '<p class="r-sum">' + esc(item.summary) + '</p>'
         + '<div class="r-meta">' + (item.category ? '<span class="cat">' + esc(item.category) + '</span>' : '') + '<span>' + esc(item.announcedDate || '') + '</span></div>'
+        + '<div class="r-ctry">' + countriesOf(item) + '</div>'
         + '<div class="r-ins">' + ins + '</div>'
         + '<div class="r-act">' + (img ? '<a class="btn" href="' + esc(shareUrlOf(item)) + '" target="_blank" rel="noopener">View card &#8599;</a>' : '') + (src ? '<a class="src" href="' + esc(src) + '" target="_blank" rel="noopener">&#8599; ' + esc(item.sourceName || 'Source') + '</a>' : '') + '</div>'
         + '<div class="r-share"><button class="sbtn li" onclick="doShare(\'li\',\'' + sl + '\',this)">LinkedIn</button><button class="sbtn x" onclick="doShare(\'x\',\'' + sl + '\',this)">X</button><button class="sbtn wa" onclick="doShare(\'wa\',\'' + sl + '\',this)">WhatsApp</button><button class="sbtn lnk" onclick="doShare(\'link\',\'' + sl + '\',this)">Copy link</button><button class="sbtn cap" onclick="doShare(\'caption\',\'' + sl + '\',this)" title="Copies a ready-to-post caption with the link">Caption</button></div>'
