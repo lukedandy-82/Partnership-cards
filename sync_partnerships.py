@@ -159,8 +159,11 @@ def main():
     except ValueError:
         cutoff = ""
     lines += [f"- {d['announcedDate']} | {d['companies'] or d['title']}" for d in no_ins if d["announcedDate"] >= cutoff]
-    with open(os.path.join(OUTPUT_DIR, "MISSING_CARDS.md"), "w", encoding="utf-8") as f:
-        f.write("\n".join(lines) + "\n")
+    report = "\n".join(lines) + "\n"
+    report_path = os.path.join(OUTPUT_DIR, "MISSING_CARDS.md")
+    report_changed = not os.path.exists(report_path) or open(report_path, encoding="utf-8").read() != report
+    with open(report_path, "w", encoding="utf-8") as f:
+        f.write(report)
 
     new_content = json.dumps(deals, indent=2, ensure_ascii=False)
 
@@ -170,7 +173,7 @@ def main():
             old_content = f.read()
 
     gh_output = os.environ.get("GITHUB_OUTPUT")
-    changed = new_content.strip() != old_content.strip()
+    changed = new_content.strip() != old_content.strip() or report_changed
 
     os.makedirs(SHARE_DIR, exist_ok=True)
     for d in deals:
