@@ -516,6 +516,36 @@
       console.error('Feed load error:', err);
     });
 
+  // Opening an insight section grows only that card: its row-mates keep the height they had while closed.
+  (function(){
+    var grid = document.getElementById('grid');
+    function rowMates(card) {
+      var top = card.offsetTop;
+      return [].filter.call(grid.querySelectorAll('.card'), function(c){ return c !== card && Math.abs(c.offsetTop - top) < 3; });
+    }
+    function unpin(c) { c.style.height = ''; c.style.alignSelf = ''; delete c.dataset.pin; }
+    grid.addEventListener('click', function(e){
+      var sum = e.target.closest && e.target.closest('details.ins > summary'); if (!sum) return;
+      var card = sum.closest('.card'); if (!card) return;
+      if (card.dataset.pin) unpin(card);                       // an opener must be free to grow
+      if (!card.dataset.expanded) {
+        rowMates(card).forEach(function(m){
+          if (m.dataset.pin || m.dataset.expanded) return;
+          m.style.height = m.offsetHeight + 'px'; m.style.alignSelf = 'start'; m.dataset.pin = '1';
+        });
+      }
+    }, true);
+    grid.addEventListener('toggle', function(e){
+      var d = e.target; if (!d.classList || !d.classList.contains('ins')) return;
+      var card = d.closest('.card'); if (!card) return;
+      if (card.querySelector('details.ins[open]')) { card.dataset.expanded = '1'; return; }
+      delete card.dataset.expanded;
+      var mates = rowMates(card);
+      if (!mates.some(function(m){ return m.dataset.expanded; })) mates.forEach(unpin);
+    }, true);
+    window.addEventListener('resize', function(){ grid.querySelectorAll('.card').forEach(function(c){ unpin(c); }); });
+  })();
+
   window.addEventListener('message', function(e) {
     if (window.__feedLoaded) return;  // the synced JSON is complete; the Wix page's 100-item CMS push is only a fallback
     if (e.data && e.data.type === 'PARTNERSHIPS_DATA' && e.data.items) init(e.data.items);
