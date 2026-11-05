@@ -194,6 +194,9 @@
   .r-ctry { justify-content: space-between; flex-wrap: nowrap; gap: 10px; }
   .ctry-txt { min-width: 0; overflow-wrap: anywhere; }
   .stage { flex: none; font: 700 11px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: #0f5f6b; background: #e3f4f6; border: 1px solid #9fd3da; border-radius: 999px; padding: 3px 10px; white-space: nowrap; }
+  .eu-mark { width: 20px; height: 20px; border-radius: 5px; background: #fff; padding: 1px; flex: none; display: block; }
+  .eu { padding-left: 5px; }
+  .cbtn.eu-f { display: inline-flex; align-items: center; gap: 6px; padding-left: 6px; }
 </style>
 </head>
 <body>
@@ -406,7 +409,7 @@
       html += '<button class="cbtn' + (activeCat === c ? ' active' : '') + (loaded && n === 0 ? ' dim' : '') + '" data-c="' + esc(c) + '">' + esc(c) + (loaded ? '<span class="cc">' + n + '</span>' : '') + '</button>';
     });
     var euN = 0; allItems.forEach(function(i){ if (passes(i, 'eu') && isEuTech(i)) euN++; });
-    html += '<span class="tipwrap"><button class="cbtn eu-f' + (activeEu ? ' active' : '') + (loaded && euN === 0 && !activeEu ? ' dim' : '') + '" id="eu-filter" aria-describedby="eu-tip">&#127466;&#127482; Build EUStack' + (loaded ? '<span class="cc">' + euN + '</span>' : '') + '</button>'
+    html += '<span class="tipwrap"><button class="cbtn eu-f' + (activeEu ? ' active' : '') + (loaded && euN === 0 && !activeEu ? ' dim' : '') + '" id="eu-filter" aria-describedby="eu-tip"><img class="eu-mark" src="assets/eustack-mark.png" width="20" height="20" alt="">Build EUStack' + (loaded ? '<span class="cc">' + euN + '</span>' : '') + '</button>'
       + '<span class="tip" id="eu-tip" role="tooltip"><b>Build EUStack</b>Tech partnerships where every company involved is headquartered in the EU: the building blocks of a European technology stack. Pairs with a US or non-EU company are not included.</span></span>';
     var bar = document.getElementById('cat-bar'); bar.innerHTML = html;
 
@@ -475,7 +478,7 @@
       var img = safeUrl(item.cardImageUrl);
       var cardBtn = img ? '<a class="card-btn" href="' + esc(img) + '" target="_blank" rel="noopener">View card &#8599;</a>' : '';
       var actions = (srcLink || cardBtn) ? '<div class="card-actions">' + srcLink + cardBtn + '</div>' : '';
-      var euBadge = isEuTech(item) ? '<a class="eustack-badge" href="https://www.gctechallies.com/build-eustack" target="_blank" rel="noopener">&#127466;&#127482; Build EUStack</a>' : '';
+      var euBadge = isEuTech(item) ? '<a class="eustack-badge" href="https://www.gctechallies.com/build-eustack" target="_blank" rel="noopener"><img class="eu-mark" src="assets/eustack-mark.png" width="20" height="20" alt="">Build EUStack</a>' : '';
       var sh = '<div class="share-bar">'
         + '<button class="sbtn li" onclick="doShare(\'li\',\'' + esc(slug) + '\')">LinkedIn</button>'
         + '<button class="sbtn x" onclick="doShare(\'x\',\'' + esc(slug) + '\')">X</button>'
@@ -483,7 +486,7 @@
         + '<button class="sbtn lnk" onclick="doShare(\'link\',\'' + esc(slug) + '\')">Copy link</button>'
         + '<button class="sbtn cap" onclick="doShare(\'caption\',\'' + esc(slug) + '\')" title="Copy a ready-to-post caption">Caption</button></div>';
       var color = CAT_COLORS[item.category] || '#475569';
-      var euSlot = isEuTech(item) ? '<a class="eu" href="https://www.gctechallies.com/build-eustack" target="_blank" rel="noopener">&#127466;&#127482; Build EUStack</a>' : '';
+      var euSlot = isEuTech(item) ? '<a class="eu" href="https://www.gctechallies.com/build-eustack" target="_blank" rel="noopener"><img class="eu-mark" src="assets/eustack-mark.png" width="20" height="20" alt="">Build EUStack</a>' : '';
       var ins = insight('Revenue Implications', lines(item.revenueImplications)) + insight('Who Is Impacted', lines(item.whoIsImpacted)) + insight('Who Can Replicate This Model', lines(item.whoCanReplicate));
       var sl = esc(slug);
       return '<article class="card" style="--cat:' + color + ';--cat-ink:' + mixHex(color, '#101010', 0.38) + ';--cat-bg:' + mixHex(color, '#ffffff', 0.88) + '" id="deal-' + sl + '">'
