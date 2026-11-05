@@ -1,0 +1,1129 @@
+{
+ "2CRSi": {
+  "site": "2crsi.com",
+  "iso": "fr",
+  "country": "France"
+ },
+ "634 Defence Entities": {
+  "iso": "eu",
+  "country": "European Union"
+ },
+ "ABN AMRO": {
+  "site": "abnamro.com",
+  "iso": "nl",
+  "country": "Netherlands"
+ },
+ "ADNOC": {
+  "site": "adnoc.ae",
+  "iso": "ae",
+  "country": "United Arab Emirates"
+ },
+ "AETHER Infrastructures": {},
+ "AMD": {
+  "site": "amd.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "AQ Compute": {
+  "site": "aqcompute.com",
+  "iso": "no",
+  "country": "Norway"
+ },
+ "ARX Robotics": {
+  "site": "arx-robotics.com",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "AWS": {
+  "site": "aws.amazon.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Accenture": {
+  "site": "accenture.com",
+  "iso": "ie",
+  "country": "Ireland"
+ },
+ "Adobe": {
+  "site": "adobe.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Adyen": {
+  "site": "adyen.com",
+  "iso": "nl",
+  "country": "Netherlands"
+ },
+ "AirPlus International": {
+  "site": "airplus.com",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "Airbus": {
+  "site": "airbus.com",
+  "iso": "fr",
+  "country": "France"
+ },
+ "Airbus Defence and Space": {
+  "site": "airbus.com",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "Altris AB": {
+  "site": "altris.se",
+  "iso": "se",
+  "country": "Sweden"
+ },
+ "Amazon": {
+  "site": "amazon.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Amazon Web Services": {
+  "site": "aws.amazon.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Ant International": {
+  "site": "ant-intl.com",
+  "iso": "sg",
+  "country": "Singapore"
+ },
+ "Anthropic": {
+  "site": "anthropic.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Apple": {
+  "site": "apple.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Aramco": {
+  "site": "aramco.com",
+  "iso": "sa",
+  "country": "Saudi Arabia"
+ },
+ "Arm": {
+  "site": "arm.com",
+  "iso": "gb",
+  "country": "United Kingdom"
+ },
+ "Atlassian": {
+  "site": "atlassian.com",
+  "iso": "au",
+  "country": "Australia"
+ },
+ "Azure": {
+  "site": "azure.microsoft.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "BALFIN Group": {
+  "site": "balfin.al",
+  "iso": "al",
+  "country": "Albania"
+ },
+ "BANCOMAT": {
+  "site": "bancomat.it",
+  "iso": "it",
+  "country": "Italy"
+ },
+ "BCG": {
+  "site": "bcg.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "BLIK": {
+  "site": "blik.com",
+  "iso": "pl",
+  "country": "Poland"
+ },
+ "BPCE Solutions immobilières": {
+  "iso": "fr",
+  "country": "France"
+ },
+ "BVNK": {
+  "site": "bvnk.com",
+  "iso": "gb",
+  "country": "United Kingdom"
+ },
+ "Bain Capital": {
+  "site": "baincapital.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Bank Norwegian": {
+  "site": "banknorwegian.no",
+  "iso": "no",
+  "country": "Norway"
+ },
+ "Bank of China (Hong Kong)": {
+  "site": "bochk.com",
+  "iso": "hk",
+  "country": "Hong Kong"
+ },
+ "Barclays": {
+  "site": "barclays.com",
+  "iso": "gb",
+  "country": "United Kingdom"
+ },
+ "Baykar": {
+  "site": "baykartech.com",
+  "iso": "tr",
+  "country": "Turkey"
+ },
+ "Berlin Group": {
+  "site": "berlin-group.org",
+  "iso": "eu",
+  "country": "European Union"
+ },
+ "Blackstone": {
+  "site": "blackstone.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Bolt": {
+  "site": "bolt.eu",
+  "iso": "ee",
+  "country": "Estonia"
+ },
+ "Booking.com": {
+  "site": "booking.com",
+  "iso": "nl",
+  "country": "Netherlands"
+ },
+ "Bosch": {
+  "site": "bosch.com",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "Bounteous": {
+  "site": "bounteous.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "BrandOn Group": {
+  "iso": "it",
+  "country": "Italy"
+ },
+ "British Gas": {
+  "site": "britishgas.co.uk",
+  "iso": "gb",
+  "country": "United Kingdom"
+ },
+ "Broadcom": {
+  "site": "broadcom.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Bundeswehr": {
+  "site": "bundeswehr.de",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "CVC Capital Partners": {
+  "site": "cvc.com",
+  "iso": "lu",
+  "country": "Luxembourg"
+ },
+ "Caliber Resource Partners": {
+  "iso": "us",
+  "country": "United States"
+ },
+ "Capacity LLC": {
+  "site": "capacity.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Centrica": {
+  "site": "centrica.com",
+  "iso": "gb",
+  "country": "United Kingdom"
+ },
+ "Checkout.com": {
+  "site": "checkout.com",
+  "iso": "gb",
+  "country": "United Kingdom"
+ },
+ "Cisco": {
+  "site": "cisco.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Cloudera": {
+  "site": "cloudera.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Cloverleaf Infrastructure": {
+  "site": "cloverleaf.net",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Commerzbank": {
+  "site": "commerzbank.com",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "Competera": {
+  "site": "competera.net"
+ },
+ "Constellation Energy": {
+  "site": "constellationenergy.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Coohom": {
+  "site": "coohom.com",
+  "iso": "cn",
+  "country": "China"
+ },
+ "CoreWeave": {
+  "site": "coreweave.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Correios de Portugal": {
+  "site": "ctt.pt",
+  "iso": "pt",
+  "country": "Portugal"
+ },
+ "CrowdStrike": {
+  "site": "crowdstrike.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "DHL eCommerce": {
+  "site": "dhl.com",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "DZ Bank": {
+  "site": "dzbank.com",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "Dassault Systèmes": {
+  "site": "3ds.com",
+  "iso": "fr",
+  "country": "France"
+ },
+ "Decathlon": {
+  "site": "decathlon.com",
+  "iso": "fr",
+  "country": "France"
+ },
+ "Deliverect": {
+  "site": "deliverect.com",
+  "iso": "be",
+  "country": "Belgium"
+ },
+ "Deloitte": {
+  "site": "deloitte.com",
+  "iso": "gb",
+  "country": "United Kingdom"
+ },
+ "Deutsche Bank": {
+  "site": "db.com",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "Deutsche Telekom": {
+  "site": "telekom.com",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "Draslovka a.s.": {
+  "site": "draslovka.com",
+  "iso": "cz",
+  "country": "Czech Republic"
+ },
+ "ECB": {
+  "site": "ecb.europa.eu",
+  "iso": "eu",
+  "country": "European Union"
+ },
+ "ECPC": {
+  "iso": "eu",
+  "country": "European Union"
+ },
+ "EIB": {
+  "site": "eib.org",
+  "iso": "lu",
+  "country": "Luxembourg"
+ },
+ "EPH": {
+  "site": "epholding.cz",
+  "iso": "cz",
+  "country": "Czech Republic"
+ },
+ "EPI": {
+  "site": "epicompany.eu",
+  "iso": "be",
+  "country": "Belgium"
+ },
+ "EURO-3C Consortium": {
+  "iso": "eu",
+  "country": "European Union"
+ },
+ "EWE AG": {
+  "site": "ewe.com",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "EWE Hydrogen GmbH": {
+  "site": "ewe.com",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "EY": {
+  "site": "ey.com",
+  "iso": "gb",
+  "country": "United Kingdom"
+ },
+ "Estée Lauder Companies": {
+  "site": "elcompanies.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "European Commission": {
+  "site": "commission.europa.eu",
+  "iso": "eu",
+  "country": "European Union"
+ },
+ "European Payments Council": {
+  "site": "europeanpaymentscouncil.eu",
+  "iso": "be",
+  "country": "Belgium"
+ },
+ "European Union": {
+  "site": "european-union.europa.eu",
+  "iso": "eu",
+  "country": "European Union"
+ },
+ "Eutelsat": {
+  "site": "eutelsat.com",
+  "iso": "fr",
+  "country": "France"
+ },
+ "Fincantieri": {
+  "site": "fincantieri.com",
+  "iso": "it",
+  "country": "Italy"
+ },
+ "Fiserv": {
+  "site": "fiserv.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Flying Tiger Copenhagen": {
+  "site": "flyingtiger.com",
+  "iso": "dk",
+  "country": "Denmark"
+ },
+ "Ford Motor Company": {
+  "site": "ford.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Fujitsu": {
+  "site": "fujitsu.com",
+  "iso": "jp",
+  "country": "Japan"
+ },
+ "G42": {
+  "site": "g42.ai",
+  "iso": "ae",
+  "country": "United Arab Emirates"
+ },
+ "GIC": {
+  "site": "gic.com.sg",
+  "iso": "sg",
+  "country": "Singapore"
+ },
+ "Geely Automobile Holdings": {
+  "site": "geelyauto.com.hk",
+  "iso": "cn",
+  "country": "China"
+ },
+ "Getnet": {
+  "site": "getnet.com.br",
+  "iso": "es",
+  "country": "Spain"
+ },
+ "Gett": {
+  "site": "gett.com",
+  "iso": "gb",
+  "country": "United Kingdom"
+ },
+ "GlobalFoundries": {
+  "site": "gf.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Google": {
+  "site": "google.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Google Cloud": {
+  "site": "cloud.google.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Gradient Labs": {
+  "site": "gradient-labs.ai",
+  "iso": "gb",
+  "country": "United Kingdom"
+ },
+ "Great British Energy": {
+  "site": "gbe.gov.uk",
+  "iso": "gb",
+  "country": "United Kingdom"
+ },
+ "Groupe BPCE": {
+  "site": "groupebpce.com",
+  "iso": "fr",
+  "country": "France"
+ },
+ "HOUTRIS": {},
+ "HSBC UK": {
+  "site": "hsbc.co.uk",
+  "iso": "gb",
+  "country": "United Kingdom"
+ },
+ "Humanoid": {
+  "iso": "gb",
+  "country": "United Kingdom"
+ },
+ "IBM": {
+  "site": "ibm.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Ignite Next": {
+  "iso": "de",
+  "country": "Germany"
+ },
+ "Innovaccer": {
+  "site": "innovaccer.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Intel": {
+  "site": "intel.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Iceland": {
+  "iso": "is",
+  "country": "Iceland"
+ },
+ "Investors": {},
+ "JPMorgan Payments": {
+  "site": "jpmorgan.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Joybuy": {
+  "site": "joybuy.com"
+ },
+ "K Health": {
+  "site": "khealth.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "KPMG": {
+  "site": "kpmg.com",
+  "iso": "gb",
+  "country": "United Kingdom"
+ },
+ "Kresus Technologies": {
+  "iso": "fr",
+  "country": "France"
+ },
+ "LBA Systems": {
+  "iso": "it",
+  "country": "Italy"
+ },
+ "LHV Bank": {
+  "site": "lhv.ee",
+  "iso": "ee",
+  "country": "Estonia"
+ },
+ "La Caisse": {
+  "site": "lacaisse.com",
+  "iso": "ca",
+  "country": "Canada"
+ },
+ "Leapmotor": {
+  "site": "leapmotor.com",
+  "iso": "cn",
+  "country": "China"
+ },
+ "Leapmotor International": {},
+ "Leonardo": {
+  "site": "leonardo.com",
+  "iso": "it",
+  "country": "Italy"
+ },
+ "Lidl": {
+  "site": "lidl.com",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "Lucid": {
+  "site": "lucidmotors.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Lyft": {
+  "site": "lyft.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "M Technologies": {},
+ "METLEN Energy & Resources": {
+  "site": "metlengroup.com",
+  "iso": "gr",
+  "country": "Greece"
+ },
+ "MIX (Milan Internet Exchange)": {
+  "site": "mix-it.net",
+  "iso": "it",
+  "country": "Italy"
+ },
+ "Mastek": {
+  "site": "mastek.com",
+  "iso": "in",
+  "country": "India"
+ },
+ "Mastercard": {
+  "site": "mastercard.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "McKinsey": {
+  "site": "mckinsey.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Merck": {},
+ "Meta": {
+  "site": "meta.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Microsoft": {
+  "site": "microsoft.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Mistral AI": {
+  "site": "mistral.ai",
+  "iso": "fr",
+  "country": "France"
+ },
+ "NOBA Bank Group": {
+  "site": "noba.bank",
+  "iso": "se",
+  "country": "Sweden"
+ },
+ "NVIDIA": {
+  "site": "nvidia.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "NXP Semiconductors": {
+  "site": "nxp.com",
+  "iso": "nl",
+  "country": "Netherlands"
+ },
+ "Naked Energy": {
+  "site": "nakedenergy.co.uk",
+  "iso": "gb",
+  "country": "United Kingdom"
+ },
+ "Nationwide": {
+  "site": "nationwide.co.uk",
+  "iso": "gb",
+  "country": "United Kingdom"
+ },
+ "Natoma": {
+  "iso": "us",
+  "country": "United States"
+ },
+ "Naval Group": {
+  "site": "naval-group.com",
+  "iso": "fr",
+  "country": "France"
+ },
+ "Nayax": {
+  "site": "nayax.com",
+  "iso": "il",
+  "country": "Israel"
+ },
+ "Nebius": {
+  "site": "nebius.com",
+  "iso": "nl",
+  "country": "Netherlands"
+ },
+ "NetBox Labs": {
+  "site": "netboxlabs.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Nexi": {
+  "site": "nexigroup.com",
+  "iso": "it",
+  "country": "Italy"
+ },
+ "Nexity": {
+  "site": "nexity.fr",
+  "iso": "fr",
+  "country": "France"
+ },
+ "Nexo Standards": {
+  "iso": "eu",
+  "country": "European Union"
+ },
+ "NextEra Energy": {
+  "site": "nexteraenergy.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Nhood": {
+  "site": "nhood.com",
+  "iso": "fr",
+  "country": "France"
+ },
+ "NiSource": {
+  "site": "nisource.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Nordax Bank": {
+  "site": "nordaxgroup.com",
+  "iso": "se",
+  "country": "Sweden"
+ },
+ "Norway": {
+  "iso": "no",
+  "country": "Norway"
+ },
+ "Novo Nordisk": {
+  "site": "novonordisk.com",
+  "iso": "dk",
+  "country": "Denmark"
+ },
+ "Nvidia": {
+  "site": "nvidia.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "OpenAI": {
+  "site": "openai.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Oracle": {
+  "site": "oracle.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Orange": {
+  "site": "orange.com",
+  "iso": "fr",
+  "country": "France"
+ },
+ "Orange Business": {
+  "site": "orange-business.com",
+  "iso": "fr",
+  "country": "France"
+ },
+ "Orange Cyberdefense": {
+  "site": "orangecyberdefense.com",
+  "iso": "fr",
+  "country": "France"
+ },
+ "OroraTech": {
+  "site": "ororatech.com",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "Pentagon": {
+  "site": "defense.gov",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Perl": {
+  "iso": "fr",
+  "country": "France"
+ },
+ "PingPong": {
+  "site": "pingpongx.com",
+  "iso": "cn",
+  "country": "China"
+ },
+ "Pony.ai": {
+  "site": "pony.ai",
+  "iso": "cn",
+  "country": "China"
+ },
+ "Presidio": {
+  "site": "presidio.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Primary Health Properties": {
+  "site": "phpgroup.co.uk",
+  "iso": "gb",
+  "country": "United Kingdom"
+ },
+ "Prime Movers Lab": {
+  "site": "primemoverslab.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Prior Labs": {
+  "site": "priorlabs.ai",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "Projex": {},
+ "Prologis": {
+  "site": "prologis.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "PwC": {
+  "site": "pwc.com",
+  "iso": "gb",
+  "country": "United Kingdom"
+ },
+ "Quant": {
+  "site": "quant.network",
+  "iso": "gb",
+  "country": "United Kingdom"
+ },
+ "Quantum Capital Group": {
+  "site": "quantumcapitalgroup.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "ROLLER": {
+  "site": "roller.software",
+  "iso": "au",
+  "country": "Australia"
+ },
+ "Raiffeisen": {
+  "site": "rbinternational.com",
+  "iso": "at",
+  "country": "Austria"
+ },
+ "Reflection AI": {
+  "site": "reflection.ai",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Revolut": {
+  "site": "revolut.com",
+  "iso": "gb",
+  "country": "United Kingdom"
+ },
+ "Rheinmetall": {
+  "site": "rheinmetall.com",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "Rivian": {
+  "site": "rivian.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Roboneers": {
+  "iso": "ua",
+  "country": "Ukraine"
+ },
+ "SAP": {
+  "site": "sap.com",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "SAP SE": {
+  "site": "sap.com",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "SBI Group": {
+  "site": "sbigroup.co.jp",
+  "iso": "jp",
+  "country": "Japan"
+ },
+ "SEALSQ": {
+  "site": "sealsq.com",
+  "iso": "ch",
+  "country": "Switzerland"
+ },
+ "SIBS-MB WAY": {
+  "site": "sibs.com",
+  "iso": "pt",
+  "country": "Portugal"
+ },
+ "SOCOMEC": {
+  "site": "socomec.com",
+  "iso": "fr",
+  "country": "France"
+ },
+ "SUSS MicroTec": {
+  "site": "suss.com",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "Saft": {
+  "site": "saftbatteries.com",
+  "iso": "fr",
+  "country": "France"
+ },
+ "Sage": {
+  "site": "sage.com",
+  "iso": "gb",
+  "country": "United Kingdom"
+ },
+ "Salesforce": {
+  "site": "salesforce.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Salesupply": {
+  "iso": "nl",
+  "country": "Netherlands"
+ },
+ "Santander": {
+  "site": "santander.com",
+  "iso": "es",
+  "country": "Spain"
+ },
+ "Schaeffler": {
+  "site": "schaeffler.com",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "Schneider Electric": {
+  "site": "se.com",
+  "iso": "fr",
+  "country": "France"
+ },
+ "Schwarz Digits": {
+  "site": "schwarz-digits.de",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "ServiceNow": {
+  "site": "servicenow.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "SiPearl": {
+  "site": "sipearl.com",
+  "iso": "fr",
+  "country": "France"
+ },
+ "Siemens": {
+  "site": "siemens.com",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "Skroutz": {
+  "site": "skroutz.gr",
+  "iso": "gr",
+  "country": "Greece"
+ },
+ "Snowflake": {
+  "site": "snowflake.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "SoftBank Group": {
+  "site": "group.softbank",
+  "iso": "jp",
+  "country": "Japan"
+ },
+ "Solaris": {
+  "site": "solarisgroup.com",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "Sony": {
+  "site": "sony.com",
+  "iso": "jp",
+  "country": "Japan"
+ },
+ "SpaceX": {
+  "site": "spacex.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Starbucks": {
+  "site": "starbucks.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Stellantis": {
+  "site": "stellantis.com",
+  "iso": "nl",
+  "country": "Netherlands"
+ },
+ "Switzerland": {
+  "iso": "ch",
+  "country": "Switzerland"
+ },
+ "Synopsys": {
+  "site": "synopsys.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "TKMS": {
+  "site": "tkms.com",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "TPG": {
+  "site": "tpg.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "TSMC": {
+  "site": "tsmc.com",
+  "iso": "tw",
+  "country": "Taiwan"
+ },
+ "Tata Motors": {
+  "site": "tatamotors.com",
+  "iso": "in",
+  "country": "India"
+ },
+ "Telefónica": {
+  "site": "telefonica.com",
+  "iso": "es",
+  "country": "Spain"
+ },
+ "TerraPay": {
+  "site": "terrapay.com",
+  "iso": "gb",
+  "country": "United Kingdom"
+ },
+ "The Clearing House": {
+  "site": "theclearinghouse.org",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Thoma Bravo": {
+  "site": "thomabravo.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Tieto": {
+  "site": "tieto.com",
+  "iso": "fi",
+  "country": "Finland"
+ },
+ "Tieto Banktech": {
+  "iso": "fi",
+  "country": "Finland"
+ },
+ "TotalEnergies": {
+  "site": "totalenergies.com",
+  "iso": "fr",
+  "country": "France"
+ },
+ "Tredence": {
+  "site": "tredence.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "US Government": {
+  "site": "usa.gov",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Uber": {
+  "site": "uber.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "UniCredit": {
+  "site": "unicreditgroup.eu",
+  "iso": "it",
+  "country": "Italy"
+ },
+ "Verbund AG": {
+  "site": "verbund.com",
+  "iso": "at",
+  "country": "Austria"
+ },
+ "Verbund Green Hydrogen GmbH": {
+  "site": "verbund.com",
+  "iso": "at",
+  "country": "Austria"
+ },
+ "Verda": {
+  "iso": "fi",
+  "country": "Finland"
+ },
+ "Verizon": {
+  "site": "verizon.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Visa": {
+  "site": "visa.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "Vodafone": {
+  "site": "vodafone.com",
+  "iso": "gb",
+  "country": "United Kingdom"
+ },
+ "Volkswagen Group": {
+  "site": "volkswagen-group.com",
+  "iso": "de",
+  "country": "Germany"
+ },
+ "Volvo Cars": {
+  "site": "volvocars.com",
+  "iso": "se",
+  "country": "Sweden"
+ },
+ "Wero": {
+  "site": "wero-wallet.eu",
+  "iso": "eu",
+  "country": "European Union"
+ },
+ "Widem Logistics": {},
+ "Wix": {
+  "site": "wix.com",
+  "iso": "il",
+  "country": "Israel"
+ },
+ "Zscaler": {
+  "site": "zscaler.com",
+  "iso": "us",
+  "country": "United States"
+ },
+ "iSelection": {
+  "iso": "fr",
+  "country": "France"
+ },
+ "ielo": {
+  "iso": "fr",
+  "country": "France"
+ },
+ "nobilia": {
+  "site": "nobilia.de",
+  "iso": "de",
+  "country": "Germany"
+ }
+}
