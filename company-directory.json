@@ -18,7 +18,10 @@
   "iso": "ae",
   "country": "United Arab Emirates"
  },
- "AETHER Infrastructures": {},
+ "AETHER Infrastructures": {
+  "iso": "fr",
+  "country": "France"
+ },
  "AMD": {
   "site": "amd.com",
   "iso": "us",
@@ -267,7 +270,7 @@
   "country": "Germany"
  },
  "Competera": {
-  "site": "competera.net"
+  "site": "competera.ai"
  },
  "Constellation Energy": {
   "site": "constellationenergy.com",
@@ -487,7 +490,10 @@
   "iso": "fr",
   "country": "France"
  },
- "HOUTRIS": {},
+ "HOUTRIS": {
+  "iso": "cy",
+  "country": "Cyprus"
+ },
  "HSBC UK": {
   "site": "hsbc.co.uk",
   "iso": "gb",
@@ -583,7 +589,10 @@
   "iso": "us",
   "country": "United States"
  },
- "M Technologies": {},
+ "M Technologies": {
+  "iso": "gr",
+  "country": "Greece"
+ },
  "METLEN Energy & Resources": {
   "site": "metlengroup.com",
   "iso": "gr",
@@ -609,7 +618,11 @@
   "iso": "us",
   "country": "United States"
  },
- "Merck": {},
+ "Merck": {
+  "site": "merck.com",
+  "iso": "us",
+  "country": "United States"
+ },
  "Meta": {
   "site": "meta.com",
   "iso": "us",

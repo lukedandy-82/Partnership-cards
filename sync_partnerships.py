@@ -159,6 +159,24 @@ def main():
     except ValueError:
         cutoff = ""
     lines += [f"- {d['announcedDate']} | {d['companies'] or d['title']}" for d in no_ins if d["announcedDate"] >= cutoff]
+    # Company directory gaps: every company on a card needs a website and HQ country in
+    # company-directory.json, otherwise its chip has no flag/link and the countries row is short.
+    try:
+        with open(os.path.join(OUTPUT_DIR, "company-directory.json"), encoding="utf-8") as f:
+            directory = json.load(f)
+    except (OSError, ValueError):
+        directory = {}
+    names = []
+    for d in deals:
+        for c in (x.strip() for x in (d.get("companies") or "").split(",")):
+            if c and c not in names:
+                names.append(c)
+    lines += ["", "## Companies missing from company-directory.json", ""]
+    lines += [f"- {c}" for c in names if c not in directory]
+    lines += ["", "## Companies without an HQ country (no flag)", ""]
+    lines += [f"- {c}" for c in names if c in directory and not directory[c].get("iso")]
+    lines += ["", "## Companies without a website (chip not clickable)", ""]
+    lines += [f"- {c}" for c in names if c in directory and not directory[c].get("site")]
     report = "\n".join(lines) + "\n"
     report_path = os.path.join(OUTPUT_DIR, "MISSING_CARDS.md")
     report_changed = not os.path.exists(report_path) or open(report_path, encoding="utf-8").read() != report

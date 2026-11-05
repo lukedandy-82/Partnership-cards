@@ -233,18 +233,14 @@
   function slugOf(item) { return item.slug || slugify((item.companies || item.title || '') + ' ' + (item.announcedDate || '')); }
   var COUNTRIES = [['United Arab Emirates|UAE','ae','United Arab Emirates'],['United States|USA|US','us','United States'],['United Kingdom|UK','gb','United Kingdom'],['Germany','de','Germany'],['France','fr','France'],['Spain','es','Spain'],['Italy','it','Italy'],['Netherlands','nl','Netherlands'],['Denmark','dk','Denmark'],['Sweden','se','Sweden'],['Finland','fi','Finland'],['Norway','no','Norway'],['Iceland','is','Iceland'],['Ireland','ie','Ireland'],['Belgium','be','Belgium'],['Luxembourg','lu','Luxembourg'],['Switzerland','ch','Switzerland'],['Austria','at','Austria'],['Poland','pl','Poland'],['Czech Republic','cz','Czech Republic'],['Greece','gr','Greece'],['Cyprus','cy','Cyprus'],['Portugal','pt','Portugal'],['Estonia','ee','Estonia'],['Albania','al','Albania'],['Israel','il','Israel'],['India','in','India'],['Japan','jp','Japan'],['China','cn','China'],['Hong Kong','hk','Hong Kong'],['Taiwan','tw','Taiwan'],['Singapore','sg','Singapore'],['Saudi Arabia','sa','Saudi Arabia'],['Ukraine','ua','Ukraine']];
   var COUNTRY_RE = COUNTRIES.map(function(c){ return [new RegExp('\\b(?:' + c[0] + ')\\b'), c[1], c[2]]; });
+  // Countries row: derived from the same company directory as the chip flags, so the two always agree.
   function countriesOf(item) {
     var out = [], seen = {};
     (item.companies || '').split(',').forEach(function(c){
       var i = DIR[c.trim()];
-      if (i && i.iso && !seen[i.iso]) { seen[i.iso] = 1; out.push({ iso: i.iso, name: i.country || i.iso }); }
+      if (i && i.iso && !seen[i.iso]) { seen[i.iso] = 1; out.push(i.country || i.iso); }
     });
-    var text = String(item.region || '').split(/\s[\u2014\u2013-]\s/)[0], found = [];
-    COUNTRY_RE.forEach(function(c){ var m = c[0].exec(text); if (m) found.push({ pos: m.index, iso: c[1], name: c[2] }); });
-    found.sort(function(a, b){ return a.pos - b.pos; }).forEach(function(f){ if (!seen[f.iso]) { seen[f.iso] = 1; out.push({ iso: f.iso, name: f.name }); } });
-    return out.map(function(f){
-      return esc(f.name);
-    }).join(' &middot; ');
+    return out.map(esc).join(' &middot; ');
   }
   function flagsFor(region) {
     var text = String(region || '').split(/\s[\u2014\u2013-]\s/)[0], found = [];
