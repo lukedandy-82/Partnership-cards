@@ -197,7 +197,6 @@
   .eu-mark { width: 20px; height: 20px; border-radius: 5px; background: #fff; padding: 1px; flex: none; display: block; }
   .eu { padding-left: 5px; }
   .cbtn.eu-f { display: inline-flex; align-items: center; gap: 6px; padding-left: 6px; }
-  .r-act { padding-bottom: 12px; }
 </style>
 </head>
 <body>
@@ -496,8 +495,8 @@
         + '<p class="r-sum">' + esc(item.summary) + '</p>'
         + '<div class="r-meta">' + (item.category ? '<span class="cat">' + esc(item.category) + '</span>' : '') + euSlot + '<span>' + esc(item.announcedDate || '') + '</span></div>'
         + '<div class="r-ctry"><span class="ctry-txt">' + countriesOf(item) + '</span>' + (item.dealStage ? '<span class="stage" title="Deal stage">' + esc(item.dealStage) + '</span>' : '') + '</div>'
-        + '<div class="r-act">' + (img ? '<a class="btn" href="' + esc(shareUrlOf(item)) + '" target="_blank" rel="noopener">View card &#8599;</a>' : '') + (src ? '<a class="src" href="' + esc(src) + '" target="_blank" rel="noopener">&#8599; ' + esc(item.sourceName || 'Source') + '</a>' : '') + '</div>'
         + '<div class="r-ins">' + ins + '</div>'
+        + '<div class="r-act">' + (img ? '<a class="btn" href="' + esc(shareUrlOf(item)) + '" target="_blank" rel="noopener">View card &#8599;</a>' : '') + (src ? '<a class="src" href="' + esc(src) + '" target="_blank" rel="noopener">&#8599; ' + esc(item.sourceName || 'Source') + '</a>' : '') + '</div>'
         + '<div class="r-share"><button class="sbtn li" onclick="doShare(\'li\',\'' + sl + '\',this)">LinkedIn</button><button class="sbtn x" onclick="doShare(\'x\',\'' + sl + '\',this)">X</button><button class="sbtn wa" onclick="doShare(\'wa\',\'' + sl + '\',this)">WhatsApp</button><button class="sbtn lnk" onclick="doShare(\'link\',\'' + sl + '\',this)">Copy link</button><button class="sbtn cap" onclick="doShare(\'caption\',\'' + sl + '\',this)" title="Copies a ready-to-post caption with the link">Caption</button></div>'
         + '</article>';
     }).join('');
