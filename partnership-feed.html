@@ -132,6 +132,8 @@
   .flags { display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center; min-width: 0; }
   .fl { display: inline-flex; }
   .fl img { width: 20px; height: 14px; border-radius: 2px; box-shadow: 0 0 0 1px var(--line-2); display: block; }
+  .r-chips { align-items: flex-start; }
+  .r-chips .eu { margin-left: auto; }
   .chip { display: inline-flex; align-items: center; gap: 5px; }
   .chip .cf { width: 16px; height: 11px; border-radius: 2px; box-shadow: 0 0 0 1px var(--line-2); display: block; flex: none; }
   a.chip { text-decoration: none; color: var(--ink-2); }
@@ -430,8 +432,7 @@
       var sl = esc(slug);
       return '<article class="card" style="--cat:' + color + '" id="deal-' + sl + '">'
         + '<div class="r-head"><h3>' + esc(item.title) + '</h3><span class="macro ' + getMacroClass(macro) + '">' + esc(macro) + '</span></div>'
-        + '<div class="r-chips">' + chips + '</div>'
-        + '<div class="r-badge">' + euSlot + '</div>'
+        + '<div class="r-chips">' + chips + euSlot + '</div>'
         + '<p class="r-sum">' + esc(item.summary) + '</p>'
         + '<div class="r-meta">' + (item.category ? '<span class="cat">' + esc(item.category) + '</span>' : '') + '<span>' + esc(item.announcedDate || '') + '</span></div>'
         + '<div class="r-ins">' + ins + '</div>'
