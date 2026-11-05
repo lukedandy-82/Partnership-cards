@@ -191,6 +191,9 @@
   .cbtn, .dbtn, .rtab { font-size: 13px; }
   .cbtn .cc, .rtab .rc { font-size: 11px; opacity: .85; }
   .result-bar { font-size: 13px; }
+  .r-ctry { justify-content: space-between; flex-wrap: nowrap; gap: 10px; }
+  .ctry-txt { min-width: 0; overflow-wrap: anywhere; }
+  .stage { flex: none; font: 700 11px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: #0f5f6b; background: #e3f4f6; border: 1px solid #9fd3da; border-radius: 999px; padding: 3px 10px; white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -488,7 +491,7 @@
         + '<div class="r-chips">' + chips + '</div>'
         + '<p class="r-sum">' + esc(item.summary) + '</p>'
         + '<div class="r-meta">' + (item.category ? '<span class="cat">' + esc(item.category) + '</span>' : '') + euSlot + '<span>' + esc(item.announcedDate || '') + '</span></div>'
-        + '<div class="r-ctry">' + countriesOf(item) + '</div>'
+        + '<div class="r-ctry"><span class="ctry-txt">' + countriesOf(item) + '</span>' + (item.dealStage ? '<span class="stage" title="Deal stage">' + esc(item.dealStage) + '</span>' : '') + '</div>'
         + '<div class="r-ins">' + ins + '</div>'
         + '<div class="r-act">' + (img ? '<a class="btn" href="' + esc(shareUrlOf(item)) + '" target="_blank" rel="noopener">View card &#8599;</a>' : '') + (src ? '<a class="src" href="' + esc(src) + '" target="_blank" rel="noopener">&#8599; ' + esc(item.sourceName || 'Source') + '</a>' : '') + '</div>'
         + '<div class="r-share"><button class="sbtn li" onclick="doShare(\'li\',\'' + sl + '\',this)">LinkedIn</button><button class="sbtn x" onclick="doShare(\'x\',\'' + sl + '\',this)">X</button><button class="sbtn wa" onclick="doShare(\'wa\',\'' + sl + '\',this)">WhatsApp</button><button class="sbtn lnk" onclick="doShare(\'link\',\'' + sl + '\',this)">Copy link</button><button class="sbtn cap" onclick="doShare(\'caption\',\'' + sl + '\',this)" title="Copies a ready-to-post caption with the link">Caption</button></div>'
