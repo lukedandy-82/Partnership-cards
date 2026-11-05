@@ -132,13 +132,11 @@
   .flags { display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center; min-width: 0; }
   .fl { display: inline-flex; }
   .fl img { width: 20px; height: 14px; border-radius: 2px; box-shadow: 0 0 0 1px var(--line-2); display: block; }
-  .r-chips { align-items: flex-start; gap: 6px 6px; min-height: 52px; }
-  .co { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; }
+  .chip { display: inline-flex; align-items: center; gap: 5px; }
+  .chip .cf { width: 16px; height: 11px; border-radius: 2px; box-shadow: 0 0 0 1px var(--line-2); display: block; flex: none; }
   a.chip { text-decoration: none; color: var(--ink-2); }
   a.chip:hover { border-color: var(--ink-3); color: var(--ink); text-decoration: underline; }
-  .fl.ph { width: 20px; height: 14px; }
-  .r-chips .eu { margin-left: auto; align-self: flex-end; }
-  .r-badge { padding: 6px 14px 0; min-height: 32px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .r-badge { padding: 8px 14px 0; min-height: 34px; display: flex; align-items: center; gap: 8px; }
   .eu { display: inline-flex; align-items: center; gap: 4px; text-decoration: none; border: 1px solid var(--eu-line); border-radius: 4px; padding: 2px 7px; background: var(--eu-bg); font: 600 10px var(--mono); color: var(--eu-ink); height: 22px; }
   .r-ins { margin: 8px 14px 0; border-top: 1px solid var(--line); }
   details.ins { border-bottom: 1px solid var(--line); }
@@ -411,9 +409,8 @@
       var slug = slugOf(item), macro = macroOf(item);
       var chips = (item.companies || '').split(',').map(function(c){ return c.trim(); }).filter(Boolean).map(function(c){
         var info = DIR[c] || {}, site = info.site ? 'https://' + info.site : '';
-        var name = site ? '<a class="chip" href="' + esc(site) + '" target="_blank" rel="noopener noreferrer" title="' + esc(c) + ' website">' + esc(c) + '</a>' : '<span class="chip">' + esc(c) + '</span>';
-        var flag = info.iso ? '<span class="fl"><img src="https://flagcdn.com/w40/' + esc(info.iso) + '.png" srcset="https://flagcdn.com/w80/' + esc(info.iso) + '.png 2x" width="20" height="14" alt="' + esc(info.country || info.iso) + '" title="' + esc(info.country || info.iso) + '" loading="lazy"></span>' : '<span class="fl ph"></span>';
-        return '<span class="co">' + name + flag + '</span>';
+        var flag = info.iso ? '<img class="cf" src="https://flagcdn.com/w40/' + esc(info.iso) + '.png" srcset="https://flagcdn.com/w80/' + esc(info.iso) + '.png 2x" width="16" height="11" alt="' + esc(info.country || info.iso) + '" title="' + esc(info.country || info.iso) + '" loading="lazy">' : '';
+        return site ? '<a class="chip" href="' + esc(site) + '" target="_blank" rel="noopener noreferrer" title="' + esc(c) + ' website">' + flag + esc(c) + '</a>' : '<span class="chip">' + flag + esc(c) + '</span>';
       }).join('');
       var src = safeUrl(item.sourceUrl);
       var srcLink = src ? '<a class="src-link" href="' + esc(src) + '" target="_blank" rel="noopener">&#8599; ' + esc(item.sourceName || 'Source') + '</a>' : '';
@@ -433,7 +430,8 @@
       var sl = esc(slug);
       return '<article class="card" style="--cat:' + color + '" id="deal-' + sl + '">'
         + '<div class="r-head"><h3>' + esc(item.title) + '</h3><span class="macro ' + getMacroClass(macro) + '">' + esc(macro) + '</span></div>'
-        + '<div class="r-chips">' + chips + euSlot + '</div>'
+        + '<div class="r-chips">' + chips + '</div>'
+        + '<div class="r-badge">' + euSlot + '</div>'
         + '<p class="r-sum">' + esc(item.summary) + '</p>'
         + '<div class="r-meta">' + (item.category ? '<span class="cat">' + esc(item.category) + '</span>' : '') + '<span>' + esc(item.announcedDate || '') + '</span></div>'
         + '<div class="r-ins">' + ins + '</div>'
