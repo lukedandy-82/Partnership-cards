@@ -61,3 +61,47 @@
 - 2026-08-06 | Great British Energy, Naked Energy
 - 2026-08-06 | ABN AMRO, Mistral AI
 - 2026-08-04 | UniCredit, Accenture, IBM
+
+## Companies missing from company-directory.json
+
+
+## Companies without an HQ country (no flag)
+
+- Projex
+- Leapmotor International
+- Investors
+- Widem Logistics
+- Joybuy
+- Competera
+
+## Companies without a website (chip not clickable)
+
+- Ignite Next
+- Roboneers
+- M Technologies
+- HOUTRIS
+- LBA Systems
+- Humanoid
+- Tieto Banktech
+- Projex
+- AETHER Infrastructures
+- iSelection
+- Perl
+- BPCE Solutions immobilières
+- ielo
+- Kresus Technologies
+- Natoma
+- Caliber Resource Partners
+- Leapmotor International
+- Verda
+- Investors
+- ECPC
+- Nexo Standards
+- Salesupply
+- BrandOn Group
+- 634 Defence Entities
+- Widem Logistics
+- Norway
+- Iceland
+- EURO-3C Consortium
+- Switzerland
