@@ -135,7 +135,7 @@
   .chip { background: var(--chip); border: 1px solid var(--line); border-radius: 4px; padding: 2px 7px; font-size: 11px; font-weight: 500; color: var(--ink-2); }
   .r-sum { flex: 1; padding: 8px 14px 0; font-size: 12px; line-height: 1.6; color: var(--ink-2); }
   .r-meta { display: flex; align-items: center; gap: 8px; padding: 10px 14px 0; font: 11px var(--mono); color: var(--ink-3); min-height: 30px; }
-  .cat { font: 600 11px var(--mono); text-transform: uppercase; letter-spacing: .06em; padding: 3px 8px; border-radius: 4px; color: var(--cat-ink, #333); background: var(--cat-bg, #eee); white-space: nowrap; }
+  .cat { font: 600 9px var(--mono); text-transform: uppercase; letter-spacing: .06em; padding: 2px 7px; border-radius: 3px; color: var(--cat-ink, #333); background: var(--cat-bg, #eee); white-space: nowrap; }
   .flags { display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center; min-width: 0; }
   .fl { display: inline-flex; }
   .fl img { width: 20px; height: 14px; border-radius: 2px; box-shadow: 0 0 0 1px var(--line-2); display: block; }
@@ -170,30 +170,13 @@
   .li { background: #0a66c2; } .x { background: #000; } .wa { background: #1c8f4d; } .lnk { background: #1f8a99; } .cap { background: #0c1b4a; border-color: #2b3a75; }
   .sbtn.done { background: #1c8f4d; border-color: transparent; }
 
-  /* ---- readability pass: larger type, AA contrast, no color-mix ---- */
+  /* ---- contrast kept (darker greys, no color-mix); sizes back to the original scale, title 14px ---- */
   :root { --ink-2: #3f3f3a; --ink-3: #66665f; }
-  #grid { grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); }
-  .r-head { min-height: 68px; }
-  .r-head h3 { font-size: 16px; line-height: 1.35; }
-  .macro { font-size: 11px; padding: 3px 7px; }
-  .chip { font-size: 13px; padding: 3px 9px; }
-  .chip .cf { width: 18px; height: 12px; }
-  .r-sum { font-size: 14.5px; line-height: 1.6; }
-  .r-meta { font-size: 12.5px; }
-  .r-ctry { font-size: 12.5px; }
-  .eu { font-size: 12px; height: 26px; }
-  details.ins summary { font-size: 14px; padding: 11px 0; }
-  details.ins li { font-size: 14px; line-height: 1.55; }
-  .btn { font-size: 13px; padding: 7px 14px; }
-  .src { font-size: 13px; }
-  .sbtn { font-size: 12.5px; padding: 7px 10px; }
+  .r-head h3 { font-size: 14px; line-height: 1.4; }
   .sbtn.wa, .wa { background: #167a41; } .sbtn.lnk, .lnk { background: #17707d; }
-  .cbtn, .dbtn, .rtab { font-size: 13px; }
-  .cbtn .cc, .rtab .rc { font-size: 11px; opacity: .85; }
-  .result-bar { font-size: 13px; }
   .r-ctry { justify-content: space-between; flex-wrap: nowrap; gap: 10px; }
   .ctry-txt { min-width: 0; overflow-wrap: anywhere; }
-  .stage { flex: none; font: 700 11px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: #0f5f6b; background: #e3f4f6; border: 1px solid #9fd3da; border-radius: 999px; padding: 3px 10px; white-space: nowrap; }
+  .stage { flex: none; font: 700 10px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: #0f5f6b; background: #e3f4f6; border: 1px solid #9fd3da; border-radius: 999px; padding: 2px 8px; white-space: nowrap; }
   .eu-mark { width: 20px; height: 20px; border-radius: 5px; background: #fff; padding: 1px; flex: none; display: block; }
   .eu { padding-left: 5px; }
   .cbtn.eu-f { display: inline-flex; align-items: center; gap: 6px; padding-left: 6px; }
