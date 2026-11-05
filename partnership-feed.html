@@ -90,6 +90,13 @@
   .result-bar button:hover { background:#1a1a1a; color:#fff; }
   .cbtn .cc { opacity:.6; font-size:10px; margin-left:3px; font-family:'IBM Plex Mono', monospace; }
   .cbtn.dim { opacity:.4; }
+  .tipwrap { position: relative; display: inline-flex; margin-left: auto; }
+  .cbtn.eu-f { background: linear-gradient(135deg, #003399, #0a56d6); color: #fff; border: 1px solid #ffcc00; font-weight: 700; }
+  .cbtn.eu-f.active { background: #ffcc00; color: #003399; border-color: #003399; }
+  .cbtn.eu-f .cc { opacity: .85; }
+  .tip { display: none; position: absolute; right: 0; top: calc(100% + 8px); width: 270px; z-index: 30; background: #0b1b3f; color: #eaf0ff; font: 400 12px/1.5 'IBM Plex Sans', Helvetica, Arial, sans-serif; padding: 10px 12px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,.28); text-align: left; }
+  .tip b { display: block; color: #ffcc00; margin-bottom: 3px; font-size: 12px; }
+  .tipwrap:hover .tip, .tipwrap:focus-within .tip { display: block; }
   .rtab.dim { opacity:.45; }
   .card.hl { box-shadow:0 0 0 2px #1d4ed8, 0 3px 12px rgba(0,0,0,0.1); }
   .share-bar { display:flex; flex-wrap:wrap; align-items:center; gap:4px; margin-top:10px; padding-top:9px; border-top:1px dashed #e8e8e4; }
@@ -214,7 +221,7 @@
   ];
 
   var allItems = [];
-  var activeRegion = 'all', activeCat = 'all', activeDateRange = 'all', activeSearch = '';
+  var activeRegion = 'all', activeCat = 'all', activeDateRange = 'all', activeSearch = '', activeEu = false;
 
   // ---------- helpers ----------
   function esc(s) { return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
@@ -306,12 +313,14 @@
   function passes(item, skip) {
     if (skip !== 'region' && activeRegion !== 'all' && macroOf(item) !== activeRegion) return false;
     if (skip !== 'cat' && activeCat !== 'all' && item.category !== activeCat) return false;
+    if (skip !== 'eu' && activeEu && !isEuTech(item)) return false;
     return matchesDateRange(item) && matchesSearch(item);
   }
 
   // ---------- filter controls ----------
   function filterRegion(r, btn) { activeRegion = r; render(); }
   function filterCat(c) { activeCat = c; render(); }
+  function filterEu() { activeEu = !activeEu; render(); }
   function filterDate(range, btn) {
     activeDateRange = range;
     document.querySelectorAll('.dbtn').forEach(function(b){ b.classList.remove('active'); });
@@ -330,7 +339,7 @@
     render(); input.focus();
   }
   function resetFilters() {
-    activeRegion = 'all'; activeCat = 'all'; activeDateRange = 'all'; activeSearch = '';
+    activeRegion = 'all'; activeCat = 'all'; activeDateRange = 'all'; activeSearch = ''; activeEu = false;
     document.getElementById('search-input').value = '';
     document.getElementById('search-clear').style.display = 'none';
     document.querySelectorAll('.dbtn').forEach(function(b, i){ b.classList.toggle('active', i === 0); });
@@ -370,8 +379,13 @@
       var n = counts[c] || 0;
       html += '<button class="cbtn' + (activeCat === c ? ' active' : '') + (loaded && n === 0 ? ' dim' : '') + '" data-c="' + esc(c) + '">' + esc(c) + (loaded ? '<span class="cc">' + n + '</span>' : '') + '</button>';
     });
+    var euN = 0; allItems.forEach(function(i){ if (passes(i, 'eu') && isEuTech(i)) euN++; });
+    html += '<span class="tipwrap"><button class="cbtn eu-f' + (activeEu ? ' active' : '') + (loaded && euN === 0 && !activeEu ? ' dim' : '') + '" id="eu-filter" aria-describedby="eu-tip">&#127466;&#127482; Build EUStack' + (loaded ? '<span class="cc">' + euN + '</span>' : '') + '</button>'
+      + '<span class="tip" id="eu-tip" role="tooltip"><b>Build EUStack</b>Tech partnerships where every company involved is headquartered in the EU: the building blocks of a European technology stack. Pairs with a US or non-EU company are not included.</span></span>';
     var bar = document.getElementById('cat-bar'); bar.innerHTML = html;
+
     bar.querySelectorAll('.cbtn').forEach(function(b){ b.onclick = function(){ filterCat(b.getAttribute('data-c')); }; });
+    document.getElementById('eu-filter').onclick = filterEu;
   }
 
   // ---------- sharing ----------
@@ -413,7 +427,7 @@
     var grid = document.getElementById('grid'), empty = document.getElementById('empty');
     var filtered = allItems.filter(function(i){ return passes(i); });
     filtered.sort(function(a, b){ return (b.announcedDate || '').localeCompare(a.announcedDate || '') || (a.title || '').localeCompare(b.title || ''); });
-    var anyFilter = activeRegion !== 'all' || activeCat !== 'all' || activeDateRange !== 'all' || activeSearch;
+    var anyFilter = activeEu || activeRegion !== 'all' || activeCat !== 'all' || activeDateRange !== 'all' || activeSearch;
     document.getElementById('result-count').textContent = 'Showing ' + filtered.length + ' of ' + allItems.length + ' partnerships';
     document.getElementById('reset-btn').style.display = anyFilter ? 'inline-block' : 'none';
     if (filtered.length === 0) {
