@@ -235,8 +235,8 @@
     COUNTRY_RE.forEach(function(c){ var m = c[0].exec(text); if (m) found.push({ pos: m.index, iso: c[1], name: c[2] }); });
     found.sort(function(a, b){ return a.pos - b.pos; }).forEach(function(f){ if (!seen[f.iso]) { seen[f.iso] = 1; out.push({ iso: f.iso, name: f.name }); } });
     return out.map(function(f){
-      return '<span class="ct"><img class="cf" src="https://flagcdn.com/w40/' + esc(f.iso) + '.png" srcset="https://flagcdn.com/w80/' + esc(f.iso) + '.png 2x" width="16" height="11" alt="" loading="lazy">' + esc(f.name) + '</span>';
-    }).join('');
+      return esc(f.name);
+    }).join(' &middot; ');
   }
   function flagsFor(region) {
     var text = String(region || '').split(/\s[\u2014\u2013-]\s/)[0], found = [];
