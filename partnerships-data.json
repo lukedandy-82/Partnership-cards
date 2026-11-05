@@ -13,7 +13,7 @@
     "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_5cd05566d18c4fe58b7e3533ab8fb3e8~mv2.png",
     "revenueImplications": "For OpenAI, the revenue is enterprise seats plus agent usage that scales with ADNOC's operations, a different line from consumer subscriptions.\nFor G42, the UAE compute layer is a recurring infrastructure contract that follows every agent ADNOC runs.\nADNOC's own return is an operational one: faster planning and valuation cycles, which it says could cut full-field plans from months to hours (its projection).",
     "whoIsImpacted": "Shell, BP and TotalEnergies, which run their own AI programmes and now face a Gulf rival standardising on one agent platform.\nMicrosoft and Anthropic, competing for the same large-enterprise agent budgets.\nEnergy-services firms such as SLB and Halliburton, whose planning software overlaps with the first use cases.",
-    "whoCanReplicate": "Saudi Aramco could pair a US model vendor with a domestic compute partner in the same way.\nEquinor and Petrobras have the data volumes and in-house AI teams to sign comparable platform deals.\nMining groups such as Rio Tinto and BHP, with similar planning and valuation workloads.",
+    "whoCanReplicate": "QatarEnergy and Petronas could pair a US model vendor with a local compute partner in the same way.\nEquinor and Petrobras have the data volumes and in-house AI teams to sign comparable platform deals.\nMining groups such as Rio Tinto and BHP, with similar planning and valuation workloads.",
     "dealStage": "Signed",
     "slug": "adnoc-openai-g42-2026-11-02",
     "shareUrl": "https://www.gctechallies.com/deal/adnoc-openai-g42-2026-11-02"
@@ -89,7 +89,7 @@
     "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_5c90a165586b438eb64407f96b470324~mv2.png",
     "revenueImplications": "For Orange Cyberdefense, the return is productivity: faster audits and trace analysis let the same 3,300 experts serve more of its €1.3 billion revenue base.\nFor Mistral, a managed-security reference opens a vertical product it can sell to other service providers.\nCustomers with data-residency rules may pay a premium for models that stay in Europe.",
     "whoIsImpacted": "US security-AI firms such as CrowdStrike and Palo Alto Networks, which now see a European model in the SOC.\nCompeting MSSPs such as Capgemini and Atos/Eviden.\nMicrosoft Security Copilot, which is the default alternative for SOC teams.",
-    "whoCanReplicate": "Thales and Airbus CyberSecurity could pair with a European model provider for defence and critical-infrastructure clients.\nDeutsche Telekom's T-Systems and Telefónica Tech can offer the same arrangement to their own security customers.\nSAP could use a design-partner model with Mistral for compliance workflows in its enterprise base.",
+    "whoCanReplicate": "Thales and Sopra Steria could pair with a European model provider for defence and critical-infrastructure clients.\nDeutsche Telekom's T-Systems and Telefónica Tech can offer the same arrangement to their own security customers.\nSAP could use a design-partner model with Mistral for compliance workflows in its enterprise base.",
     "dealStage": "Joined",
     "slug": "orange-cyberdefense-mistral-ai-2026-10-29",
     "shareUrl": "https://www.gctechallies.com/deal/orange-cyberdefense-mistral-ai-2026-10-29"
