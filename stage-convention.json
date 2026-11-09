@@ -1,13 +1,12 @@
 {
   "name": "Deal Stage Ladder",
-  "note": "Eight labels only. The filter buttons and the card labels both use these exact names, in this order. Use Funding round, Acquisition or Regulatory approval when that is what the deal is; otherwise the stage of the partnership. 'map' re-clusters older words; the sync and the feed apply it and report anything unmapped.",
+  "note": "Seven labels only. The filter buttons and the card labels both use these exact names, in this order. Use Acquisition or Regulatory approval when that is what the deal is; otherwise the stage of the partnership (funding rounds count as Signed). 'map' re-clusters older words; the sync and the feed apply it and report anything unmapped.",
   "order": [
     "Letter of Intent",
     "MoU",
     "Signed",
     "Launched",
     "Expanded",
-    "Funding round",
     "Acquisition",
     "Regulatory approval"
   ],
@@ -17,7 +16,6 @@
     "Signed": "Contract, agreement or selection in place, not yet in use",
     "Launched": "Running: pilot, preview, general availability or in production",
     "Expanded": "Existing live deal widened in scope or scale",
-    "Funding round": "Investment or capital raise in one of the parties",
     "Acquisition": "One party buys another, or a stake in a business",
     "Regulatory approval": "A regulator clears the deal"
   },
@@ -37,7 +35,7 @@
     "Expanded": "Expanded",
     "Letter of Intent": "Letter of Intent",
     "MoU": "MoU",
-    "Funding round": "Funding round",
+    "Funding round": "Signed",
     "Acquisition": "Acquisition",
     "Regulatory approval": "Regulatory approval"
   }
