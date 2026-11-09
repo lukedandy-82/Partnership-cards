@@ -281,8 +281,9 @@
   function similar(v) {
     var arr = lines(v); if (!arr.length) return '';
     return '<details class="ins sim"><summary>Similar Deals</summary><ul>' + arr.map(function(t){
-      var p = t.split('|').map(function(x){ return x.trim(); }), u = safeUrl(p[2]);
-      return '<li><b>' + esc(p[0]) + '</b>' + (p[1] ? ': ' + esc(p[1]) : '') + (u ? ' <a href="' + esc(u) + '" target="_blank" rel="noopener">source &#8599;</a>' : '') + '</li>';
+      var p = t.split('|').map(function(x){ return x.trim(); }), u = safeUrl(p[2]), own = p[3] && itemBySlug(p[3]);
+      var link = own ? ' <a href="#deal-' + esc(p[3]) + '" data-goto="' + esc(p[3]) + '">our card &#8595;</a>' : (u ? ' <a href="' + esc(u) + '" target="_blank" rel="noopener">source &#8599;</a>' : '');
+      return '<li><b>' + esc(p[0]) + '</b>' + (p[1] ? ': ' + esc(p[1]) : '') + link + '</li>';
     }).join('') + '</ul></details>';
   }
   function toast(msg) { var t = document.getElementById('toast'); t.textContent = msg; t.className = 'show'; setTimeout(function(){ t.className = ''; }, 1800); }
@@ -536,6 +537,15 @@
     var el = document.getElementById('deal-' + slug);
     if (el) { el.classList.add('hl'); setTimeout(function(){ el.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 100); }
   }
+
+  // "our card" links inside Similar Deals: jump to that card in this feed (clear filters first so it is visible)
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest && e.target.closest('a[data-goto]'); if (!a) return;
+    e.preventDefault();
+    var slug = a.getAttribute('data-goto'); resetFilters();
+    var el = document.getElementById('deal-' + slug);
+    if (el) { document.querySelectorAll('.hl').forEach(function(x){ x.classList.remove('hl'); }); el.classList.add('hl'); el.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+  });
 
   function init(data) {
     allItems = Array.isArray(data) ? data : [];
