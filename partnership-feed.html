@@ -280,7 +280,7 @@
   // similarDeals: one line per company, "Company | what they did | https://source" (source optional).
   function similar(v) {
     var arr = lines(v); if (!arr.length) return '';
-    return '<details class="ins sim"><summary>Similar Deals Elsewhere</summary><ul>' + arr.map(function(t){
+    return '<details class="ins sim"><summary>Similar Deals</summary><ul>' + arr.map(function(t){
       var p = t.split('|').map(function(x){ return x.trim(); }), u = safeUrl(p[2]);
       return '<li><b>' + esc(p[0]) + '</b>' + (p[1] ? ': ' + esc(p[1]) : '') + (u ? ' <a href="' + esc(u) + '" target="_blank" rel="noopener">source &#8599;</a>' : '') + '</li>';
     }).join('') + '</ul></details>';

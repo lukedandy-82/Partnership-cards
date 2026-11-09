@@ -1,19 +1,25 @@
 {
   "name": "Deal Stage Ladder",
-  "note": "Five stages only. The filter buttons and the card labels both use these exact names, in this order. 'map' re-clusters older or finer CMS words into them; sync_partnerships.py and the feed apply it, and any word not covered is reported in MISSING_CARDS.md. Set dealStage in the CMS to one of the five names directly for new deals.",
+  "note": "Eight labels only. The filter buttons and the card labels both use these exact names, in this order. Use Funding round, Acquisition or Regulatory approval when that is what the deal is; otherwise the stage of the partnership. 'map' re-clusters older words; the sync and the feed apply it and report anything unmapped.",
   "order": [
     "Letter of Intent",
     "MoU",
     "Signed",
     "Launched",
-    "Expanded"
+    "Expanded",
+    "Funding round",
+    "Acquisition",
+    "Regulatory approval"
   ],
   "blurbs": {
     "Letter of Intent": "Announced intent to explore, nothing binding",
     "MoU": "Memorandum of understanding: agreed in principle, not yet a contract",
     "Signed": "Contract, agreement or selection in place, not yet in use",
     "Launched": "Running: pilot, preview, general availability or in production",
-    "Expanded": "Existing live deal widened in scope or scale"
+    "Expanded": "Existing live deal widened in scope or scale",
+    "Funding round": "Investment or capital raise in one of the parties",
+    "Acquisition": "One party buys another, or a stake in a business",
+    "Regulatory approval": "A regulator clears the deal"
   },
   "map": {
     "Letter of intent": "Letter of Intent",
@@ -28,6 +34,11 @@
     "Launched": "Launched",
     "In production": "Launched",
     "Live": "Launched",
-    "Expanded": "Expanded"
+    "Expanded": "Expanded",
+    "Letter of Intent": "Letter of Intent",
+    "MoU": "MoU",
+    "Funding round": "Funding round",
+    "Acquisition": "Acquisition",
+    "Regulatory approval": "Regulatory approval"
   }
 }
