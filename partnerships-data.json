@@ -69,7 +69,7 @@
   "sourceUrl": "https://techcrunch.com/2026/10/29/rivian-expands-joint-venture-with-vw-to-include-ai-assistant/",
   "sourceName": "TechCrunch",
   "euTech": false,
-  "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_d34f03a5f475491d90d47a31f3c8703e~mv2.png",
+  "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_d0d72d9457a24ad7836de0e38f0a64ee~mv2.png",
   "revenueImplications": "For Rivian, licensing creates software revenue from a product it built for its own R1 and R2 vehicles, and a larger buyer lowers the unit cost of development.\nFor VW, licensing avoids building a voice stack alone and speeds the roll-out of its software-defined architecture.\nThe fee is undisclosed, so the size of the revenue line remains unknown.",
   "whoIsImpacted": "Cerence and SoundHound, which sell voice assistants to carmakers.\nGoogle (Android Automotive) and Amazon (Alexa), which compete for in-car assistant slots.\nTier-one suppliers such as Bosch and Continental that package in-cabin software.",
   "whoCanReplicate": "Stellantis could license its in-house STLA software components to other makers the same way.\nHyundai and Toyota hold software assets that could be sold across partners.\nPolestar and Volvo Cars, which already share software with Google and Nvidia, could license their own assistant.",
