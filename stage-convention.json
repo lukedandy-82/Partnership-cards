@@ -1,48 +1,33 @@
 {
   "name": "Deal Stage Ladder",
-  "note": "Single source for the stage filter in partnership-feed.html and the unmapped-value check in sync_partnerships.py. The filter buttons use the exact dealStage words printed on the cards, in this order; 'map' groups each word into a rung of the Deal Stage Ladder (shown as a tooltip).",
-  "stages": [
-    {
-      "id": "Intent",
-      "blurb": "Announced ambition, nothing binding yet"
-    },
-    {
-      "id": "Signed",
-      "blurb": "Contract, agreement or selection in place, not yet in use"
-    },
-    {
-      "id": "Pilot",
-      "blurb": "Testing with a limited group of customers or units"
-    },
-    {
-      "id": "Live",
-      "blurb": "Running in production or generally available"
-    },
-    {
-      "id": "Expanded",
-      "blurb": "Existing live deal widened in scope or scale"
-    }
+  "note": "Five stages only. The filter buttons and the card labels both use these exact names, in this order. 'map' re-clusters older or finer CMS words into them; sync_partnerships.py and the feed apply it, and any word not covered is reported in MISSING_CARDS.md. Set dealStage in the CMS to one of the five names directly for new deals.",
+  "order": [
+    "Letter of Intent",
+    "MoU",
+    "Signed",
+    "Launched",
+    "Expanded"
   ],
+  "blurbs": {
+    "Letter of Intent": "Announced intent to explore, nothing binding",
+    "MoU": "Memorandum of understanding: agreed in principle, not yet a contract",
+    "Signed": "Contract, agreement or selection in place, not yet in use",
+    "Launched": "Running: pilot, preview, general availability or in production",
+    "Expanded": "Existing live deal widened in scope or scale"
+  },
   "map": {
-    "Letter of intent": "Intent",
+    "Letter of intent": "Letter of Intent",
+    "LOI": "Letter of Intent",
+    "Memorandum of understanding": "MoU",
     "Signed": "Signed",
     "Agreed": "Signed",
     "Selected": "Signed",
     "Joined": "Signed",
-    "Private preview": "Pilot",
-    "Launched": "Live",
-    "In production": "Live",
+    "Private preview": "Launched",
+    "Pilot": "Launched",
+    "Launched": "Launched",
+    "In production": "Launched",
+    "Live": "Launched",
     "Expanded": "Expanded"
-  },
-  "order": [
-    "Letter of intent",
-    "Signed",
-    "Agreed",
-    "Selected",
-    "Joined",
-    "Private preview",
-    "Launched",
-    "In production",
-    "Expanded"
-  ]
+  }
 }
