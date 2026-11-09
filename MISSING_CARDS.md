@@ -62,6 +62,35 @@
 - 2026-08-06 | ABN AMRO, Mistral AI
 - 2026-08-04 | UniCredit, Accenture, IBM
 
+## dealStage values not in stage-convention.json (invisible to the stage filter)
+
+
+## Replicators with known ties (re-check before publishing)
+
+- 2026-10-30 | Estée Lauder Companies, Microsoft | Diageo -> SAP / IBM (caveat): Five-year programme across 180 countries; no hyperscaler named; AWS podcast appearance without detail
+- 2026-10-30 | Estée Lauder Companies, Microsoft | Puig -> none found (caveat): No group-level cloud partner in public sources; evidence is absence plus a job post
+
+## Deals without similarDeals (recent 90 days)
+
+- 2026-10-30 | EIB, Deutsche Bank
+- 2026-10-29 | Rivian, Volkswagen Group
+- 2026-10-26 | Volkswagen Group, NXP Semiconductors
+- 2026-10-15 | Volvo Cars, Nvidia
+- 2026-10-13 | BALFIN Group, Flying Tiger Copenhagen
+- 2026-10-12 | Tata Motors, Stellantis
+- 2026-10-05 | ARX Robotics, Roboneers
+- 2026-09-30 | Synopsys, OpenAI
+- 2026-09-23 | nobilia, Coohom
+- 2026-09-15 | TotalEnergies, Mistral AI
+- 2026-09-15 | NetBox Labs, Presidio
+- 2026-09-01 | TKMS, Fincantieri
+- 2026-08-21 | TerraPay, Deutsche Bank
+- 2026-08-21 | Nvidia, Cloverleaf Infrastructure
+- 2026-08-13 | Innovaccer, Mastek
+- 2026-08-10 | Sony, TSMC
+- 2026-08-06 | Great British Energy, Naked Energy
+- 2026-08-04 | UniCredit, Accenture, IBM
+
 ## Companies missing from company-directory.json
 
 
