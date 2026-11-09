@@ -1,0 +1,22 @@
+{
+  "name": "Deal Stage Ladder",
+  "note": "Single source for the stage filter in partnership-feed.html and the unmapped-value check in sync_partnerships.py. Put the exact CMS dealStage word in 'map' and it files itself under one of the five rungs.",
+  "stages": [
+    { "id": "Intent",   "blurb": "Announced ambition, nothing binding yet" },
+    { "id": "Signed",   "blurb": "Contract, agreement or selection in place, not yet in use" },
+    { "id": "Pilot",    "blurb": "Testing with a limited group of customers or units" },
+    { "id": "Live",     "blurb": "Running in production or generally available" },
+    { "id": "Expanded", "blurb": "Existing live deal widened in scope or scale" }
+  ],
+  "map": {
+    "Letter of intent": "Intent",
+    "Signed": "Signed",
+    "Agreed": "Signed",
+    "Selected": "Signed",
+    "Joined": "Signed",
+    "Private preview": "Pilot",
+    "Launched": "Live",
+    "In production": "Live",
+    "Expanded": "Expanded"
+  }
+}

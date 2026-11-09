@@ -1138,5 +1138,65 @@
   "site": "nobilia.de",
   "iso": "de",
   "country": "Germany"
+ },
+ "Unilever": {
+  "ties": [
+   {
+    "with": "Google Cloud",
+    "what": "Five-year AI and data backbone deal; Google Cloud replaced Azure as cloud of choice",
+    "verdict": "disqualifies",
+    "source": "https://computerweekly.com/news/366639143/Unilever-adds-more-Google-Cloud-as-backbone-for-AI"
+   }
+  ]
+ },
+ "LVMH": {
+  "ties": [
+   {
+    "with": "Google Cloud",
+    "what": "Group data and AI platform across its maisons",
+    "verdict": "disqualifies",
+    "source": "https://blog.google/products/google-cloud/lvmh/"
+   }
+  ]
+ },
+ "Amorepacific": {
+  "ties": [
+   {
+    "with": "AWS",
+    "what": "Expanded AI partnership; also a KT-built R&D AI platform (July 2026)",
+    "verdict": "disqualifies",
+    "source": "https://www.apgroup.com/int/en/news/2026-05-22-1.html"
+   }
+  ]
+ },
+ "Diageo": {
+  "ties": [
+   {
+    "with": "SAP / IBM",
+    "what": "Five-year programme across 180 countries; no hyperscaler named; AWS podcast appearance without detail",
+    "verdict": "caveat",
+    "source": ""
+   }
+  ]
+ },
+ "Puig": {
+  "ties": [
+   {
+    "with": "none found",
+    "what": "No group-level cloud partner in public sources; evidence is absence plus a job post",
+    "verdict": "caveat",
+    "source": ""
+   }
+  ]
+ },
+ "Shiseido": {
+  "ties": [
+   {
+    "with": "single cloud operator",
+    "what": "Procurement requires picking one cloud operator, so a Microsoft-style group deal conflicts",
+    "verdict": "disqualifies",
+    "source": ""
+   }
+  ]
  }
 }

@@ -37,7 +37,7 @@ DEAL_BASE = "https://www.gctechallies.com/deal/"  # Wix dynamic item page (one p
 FIELDS = [
     "title", "companies", "summary", "category", "region",
     "macroRegion", "announcedDate", "sourceUrl", "sourceName", "euTech",
-    "cardImageUrl", "revenueImplications", "whoIsImpacted", "whoCanReplicate", "dealStage",
+    "cardImageUrl", "revenueImplications", "whoIsImpacted", "whoCanReplicate", "dealStage", "similarDeals",
 ]
 
 
@@ -171,6 +171,28 @@ def main():
         for c in (x.strip() for x in (d.get("companies") or "").split(",")):
             if c and c not in names:
                 names.append(c)
+    # Stage ladder: every dealStage word must map to a rung in stage-convention.json, or the stage filter skips the deal.
+    try:
+        with open(os.path.join(OUTPUT_DIR, "stage-convention.json"), encoding="utf-8") as f:
+            stage_map = json.load(f).get("map", {})
+    except (OSError, ValueError):
+        stage_map = {}
+    lines += ["", "## dealStage values not in stage-convention.json (invisible to the stage filter)", ""]
+    lines += [f"- {d['announcedDate']} | {d['companies']} | \"{d['dealStage']}\"" for d in deals
+              if d.get("dealStage") and d["dealStage"] not in stage_map]
+    # Replicator pre-check: a company named in 'Who Can Replicate' that already has a researched tie in
+    # company-directory.json must be re-checked before it stays on the card.
+    lines += ["", "## Replicators with known ties (re-check before publishing)", ""]
+    for d in deals:
+        for ln in re.split(r"\n", d.get("whoCanReplicate") or ""):
+            for cname, info in directory.items():
+                ties = info.get("ties") or []
+                if ties and re.match(r"\s*" + re.escape(cname) + r"\b", ln):
+                    desc = "; ".join(f"{t['with']} ({t['verdict']}): {t['what']}" for t in ties)
+                    lines.append(f"- {d['announcedDate']} | {d['companies']} | {cname} -> {desc}")
+    lines += ["", "## Deals without similarDeals (recent 90 days)", ""]
+    lines += [f"- {d['announcedDate']} | {d['companies'] or d['title']}" for d in deals
+              if not (d.get("similarDeals") or "").strip() and d["announcedDate"] >= cutoff]
     lines += ["", "## Companies missing from company-directory.json", ""]
     lines += [f"- {c}" for c in names if c not in directory]
     lines += ["", "## Companies without an HQ country (no flag)", ""]

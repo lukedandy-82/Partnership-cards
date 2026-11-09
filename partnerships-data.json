@@ -31,11 +31,12 @@
     "euTech": false,
     "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_301c925acacf4c03bd1e52fee6bad14c~mv2.png",
     "revenueImplications": "For Microsoft, the revenue is multi-year Azure consumption plus Copilot licences across a group selling in about 150 countries and territories.\nFor Estée Lauder, the case rests on better demand forecasting and more precise marketing spend; the release gives no targets.\nRetailers and agencies connected to the data platform may become paid integration partners.",
-    "whoIsImpacted": "Salesforce and Snowflake, which compete for the consumer-data layer inside large brands.\nGoogle Cloud and AWS, which lose a reference customer in beauty.\nL'Oréal and Coty, who will be benchmarked on data maturity.",
-    "whoCanReplicate": "Unilever and Procter & Gamble have the global brand portfolios that justify one data foundation.\nLVMH and Kering could do the same across separate houses with fragmented customer data.\nInditex and H&M have the retail data that benefits from unified decision intelligence.",
+    "whoIsImpacted": "Salesforce and Snowflake, which compete for the consumer-data layer inside large brands.\nGoogle Cloud and AWS, whose beauty-sector pitches now compete with a group-wide Microsoft reference.\nL'Oréal and Coty, who will be benchmarked on data maturity.",
+    "whoCanReplicate": "Diageo runs a five-year SAP and IBM programme across 180 countries with no hyperscaler partner named; a unified data foundation is the open step before any agents.\nPuig has many brands serving one consumer and no group-level cloud partner found in public sources, so a data-first sequence is still open.",
     "dealStage": "Signed",
     "slug": "estee-lauder-companies-microsoft-2026-10-30",
-    "shareUrl": "https://www.gctechallies.com/deal/estee-lauder-companies-microsoft-2026-10-30"
+    "shareUrl": "https://www.gctechallies.com/deal/estee-lauder-companies-microsoft-2026-10-30",
+    "similarDeals": "Unilever | Five-year Google Cloud deal for data platforms and AI | https://computerweekly.com/news/366639143/Unilever-adds-more-Google-Cloud-as-backbone-for-AI\nLVMH | Google Cloud data and AI platform across its maisons | https://blog.google/products/google-cloud/lvmh/\nAmorepacific | Expanded AWS partnership for company-wide AI | https://www.apgroup.com/int/en/news/2026-05-22-1.html"
   },
   {
     "title": "EIB × Deutsche Bank — €560M Partnership for Europe's Space Businesses",
