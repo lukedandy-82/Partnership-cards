@@ -341,7 +341,7 @@
   }
 
   // Stage ladder: the CMS dealStage word maps to one of five rungs (see stage-convention.json).
-  function stageOf(item) { return item.dealStage ? (STAGES.map[item.dealStage] || '') : ''; }
+  function stageOf(item) { return item.dealStage || ''; }   // exact word shown on the card
 
   function passes(item, skip) {
     if (skip !== 'stage' && activeStage !== 'all' && stageOf(item) !== activeStage) return false;
@@ -430,7 +430,9 @@
       var sc = {}, st = 0;
       allItems.forEach(function(i){ var g = stageOf(i); if (g && passes(i, 'stage')) { sc[g] = (sc[g] || 0) + 1; st++; } });
       var sh = '<span class="lbl">Stage</span><button class="sbtn2' + (activeStage === 'all' ? ' active' : '') + '" data-g="all">All<span class="cc">' + st + '</span></button>';
-      STAGES.stages.forEach(function(g){
+      var known = {}; STAGES.stages.forEach(function(g){ known[g.id] = 1; });
+      var extra = Object.keys(sc).filter(function(k){ return !known[k]; }).map(function(k){ return { id: k, blurb: 'Not in stage-convention.json' }; });
+      STAGES.stages.concat(extra).forEach(function(g){
         var n = sc[g.id] || 0;
         sh += '<button class="sbtn2' + (activeStage === g.id ? ' active' : '') + (n === 0 && activeStage !== g.id ? ' dim' : '') + '" data-g="' + esc(g.id) + '" title="' + esc(g.blurb) + '">' + esc(g.id) + '<span class="cc">' + n + '</span></button>';
       });
@@ -516,7 +518,7 @@
         + '<div class="r-chips">' + chips + '</div>'
         + '<p class="r-sum">' + esc(item.summary) + '</p>'
         + '<div class="r-meta">' + (item.category ? '<span class="cat">' + esc(item.category) + '</span>' : '') + euSlot + '<span>' + esc(item.announcedDate || '') + '</span></div>'
-        + '<div class="r-ctry"><span class="ctry-txt">' + countriesOf(item) + '</span>' + (item.dealStage ? '<span class="stage" title="Stage ladder: ' + esc(stageOf(item) || 'unmapped') + '">' + esc(item.dealStage) + '</span>' : '') + '</div>'
+        + '<div class="r-ctry"><span class="ctry-txt">' + countriesOf(item) + '</span>' + (item.dealStage ? '<span class="stage" title="Ladder rung: ' + esc(STAGES.map[item.dealStage] || 'unmapped') + '">' + esc(item.dealStage) + '</span>' : '') + '</div>'
         + '<div class="r-ins">' + ins + '</div>'
         + '<div class="r-act">' + (img ? '<a class="btn" href="' + esc(shareUrlOf(item)) + '" target="_blank" rel="noopener">View card &#8599;</a>' : '') + (src ? '<a class="src" href="' + esc(src) + '" target="_blank" rel="noopener">&#8599; ' + esc(item.sourceName || 'Source') + '</a>' : '') + '</div>'
         + '<div class="r-share"><button class="sbtn li" onclick="doShare(\'li\',\'' + sl + '\',this)">LinkedIn</button><button class="sbtn x" onclick="doShare(\'x\',\'' + sl + '\',this)">X</button><button class="sbtn wa" onclick="doShare(\'wa\',\'' + sl + '\',this)">WhatsApp</button><button class="sbtn lnk" onclick="doShare(\'link\',\'' + sl + '\',this)">Copy link</button><button class="sbtn cap" onclick="doShare(\'caption\',\'' + sl + '\',this)" title="Copies a ready-to-post caption with the link">Caption</button></div>'
@@ -551,7 +553,7 @@
     .then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; });
   fetch('partnerships-data.json?v=' + Date.now(), { cache: 'no-store' })
     .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-    .then(function(items){ return Promise.all([dirP, stageP]).then(function(r){ DIR = r[0] || {}; if (r[1] && r[1].stages) STAGES = { stages: r[1].stages, map: r[1].map || {} }; window.__feedLoaded = true; init(items); }); })
+    .then(function(items){ return Promise.all([dirP, stageP]).then(function(r){ DIR = r[0] || {}; if (r[1] && r[1].order) STAGES = { stages: r[1].order.map(function(w){ return { id: w, blurb: 'Ladder rung: ' + ((r[1].map || {})[w] || 'unmapped') }; }), map: r[1].map || {} }; window.__feedLoaded = true; init(items); }); })
     .catch(function(err) {
       document.getElementById('grid').innerHTML = '<div class="loading">Unable to load data. Please refresh. (If you opened this file straight from your computer, open it from the GitHub Pages address instead.)</div>';
       console.error('Feed load error:', err);
