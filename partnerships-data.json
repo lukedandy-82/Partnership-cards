@@ -210,7 +210,7 @@
     "sourceUrl": "https://electrek.co/2026/10/21/lucid-bolt-robotaxi-nvidia-alpamayo-madrid-2027/",
     "sourceName": "Electrek",
     "euTech": false,
-    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_b409a32872884d78a432cae0de977055~mv2.png",
+    "cardImageUrl": "https://static.wixstatic.com/media/5f6b28_136a3bc774a44bbeaab430b33e1f0f1d~mv2.png",
     "revenueImplications": "For Bolt, autonomy replaces the driver's share of each fare, which is the pool of margin it is chasing.\nFor Lucid, a fleet customer adds vehicle sales that consumer demand has not supplied.\nFor Nvidia, revenue comes through compute and software licences on every vehicle.",
     "whoIsImpacted": "Uber, which partners with Waymo and others and competes with Bolt in Europe.\nWaymo and Wayve, which compete for European city permits.\nMobileye, whose driver-assistance stack is an alternative to Nvidia's.",
     "whoCanReplicate": "FreeNow, owned by Lyft, could choose a driving stack and vehicle supplier in the same way.\nCabify and Heetch can pair with Chinese or US vehicle makers.\nPublic-transport operators such as Arriva and Transdev could pilot robotaxi fleets on Nvidia's platform.",
