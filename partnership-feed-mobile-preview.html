@@ -7,7 +7,10 @@
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'IBM Plex Sans', sans-serif; background: #f9f9f7; color: #1a1a1a; }
-  .feed-header { background: #1a1a1a; padding: 24px 28px 20px; }
+  .feed-header { background: #1a1a1a; padding: 24px 28px 20px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+  .fh-left { flex: 1 1 320px; min-width: 0; }
+  .fh-right { flex: 0 1 auto; display: flex; align-items: center; gap: 14px; background: #0b1b3f; border: 1px solid #1f3566; border-radius: 10px; padding: 10px 12px 10px 16px; max-width: 100%; }
+  .fh-sub { color: #eaf0ff; font-size: 13px; line-height: 1.4; max-width: 260px; }
   .feed-header h1 { font-size: 22px; font-weight: 600; color: #fff; letter-spacing: -0.3px; }
   .feed-header p { color: #888; font-size: 13px; margin-top: 5px; font-family: 'IBM Plex Mono', monospace; }
   .search-bar { background: #fff; border-bottom: 1px solid #e8e8e4; padding: 12px 16px; }
@@ -218,6 +221,8 @@
 
   @media (max-width: 640px) {
     .feed-header { padding: 16px 16px 14px; }
+    .fh-right { width: 100%; justify-content: space-between; }
+    .fh-sub { max-width: none; flex: 1; }
     .feed-header h1 { font-size: 19px; }
     .feed-header p { font-size: 11px; }
     .search-bar { padding: 10px 12px; }
@@ -268,17 +273,14 @@
 </head>
 <body>
 <div class="feed-header">
-  <h1>Partnership Feed</h1>
-  <p>Tracking the partnerships reshaping global industries</p>
-</div>
-<div class="sub-bar" id="sub-bar">
-  <div class="sub-row"><span><b>Partnership updates:</b> get new deals and analysis in your inbox</span><button class="sub-open" type="button" onclick="openSubscribe()" id="sub-open">Subscribe</button></div>
-  <form class="sub-form" id="sub-form" onsubmit="return submitSub(event)" novalidate>
-    <input type="email" id="sub-email" placeholder="you@company.com" autocomplete="email" inputmode="email" aria-label="Email address" required>
-    <button type="submit">Get the digest</button>
-    <label class="sub-consent"><input type="checkbox" id="sub-consent"><span>I agree to receive GcTechAllies partnership updates by email. I can unsubscribe at any time.</span></label>
-    <div class="sub-msg" id="sub-msg" role="status"></div>
-  </form>
+  <div class="fh-left">
+    <h1>Partnership Feed</h1>
+    <p>Tracking the partnerships reshaping global industries</p>
+  </div>
+  <div class="fh-right">
+    <span class="fh-sub"><b>Partnership digest:</b> new deals and analysis in your inbox</span>
+    <button class="sub-open" type="button" onclick="openSubscribe()" id="sub-open">Subscribe</button>
+  </div>
 </div>
 <div class="search-bar">
   <div class="search-wrap">
