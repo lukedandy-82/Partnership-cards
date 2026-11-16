@@ -260,11 +260,11 @@
   <p>Tracking the partnerships reshaping global industries</p>
 </div>
 <div class="sub-bar" id="sub-bar">
-  <div class="sub-row"><span><b>Weekly digest:</b> new partnerships in your inbox every week</span><button class="sub-open" type="button" onclick="toggleSub()" id="sub-open">Subscribe</button></div>
+  <div class="sub-row"><span><b>Partnership updates:</b> get new deals and analysis in your inbox</span><button class="sub-open" type="button" onclick="toggleSub()" id="sub-open">Subscribe</button></div>
   <form class="sub-form" id="sub-form" onsubmit="return submitSub(event)" novalidate>
     <input type="email" id="sub-email" placeholder="you@company.com" autocomplete="email" inputmode="email" aria-label="Email address" required>
     <button type="submit">Get the digest</button>
-    <label class="sub-consent"><input type="checkbox" id="sub-consent"><span>I agree to receive the GcTechAllies weekly partnership digest by email. I can unsubscribe at any time.</span></label>
+    <label class="sub-consent"><input type="checkbox" id="sub-consent"><span>I agree to receive GcTechAllies partnership updates by email. I can unsubscribe at any time.</span></label>
     <div class="sub-msg" id="sub-msg" role="status"></div>
   </form>
 </div>
@@ -617,6 +617,7 @@
   function toggleSub() { var b = document.getElementById('sub-bar'); b.classList.toggle('open'); document.getElementById('sub-open').textContent = b.classList.contains('open') ? 'Close' : 'Subscribe'; if (b.classList.contains('open')) setTimeout(function(){ document.getElementById('sub-email').focus(); }, 50); postH(); }
   // Subscribe: posts to a Wix backend endpoint. Empty = preview mode (nothing is sent).
   var SUBSCRIBE_ENDPOINT = '';
+  if (!SUBSCRIBE_ENDPOINT) { var _sb = document.getElementById('sub-bar'); if (_sb) _sb.style.display = 'none'; }
   function submitSub(e) {
     e.preventDefault();
     var em = document.getElementById('sub-email').value.trim(), ok = document.getElementById('sub-consent').checked, msg = document.getElementById('sub-msg');

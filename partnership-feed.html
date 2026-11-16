@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -188,12 +189,84 @@
   .eu-mark { width: 20px; height: 20px; border-radius: 5px; background: #fff; padding: 1px; flex: none; display: block; }
   .eu { padding-left: 5px; }
   .cbtn.eu-f { display: inline-flex; align-items: center; gap: 6px; padding-left: 6px; }
+
+  /* ===== MOBILE + SUBSCRIBE LAYER (preview) ===== */
+  .sub-bar { background: #0b1b3f; color: #eaf0ff; padding: 10px 16px; }
+  .sub-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+  .sub-row span { font-size: 13px; line-height: 1.4; }
+  .sub-open { border: 1px solid #27a9bb; background: #27a9bb; color: #06122e; font: 700 12px var(--sans); border-radius: 6px; padding: 7px 12px; cursor: pointer; min-height: 36px; }
+  .sub-form { display: none; margin-top: 10px; gap: 8px; flex-wrap: wrap; }
+  .sub-bar.open .sub-form { display: flex; }
+  .sub-form input[type=email] { flex: 1 1 220px; min-width: 0; min-height: 44px; border-radius: 8px; border: 1px solid #33466f; background: #fff; padding: 0 12px; font: 400 16px var(--sans); }
+  .sub-form button { min-height: 44px; border: 0; border-radius: 8px; background: #27a9bb; color: #06122e; font: 700 14px var(--sans); padding: 0 18px; cursor: pointer; }
+  .sub-consent { flex: 1 1 100%; display: flex; gap: 8px; align-items: flex-start; font-size: 12px; line-height: 1.45; color: #b8d4ee; }
+  .sub-consent input { margin-top: 2px; width: 18px; height: 18px; flex: none; }
+  .sub-msg { flex: 1 1 100%; font-size: 12px; color: #9fe6ef; min-height: 16px; }
+  .filters-btn, .share-toggle, .more-btn { display: none; }
+  #more { text-align: center; padding: 4px 16px 28px; }
+  .more-btn { margin: 0 auto; min-height: 46px; padding: 0 22px; border-radius: 10px; border: 1px solid #1a1a1a; background: #1a1a1a; color: #fff; font: 600 14px var(--sans); cursor: pointer; }
+  .more-btn.on { display: inline-flex; align-items: center; justify-content: center; }
+  .r-sum .rm { display: none; }
+
+  @media (max-width: 640px) {
+    .feed-header { padding: 16px 16px 14px; }
+    .feed-header h1 { font-size: 19px; }
+    .feed-header p { font-size: 11px; }
+    .search-bar { padding: 10px 12px; }
+    #search-input { min-height: 44px; font-size: 16px; padding-left: 38px; }
+    .region-nav { padding: 0 6px; scrollbar-width: none; }
+    .region-nav::-webkit-scrollbar { display: none; }
+    .rtab { padding: 13px 11px; min-height: 44px; font-size: 13px; }
+    .result-bar { padding: 8px 12px; gap: 8px; flex-wrap: wrap; font-size: 11px; }
+    .result-bar .filters-btn { display: inline-flex !important; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border-radius: 8px; border: 1px solid #1a1a1a; background: #fff; color: #1a1a1a; font: 600 13px var(--sans); cursor: pointer; }
+    .result-bar .filters-btn.has { background: #1a1a1a; color: #fff; }
+    .result-bar #reset-btn { min-height: 40px; padding: 0 12px; font-size: 12px; }
+    body:not(.filters-open) .cat-bar, body:not(.filters-open) .stage-bar, body:not(.filters-open) .date-bar { display: none; }
+    .cat-bar, .stage-bar, .date-bar { padding: 10px 12px; gap: 8px; }
+    .cbtn, .sbtn2, .dbtn { min-height: 40px; padding: 0 14px; font-size: 12px; display: inline-flex; align-items: center; }
+    .cbtn.eu-f { min-height: 44px; }
+    .tipwrap { margin-left: 0; }
+    .tip { display: none !important; }
+    #grid { grid-template-columns: 1fr; gap: 12px; padding: 12px; }
+    .r-head { min-height: 0; padding: 14px 14px 0; }
+    .r-head h3 { font-size: 16px; }
+    .r-chips { min-height: 0; }
+    .chip { font-size: 12px; padding: 4px 9px; }
+    .r-sum { font-size: 14px; line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+    .r-sum.open { display: block; -webkit-line-clamp: unset; overflow: visible; }
+    .r-sum .rm { display: none; }
+    .r-meta { min-height: 0; }
+    .r-ctry { min-height: 0; flex-wrap: wrap; }
+    details.ins summary { min-height: 46px; padding: 0; font-size: 14px; }
+    details.ins li { font-size: 14px; }
+    .r-act { gap: 10px; }
+    .btn { min-height: 44px; padding: 0 16px; font-size: 14px; }
+    .src { font-size: 13px; padding: 10px 0; }
+    .share-toggle { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 6px; border: 1px solid #d4d4d0; background: #fff; font: 600 14px var(--sans); color: #1a1a1a; margin-left: auto; cursor: pointer; }
+    .r-share { display: none; }
+    .r-share.open { display: flex; }
+    .sbtn { min-height: 44px; padding: 0 14px; font-size: 13px; }
+    .more-btn.on { width: calc(100% - 8px); }
+    .sub-row span { font-size: 13px; }
+    .sub-open { min-height: 40px; }
+    a.chip, .chip { min-height: 34px; }
+    .src { display: inline-flex; align-items: center; min-height: 44px; }
+  }
 </style>
 </head>
 <body>
 <div class="feed-header">
   <h1>Partnership Feed</h1>
   <p>Tracking the partnerships reshaping global industries</p>
+</div>
+<div class="sub-bar" id="sub-bar">
+  <div class="sub-row"><span><b>Partnership updates:</b> get new deals and analysis in your inbox</span><button class="sub-open" type="button" onclick="toggleSub()" id="sub-open">Subscribe</button></div>
+  <form class="sub-form" id="sub-form" onsubmit="return submitSub(event)" novalidate>
+    <input type="email" id="sub-email" placeholder="you@company.com" autocomplete="email" inputmode="email" aria-label="Email address" required>
+    <button type="submit">Get the digest</button>
+    <label class="sub-consent"><input type="checkbox" id="sub-consent"><span>I agree to receive GcTechAllies partnership updates by email. I can unsubscribe at any time.</span></label>
+    <div class="sub-msg" id="sub-msg" role="status"></div>
+  </form>
 </div>
 <div class="search-bar">
   <div class="search-wrap">
@@ -218,8 +291,9 @@
   <button class="dbtn" onclick="filterDate('month',this)">This Month</button>
   <button class="dbtn" onclick="filterDate('90d',this)">Last 3 Months</button>
 </div>
-<div class="result-bar"><span id="result-count"></span><button id="reset-btn" onclick="resetFilters()">Clear filters</button></div>
+<div class="result-bar"><button class="filters-btn" id="filters-btn" type="button" onclick="toggleFilters()">Filters<span id="fcount"></span></button><span id="result-count"></span><button id="reset-btn" onclick="resetFilters()">Clear filters</button></div>
 <div id="grid"><div class="loading"><span class="dot"></span><span class="dot"></span><span class="dot"></span><br><br>Loading partnerships...</div></div>
+<div id="more"><button class="more-btn" id="more-btn" type="button" onclick="showMore()"></button></div>
 <div id="empty"><h2 id="empty-msg">No partnerships match this filter.</h2><button onclick="resetFilters()">Clear filters</button></div>
 <div id="toast"></div>
 <script>
@@ -481,6 +555,13 @@
     var grid = document.getElementById('grid'), empty = document.getElementById('empty');
     var filtered = allItems.filter(function(i){ return passes(i); });
     filtered.sort(function(a, b){ return (b.announcedDate || '').localeCompare(a.announcedDate || '') || (a.title || '').localeCompare(b.title || ''); });
+    lastFiltered = filtered;
+    var fkey = [activeRegion, activeCat, activeStage, activeDateRange, activeSearch, activeEu].join('|');
+    if (fkey !== lastKey) { shown = PAGE(); lastKey = fkey; }
+    var visible = filtered.slice(0, shown);
+    var nf = (activeRegion !== 'all') + (activeCat !== 'all') + (activeStage !== 'all') + (activeDateRange !== 'all') + (activeEu ? 1 : 0);
+    var fc = document.getElementById('fcount'), fb = document.getElementById('filters-btn');
+    if (fc) fc.textContent = nf ? ' (' + nf + ')' : ''; if (fb) fb.classList.toggle('has', nf > 0);
     var anyFilter = activeEu || activeRegion !== 'all' || activeCat !== 'all' || activeStage !== 'all' || activeDateRange !== 'all' || activeSearch;
     document.getElementById('result-count').textContent = 'Showing ' + filtered.length + ' of ' + allItems.length + ' partnerships';
     document.getElementById('reset-btn').style.display = anyFilter ? 'inline-block' : 'none';
@@ -491,7 +572,7 @@
       return;
     }
     empty.style.display = 'none';
-    grid.innerHTML = filtered.map(function(item) {
+    grid.innerHTML = visible.map(function(item) {
       var slug = slugOf(item), macro = macroOf(item);
       var chips = (item.companies || '').split(',').map(function(c){ return c.trim(); }).filter(Boolean).map(function(c){
         var info = DIR[c] || {}, site = info.site ? 'https://' + info.site : '';
@@ -517,15 +598,47 @@
       return '<article class="card" style="--cat:' + color + ';--cat-ink:' + mixHex(color, '#101010', 0.38) + ';--cat-bg:' + mixHex(color, '#ffffff', 0.88) + '" id="deal-' + sl + '">'
         + '<div class="r-head"><h3>' + esc(item.title) + '</h3><span class="macro ' + getMacroClass(macro) + '">' + esc(macro) + '</span></div>'
         + '<div class="r-chips">' + chips + '</div>'
-        + '<p class="r-sum">' + esc(item.summary) + '</p>'
+        + '<p class="r-sum" onclick="this.classList.toggle(\'open\');postH()">' + esc(item.summary) + '</p>'
         + '<div class="r-meta">' + (item.category ? '<span class="cat">' + esc(item.category) + '</span>' : '') + euSlot + '<span>' + esc(item.announcedDate || '') + '</span></div>'
         + '<div class="r-ctry"><span class="ctry-txt">' + countriesOf(item) + '</span>' + (stageOf(item) ? '<span class="stage" title="' + esc((STAGES.stages.filter(function(g){ return g.id === stageOf(item); })[0] || {}).blurb || 'Deal stage') + '">' + esc(stageOf(item)) + '</span>' : '') + '</div>'
         + '<div class="r-ins">' + ins + '</div>'
-        + '<div class="r-act">' + (img ? '<a class="btn" href="' + esc(shareUrlOf(item)) + '" target="_blank" rel="noopener">View card &#8599;</a>' : '') + (src ? '<a class="src" href="' + esc(src) + '" target="_blank" rel="noopener">&#8599; ' + esc(item.sourceName || 'Source') + '</a>' : '') + '</div>'
+        + '<div class="r-act">' + (img ? '<a class="btn" href="' + esc(shareUrlOf(item)) + '" target="_blank" rel="noopener">View card &#8599;</a>' : '') + (src ? '<a class="src" href="' + esc(src) + '" target="_blank" rel="noopener">&#8599; ' + esc(item.sourceName || 'Source') + '</a>' : '') + '<button class="share-toggle" type="button" onclick="shareToggle(\'' + sl + '\',this)">Share</button></div>'
         + '<div class="r-share"><button class="sbtn li" onclick="doShare(\'li\',\'' + sl + '\',this)">LinkedIn</button><button class="sbtn x" onclick="doShare(\'x\',\'' + sl + '\',this)">X</button><button class="sbtn wa" onclick="doShare(\'wa\',\'' + sl + '\',this)">WhatsApp</button><button class="sbtn lnk" onclick="doShare(\'link\',\'' + sl + '\',this)">Copy link</button><button class="sbtn cap" onclick="doShare(\'caption\',\'' + sl + '\',this)" title="Copies a ready-to-post caption with the link">Caption</button></div>'
         + '</article>';
     }).join('');
+    var mb = document.getElementById('more-btn'), left = filtered.length - visible.length;
+    if (mb) { mb.classList.toggle('on', left > 0); mb.textContent = left > 0 ? 'Show ' + Math.min(left, PAGE()) + ' more (' + left + ' left)' : ''; }
+    postH();
   }
+  var shown = 0, lastKey = null, lastFiltered = [];
+  function PAGE() { return window.matchMedia && window.matchMedia('(max-width: 640px)').matches ? 12 : 24; }
+  function showMore() { shown += PAGE(); render(); }
+  function toggleFilters() { document.body.classList.toggle('filters-open'); postH(); }
+  function toggleSub() { var b = document.getElementById('sub-bar'); b.classList.toggle('open'); document.getElementById('sub-open').textContent = b.classList.contains('open') ? 'Close' : 'Subscribe'; if (b.classList.contains('open')) setTimeout(function(){ document.getElementById('sub-email').focus(); }, 50); postH(); }
+  // Subscribe: posts to a Wix backend endpoint. Empty = preview mode (nothing is sent).
+  var SUBSCRIBE_ENDPOINT = '';
+  if (!SUBSCRIBE_ENDPOINT) { var _sb = document.getElementById('sub-bar'); if (_sb) _sb.style.display = 'none'; }
+  function submitSub(e) {
+    e.preventDefault();
+    var em = document.getElementById('sub-email').value.trim(), ok = document.getElementById('sub-consent').checked, msg = document.getElementById('sub-msg');
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) { msg.textContent = 'Please enter a valid email address.'; return false; }
+    if (!ok) { msg.textContent = 'Please tick the box to agree to receive the digest.'; return false; }
+    if (!SUBSCRIBE_ENDPOINT) { msg.textContent = 'Preview mode: the form is not connected yet, nothing was sent.'; return false; }
+    msg.textContent = 'Sending...';
+    fetch(SUBSCRIBE_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: em, consent: true, source: 'partnership-feed' }) })
+      .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); msg.textContent = 'Thanks, you are on the list.'; document.getElementById('sub-form').reset(); })
+      .catch(function(){ msg.textContent = 'Something went wrong. Please try again.'; });
+    return false;
+  }
+  function shareToggle(slug, btn) {
+    var item = itemBySlug(slug); if (!item) return;
+    if (navigator.share) { navigator.share({ title: item.title, text: item.title, url: shareUrlOf(item) }).catch(function(){}); return; }
+    var row = btn.closest('.card').querySelector('.r-share'); row.classList.toggle('open'); postH();
+  }
+  function postH() { try { setTimeout(function(){ parent.postMessage({ type: 'FEED_HEIGHT', h: document.documentElement.scrollHeight }, '*'); }, 60); } catch (e) {} }
+  window.addEventListener('resize', postH);
+  document.addEventListener('toggle', postH, true);
+  function ensureVisible(slug) { var idx = -1; lastFiltered.forEach(function(i, n){ if (slugOf(i) === slug) idx = n; }); if (idx >= shown) { shown = idx + 1; render(); } }
 
   // Deep link: ?deal=<slug> scrolls to and highlights one card (clears filters first if it would be hidden).
   function openDeepLink() {
@@ -533,7 +646,7 @@
     if (!m) return;
     var slug = decodeURIComponent(m[1]);
     if (!itemBySlug(slug)) return;
-    resetFilters();
+    resetFilters(); ensureVisible(slug);
     var el = document.getElementById('deal-' + slug);
     if (el) { el.classList.add('hl'); setTimeout(function(){ el.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 100); }
   }
@@ -542,7 +655,7 @@
   document.addEventListener('click', function(e) {
     var a = e.target.closest && e.target.closest('a[data-goto]'); if (!a) return;
     e.preventDefault();
-    var slug = a.getAttribute('data-goto'); resetFilters();
+    var slug = a.getAttribute('data-goto'); resetFilters(); ensureVisible(slug);
     var el = document.getElementById('deal-' + slug);
     if (el) { document.querySelectorAll('.hl').forEach(function(x){ x.classList.remove('hl'); }); el.classList.add('hl'); el.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
   });
