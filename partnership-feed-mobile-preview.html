@@ -42,8 +42,12 @@
     background: #fff; color: #555; cursor: pointer; transition: all 0.1s;
     text-transform: uppercase; letter-spacing: 0.05em; font-family: 'IBM Plex Sans', sans-serif; }
   .cbtn.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+  .flbl { background:#fff; padding: 8px 16px 0; font: 700 10px var(--mono, monospace); text-transform: uppercase; letter-spacing: .06em; color: #666; }
+  .date-bar { align-items: center; }
+  .dbtn .cc { background: rgba(0,0,0,.08); border-radius: 8px; padding: 0 5px; margin-left: 6px; font: 10px var(--mono, monospace); }
+  .dbtn.active .cc { background: rgba(255,255,255,.25); }
   .stage-bar { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; padding: 10px 16px; background: #f9f9f7; border-bottom: 1px solid #e8e8e4; }
-  .stage-bar .lbl { font: 700 10px var(--mono, monospace); text-transform: uppercase; letter-spacing: .06em; color: #666; margin-right: 2px; }
+  .cat-bar .lbl, .date-bar .lbl, .stage-bar .lbl { font: 700 10px var(--mono, monospace); text-transform: uppercase; letter-spacing: .06em; color: #666; margin-right: 2px; }
   .sbtn2 { padding: 4px 11px; border-radius: 20px; font-size: 11px; font-weight: 500; border: 1px solid #d4d4d0; background: #fff; color: #444; cursor: pointer; font-family: inherit; }
   .sbtn2.active { background: #0f5f6b; color: #fff; border-color: #0f5f6b; }
   .sbtn2.dim { opacity: .4; }
@@ -281,6 +285,7 @@
     <button id="search-clear" onclick="clearSearch()">&times;</button>
   </div>
 </div>
+<div class="flbl">Region</div>
 <div class="region-nav">
   <button class="rtab active" data-r="all" onclick="filterRegion('all',this)">All <span class="rc" id="rc-all">-</span></button>
   <button class="rtab r-eu" data-r="EU" onclick="filterRegion('EU',this)"><span class="re">&#127466;&#127482;</span> Europe <span class="rc" id="rc-eu">-</span></button>
@@ -291,12 +296,12 @@
 </div>
 <div class="cat-bar" id="cat-bar"></div>
 <div class="stage-bar" id="stage-bar"></div>
-<div class="date-bar">
-  <button class="dbtn active" onclick="filterDate('all',this)">All Time</button>
-  <button class="dbtn" onclick="filterDate('7d',this)">Last 7 Days</button>
-  <button class="dbtn" onclick="filterDate('30d',this)">Last 30 Days</button>
-  <button class="dbtn" onclick="filterDate('month',this)">This Month</button>
-  <button class="dbtn" onclick="filterDate('90d',this)">Last 3 Months</button>
+<div class="date-bar"><span class="lbl">Date</span>
+  <button class="dbtn active" data-d="all" onclick="filterDate('all',this)">All Time<span class="cc"></span></button>
+  <button class="dbtn" data-d="7d" onclick="filterDate('7d',this)">Last 7 Days<span class="cc"></span></button>
+  <button class="dbtn" data-d="30d" onclick="filterDate('30d',this)">Last 30 Days<span class="cc"></span></button>
+  <button class="dbtn" data-d="month" onclick="filterDate('month',this)">This Month<span class="cc"></span></button>
+  <button class="dbtn" data-d="90d" onclick="filterDate('90d',this)">Last 3 Months<span class="cc"></span></button>
 </div>
 <div class="result-bar"><button class="filters-btn" id="filters-btn" type="button" onclick="toggleFilters()">Filters<span id="fcount"></span></button><span id="result-count"></span><button id="reset-btn" onclick="resetFilters()">Clear filters</button></div>
 <div id="grid"><div class="loading"><span class="dot"></span><span class="dot"></span><span class="dot"></span><br><br>Loading partnerships...</div></div>
@@ -371,8 +376,8 @@
 
   // Region: always resolves to one of EU / North America / Asia / Global, so every card sits under exactly one tab.
   // Rule: all companies in one region -> that region; companies from different regions -> Global.
-  var R_EU = 'at be bg hr cy cz dk ee fi fr de gr hu ie it lv lt lu mt nl pl pt ro sk si es se gb ch no is al ua tr eu'.split(' '),
-      R_NA = ['us', 'ca'], R_AS = 'cn jp kr in sg hk tw my id th vn ph'.split(' '), R_ME = 'ae sa il qa kw bh om jo lb iq ir eg'.split(' ');
+  var R_EU = 'at be bg hr cy cz dk ee fi fr de gr hu ie it lv lt lu mt nl pl pt ro sk si es se gb ch no is al ua eu'.split(' '),
+      R_NA = ['us', 'ca'], R_AS = 'cn jp kr in sg hk tw my id th vn ph'.split(' '), R_ME = 'ae sa il tr qa kw bh om jo lb iq ir eg'.split(' ');
   function regionOfIso(iso) { return R_EU.indexOf(iso) > -1 ? 'EU' : R_NA.indexOf(iso) > -1 ? 'North America' : R_AS.indexOf(iso) > -1 ? 'Asia' : R_ME.indexOf(iso) > -1 ? 'Middle East' : 'Other'; }
   function macroFromCompanies(item) {
     var seen = {}, n = 0, only = null, missing = false;
@@ -420,14 +425,15 @@
   }
 
   // Date range on plain YYYY-MM-DD strings: no timezone drift, today and the boundary day are included.
-  function matchesDateRange(item) {
-    if (activeDateRange === 'all') return true;
+  function matchesDateRange(item, range) {
+    range = range || activeDateRange;
+    if (range === 'all') return true;
     var d = (item.announcedDate || '').slice(0, 10);
     if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) return false;
     var now = new Date(), c;
-    if (activeDateRange === 'month') c = new Date(now.getFullYear(), now.getMonth(), 1);
+    if (range === 'month') c = new Date(now.getFullYear(), now.getMonth(), 1);
     else {
-      var days = { '7d': 6, '30d': 29, '90d': 89 }[activeDateRange];
+      var days = { '7d': 6, '30d': 29, '90d': 89 }[range];
       c = new Date(now.getFullYear(), now.getMonth(), now.getDate() - days);
     }
     return d >= ymd(c);
@@ -448,7 +454,7 @@
     if (skip !== 'region' && activeRegion !== 'all' && macroOf(item) !== activeRegion) return false;
     if (skip !== 'cat' && activeCat !== 'all' && item.category !== activeCat) return false;
     if (skip !== 'eu' && activeEu && !isEuTech(item)) return false;
-    return matchesDateRange(item) && matchesSearch(item);
+    return (skip === 'date' || matchesDateRange(item)) && matchesSearch(item);
   }
 
   // ---------- filter controls ----------
@@ -490,6 +496,9 @@
     document.getElementById('rc-na').textContent = rc['North America'];
     document.getElementById('rc-asia').textContent = rc['Asia'];
     document.getElementById('rc-me').textContent = rc['Middle East'];
+    var meAll = 0; allItems.forEach(function(i){ if (macroOf(i) === 'Middle East') meAll++; });
+    document.querySelector('.rtab.r-me').style.display = (meAll || activeRegion === 'Middle East') ? '' : 'none';   // hidden until a pure Middle East deal exists
+    document.querySelectorAll('.dbtn').forEach(function(b){ var r = b.getAttribute('data-d'), n = 0; allItems.forEach(function(i){ if (passes(i, 'date') && matchesDateRange(i, r)) n++; }); b.querySelector('.cc').textContent = n; });
     document.getElementById('rc-global').textContent = rc['Global'];
     document.querySelectorAll('.rtab').forEach(function(b){
       var r = b.getAttribute('data-r');
@@ -518,6 +527,7 @@
     var euN = 0; allItems.forEach(function(i){ if (passes(i, 'eu') && isEuTech(i)) euN++; });
     html += '<span class="tipwrap"><button class="cbtn eu-f' + (activeEu ? ' active' : '') + (loaded && euN === 0 && !activeEu ? ' dim' : '') + '" id="eu-filter" aria-describedby="eu-tip"><img class="eu-mark" src="assets/eustack-mark.png" width="20" height="20" alt="">Build EUStack' + (loaded ? '<span class="cc">' + euN + '</span>' : '') + '</button>'
       + '<span class="tip" id="eu-tip" role="tooltip"><b>Build EUStack</b>Tech partnerships where every company involved is headquartered in the EU: the building blocks of a European technology stack. Pairs with a US or non-EU company are not included.</span></span>';
+    html = '<span class="lbl">Industry</span>' + html;
     var bar = document.getElementById('cat-bar'); bar.innerHTML = html;
 
     bar.querySelectorAll('.cbtn').forEach(function(b){ b.onclick = function(){ filterCat(b.getAttribute('data-c')); }; });
