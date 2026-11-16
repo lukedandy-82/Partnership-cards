@@ -33,6 +33,8 @@
   .rtab.r-na.active .rc { background: #166534; }
   .rtab.r-asia.active { border-bottom-color: #c2410c; color: #c2410c; }
   .rtab.r-asia.active .rc { background: #c2410c; }
+  .rtab.r-me.active { border-bottom-color: #a16207; color: #a16207; }
+  .rtab.r-me.active .rc { background: #a16207; }
   .rtab.r-global.active { border-bottom-color: #7c3aed; color: #7c3aed; }
   .rtab.r-global.active .rc { background: #7c3aed; }
   .cat-bar { display: flex; gap: 6px; flex-wrap: wrap; padding: 10px 16px; background: #f9f9f7; border-bottom: 1px solid #e8e8e4; }
@@ -139,6 +141,7 @@
   .r-head h3 { font-size: 13px; font-weight: 600; line-height: 1.4; flex: 1; min-width: 0; }
   .macro { font: 600 9px var(--mono); padding: 2px 6px; border-radius: 3px; text-transform: uppercase; letter-spacing: .08em; flex-shrink: 0; }
   .m-EU { background: var(--m-eu-bg); color: var(--m-eu); } .m-NA { background: var(--m-na-bg); color: var(--m-na); }
+  .m-ME { background: #fef3c7; color: #a16207; }
   .m-Asia { background: var(--m-asia-bg); color: var(--m-asia); } .m-Global { background: var(--m-gl-bg); color: var(--m-gl); }
   .r-chips { display: flex; flex-wrap: wrap; gap: 4px; padding: 8px 14px 0; min-height: 34px; align-content: flex-start; }
   .chip { background: var(--chip); border: 1px solid var(--line); border-radius: 4px; padding: 2px 7px; font-size: 11px; font-weight: 500; color: var(--ink-2); }
@@ -283,6 +286,7 @@
   <button class="rtab r-eu" data-r="EU" onclick="filterRegion('EU',this)"><span class="re">&#127466;&#127482;</span> Europe <span class="rc" id="rc-eu">-</span></button>
   <button class="rtab r-na" data-r="North America" onclick="filterRegion('North America',this)"><span class="re">&#127758;</span> N. America <span class="rc" id="rc-na">-</span></button>
   <button class="rtab r-asia" data-r="Asia" onclick="filterRegion('Asia',this)"><span class="re">&#127759;</span> Asia <span class="rc" id="rc-asia">-</span></button>
+  <button class="rtab r-me" data-r="Middle East" onclick="filterRegion('Middle East',this)"><span class="re">&#127964;</span> Middle East <span class="rc" id="rc-me">-</span></button>
   <button class="rtab r-global" data-r="Global" onclick="filterRegion('Global',this)"><span class="re">&#127760;</span> Global <span class="rc" id="rc-global">-</span></button>
 </div>
 <div class="cat-bar" id="cat-bar"></div>
@@ -367,9 +371,9 @@
 
   // Region: always resolves to one of EU / North America / Asia / Global, so every card sits under exactly one tab.
   // Rule: all companies in one region -> that region; companies from different regions -> Global.
-  var R_EU = 'at be bg hr cy cz dk ee fi fr de gr hu ie it lv lt lu mt nl pl pt ro sk si es se gb ch no is al ua eu'.split(' '),
-      R_NA = ['us', 'ca'], R_AS = 'cn jp kr in sg hk tw my id th vn ph'.split(' ');
-  function regionOfIso(iso) { return R_EU.indexOf(iso) > -1 ? 'EU' : R_NA.indexOf(iso) > -1 ? 'North America' : R_AS.indexOf(iso) > -1 ? 'Asia' : 'Other'; }
+  var R_EU = 'at be bg hr cy cz dk ee fi fr de gr hu ie it lv lt lu mt nl pl pt ro sk si es se gb ch no is al ua tr eu'.split(' '),
+      R_NA = ['us', 'ca'], R_AS = 'cn jp kr in sg hk tw my id th vn ph'.split(' '), R_ME = 'ae sa il qa kw bh om jo lb iq ir eg'.split(' ');
+  function regionOfIso(iso) { return R_EU.indexOf(iso) > -1 ? 'EU' : R_NA.indexOf(iso) > -1 ? 'North America' : R_AS.indexOf(iso) > -1 ? 'Asia' : R_ME.indexOf(iso) > -1 ? 'Middle East' : 'Other'; }
   function macroFromCompanies(item) {
     var seen = {}, n = 0, only = null, missing = false;
     (item.companies || '').split(',').forEach(function(c){
@@ -387,11 +391,13 @@
     if (k === 'eu' || k === 'europe') return 'EU';
     if (k === 'north america' || k === 'na') return 'North America';
     if (k === 'asia') return 'Asia';
+    if (k === 'middle east') return 'Middle East';
     if (k === 'global') return 'Global';
     var r = norm(item.region);
     if (/^(eu|europe|uk)\b/.test(r)) return 'EU';
     if (/^(north america|us|usa|united states)\b/.test(r)) return 'North America';
     if (/^asia\b/.test(r)) return 'Asia';
+    if (/^middle east\b/.test(r)) return 'Middle East';
     return 'Global';
   }
   function mixHex(hex, other, pct) {
@@ -399,7 +405,7 @@
     [16, 8, 0].forEach(function(sh){ var x = (a >> sh) & 255, y = (b >> sh) & 255; out += ('0' + Math.round(x * (1 - pct) + y * pct).toString(16)).slice(-2); });
     return out;
   }
-  function getMacroClass(m) { return {'EU':'m-EU','North America':'m-NA','Asia':'m-Asia'}[m] || 'm-Global'; }
+  function getMacroClass(m) { return {'EU':'m-EU','North America':'m-NA','Asia':'m-Asia','Middle East':'m-ME'}[m] || 'm-Global'; }
 
   function isEuTech(item) {
     if (item.euTech === true) return true;
@@ -477,12 +483,13 @@
 
   // Counts always reflect the OTHER active filters, so a tab showing 0 really means "nothing here with this combination".
   function updateControls() {
-    var rc = { all: 0, 'EU': 0, 'North America': 0, 'Asia': 0, 'Global': 0 };
+    var rc = { all: 0, 'EU': 0, 'North America': 0, 'Asia': 0, 'Middle East': 0, 'Global': 0 };
     allItems.forEach(function(i){ if (passes(i, 'region')) { rc.all++; rc[macroOf(i)]++; } });
     document.getElementById('rc-all').textContent = rc.all;
     document.getElementById('rc-eu').textContent = rc['EU'];
     document.getElementById('rc-na').textContent = rc['North America'];
     document.getElementById('rc-asia').textContent = rc['Asia'];
+    document.getElementById('rc-me').textContent = rc['Middle East'];
     document.getElementById('rc-global').textContent = rc['Global'];
     document.querySelectorAll('.rtab').forEach(function(b){
       var r = b.getAttribute('data-r');
