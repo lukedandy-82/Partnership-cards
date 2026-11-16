@@ -26,7 +26,10 @@
   .rtab { padding: 11px 16px; font-size: 13px; font-weight: 500; cursor: pointer; border: none; background: none;
     color: #888; border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap;
     transition: all 0.15s; font-family: 'IBM Plex Sans', sans-serif; display: flex; align-items: center; gap: 6px; }
-  .rtab:first-child { padding-left: 0; }
+  .region-nav .lbl { align-self: center; }
+  .region-nav .lbl + .rtab { padding-left: 0; }
+  .cat-bar, .stage-bar, .date-bar { display: grid !important; grid-template-columns: 64px minmax(0,1fr); align-items: center; column-gap: 8px; padding-top: 6px; padding-bottom: 6px; }
+  .opts { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; min-width: 0; }
   .rtab:hover { color: #1a1a1a; }
   .rtab.active { color: #1a1a1a; border-bottom-color: #1a1a1a; }
   .rtab .rc { background: #f0f0ee; color: #555; font-size: 10px; padding: 1px 5px; border-radius: 8px; font-family: 'IBM Plex Mono', monospace; }
@@ -51,7 +54,7 @@
   .dbtn .cc { background: rgba(0,0,0,.08); border-radius: 8px; padding: 0 5px; margin-left: 6px; font: 10px var(--mono, monospace); }
   .dbtn.active .cc { background: rgba(255,255,255,.25); }
   .stage-bar { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; padding: 10px 16px; background: #f9f9f7; border-bottom: 1px solid #e8e8e4; }
-  .cat-bar .lbl, .date-bar .lbl, .stage-bar .lbl { flex: 0 0 100%; margin: 0 0 2px; font: 700 10px var(--mono, monospace); text-transform: uppercase; letter-spacing: .06em; color: #666; margin-right: 2px; }
+  .cat-bar .lbl, .date-bar .lbl, .stage-bar .lbl, .region-nav .lbl { flex: none; width: 64px; margin: 0; font: 700 10px var(--mono, monospace); text-transform: uppercase; letter-spacing: .06em; color: #666; margin-right: 2px; }
   .sbtn2 { padding: 4px 11px; border-radius: 20px; font-size: 11px; font-weight: 500; border: 1px solid #d4d4d0; background: #fff; color: #444; cursor: pointer; font-family: inherit; }
   .sbtn2.active { background: #0f5f6b; color: #fff; border-color: #0f5f6b; }
   .sbtn2.dim { opacity: .4; }
@@ -230,7 +233,11 @@
     .region-nav { padding: 0 6px; scrollbar-width: none; }
     .region-nav::-webkit-scrollbar { display: none; }
     .region-nav { padding: 0; overflow-x: visible; }
-    .rtab:first-child { padding-left: 2px; }
+    .region-nav .lbl { width: 60px; box-sizing: border-box; padding-left: 12px; font-size: 9px; white-space: nowrap; text-align: left; }
+    .region-nav .lbl + .rtab { padding-left: 2px; }
+    .cat-bar, .stage-bar, .date-bar { grid-template-columns: 52px minmax(0,1fr); column-gap: 6px; padding: 6px 12px; }
+    .cat-bar .lbl, .stage-bar .lbl, .date-bar .lbl { width: 52px; font-size: 9px; }
+    .opts { gap: 6px; }
     .rtab { flex: 1 1 0; min-width: 0; padding: 8px 2px; min-height: 52px; font-size: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; line-height: 1.15; text-align: center; white-space: normal; }
     .rtab .rc { margin-left: 0; font-size: 11px; }
     .rtab .re { display: none; }
@@ -238,9 +245,9 @@
     .result-bar .filters-btn { display: inline-flex !important; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border-radius: 8px; border: 1px solid #1a1a1a; background: #fff; color: #1a1a1a; font: 600 13px var(--sans); cursor: pointer; }
     .result-bar .filters-btn.has { background: #1a1a1a; color: #fff; }
     .result-bar #reset-btn { min-height: 40px; padding: 0 12px; font-size: 12px; }
-    body:not(.filters-open) .cat-bar, body:not(.filters-open) .stage-bar, body:not(.filters-open) .date-bar { display: none; }
+    body:not(.filters-open) .cat-bar, body:not(.filters-open) .stage-bar, body:not(.filters-open) .date-bar { display: none !important; }
     .cat-bar, .stage-bar, .date-bar { padding: 10px 12px; gap: 8px; }
-    .cbtn, .sbtn2, .dbtn { min-height: 40px; padding: 0 14px; font-size: 12px; display: inline-flex; align-items: center; }
+    .cbtn, .sbtn2, .dbtn { min-height: 34px; padding: 0 11px; font-size: 12px; display: inline-flex; align-items: center; }
     .cbtn.eu-f { min-height: 44px; }
     .tipwrap { margin-left: 0; }
     .tip { display: none !important; }
@@ -289,8 +296,8 @@
     <button id="search-clear" onclick="clearSearch()">&times;</button>
   </div>
 </div>
-<div class="flbl">Region</div>
 <div class="region-nav">
+  <span class="lbl">Region</span>
   <button class="rtab active" data-r="all" onclick="filterRegion('all',this)">All <span class="rc" id="rc-all">-</span></button>
   <button class="rtab r-eu" data-r="EU" onclick="filterRegion('EU',this)"><span class="re">&#127466;&#127482;</span> Europe <span class="rc" id="rc-eu">-</span></button>
   <button class="rtab r-na" data-r="North America" onclick="filterRegion('North America',this)"><span class="re">&#127758;</span> N. America <span class="rc" id="rc-na">-</span></button>
@@ -300,7 +307,7 @@
 </div>
 <div class="cat-bar" id="cat-bar"></div>
 <div class="stage-bar" id="stage-bar"></div>
-<div class="date-bar"><span class="lbl">Date</span>
+<div class="date-bar" id="date-bar"><span class="lbl">Date</span>
   <button class="dbtn active" data-d="all" onclick="filterDate('all',this)">All Time<span class="cc"></span></button>
   <button class="dbtn" data-d="7d" onclick="filterDate('7d',this)">Last 7 Days<span class="cc"></span></button>
   <button class="dbtn" data-d="30d" onclick="filterDate('30d',this)">Last 30 Days<span class="cc"></span></button>
@@ -532,7 +539,7 @@
     html += '<span class="tipwrap"><button class="cbtn eu-f' + (activeEu ? ' active' : '') + (loaded && euN === 0 && !activeEu ? ' dim' : '') + '" id="eu-filter" aria-describedby="eu-tip"><img class="eu-mark" src="assets/eustack-mark.png" width="20" height="20" alt="">Build EUStack' + (loaded ? '<span class="cc">' + euN + '</span>' : '') + '</button>'
       + '<span class="tip" id="eu-tip" role="tooltip"><b>Build EUStack</b>Tech partnerships where every company involved is headquartered in the EU: the building blocks of a European technology stack. Pairs with a US or non-EU company are not included.</span></span>';
     html = '<span class="lbl">Industry</span>' + html;
-    var bar = document.getElementById('cat-bar'); bar.innerHTML = html;
+    var bar = document.getElementById('cat-bar'); bar.innerHTML = html; wrapOpts(bar);
 
     bar.querySelectorAll('.cbtn').forEach(function(b){ b.onclick = function(){ filterCat(b.getAttribute('data-c')); }; });
     document.getElementById('eu-filter').onclick = filterEu;
@@ -551,7 +558,7 @@
         var n = sc[g.id] || 0;
         sh += '<button class="sbtn2' + (activeStage === g.id ? ' active' : '') + (n === 0 && activeStage !== g.id ? ' dim' : '') + '" data-g="' + esc(g.id) + '" title="' + esc(g.blurb) + '">' + esc(g.id) + '<span class="cc">' + n + '</span></button>';
       });
-      sb.innerHTML = sh;
+      sb.innerHTML = sh; wrapOpts(sb);
       sb.querySelectorAll('.sbtn2').forEach(function(b){ b.onclick = function(){ var g = b.getAttribute('data-g'); if (g === 'all') { activeStage = 'all'; render(); } else filterStage(g); }; });
     }
   }
@@ -652,6 +659,8 @@
   }
   var shown = 0, lastKey = null, lastFiltered = [];
   function PAGE() { return window.matchMedia && window.matchMedia('(max-width: 640px)').matches ? 12 : 24; }
+  function wrapOpts(el) { if (!el) return; var o = document.createElement('div'); o.className = 'opts'; Array.prototype.slice.call(el.children).forEach(function(c){ if (!c.classList.contains('lbl')) o.appendChild(c); }); el.appendChild(o); }
+  wrapOpts(document.getElementById('date-bar'));
   function showMore() { shown += PAGE(); render(); }
   function toggleFilters() { document.body.classList.toggle('filters-open'); postH(); }
   function toggleSub() { var b = document.getElementById('sub-bar'); b.classList.toggle('open'); document.getElementById('sub-open').textContent = b.classList.contains('open') ? 'Close' : 'Subscribe'; if (b.classList.contains('open')) setTimeout(function(){ document.getElementById('sub-email').focus(); }, 50); postH(); }
