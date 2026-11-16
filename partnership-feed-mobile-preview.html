@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'IBM Plex Sans', sans-serif; background: #f9f9f7; color: #1a1a1a; }
+  .feed-header { background: #1a1a1a; padding: 24px 28px 20px; }
+  .feed-header h1 { font-size: 22px; font-weight: 600; color: #fff; letter-spacing: -0.3px; }
+  .feed-header p { color: #888; font-size: 13px; margin-top: 5px; font-family: 'IBM Plex Mono', monospace; }
+  .search-bar { background: #fff; border-bottom: 1px solid #e8e8e4; padding: 12px 16px; }
+  .search-wrap { position: relative; max-width: 480px; }
+  .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #aaa; font-size: 14px; pointer-events: none; }
+  #search-input { width: 100%; padding: 9px 34px 9px 34px; border: 1px solid #d4d4d0; border-radius: 8px;
+    font-size: 13px; font-family: 'IBM Plex Sans', sans-serif; background: #f9f9f7; color: #1a1a1a; }
+  #search-input:focus { outline: none; border-color: #1a1a1a; background: #fff; }
+  #search-clear { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;
+    color: #aaa; font-size: 15px; display: none; background: none; border: none; padding: 4px; line-height: 1; }
+  #search-clear:hover { color: #1a1a1a; }
+  .region-nav { background: #fff; border-bottom: 2px solid #e8e8e4; padding: 0 16px; display: flex; overflow-x: auto; }
+  .rtab { padding: 11px 16px; font-size: 13px; font-weight: 500; cursor: pointer; border: none; background: none;
+    color: #888; border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap;
+    transition: all 0.15s; font-family: 'IBM Plex Sans', sans-serif; display: flex; align-items: center; gap: 6px; }
+  .rtab:hover { color: #1a1a1a; }
+  .rtab.active { color: #1a1a1a; border-bottom-color: #1a1a1a; }
+  .rtab .rc { background: #f0f0ee; color: #555; font-size: 10px; padding: 1px 5px; border-radius: 8px; font-family: 'IBM Plex Mono', monospace; }
+  .rtab.active .rc { background: #1a1a1a; color: #fff; }
+  .rtab.r-eu.active { border-bottom-color: #1d4ed8; color: #1d4ed8; }
+  .rtab.r-eu.active .rc { background: #1d4ed8; }
+  .rtab.r-na.active { border-bottom-color: #166534; color: #166534; }
+  .rtab.r-na.active .rc { background: #166534; }
+  .rtab.r-asia.active { border-bottom-color: #c2410c; color: #c2410c; }
+  .rtab.r-asia.active .rc { background: #c2410c; }
+  .rtab.r-global.active { border-bottom-color: #7c3aed; color: #7c3aed; }
+  .rtab.r-global.active .rc { background: #7c3aed; }
+  .cat-bar { display: flex; gap: 6px; flex-wrap: wrap; padding: 10px 16px; background: #f9f9f7; border-bottom: 1px solid #e8e8e4; }
+  .cbtn { padding: 4px 11px; border-radius: 20px; font-size: 11px; font-weight: 500; border: 1px solid #d4d4d0;
+    background: #fff; color: #555; cursor: pointer; transition: all 0.1s;
+    text-transform: uppercase; letter-spacing: 0.05em; font-family: 'IBM Plex Sans', sans-serif; }
+  .cbtn.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+  .stage-bar { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; padding: 10px 16px; background: #f9f9f7; border-bottom: 1px solid #e8e8e4; }
+  .stage-bar .lbl { font: 700 10px var(--mono, monospace); text-transform: uppercase; letter-spacing: .06em; color: #666; margin-right: 2px; }
+  .sbtn2 { padding: 4px 11px; border-radius: 20px; font-size: 11px; font-weight: 500; border: 1px solid #d4d4d0; background: #fff; color: #444; cursor: pointer; font-family: inherit; }
+  .sbtn2.active { background: #0f5f6b; color: #fff; border-color: #0f5f6b; }
+  .sbtn2.dim { opacity: .4; }
+  .sbtn2 .cc { opacity:.6; font-size:10px; margin-left:3px; font-family:'IBM Plex Mono', monospace; }
+  .sim li b { font-weight: 600; }
+  .sim li a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+  .date-bar { display: flex; gap: 6px; flex-wrap: wrap; padding: 10px 16px; background: #fff; border-bottom: 1px solid #e8e8e4; }
+  .dbtn { padding: 4px 11px; border-radius: 20px; font-size: 11px; font-weight: 500; border: 1px solid #d4d4d0;
+    background: #fff; color: #555; cursor: pointer; transition: all 0.1s;
+    font-family: 'IBM Plex Sans', sans-serif; }
+  .dbtn.active { background: #1d4ed8; color: #fff; border-color: #1d4ed8; }
+  #grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; padding: 20px 16px; }
+  .card { background: #fff; border: 1px solid #e8e8e4; border-radius: 10px; overflow: hidden; transition: box-shadow 0.15s; }
+  .card:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.08); }
+  .card-top { padding: 10px 14px 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+  .card-top h3 { font-size: 13px; font-weight: 600; line-height: 1.4; flex: 1; }
+  .macro-badge { font-size: 9px; font-weight: 600; padding: 2px 6px; border-radius: 3px;
+    text-transform: uppercase; letter-spacing: 0.08em; font-family: 'IBM Plex Mono', monospace; flex-shrink: 0; }
+  .m-EU { background: #dbeafe; color: #1e40af; }
+  .m-NA { background: #dcfce7; color: #166534; }
+  .m-Asia { background: #ffedd5; color: #c2410c; }
+  .m-Global { background: #f3e8ff; color: #7c3aed; }
+  .chips { display: flex; flex-wrap: wrap; gap: 4px; padding: 8px 14px 0; }
+  .chip { background: #f5f5f3; border: 1px solid #e8e8e4; border-radius: 4px; padding: 2px 7px; font-size: 11px; font-weight: 500; color: #444; }
+  .card-body { padding: 8px 14px 12px; }
+  .summary { font-size: 12px; color: #555; line-height: 1.6; }
+  .meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+  .cat-tag { background: #f0f0ee; border-radius: 3px; padding: 1px 6px; font-size: 9px; font-weight: 600; color: #555;
+    text-transform: uppercase; letter-spacing: 0.06em; font-family: 'IBM Plex Mono', monospace; }
+  .meta-txt { font-size: 11px; color: #aaa; font-family: 'IBM Plex Mono', monospace; }
+  .src-link { display: inline-flex; align-items: center; gap: 3px; font-size: 11px; color: #1d4ed8; text-decoration: none; margin-top: 6px; }
+  .src-link:hover { text-decoration: underline; }
+  .card-actions { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 8px; }
+  .card-actions .src-link { margin-top: 0; }
+  .card-btn { display: inline-flex; align-items: center; gap: 4px; margin-left: auto; font-size: 11px; font-weight: 600;
+    color: #1a1a1a; text-decoration: none; border: 1px solid #d4d4d0; border-radius: 6px; padding: 3px 9px; background: #fff;
+    font-family: 'IBM Plex Sans', sans-serif; transition: all 0.1s; }
+  .card-btn:hover { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+  .eustack-badge { display: inline-flex; align-items: center; text-decoration: none;
+    border: 1px solid #c7d7f0; border-radius: 4px; padding: 2px 6px;
+    background: #eef4fc; flex-shrink: 0; vertical-align: middle;
+    font-size: 10px; font-weight: 600; color: #1e3a8a;
+    font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.02em; }
+  .eustack-badge:hover { background: #dbeafe; border-color: #93c5fd; }
+  #empty { text-align: center; padding: 60px 20px; display: none; }
+  #empty h2 { font-size: 15px; color: #999; font-weight: 400; }
+  .loading { text-align: center; padding: 50px; color: #bbb; font-size: 13px; font-family: 'IBM Plex Mono', monospace; }
+  .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #1a1a1a; animation: blink 1s infinite alternate; margin: 0 2px; }
+  .dot:nth-child(2) { animation-delay: 0.3s; }
+  .dot:nth-child(3) { animation-delay: 0.6s; }
+  @keyframes blink { from { opacity: 0.2; } to { opacity: 1; } }
+
+  .result-bar { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:8px 16px; background:#fff; border-bottom:1px solid #e8e8e4; font-size:12px; color:#777; font-family:'IBM Plex Mono', monospace; }
+  .result-bar button { border:1px solid #d4d4d0; background:#fff; border-radius:6px; padding:3px 9px; font-size:11px; cursor:pointer; font-family:'IBM Plex Sans', sans-serif; color:#1a1a1a; display:none; }
+  .result-bar button:hover { background:#1a1a1a; color:#fff; }
+  .cbtn .cc { opacity:.6; font-size:10px; margin-left:3px; font-family:'IBM Plex Mono', monospace; }
+  .cbtn.dim { opacity:.4; }
+  .tipwrap { position: relative; display: inline-flex; margin-left: auto; }
+  .cbtn.eu-f { background: linear-gradient(135deg, #003399, #0a56d6); color: #fff; border: 1px solid #ffcc00; font-weight: 700; }
+  .cbtn.eu-f.active { background: #ffcc00; color: #003399; border-color: #003399; }
+  .cbtn.eu-f .cc { opacity: .85; }
+  .tip { display: none; position: absolute; right: 0; top: calc(100% + 8px); width: 270px; z-index: 30; background: #0b1b3f; color: #eaf0ff; font: 400 12px/1.5 'IBM Plex Sans', Helvetica, Arial, sans-serif; padding: 10px 12px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,.28); text-align: left; }
+  .tip b { display: block; color: #ffcc00; margin-bottom: 3px; font-size: 12px; }
+  .tipwrap:hover .tip, .tipwrap:focus-within .tip { display: block; }
+  .rtab.dim { opacity:.45; }
+  .card.hl { box-shadow:0 0 0 2px #1d4ed8, 0 3px 12px rgba(0,0,0,0.1); }
+  .share-bar { display:flex; flex-wrap:wrap; align-items:center; gap:4px; margin-top:10px; padding-top:9px; border-top:1px dashed #e8e8e4; }
+  .share-lbl { font-size:10px; color:#aaa; text-transform:uppercase; letter-spacing:.08em; font-family:'IBM Plex Mono', monospace; margin-right:2px; }
+  .sbtn { display:inline-flex; align-items:center; gap:4px; font-size:11px; font-weight:600; color:#fff; text-decoration:none; border:1px solid transparent; border-radius:6px; padding:4px 9px; cursor:pointer; font-family:'IBM Plex Sans', sans-serif; transition:filter .12s, transform .12s; }
+  .sbtn:hover { filter:brightness(1.12); transform:translateY(-1px); }
+  .sbtn:active { transform:none; }
+  .sbtn.li { background:#0a66c2; }
+  .sbtn.x { background:#000; }
+  .sbtn.wa { background:#1faa59; }
+  .sbtn.lnk { background:#27a9bb; }
+  .sbtn.cap { background:#0c1b4a; }
+  #toast { position:fixed; left:50%; bottom:22px; transform:translateX(-50%); background:#1a1a1a; color:#fff; padding:8px 14px; border-radius:8px; font-size:12px; opacity:0; pointer-events:none; transition:opacity .2s; z-index:9; }
+  #toast.show { opacity:1; }
+  #empty button { margin-top:14px; border:1px solid #1a1a1a; background:#1a1a1a; color:#fff; border-radius:6px; padding:6px 14px; font-size:12px; cursor:pointer; }
+
+  /* ---- card layout v2: identical rows on every card ---- */
+  .card-v2 { }
+  :root {
+    --bg: #f9f9f7; --surface: #ffffff; --ink: #1a1a1a; --ink-2: #555550; --ink-3: #8a8a84;
+    --line: #e8e8e4; --line-2: #d4d4d0; --chip: #f5f5f3; --head: #1a1a1a; --head-ink: #ffffff; --head-sub: #9a9a94;
+    --link: #1d4ed8; --eu-bg: #eef4fc; --eu-line: #c7d7f0; --eu-ink: #1e3a8a;
+    --stage: #fff4d6; --stage-ink: #7a5300;
+    --m-eu-bg: #dbeafe; --m-eu: #1e40af; --m-na-bg: #dcfce7; --m-na: #166534; --m-asia-bg: #ffedd5; --m-asia: #c2410c; --m-gl-bg: #f3e8ff; --m-gl: #7c3aed;
+    --sans: 'IBM Plex Sans', system-ui, sans-serif; --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  #grid { align-items: stretch; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; display: flex; flex-direction: column; min-width: 0; }
+  .card:hover { box-shadow: 0 3px 12px rgba(0,0,0,.10); }
+  .r-head { display: flex; gap: 10px; justify-content: space-between; align-items: flex-start; padding: 12px 14px 0; min-height: 76px; }
+  .r-head h3 { font-size: 13px; font-weight: 600; line-height: 1.4; flex: 1; min-width: 0; }
+  .macro { font: 600 9px var(--mono); padding: 2px 6px; border-radius: 3px; text-transform: uppercase; letter-spacing: .08em; flex-shrink: 0; }
+  .m-EU { background: var(--m-eu-bg); color: var(--m-eu); } .m-NA { background: var(--m-na-bg); color: var(--m-na); }
+  .m-Asia { background: var(--m-asia-bg); color: var(--m-asia); } .m-Global { background: var(--m-gl-bg); color: var(--m-gl); }
+  .r-chips { display: flex; flex-wrap: wrap; gap: 4px; padding: 8px 14px 0; min-height: 34px; align-content: flex-start; }
+  .chip { background: var(--chip); border: 1px solid var(--line); border-radius: 4px; padding: 2px 7px; font-size: 11px; font-weight: 500; color: var(--ink-2); }
+  .r-sum { flex: 1; padding: 8px 14px 0; font-size: 12px; line-height: 1.6; color: var(--ink-2); }
+  .r-meta { display: flex; align-items: center; gap: 8px; padding: 10px 14px 0; font: 11px var(--mono); color: var(--ink-3); min-height: 30px; }
+  .cat { font: 600 9px var(--mono); text-transform: uppercase; letter-spacing: .06em; padding: 2px 7px; border-radius: 3px; color: var(--cat-ink, #333); background: var(--cat-bg, #eee); white-space: nowrap; }
+  .flags { display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center; min-width: 0; }
+  .fl { display: inline-flex; }
+  .fl img { width: 20px; height: 14px; border-radius: 2px; box-shadow: 0 0 0 1px var(--line-2); display: block; }
+  .r-chips { align-items: flex-start; }
+  .r-meta > span:last-child { margin-left: auto; }
+  .r-ctry { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; padding: 8px 14px 10px; min-height: 36px; font: 11px var(--mono); color: var(--ink-3); }
+  .ct { display: inline-flex; align-items: center; gap: 5px; }
+  .chip { display: inline-flex; align-items: center; gap: 5px; }
+  .chip .cf { width: 16px; height: 11px; border-radius: 2px; box-shadow: 0 0 0 1px var(--line-2); display: block; flex: none; }
+  a.chip { text-decoration: none; color: var(--ink-2); }
+  a.chip:hover { border-color: var(--ink-3); color: var(--ink); text-decoration: underline; }
+  .r-badge { padding: 8px 14px 0; min-height: 34px; display: flex; align-items: center; gap: 8px; }
+  .eu { display: inline-flex; align-items: center; gap: 5px; text-decoration: none; border: 1px solid #ffcc00; border-radius: 5px; padding: 3px 10px; background: linear-gradient(135deg, #003399, #0a56d6); font: 700 11px var(--mono); letter-spacing: .02em; color: #fff; height: 24px; box-shadow: 0 2px 6px rgba(0,51,153,.35); transition: transform .12s, box-shadow .12s; }
+  .eu:hover { transform: translateY(-1px); box-shadow: 0 4px 10px rgba(0,51,153,.45); }
+  .r-ins { margin: 8px 14px 0; border-top: 1px solid var(--line); }
+  details.ins { border-bottom: 1px solid var(--line); }
+  details.ins summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 9px 0; font-size: 12px; font-weight: 600; color: var(--ink); }
+  details.ins summary::-webkit-details-marker { display: none; }
+  details.ins summary::after { content: '+'; font: 500 15px var(--mono); color: var(--ink-3); }
+  details.ins[open] summary::after { content: '\2212'; }
+  details.ins ul { padding: 0 0 10px 16px; display: grid; gap: 6px; }
+  details.ins li { font-size: 12px; line-height: 1.55; color: var(--ink-2); }
+  details.ins summary:focus-visible, .btn:focus-visible, .sbtn:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+  .r-act { display: flex; align-items: center; gap: 12px; padding: 12px 14px 0; min-height: 44px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 4px; font: 600 11px var(--sans); color: #fff; background: var(--cat); text-decoration: none; border-radius: 6px; padding: 5px 11px; border: 1px solid transparent; }
+  .btn:hover { filter: brightness(1.1); }
+  .src { font-size: 11px; color: var(--link); text-decoration: none; min-width: 0; overflow-wrap: anywhere; }
+  .src:hover { text-decoration: underline; }
+  .r-share { display: flex; flex-wrap: wrap; gap: 4px; margin: 12px 14px 14px; padding-top: 10px; border-top: 1px dashed var(--line); }
+  .sbtn { font: 600 11px var(--sans); color: #fff; border: 1px solid transparent; border-radius: 6px; padding: 5px 8px; cursor: pointer; text-align: center; }
+  .sbtn:hover { filter: brightness(1.12); }
+  .li { background: #0a66c2; } .x { background: #000; } .wa { background: #1c8f4d; } .lnk { background: #1f8a99; } .cap { background: #0c1b4a; border-color: #2b3a75; }
+  .sbtn.done { background: #1c8f4d; border-color: transparent; }
+
+  /* ---- contrast kept (darker greys, no color-mix); sizes back to the original scale, title 14px ---- */
+  :root { --ink-2: #3f3f3a; --ink-3: #66665f; }
+  .r-head h3 { font-size: 14px; line-height: 1.4; }
+  .sbtn.wa, .wa { background: #167a41; } .sbtn.lnk, .lnk { background: #17707d; }
+  .r-ctry { justify-content: space-between; flex-wrap: nowrap; gap: 10px; }
+  .ctry-txt { min-width: 0; overflow-wrap: anywhere; }
+  .stage { flex: none; font: 700 10px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: #0f5f6b; background: #e3f4f6; border: 1px solid #9fd3da; border-radius: 999px; padding: 2px 8px; white-space: nowrap; }
+  .eu-mark { width: 20px; height: 20px; border-radius: 5px; background: #fff; padding: 1px; flex: none; display: block; }
+  .eu { padding-left: 5px; }
+  .cbtn.eu-f { display: inline-flex; align-items: center; gap: 6px; padding-left: 6px; }
+
+  /* ===== MOBILE + SUBSCRIBE LAYER (preview) ===== */
+  .sub-bar { background: #0b1b3f; color: #eaf0ff; padding: 10px 16px; }
+  .sub-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+  .sub-row span { font-size: 13px; line-height: 1.4; }
+  .sub-open { border: 1px solid #27a9bb; background: #27a9bb; color: #06122e; font: 700 12px var(--sans); border-radius: 6px; padding: 7px 12px; cursor: pointer; min-height: 36px; }
+  .sub-form { display: none; margin-top: 10px; gap: 8px; flex-wrap: wrap; }
+  .sub-bar.open .sub-form { display: flex; }
+  .sub-form input[type=email] { flex: 1 1 220px; min-width: 0; min-height: 44px; border-radius: 8px; border: 1px solid #33466f; background: #fff; padding: 0 12px; font: 400 16px var(--sans); }
+  .sub-form button { min-height: 44px; border: 0; border-radius: 8px; background: #27a9bb; color: #06122e; font: 700 14px var(--sans); padding: 0 18px; cursor: pointer; }
+  .sub-consent { flex: 1 1 100%; display: flex; gap: 8px; align-items: flex-start; font-size: 12px; line-height: 1.45; color: #b8d4ee; }
+  .sub-consent input { margin-top: 2px; width: 18px; height: 18px; flex: none; }
+  .sub-msg { flex: 1 1 100%; font-size: 12px; color: #9fe6ef; min-height: 16px; }
+  .filters-btn, .share-toggle, .more-btn { display: none; }
+  #more { text-align: center; padding: 4px 16px 28px; }
+  .more-btn { margin: 0 auto; min-height: 46px; padding: 0 22px; border-radius: 10px; border: 1px solid #1a1a1a; background: #1a1a1a; color: #fff; font: 600 14px var(--sans); cursor: pointer; }
+  .more-btn.on { display: inline-flex; align-items: center; justify-content: center; }
+  .r-sum .rm { display: none; }
+
+  @media (max-width: 640px) {
+    .feed-header { padding: 16px 16px 14px; }
+    .feed-header h1 { font-size: 19px; }
+    .feed-header p { font-size: 11px; }
+    .search-bar { padding: 10px 12px; }
+    #search-input { min-height: 44px; font-size: 16px; padding-left: 38px; }
+    .region-nav { padding: 0 6px; scrollbar-width: none; }
+    .region-nav::-webkit-scrollbar { display: none; }
+    .rtab { padding: 13px 11px; min-height: 44px; font-size: 13px; }
+    .result-bar { padding: 8px 12px; gap: 8px; flex-wrap: wrap; font-size: 11px; }
+    .result-bar .filters-btn { display: inline-flex !important; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border-radius: 8px; border: 1px solid #1a1a1a; background: #fff; color: #1a1a1a; font: 600 13px var(--sans); cursor: pointer; }
+    .result-bar .filters-btn.has { background: #1a1a1a; color: #fff; }
+    .result-bar #reset-btn { min-height: 40px; padding: 0 12px; font-size: 12px; }
+    body:not(.filters-open) .cat-bar, body:not(.filters-open) .stage-bar, body:not(.filters-open) .date-bar { display: none; }
+    .cat-bar, .stage-bar, .date-bar { padding: 10px 12px; gap: 8px; }
+    .cbtn, .sbtn2, .dbtn { min-height: 40px; padding: 0 14px; font-size: 12px; display: inline-flex; align-items: center; }
+    .cbtn.eu-f { min-height: 44px; }
+    .tipwrap { margin-left: 0; }
+    .tip { display: none !important; }
+    #grid { grid-template-columns: 1fr; gap: 12px; padding: 12px; }
+    .r-head { min-height: 0; padding: 14px 14px 0; }
+    .r-head h3 { font-size: 16px; }
+    .r-chips { min-height: 0; }
+    .chip { font-size: 12px; padding: 4px 9px; }
+    .r-sum { font-size: 14px; line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+    .r-sum.open { display: block; -webkit-line-clamp: unset; overflow: visible; }
+    .r-sum .rm { display: none; }
+    .r-meta { min-height: 0; }
+    .r-ctry { min-height: 0; flex-wrap: wrap; }
+    details.ins summary { min-height: 46px; padding: 0; font-size: 14px; }
+    details.ins li { font-size: 14px; }
+    .r-act { gap: 10px; }
+    .btn { min-height: 44px; padding: 0 16px; font-size: 14px; }
+    .src { font-size: 13px; padding: 10px 0; }
+    .share-toggle { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 6px; border: 1px solid #d4d4d0; background: #fff; font: 600 14px var(--sans); color: #1a1a1a; margin-left: auto; cursor: pointer; }
+    .r-share { display: none; }
+    .r-share.open { display: flex; }
+    .sbtn { min-height: 44px; padding: 0 14px; font-size: 13px; }
+    .more-btn.on { width: calc(100% - 8px); }
+    .sub-row span { font-size: 13px; }
+    .sub-open { min-height: 40px; }
+    a.chip, .chip { min-height: 34px; }
+    .src { display: inline-flex; align-items: center; min-height: 44px; }
+  }
+</style>
+</head>
+<body>
+<div class="feed-header">
+  <h1>Partnership Feed</h1>
+  <p>Tracking the partnerships reshaping global industries</p>
+</div>
+<div class="sub-bar" id="sub-bar">
+  <div class="sub-row"><span><b>Weekly digest:</b> new partnerships in your inbox every week</span><button class="sub-open" type="button" onclick="toggleSub()" id="sub-open">Subscribe</button></div>
+  <form class="sub-form" id="sub-form" onsubmit="return submitSub(event)" novalidate>
+    <input type="email" id="sub-email" placeholder="you@company.com" autocomplete="email" inputmode="email" aria-label="Email address" required>
+    <button type="submit">Get the digest</button>
+    <label class="sub-consent"><input type="checkbox" id="sub-consent"><span>I agree to receive the GcTechAllies weekly partnership digest by email. I can unsubscribe at any time.</span></label>
+    <div class="sub-msg" id="sub-msg" role="status"></div>
+  </form>
+</div>
+<div class="search-bar">
+  <div class="search-wrap">
+    <span class="search-icon">&#128269;</span>
+    <input type="text" id="search-input" placeholder="Search by deal or company name..." oninput="handleSearch()">
+    <button id="search-clear" onclick="clearSearch()">&times;</button>
+  </div>
+</div>
+<div class="region-nav">
+  <button class="rtab active" data-r="all" onclick="filterRegion('all',this)">All <span class="rc" id="rc-all">-</span></button>
+  <button class="rtab r-eu" data-r="EU" onclick="filterRegion('EU',this)">&#127466;&#127482; Europe <span class="rc" id="rc-eu">-</span></button>
+  <button class="rtab r-na" data-r="North America" onclick="filterRegion('North America',this)">&#127758; N. America <span class="rc" id="rc-na">-</span></button>
+  <button class="rtab r-asia" data-r="Asia" onclick="filterRegion('Asia',this)">&#127759; Asia <span class="rc" id="rc-asia">-</span></button>
+  <button class="rtab r-global" data-r="Global" onclick="filterRegion('Global',this)">&#127760; Global <span class="rc" id="rc-global">-</span></button>
+</div>
+<div class="cat-bar" id="cat-bar"></div>
+<div class="stage-bar" id="stage-bar"></div>
+<div class="date-bar">
+  <button class="dbtn active" onclick="filterDate('all',this)">All Time</button>
+  <button class="dbtn" onclick="filterDate('7d',this)">Last 7 Days</button>
+  <button class="dbtn" onclick="filterDate('30d',this)">Last 30 Days</button>
+  <button class="dbtn" onclick="filterDate('month',this)">This Month</button>
+  <button class="dbtn" onclick="filterDate('90d',this)">Last 3 Months</button>
+</div>
+<div class="result-bar"><button class="filters-btn" id="filters-btn" type="button" onclick="toggleFilters()">Filters<span id="fcount"></span></button><span id="result-count"></span><button id="reset-btn" onclick="resetFilters()">Clear filters</button></div>
+<div id="grid"><div class="loading"><span class="dot"></span><span class="dot"></span><span class="dot"></span><br><br>Loading partnerships...</div></div>
+<div id="more"><button class="more-btn" id="more-btn" type="button" onclick="showMore()"></button></div>
+<div id="empty"><h2 id="empty-msg">No partnerships match this filter.</h2><button onclick="resetFilters()">Clear filters</button></div>
+<div id="toast"></div>
+<script>
+  // ---------- configuration ----------
+  var SHARE_BASE = 'https://www.gctechallies.com/deal/';
+  var CAT_ORDER = ['AI','Payments','Fintech','Ecommerce','Retail','SaaS','Cloud','Logistics','Energy','Defence','Space','Automotive','Sport','Healthcare'];
+
+  // EU tech deals — both companies must be European-headquartered AND a tech deal.
+  // Used only when the CMS euTech field is missing (older items). euTech true/false in the CMS always wins.
+  var EU_TECH_PAIRS = [
+    ['SAP','Prior Labs'],['EPH','TotalEnergies'],['Airbus','Mistral AI'],
+    ['Centrica','SAP SE'],['Checkout.com','BLIK'],
+    ['Adyen','ROLLER'],
+    ['Humanoid','Schaeffler'],['NOBA','Tieto'],['SiPearl','2CRSi'],
+    ['EWE','Verbund'],['Altris','Draslovka'],['Saft','Naval Group'],
+    ['ielo','MIX'],['METLEN','HOUTRIS'],['BPCE','Nexity'],
+    ['SUSS','Ignite Next'],
+    ['EIB','Deutsche Bank'],['Orange Cyberdefense','Mistral AI'],['Volkswagen Group','NXP']
+  ];
+
+  var allItems = [];
+  var activeRegion = 'all', activeCat = 'all', activeDateRange = 'all', activeSearch = '', activeEu = false, activeStage = 'all';
+  var STAGES = { stages: [], map: {}, order: [] };   // loaded from stage-convention.json
+
+  // ---------- helpers ----------
+  function esc(s) { return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+  function safeUrl(u) { return /^https?:\/\//i.test(u || '') ? u : ''; }
+  function norm(s) { return String(s == null ? '' : s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); }
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function ymd(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+  function slugify(s) { return norm(s).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+  function slugOf(item) { return item.slug || slugify((item.companies || item.title || '') + ' ' + (item.announcedDate || '')); }
+  var COUNTRIES = [['United Arab Emirates|UAE','ae','United Arab Emirates'],['United States|USA|US','us','United States'],['United Kingdom|UK','gb','United Kingdom'],['Germany','de','Germany'],['France','fr','France'],['Spain','es','Spain'],['Italy','it','Italy'],['Netherlands','nl','Netherlands'],['Denmark','dk','Denmark'],['Sweden','se','Sweden'],['Finland','fi','Finland'],['Norway','no','Norway'],['Iceland','is','Iceland'],['Ireland','ie','Ireland'],['Belgium','be','Belgium'],['Luxembourg','lu','Luxembourg'],['Switzerland','ch','Switzerland'],['Austria','at','Austria'],['Poland','pl','Poland'],['Czech Republic','cz','Czech Republic'],['Greece','gr','Greece'],['Cyprus','cy','Cyprus'],['Portugal','pt','Portugal'],['Estonia','ee','Estonia'],['Albania','al','Albania'],['Israel','il','Israel'],['India','in','India'],['Japan','jp','Japan'],['China','cn','China'],['Hong Kong','hk','Hong Kong'],['Taiwan','tw','Taiwan'],['Singapore','sg','Singapore'],['Saudi Arabia','sa','Saudi Arabia'],['Ukraine','ua','Ukraine']];
+  var COUNTRY_RE = COUNTRIES.map(function(c){ return [new RegExp('\\b(?:' + c[0] + ')\\b'), c[1], c[2]]; });
+  // Countries row: derived from the same company directory as the chip flags, so the two always agree.
+  function countriesOf(item) {
+    var out = [], seen = {};
+    (item.companies || '').split(',').forEach(function(c){
+      var i = DIR[c.trim()];
+      if (i && i.iso && !seen[i.iso]) { seen[i.iso] = 1; out.push(i.country || i.iso); }
+    });
+    return out.map(esc).join(' &middot; ');
+  }
+  function flagsFor(region) {
+    var text = String(region || '').split(/\s[\u2014\u2013-]\s/)[0], found = [];
+    COUNTRY_RE.forEach(function(c){ var m = c[0].exec(text); if (m) found.push({ pos: m.index, iso: c[1], name: c[2] }); });
+    found.sort(function(a, b){ return a.pos - b.pos; });
+    return found.map(function(f){
+      return '<span class="fl"><img src="https://flagcdn.com/w40/' + f.iso + '.png" srcset="https://flagcdn.com/w80/' + f.iso + '.png 2x" width="20" height="14" alt="' + esc(f.name) + '" title="' + esc(f.name) + '" loading="lazy"></span>';
+    }).join('');
+  }
+  var CAT_COLORS = {AI:'#6d28d9',Cloud:'#0369a1',Payments:'#0f766e',Fintech:'#0e7490',Energy:'#b45309',Automotive:'#be123c',Defence:'#475569',Retail:'#be185d',Space:'#4338ca',SaaS:'#1d4ed8',Ecommerce:'#a21caf',Logistics:'#4d7c0f',Healthcare:'#047857','Healthcare & Real Estate':'#047857',Sport:'#c2410c'};
+  function lines(v) { return Array.isArray(v) ? v : String(v || '').split('\n').map(function(x){ return x.trim(); }).filter(Boolean); }
+  function insight(title, arr) {
+    if (!arr.length) return '';
+    return '<details class="ins"><summary>' + title + '</summary><ul>' + arr.map(function(t){ return '<li>' + esc(t) + '</li>'; }).join('') + '</ul></details>';
+  }
+  // similarDeals: one line per company, "Company | what they did | https://source" (source optional).
+  function similar(v) {
+    var arr = lines(v); if (!arr.length) return '';
+    return '<details class="ins sim"><summary>Similar Deals</summary><ul>' + arr.map(function(t){
+      var p = t.split('|').map(function(x){ return x.trim(); }), u = safeUrl(p[2]), own = p[3] && itemBySlug(p[3]);
+      var link = own ? ' <a href="#deal-' + esc(p[3]) + '" data-goto="' + esc(p[3]) + '">our card &#8595;</a>' : (u ? ' <a href="' + esc(u) + '" target="_blank" rel="noopener">source &#8599;</a>' : '');
+      return '<li><b>' + esc(p[0]) + '</b>' + (p[1] ? ': ' + esc(p[1]) : '') + link + '</li>';
+    }).join('') + '</ul></details>';
+  }
+  function toast(msg) { var t = document.getElementById('toast'); t.textContent = msg; t.className = 'show'; setTimeout(function(){ t.className = ''; }, 1800); }
+
+  // Region: always resolves to one of EU / North America / Asia / Global, so every card sits under exactly one tab.
+  function macroOf(item) {
+    var k = norm(item.macroRegion).trim();
+    if (k === 'eu' || k === 'europe') return 'EU';
+    if (k === 'north america' || k === 'na') return 'North America';
+    if (k === 'asia') return 'Asia';
+    if (k === 'global') return 'Global';
+    var r = norm(item.region);
+    if (/^(eu|europe|uk)\b/.test(r)) return 'EU';
+    if (/^(north america|us|usa|united states)\b/.test(r)) return 'North America';
+    if (/^asia\b/.test(r)) return 'Asia';
+    return 'Global';
+  }
+  function mixHex(hex, other, pct) {
+    var a = parseInt(hex.slice(1), 16), b = parseInt(other.slice(1), 16), out = '#';
+    [16, 8, 0].forEach(function(sh){ var x = (a >> sh) & 255, y = (b >> sh) & 255; out += ('0' + Math.round(x * (1 - pct) + y * pct).toString(16)).slice(-2); });
+    return out;
+  }
+  function getMacroClass(m) { return {'EU':'m-EU','North America':'m-NA','Asia':'m-Asia'}[m] || 'm-Global'; }
+
+  function isEuTech(item) {
+    if (item.euTech === true) return true;
+    if (item.euTech === false) return false;
+    var cos = item.companies || '';
+    return EU_TECH_PAIRS.some(function(pair) {
+      return pair.every(function(co) {
+        var re = new RegExp('(^|[^A-Za-z0-9])' + co.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '($|[^A-Za-z0-9])', 'i');
+        return re.test(cos);
+      });
+    });
+  }
+
+  // Date range on plain YYYY-MM-DD strings: no timezone drift, today and the boundary day are included.
+  function matchesDateRange(item) {
+    if (activeDateRange === 'all') return true;
+    var d = (item.announcedDate || '').slice(0, 10);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) return false;
+    var now = new Date(), c;
+    if (activeDateRange === 'month') c = new Date(now.getFullYear(), now.getMonth(), 1);
+    else {
+      var days = { '7d': 6, '30d': 29, '90d': 89 }[activeDateRange];
+      c = new Date(now.getFullYear(), now.getMonth(), now.getDate() - days);
+    }
+    return d >= ymd(c);
+  }
+
+  // Search: every word must appear somewhere in title, companies, summary, category, region or source (accent-insensitive).
+  function matchesSearch(item) {
+    if (!activeSearch) return true;
+    var hay = norm([item.title, item.companies, item.summary, item.category, item.region, item.macroRegion, item.sourceName].join(' '));
+    return activeSearch.split(/\s+/).every(function(tok) { return tok.length < 2 || tok === '\u00d7' || hay.indexOf(tok) !== -1; });
+  }
+
+  // Stage ladder: the CMS dealStage word maps to one of five rungs (see stage-convention.json).
+  function stageOf(item) { var w = String(item.dealStage || '').trim(); return STAGES.order.indexOf(w) >= 0 ? w : (STAGES.map[w] || w); }   // clustered name = card label = filter button
+
+  function passes(item, skip) {
+    if (skip !== 'stage' && activeStage !== 'all' && stageOf(item) !== activeStage) return false;
+    if (skip !== 'region' && activeRegion !== 'all' && macroOf(item) !== activeRegion) return false;
+    if (skip !== 'cat' && activeCat !== 'all' && item.category !== activeCat) return false;
+    if (skip !== 'eu' && activeEu && !isEuTech(item)) return false;
+    return matchesDateRange(item) && matchesSearch(item);
+  }
+
+  // ---------- filter controls ----------
+  function filterRegion(r, btn) { activeRegion = r; render(); }
+  function filterCat(c) { activeCat = c; render(); }
+  function filterEu() { activeEu = !activeEu; render(); }
+  function filterStage(g) { activeStage = (activeStage === g ? 'all' : g); render(); }
+  function filterDate(range, btn) {
+    activeDateRange = range;
+    document.querySelectorAll('.dbtn').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    render();
+  }
+  function handleSearch() {
+    activeSearch = norm(document.getElementById('search-input').value).trim();
+    document.getElementById('search-clear').style.display = activeSearch ? 'block' : 'none';
+    render();
+  }
+  function clearSearch() {
+    var input = document.getElementById('search-input');
+    input.value = ''; activeSearch = '';
+    document.getElementById('search-clear').style.display = 'none';
+    render(); input.focus();
+  }
+  function resetFilters() {
+    activeRegion = 'all'; activeCat = 'all'; activeDateRange = 'all'; activeSearch = ''; activeEu = false; activeStage = 'all';
+    document.getElementById('search-input').value = '';
+    document.getElementById('search-clear').style.display = 'none';
+    document.querySelectorAll('.dbtn').forEach(function(b, i){ b.classList.toggle('active', i === 0); });
+    render();
+  }
+
+  // Counts always reflect the OTHER active filters, so a tab showing 0 really means "nothing here with this combination".
+  function updateControls() {
+    var rc = { all: 0, 'EU': 0, 'North America': 0, 'Asia': 0, 'Global': 0 };
+    allItems.forEach(function(i){ if (passes(i, 'region')) { rc.all++; rc[macroOf(i)]++; } });
+    document.getElementById('rc-all').textContent = rc.all;
+    document.getElementById('rc-eu').textContent = rc['EU'];
+    document.getElementById('rc-na').textContent = rc['North America'];
+    document.getElementById('rc-asia').textContent = rc['Asia'];
+    document.getElementById('rc-global').textContent = rc['Global'];
+    document.querySelectorAll('.rtab').forEach(function(b){
+      var r = b.getAttribute('data-r');
+      b.classList.toggle('active', r === activeRegion);
+      b.classList.toggle('dim', r !== 'all' && rc[r] === 0);
+    });
+    // category buttons are built from the data, so a new CMS category gets its filter automatically
+    var counts = {};
+    allItems.forEach(function(i){ if (i.category && passes(i, 'cat')) counts[i.category] = (counts[i.category] || 0) + 1; });
+    var cats = {};
+    allItems.forEach(function(i){ if (i.category) cats[i.category] = 1; });
+    // before the data arrives (or if it fails to load) show the standard categories so the bar is never empty
+    if (!Object.keys(cats).length) { CAT_ORDER.forEach(function(c){ cats[c] = 1; }); }
+    var list = Object.keys(cats).sort(function(a, b){
+      var ia = CAT_ORDER.indexOf(a), ib = CAT_ORDER.indexOf(b);
+      return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib) || a.localeCompare(b);
+    });
+    if (activeCat !== 'all' && !cats[activeCat]) activeCat = 'all';
+    var total = 0; Object.keys(counts).forEach(function(k){ total += counts[k]; });
+    var loaded = allItems.length > 0;
+    var html = '<button class="cbtn' + (activeCat === 'all' ? ' active' : '') + '" data-c="all">All' + (loaded ? '<span class="cc">' + total + '</span>' : '') + '</button>';
+    list.forEach(function(c){
+      var n = counts[c] || 0;
+      html += '<button class="cbtn' + (activeCat === c ? ' active' : '') + (loaded && n === 0 ? ' dim' : '') + '" data-c="' + esc(c) + '">' + esc(c) + (loaded ? '<span class="cc">' + n + '</span>' : '') + '</button>';
+    });
+    var euN = 0; allItems.forEach(function(i){ if (passes(i, 'eu') && isEuTech(i)) euN++; });
+    html += '<span class="tipwrap"><button class="cbtn eu-f' + (activeEu ? ' active' : '') + (loaded && euN === 0 && !activeEu ? ' dim' : '') + '" id="eu-filter" aria-describedby="eu-tip"><img class="eu-mark" src="assets/eustack-mark.png" width="20" height="20" alt="">Build EUStack' + (loaded ? '<span class="cc">' + euN + '</span>' : '') + '</button>'
+      + '<span class="tip" id="eu-tip" role="tooltip"><b>Build EUStack</b>Tech partnerships where every company involved is headquartered in the EU: the building blocks of a European technology stack. Pairs with a US or non-EU company are not included.</span></span>';
+    var bar = document.getElementById('cat-bar'); bar.innerHTML = html;
+
+    bar.querySelectorAll('.cbtn').forEach(function(b){ b.onclick = function(){ filterCat(b.getAttribute('data-c')); }; });
+    document.getElementById('eu-filter').onclick = filterEu;
+
+    // stage bar: only the rungs defined in stage-convention.json; counts follow the other active filters
+    var sb = document.getElementById('stage-bar');
+    if (!STAGES.stages.length) { sb.style.display = 'none'; }
+    else {
+      sb.style.display = '';
+      var sc = {}, st = 0;
+      allItems.forEach(function(i){ var g = stageOf(i); if (g && passes(i, 'stage')) { sc[g] = (sc[g] || 0) + 1; st++; } });
+      var sh = '<span class="lbl">Stage</span><button class="sbtn2' + (activeStage === 'all' ? ' active' : '') + '" data-g="all">All<span class="cc">' + st + '</span></button>';
+      var known = {}; STAGES.stages.forEach(function(g){ known[g.id] = 1; });
+      var extra = Object.keys(sc).filter(function(k){ return !known[k]; }).map(function(k){ return { id: k, blurb: 'Not in stage-convention.json' }; });
+      STAGES.stages.concat(extra).forEach(function(g){
+        var n = sc[g.id] || 0;
+        sh += '<button class="sbtn2' + (activeStage === g.id ? ' active' : '') + (n === 0 && activeStage !== g.id ? ' dim' : '') + '" data-g="' + esc(g.id) + '" title="' + esc(g.blurb) + '">' + esc(g.id) + '<span class="cc">' + n + '</span></button>';
+      });
+      sb.innerHTML = sh;
+      sb.querySelectorAll('.sbtn2').forEach(function(b){ b.onclick = function(){ var g = b.getAttribute('data-g'); if (g === 'all') { activeStage = 'all'; render(); } else filterStage(g); }; });
+    }
+  }
+
+  // ---------- sharing ----------
+  function shareUrlOf(item) {
+    return SHARE_BASE + encodeURIComponent(slugOf(item));
+  }
+  function captionOf(item) {
+    var sum = item.summary || '';
+    if (sum.length > 230) sum = sum.slice(0, 227).replace(/\s+\S*$/, '') + '...';
+    return item.title + '\n\n' + sum + '\n\n' + shareUrlOf(item) + '\n\n#Partnerships #GcTechAllies' + (isEuTech(item) ? ' #BuildEUStack' : '');
+  }
+  function copyText(text, okMsg, btn) {
+    function ok() { toast(okMsg); if (btn) { var old = btn.getAttribute('data-l') || btn.textContent; btn.setAttribute('data-l', old); btn.textContent = 'Copied \u2713'; btn.classList.add('done'); setTimeout(function(){ btn.textContent = old; btn.classList.remove('done'); }, 1800); } }
+    function fallback() {
+      var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); ok(); } catch (e) { toast('Copy failed - select and copy manually'); }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok, fallback);
+    else fallback();
+  }
+  function itemBySlug(slug) { return allItems.filter(function(i){ return slugOf(i) === slug; })[0]; }
+  function doShare(kind, slug, btn) {
+    var item = itemBySlug(slug); if (!item) return;
+    var url = shareUrlOf(item), title = item.title;
+    if (kind === 'link') return copyText(url, 'Link copied', btn);
+    if (kind === 'caption') return copyText(captionOf(item), 'Caption copied', btn);
+    var target = null;
+    if (kind === 'li') target = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
+    if (kind === 'x') target = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(title.length > 200 ? title.slice(0, 197) + '...' : title) + '&url=' + encodeURIComponent(url);
+    if (kind === 'wa') target = 'https://wa.me/?text=' + encodeURIComponent(title + ' ' + url);
+    if (target) window.open(target, '_blank', 'noopener');
+  }
+
+  // ---------- rendering ----------
+  function render() {
+    updateControls();
+    var grid = document.getElementById('grid'), empty = document.getElementById('empty');
+    var filtered = allItems.filter(function(i){ return passes(i); });
+    filtered.sort(function(a, b){ return (b.announcedDate || '').localeCompare(a.announcedDate || '') || (a.title || '').localeCompare(b.title || ''); });
+    lastFiltered = filtered;
+    var fkey = [activeRegion, activeCat, activeStage, activeDateRange, activeSearch, activeEu].join('|');
+    if (fkey !== lastKey) { shown = PAGE(); lastKey = fkey; }
+    var visible = filtered.slice(0, shown);
+    var nf = (activeRegion !== 'all') + (activeCat !== 'all') + (activeStage !== 'all') + (activeDateRange !== 'all') + (activeEu ? 1 : 0);
+    var fc = document.getElementById('fcount'), fb = document.getElementById('filters-btn');
+    if (fc) fc.textContent = nf ? ' (' + nf + ')' : ''; if (fb) fb.classList.toggle('has', nf > 0);
+    var anyFilter = activeEu || activeRegion !== 'all' || activeCat !== 'all' || activeStage !== 'all' || activeDateRange !== 'all' || activeSearch;
+    document.getElementById('result-count').textContent = 'Showing ' + filtered.length + ' of ' + allItems.length + ' partnerships';
+    document.getElementById('reset-btn').style.display = anyFilter ? 'inline-block' : 'none';
+    if (filtered.length === 0) {
+      grid.innerHTML = '';
+      document.getElementById('empty-msg').textContent = activeSearch ? 'No partnerships match "' + document.getElementById('search-input').value.trim() + '" with the current filters.' : 'No partnerships match this combination of filters.';
+      empty.style.display = 'block';
+      return;
+    }
+    empty.style.display = 'none';
+    grid.innerHTML = visible.map(function(item) {
+      var slug = slugOf(item), macro = macroOf(item);
+      var chips = (item.companies || '').split(',').map(function(c){ return c.trim(); }).filter(Boolean).map(function(c){
+        var info = DIR[c] || {}, site = info.site ? 'https://' + info.site : '';
+        var flag = info.iso ? '<img class="cf" src="https://flagcdn.com/w40/' + esc(info.iso) + '.png" srcset="https://flagcdn.com/w80/' + esc(info.iso) + '.png 2x" width="16" height="11" alt="' + esc(info.country || info.iso) + '" title="' + esc(info.country || info.iso) + '" loading="lazy">' : '';
+        return site ? '<a class="chip" href="' + esc(site) + '" target="_blank" rel="noopener noreferrer" title="' + esc(c) + ' website">' + flag + esc(c) + '</a>' : '<span class="chip">' + flag + esc(c) + '</span>';
+      }).join('');
+      var src = safeUrl(item.sourceUrl);
+      var srcLink = src ? '<a class="src-link" href="' + esc(src) + '" target="_blank" rel="noopener">&#8599; ' + esc(item.sourceName || 'Source') + '</a>' : '';
+      var img = safeUrl(item.cardImageUrl);
+      var cardBtn = img ? '<a class="card-btn" href="' + esc(img) + '" target="_blank" rel="noopener">View card &#8599;</a>' : '';
+      var actions = (srcLink || cardBtn) ? '<div class="card-actions">' + srcLink + cardBtn + '</div>' : '';
+      var euBadge = isEuTech(item) ? '<a class="eustack-badge" href="https://www.gctechallies.com/build-eustack" target="_blank" rel="noopener"><img class="eu-mark" src="assets/eustack-mark.png" width="20" height="20" alt="">Build EUStack</a>' : '';
+      var sh = '<div class="share-bar">'
+        + '<button class="sbtn li" onclick="doShare(\'li\',\'' + esc(slug) + '\')">LinkedIn</button>'
+        + '<button class="sbtn x" onclick="doShare(\'x\',\'' + esc(slug) + '\')">X</button>'
+        + '<button class="sbtn wa" onclick="doShare(\'wa\',\'' + esc(slug) + '\')">WhatsApp</button>'
+        + '<button class="sbtn lnk" onclick="doShare(\'link\',\'' + esc(slug) + '\')">Copy link</button>'
+        + '<button class="sbtn cap" onclick="doShare(\'caption\',\'' + esc(slug) + '\')" title="Copy a ready-to-post caption">Caption</button></div>';
+      var color = CAT_COLORS[item.category] || '#475569';
+      var euSlot = isEuTech(item) ? '<a class="eu" href="https://www.gctechallies.com/build-eustack" target="_blank" rel="noopener"><img class="eu-mark" src="assets/eustack-mark.png" width="20" height="20" alt="">Build EUStack</a>' : '';
+      var ins = insight('Revenue Implications', lines(item.revenueImplications)) + insight('Who Is Impacted', lines(item.whoIsImpacted)) + insight('Who Can Replicate This Model', lines(item.whoCanReplicate)) + similar(item.similarDeals);
+      var sl = esc(slug);
+      return '<article class="card" style="--cat:' + color + ';--cat-ink:' + mixHex(color, '#101010', 0.38) + ';--cat-bg:' + mixHex(color, '#ffffff', 0.88) + '" id="deal-' + sl + '">'
+        + '<div class="r-head"><h3>' + esc(item.title) + '</h3><span class="macro ' + getMacroClass(macro) + '">' + esc(macro) + '</span></div>'
+        + '<div class="r-chips">' + chips + '</div>'
+        + '<p class="r-sum" onclick="this.classList.toggle(\'open\');postH()">' + esc(item.summary) + '</p>'
+        + '<div class="r-meta">' + (item.category ? '<span class="cat">' + esc(item.category) + '</span>' : '') + euSlot + '<span>' + esc(item.announcedDate || '') + '</span></div>'
+        + '<div class="r-ctry"><span class="ctry-txt">' + countriesOf(item) + '</span>' + (stageOf(item) ? '<span class="stage" title="' + esc((STAGES.stages.filter(function(g){ return g.id === stageOf(item); })[0] || {}).blurb || 'Deal stage') + '">' + esc(stageOf(item)) + '</span>' : '') + '</div>'
+        + '<div class="r-ins">' + ins + '</div>'
+        + '<div class="r-act">' + (img ? '<a class="btn" href="' + esc(shareUrlOf(item)) + '" target="_blank" rel="noopener">View card &#8599;</a>' : '') + (src ? '<a class="src" href="' + esc(src) + '" target="_blank" rel="noopener">&#8599; ' + esc(item.sourceName || 'Source') + '</a>' : '') + '<button class="share-toggle" type="button" onclick="shareToggle(\'' + sl + '\',this)">Share</button></div>'
+        + '<div class="r-share"><button class="sbtn li" onclick="doShare(\'li\',\'' + sl + '\',this)">LinkedIn</button><button class="sbtn x" onclick="doShare(\'x\',\'' + sl + '\',this)">X</button><button class="sbtn wa" onclick="doShare(\'wa\',\'' + sl + '\',this)">WhatsApp</button><button class="sbtn lnk" onclick="doShare(\'link\',\'' + sl + '\',this)">Copy link</button><button class="sbtn cap" onclick="doShare(\'caption\',\'' + sl + '\',this)" title="Copies a ready-to-post caption with the link">Caption</button></div>'
+        + '</article>';
+    }).join('');
+    var mb = document.getElementById('more-btn'), left = filtered.length - visible.length;
+    if (mb) { mb.classList.toggle('on', left > 0); mb.textContent = left > 0 ? 'Show ' + Math.min(left, PAGE()) + ' more (' + left + ' left)' : ''; }
+    postH();
+  }
+  var shown = 0, lastKey = null, lastFiltered = [];
+  function PAGE() { return window.matchMedia && window.matchMedia('(max-width: 640px)').matches ? 12 : 24; }
+  function showMore() { shown += PAGE(); render(); }
+  function toggleFilters() { document.body.classList.toggle('filters-open'); postH(); }
+  function toggleSub() { var b = document.getElementById('sub-bar'); b.classList.toggle('open'); document.getElementById('sub-open').textContent = b.classList.contains('open') ? 'Close' : 'Subscribe'; if (b.classList.contains('open')) setTimeout(function(){ document.getElementById('sub-email').focus(); }, 50); postH(); }
+  // Subscribe: posts to a Wix backend endpoint. Empty = preview mode (nothing is sent).
+  var SUBSCRIBE_ENDPOINT = '';
+  function submitSub(e) {
+    e.preventDefault();
+    var em = document.getElementById('sub-email').value.trim(), ok = document.getElementById('sub-consent').checked, msg = document.getElementById('sub-msg');
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) { msg.textContent = 'Please enter a valid email address.'; return false; }
+    if (!ok) { msg.textContent = 'Please tick the box to agree to receive the digest.'; return false; }
+    if (!SUBSCRIBE_ENDPOINT) { msg.textContent = 'Preview mode: the form is not connected yet, nothing was sent.'; return false; }
+    msg.textContent = 'Sending...';
+    fetch(SUBSCRIBE_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: em, consent: true, source: 'partnership-feed' }) })
+      .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); msg.textContent = 'Thanks, you are on the list.'; document.getElementById('sub-form').reset(); })
+      .catch(function(){ msg.textContent = 'Something went wrong. Please try again.'; });
+    return false;
+  }
+  function shareToggle(slug, btn) {
+    var item = itemBySlug(slug); if (!item) return;
+    if (navigator.share) { navigator.share({ title: item.title, text: item.title, url: shareUrlOf(item) }).catch(function(){}); return; }
+    var row = btn.closest('.card').querySelector('.r-share'); row.classList.toggle('open'); postH();
+  }
+  function postH() { try { setTimeout(function(){ parent.postMessage({ type: 'FEED_HEIGHT', h: document.documentElement.scrollHeight }, '*'); }, 60); } catch (e) {} }
+  window.addEventListener('resize', postH);
+  document.addEventListener('toggle', postH, true);
+  function ensureVisible(slug) { var idx = -1; lastFiltered.forEach(function(i, n){ if (slugOf(i) === slug) idx = n; }); if (idx >= shown) { shown = idx + 1; render(); } }
+
+  // Deep link: ?deal=<slug> scrolls to and highlights one card (clears filters first if it would be hidden).
+  function openDeepLink() {
+    var m = /[?&]deal=([^&#]+)/.exec(location.search) || /#deal-(.+)$/.exec(location.hash);
+    if (!m) return;
+    var slug = decodeURIComponent(m[1]);
+    if (!itemBySlug(slug)) return;
+    resetFilters(); ensureVisible(slug);
+    var el = document.getElementById('deal-' + slug);
+    if (el) { el.classList.add('hl'); setTimeout(function(){ el.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 100); }
+  }
+
+  // "our card" links inside Similar Deals: jump to that card in this feed (clear filters first so it is visible)
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest && e.target.closest('a[data-goto]'); if (!a) return;
+    e.preventDefault();
+    var slug = a.getAttribute('data-goto'); resetFilters(); ensureVisible(slug);
+    var el = document.getElementById('deal-' + slug);
+    if (el) { document.querySelectorAll('.hl').forEach(function(x){ x.classList.remove('hl'); }); el.classList.add('hl'); el.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+  });
+
+  function init(data) {
+    allItems = Array.isArray(data) ? data : [];
+    render();
+    openDeepLink();
+  }
+
+  updateControls();   // draw the filter bars immediately, before the data arrives
+
+  // Load data (cache-busted so the page always shows the latest sync)
+  var DIR = {};
+  var dirP = fetch('company-directory.json?v=' + Date.now(), { cache: 'no-store' })
+    .then(function(r){ return r.ok ? r.json() : {}; }).catch(function(){ return {}; });
+  var stageP = fetch('stage-convention.json?v=' + Date.now(), { cache: 'no-store' })
+    .then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; });
+  fetch('partnerships-data.json?v=' + Date.now(), { cache: 'no-store' })
+    .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function(items){ return Promise.all([dirP, stageP]).then(function(r){ DIR = r[0] || {}; if (r[1] && r[1].order) STAGES = { stages: r[1].order.map(function(w){ return { id: w, blurb: (r[1].blurbs || {})[w] || '' }; }), map: r[1].map || {}, order: r[1].order }; window.__feedLoaded = true; init(items); }); })
+    .catch(function(err) {
+      document.getElementById('grid').innerHTML = '<div class="loading">Unable to load data. Please refresh. (If you opened this file straight from your computer, open it from the GitHub Pages address instead.)</div>';
+      console.error('Feed load error:', err);
+    });
+
+  // Opening an insight section grows only that card: its row-mates keep the height they had while closed.
+  (function(){
+    var grid = document.getElementById('grid');
+    function rowMates(card) {
+      var top = card.offsetTop;
+      return [].filter.call(grid.querySelectorAll('.card'), function(c){ return c !== card && Math.abs(c.offsetTop - top) < 3; });
+    }
+    function unpin(c) { c.style.height = ''; c.style.alignSelf = ''; delete c.dataset.pin; }
+    grid.addEventListener('click', function(e){
+      var sum = e.target.closest && e.target.closest('details.ins > summary'); if (!sum) return;
+      var card = sum.closest('.card'); if (!card) return;
+      if (card.dataset.pin) unpin(card);                       // an opener must be free to grow
+      if (!card.dataset.expanded) {
+        rowMates(card).forEach(function(m){
+          if (m.dataset.pin || m.dataset.expanded) return;
+          m.style.height = m.offsetHeight + 'px'; m.style.alignSelf = 'start'; m.dataset.pin = '1';
+        });
+      }
+    }, true);
+    grid.addEventListener('toggle', function(e){
+      var d = e.target; if (!d.classList || !d.classList.contains('ins')) return;
+      var card = d.closest('.card'); if (!card) return;
+      if (card.querySelector('details.ins[open]')) { card.dataset.expanded = '1'; return; }
+      delete card.dataset.expanded;
+      var mates = rowMates(card);
+      if (!mates.some(function(m){ return m.dataset.expanded; })) mates.forEach(unpin);
+    }, true);
+    window.addEventListener('resize', function(){ grid.querySelectorAll('.card').forEach(function(c){ unpin(c); }); });
+  })();
+
+  window.addEventListener('message', function(e) {
+    if (window.__feedLoaded) return;  // the synced JSON is complete; the Wix page's 100-item CMS push is only a fallback
+    if (e.data && e.data.type === 'PARTNERSHIPS_DATA' && e.data.items) init(e.data.items);
+  });
+</script>
+</body>
+</html>
