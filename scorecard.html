@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Partnership Readiness Scorecard | GcTechAllies</title>
+<style>
+  :root { --navy:#0b1b3f; --teal:#27a9bb; --ink:#14213d; --mute:#5b6b8a; --line:#e3e8f1; --bg:#f5f7fb; --sans:'IBM Plex Sans',system-ui,-apple-system,Segoe UI,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:var(--sans); background:var(--bg); color:var(--ink); }
+  .wrap { max-width:720px; margin:0 auto; padding:0 16px 48px; }
+  header { background:var(--navy); color:#fff; padding:22px 16px 20px; }
+  header .in { max-width:720px; margin:0 auto; }
+  header h1 { margin:0 0 6px; font-size:22px; }
+  header p { margin:0; font-size:14px; color:#b8d4ee; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:18px; margin-top:16px; }
+  label.q, .q { display:block; font-weight:600; font-size:14px; margin:16px 0 8px; }
+  .q:first-child { margin-top:0; }
+  input[type=text], input[type=email] { width:100%; min-height:46px; border:1px solid #c9d2e3; border-radius:8px; padding:0 12px; font:400 16px var(--sans); }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; }
+  .chips button { min-height:42px; padding:0 14px; border-radius:999px; border:1px solid #c9d2e3; background:#fff; font:500 14px var(--sans); color:var(--ink); cursor:pointer; }
+  .chips button.on { background:var(--navy); border-color:var(--navy); color:#fff; }
+  .go, .unlock { margin-top:20px; width:100%; min-height:50px; border:0; border-radius:10px; background:var(--teal); color:#06122e; font:700 16px var(--sans); cursor:pointer; }
+  .go:disabled { opacity:.45; cursor:not-allowed; }
+  .hint { font-size:12px; color:var(--mute); margin-top:8px; }
+  #result { display:none; }
+  .score-row { display:flex; align-items:center; gap:16px; }
+  .ring { width:96px; height:96px; flex:none; }
+  .tier { font:600 11px var(--mono); text-transform:uppercase; letter-spacing:.08em; color:var(--teal); }
+  .score-row h2 { margin:2px 0 4px; font-size:20px; }
+  .score-row p { margin:0; font-size:14px; color:var(--mute); }
+  .model { margin-top:16px; padding:14px; border-radius:10px; background:#eaf7f9; border:1px solid #bfe5ea; font-size:14px; }
+  .model b { display:block; font-size:12px; font-family:var(--mono); text-transform:uppercase; letter-spacing:.08em; color:#0e6f7e; margin-bottom:4px; }
+  .gate { position:relative; margin-top:16px; }
+  .blur { filter:blur(6px); pointer-events:none; user-select:none; max-height:260px; overflow:hidden; }
+  .gate-box { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; padding:18px; background:linear-gradient(rgba(255,255,255,.55), #fff 70%); }
+  .gate-box h3 { margin:0 0 6px; font-size:17px; }
+  .gate-box p { margin:0 0 12px; font-size:13px; color:var(--mute); }
+  .consent { display:flex; gap:8px; align-items:flex-start; font-size:12px; color:var(--mute); margin-top:10px; line-height:1.45; }
+  .consent input { width:18px; height:18px; margin-top:2px; flex:none; }
+  .msg { font-size:12px; min-height:16px; margin-top:6px; color:#b42318; }
+  #full { display:none; }
+  .dim { margin:10px 0; } .dim .t { display:flex; justify-content:space-between; font-size:13px; margin-bottom:4px; }
+  .bar { height:8px; background:#e8edf5; border-radius:99px; overflow:hidden; } .bar i { display:block; height:100%; background:var(--teal); border-radius:99px; }
+  h3.sec { font-size:15px; margin:22px 0 8px; }
+  .deal { padding:10px 0; border-top:1px solid var(--line); font-size:14px; } .deal a { color:var(--navy); font-weight:600; text-decoration:none; } .deal small { display:block; color:var(--mute); margin-top:2px; }
+  .plan { display:grid; gap:10px; } .plan div { border:1px solid var(--line); border-radius:10px; padding:12px; font-size:14px; } .plan b { display:block; font:600 11px var(--mono); text-transform:uppercase; letter-spacing:.08em; color:var(--teal); margin-bottom:4px; }
+  .foot { font-size:12px; color:var(--mute); margin-top:18px; }
+  .foot a { color:var(--navy); }
+</style>
+</head>
+<body>
+<header><div class="in"><h1>Partnership Readiness Scorecard</h1><p>One minute. Six questions. Benchmarked against 130+ real partnerships tracked by GcTechAllies.</p></div></header>
+<div class="wrap">
+  <div class="card" id="form">
+    <label class="q" for="url">Your company website</label>
+    <input type="text" id="url" inputmode="url" placeholder="yourcompany.com" autocomplete="url">
+
+    <div class="q">Your industry</div><div class="chips" data-k="cat"></div>
+    <div class="q">Where are you headquartered?</div><div class="chips" data-k="hq"></div>
+    <div class="q">Company stage</div><div class="chips" data-k="stage"></div>
+    <div class="q">What do you want from partnerships?</div><div class="chips" data-k="goal"></div>
+    <div class="q">Active partnerships today</div><div class="chips" data-k="have"></div>
+    <div class="q">Someone owns partnerships full time?</div><div class="chips" data-k="owner"></div>
+
+    <button class="go" id="go" disabled>See my score</button>
+    <div class="hint">Free. Your answers stay in your browser until you choose to unlock the full report.</div>
+  </div>
+
+  <div id="result">
+    <div class="card">
+      <div class="score-row">
+        <svg class="ring" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="none" stroke="#e8edf5" stroke-width="10"/><circle id="arc" cx="50" cy="50" r="42" fill="none" stroke="#27a9bb" stroke-width="10" stroke-linecap="round" transform="rotate(-90 50 50)" stroke-dasharray="264" stroke-dashoffset="264"/><text id="num" x="50" y="58" text-anchor="middle" font-size="26" font-weight="700" fill="#0b1b3f">0</text></svg>
+        <div><div class="tier" id="tier"></div><h2 id="headline"></h2><p id="sub"></p></div>
+      </div>
+      <div class="model"><b>Recommended model</b><span id="model"></span></div>
+
+      <div class="gate" id="gate">
+        <div class="blur" aria-hidden="true">
+          <h3 class="sec">Score breakdown</h3><div class="dim"><div class="t"><span>Strategic fit</span><span>72</span></div><div class="bar"><i style="width:72%"></i></div></div><div class="dim"><div class="t"><span>Proof</span><span>55</span></div><div class="bar"><i style="width:55%"></i></div></div>
+          <h3 class="sec">3 comparable deals</h3><div class="deal"><a>Example partnership one</a><small>Category · date</small></div><div class="deal"><a>Example partnership two</a><small>Category · date</small></div>
+        </div>
+        <div class="gate-box">
+          <h3>Get the full report</h3><p>Score breakdown, 3 comparable European and global deals, and a 30/60/90-day plan.</p>
+          <input type="email" id="email" placeholder="you@company.com" autocomplete="email" inputmode="email" aria-label="Work email">
+          <label class="consent"><input type="checkbox" id="consent"><span>I agree to receive my report and occasional GcTechAllies partnership updates by email. I can unsubscribe at any time.</span></label>
+          <button class="unlock" id="unlock">Unlock full report</button>
+          <div class="msg" id="gmsg"></div>
+        </div>
+      </div>
+
+      <div id="full"></div>
+    </div>
+    <p class="foot">Indicative score for discussion, based on your answers and public partnership patterns, not a valuation or advice. <a href="#" id="again">Start again</a></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Set to a Velo endpoint later: receives {email, consent, url, answers, score}. Empty = preview mode (nothing is sent).
+  var SCORE_ENDPOINT = '';
+  var DEALS_URL = 'partnerships-data.json';
+  var OPT = {
+    cat:   ['AI','Payments','Fintech','Cloud','SaaS','Energy','Automotive','Defence','Space','Healthcare','Logistics','Ecommerce','Retail'],
+    hq:    ['Europe','North America','Asia','Middle East','Other'],
+    stage: ['Seed','Series A-B','Growth','Enterprise'],
+    goal:  ['Distribution and channel','Technology integration','Co-sell with a big platform','Enter Europe'],
+    have:  ['None yet','1-3','4-10','10+'],
+    owner: ['Yes','No, a founder does it','Part-time']
+  };
+  var A = {}, deals = [];
+  var REG = { 'Europe':'EU', 'North America':'North America', 'Asia':'Asia', 'Middle East':'Middle East' };
+
+  document.querySelectorAll('.chips').forEach(function(box){
+    var k = box.getAttribute('data-k');
+    OPT[k].forEach(function(v){ var b = document.createElement('button'); b.type='button'; b.textContent=v;
+      b.onclick=function(){ A[k]=v; box.querySelectorAll('button').forEach(function(x){ x.classList.toggle('on', x===b); }); check(); }; box.appendChild(b); });
+  });
+  document.getElementById('url').addEventListener('input', check);
+  function domain() { var u = document.getElementById('url').value.trim().replace(/^https?:\/\//i,'').replace(/^www\./i,'').split(/[\/?#]/)[0].toLowerCase(); return /^[a-z0-9-]+(\.[a-z0-9-]+)+$/.test(u) ? u : ''; }
+  function check() { document.getElementById('go').disabled = !(domain() && Object.keys(OPT).every(function(k){ return A[k]; })); }
+
+  fetch(DEALS_URL + '?v=' + Date.now()).then(function(r){ return r.json(); }).then(function(d){ deals = d; }).catch(function(){});
+
+  // ---- scoring (transparent, rule-based) ----
+  function score() {
+    var cat = A.cat, now = Date.now(), d90 = 90*864e5;
+    var inCat = deals.filter(function(d){ return d.category === cat; });
+    var recent = inCat.filter(function(d){ return now - new Date(d.announcedDate) < d90; }).length;
+    var momentum = Math.min(100, 35 + recent * 13);                                   // how active the category is
+    var fit = 50 + ({ 'Europe':14, 'North America':8, 'Asia':4, 'Middle East':6, 'Other':0 }[A.hq]) + ({ 'Seed':-4, 'Series A-B':6, 'Growth':14, 'Enterprise':18 }[A.stage]) + (A.goal==='Enter Europe' && A.hq==='Europe' ? 6 : 0);
+    var proof = { 'None yet':22, '1-3':52, '4-10':78, '10+':92 }[A.have];
+    var cap = { 'Yes':92, 'Part-time':58, 'No, a founder does it':28 }[A.owner];
+    var dims = [['Strategic fit', Math.max(10, Math.min(100, fit))], ['Proof (existing partnerships)', proof], ['Capacity to execute', cap], ['Market momentum in ' + cat, momentum]];
+    var total = Math.round(dims[0][1]*.3 + dims[1][1]*.25 + dims[2][1]*.25 + dims[3][1]*.2);
+    return { total: total, dims: dims, recent: recent, n: inCat.length };
+  }
+  function tierOf(s) { return s>=75 ? ['Ready','Ready to scale partnerships'] : s>=55 ? ['Nearly ready','Close: a few gaps to fix'] : s>=35 ? ['Building','Early: focus before you expand'] : ['Not yet','Foundations first']; }
+  function modelOf() {
+    var m = { 'Distribution and channel':'Channel partnership: a referral or reseller agreement with one established European platform in your space, with one named owner on both sides and a first pilot in 60 days.',
+      'Technology integration':'Technology integration: ship one integration into a partner marketplace or app store, then co-market it. Measure by integrations live and joint pipeline.',
+      'Co-sell with a big platform':'Co-sell: a marketplace listing plus a co-sell motion with a hyperscaler or enterprise platform. Start with one vertical and 3 shared target accounts.',
+      'Enter Europe':'Market entry alliance: a local distribution partner in one lead country (not all of Europe), with localisation and compliance covered by the partner.' };
+    return m[A.goal];
+  }
+  function plan(s) {
+    var low = s.dims[2][1] < 50;
+    return [['Days 1-30', low ? 'Name one partnerships owner and write a one-page partner offer: who you help, what the partner earns, what you need from them.' : 'Write a one-page partner offer and shortlist 10 target partners, ranked by customer overlap.'],
+            ['Days 31-60', 'Open conversations with 3 partners from the shortlist. Agree one pilot with a clear metric, a named owner on each side and a 90-day end date.'],
+            ['Days 61-90', 'Launch the pilot, publish one joint announcement, and review: keep, fix or stop. Only then expand to a second partner.']];
+  }
+  function similar() {
+    var reg = REG[A.hq];
+    var pool = deals.filter(function(d){ return d.category === A.cat; });
+    pool.sort(function(a,b){ return (b.macroRegion===reg) - (a.macroRegion===reg) || (b.announcedDate||'').localeCompare(a.announcedDate||''); });
+    return pool.slice(0,3);
+  }
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+
+  var S;
+  document.getElementById('go').onclick = function(){
+    S = score(); var t = tierOf(S.total);
+    document.getElementById('form').style.display='none'; document.getElementById('result').style.display='block';
+    document.getElementById('tier').textContent = t[0];
+    document.getElementById('headline').textContent = t[1];
+    document.getElementById('sub').textContent = domain() + ' · ' + A.cat + ' · ' + S.n + ' comparable deals tracked, ' + S.recent + ' in the last 90 days';
+    document.getElementById('model').textContent = modelOf();
+    var n = 0, num = document.getElementById('num'), arc = document.getElementById('arc');
+    arc.style.transition = 'stroke-dashoffset .9s ease'; arc.setAttribute('stroke-dashoffset', 264 - 264*S.total/100);
+    var iv = setInterval(function(){ n = Math.min(S.total, n+3); num.textContent = n; if (n>=S.total) clearInterval(iv); }, 20);
+    window.scrollTo(0,0); try { parent.postMessage({type:'FEED_HEIGHT', h: document.documentElement.scrollHeight}, '*'); } catch(e){}
+  };
+
+  document.getElementById('unlock').onclick = function(){
+    var em = document.getElementById('email').value.trim(), msg = document.getElementById('gmsg');
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) { msg.textContent = 'Please enter a valid email address.'; return; }
+    if (!document.getElementById('consent').checked) { msg.textContent = 'Please tick the box to receive your report.'; return; }
+    msg.textContent = '';
+    if (SCORE_ENDPOINT) {
+      fetch(SCORE_ENDPOINT, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ email: em, consent: true, url: domain(), answers: A, score: S.total, source:'scorecard' }) })
+        .then(function(r){ if (!r.ok) throw 0; reveal(); }).catch(function(){ msg.textContent = 'Something went wrong. Please try again.'; });
+    } else reveal();   // preview mode: nothing is stored or sent
+  };
+  function reveal() {
+    document.getElementById('gate').style.display='none';
+    var h = '<h3 class="sec">Score breakdown</h3>' + S.dims.map(function(d){ return '<div class="dim"><div class="t"><span>'+esc(d[0])+'</span><span>'+d[1]+'</span></div><div class="bar"><i style="width:'+d[1]+'%"></i></div></div>'; }).join('');
+    var sim = similar();
+    h += '<h3 class="sec">Comparable deals</h3>' + (sim.length ? sim.map(function(d){ var u = 'https://www.gctechallies.com/deal/' + encodeURIComponent(d.slug || ''); return '<div class="deal"><a href="'+(d.slug?u:'#')+'" target="_blank" rel="noopener">'+esc(d.title)+'</a><small>'+esc(d.category)+' · '+esc((d.announcedDate||'').slice(0,10))+'</small></div>'; }).join('') : '<div class="deal">No comparable deals loaded.</div>');
+    h += '<h3 class="sec">Your 30/60/90-day plan</h3><div class="plan">' + plan(S).map(function(p){ return '<div><b>'+p[0]+'</b>'+esc(p[1])+'</div>'; }).join('') + '</div>';
+    h += '<p class="hint">Preview mode: nothing was stored or sent.</p>';
+    var f = document.getElementById('full'); f.innerHTML = h; f.style.display='block';
+    try { parent.postMessage({type:'FEED_HEIGHT', h: document.documentElement.scrollHeight}, '*'); } catch(e){}
+  }
+  document.getElementById('again').onclick = function(e){ e.preventDefault(); location.reload(); };
+})();
+</script>
+</body>
+</html>
