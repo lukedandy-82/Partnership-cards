@@ -216,7 +216,10 @@
     #search-input { min-height: 44px; font-size: 16px; padding-left: 38px; }
     .region-nav { padding: 0 6px; scrollbar-width: none; }
     .region-nav::-webkit-scrollbar { display: none; }
-    .rtab { padding: 13px 11px; min-height: 44px; font-size: 13px; }
+    .region-nav { padding: 0; overflow-x: visible; }
+    .rtab { flex: 1 1 0; min-width: 0; padding: 8px 2px; min-height: 52px; font-size: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; line-height: 1.15; text-align: center; white-space: normal; }
+    .rtab .rc { margin-left: 0; font-size: 11px; }
+    .rtab .re { display: none; }
     .result-bar { padding: 8px 12px; gap: 8px; flex-wrap: wrap; font-size: 11px; }
     .result-bar .filters-btn { display: inline-flex !important; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border-radius: 8px; border: 1px solid #1a1a1a; background: #fff; color: #1a1a1a; font: 600 13px var(--sans); cursor: pointer; }
     .result-bar .filters-btn.has { background: #1a1a1a; color: #fff; }
@@ -277,10 +280,10 @@
 </div>
 <div class="region-nav">
   <button class="rtab active" data-r="all" onclick="filterRegion('all',this)">All <span class="rc" id="rc-all">-</span></button>
-  <button class="rtab r-eu" data-r="EU" onclick="filterRegion('EU',this)">&#127466;&#127482; Europe <span class="rc" id="rc-eu">-</span></button>
-  <button class="rtab r-na" data-r="North America" onclick="filterRegion('North America',this)">&#127758; N. America <span class="rc" id="rc-na">-</span></button>
-  <button class="rtab r-asia" data-r="Asia" onclick="filterRegion('Asia',this)">&#127759; Asia <span class="rc" id="rc-asia">-</span></button>
-  <button class="rtab r-global" data-r="Global" onclick="filterRegion('Global',this)">&#127760; Global <span class="rc" id="rc-global">-</span></button>
+  <button class="rtab r-eu" data-r="EU" onclick="filterRegion('EU',this)"><span class="re">&#127466;&#127482;</span> Europe <span class="rc" id="rc-eu">-</span></button>
+  <button class="rtab r-na" data-r="North America" onclick="filterRegion('North America',this)"><span class="re">&#127758;</span> N. America <span class="rc" id="rc-na">-</span></button>
+  <button class="rtab r-asia" data-r="Asia" onclick="filterRegion('Asia',this)"><span class="re">&#127759;</span> Asia <span class="rc" id="rc-asia">-</span></button>
+  <button class="rtab r-global" data-r="Global" onclick="filterRegion('Global',this)"><span class="re">&#127760;</span> Global <span class="rc" id="rc-global">-</span></button>
 </div>
 <div class="cat-bar" id="cat-bar"></div>
 <div class="stage-bar" id="stage-bar"></div>
@@ -363,7 +366,23 @@
   function toast(msg) { var t = document.getElementById('toast'); t.textContent = msg; t.className = 'show'; setTimeout(function(){ t.className = ''; }, 1800); }
 
   // Region: always resolves to one of EU / North America / Asia / Global, so every card sits under exactly one tab.
+  // Rule: all companies in one region -> that region; companies from different regions -> Global.
+  var R_EU = 'at be bg hr cy cz dk ee fi fr de gr hu ie it lv lt lu mt nl pl pt ro sk si es se gb ch no is al ua eu'.split(' '),
+      R_NA = ['us', 'ca'], R_AS = 'cn jp kr in sg hk tw my id th vn ph'.split(' ');
+  function regionOfIso(iso) { return R_EU.indexOf(iso) > -1 ? 'EU' : R_NA.indexOf(iso) > -1 ? 'North America' : R_AS.indexOf(iso) > -1 ? 'Asia' : 'Other'; }
+  function macroFromCompanies(item) {
+    var seen = {}, n = 0, only = null, missing = false;
+    (item.companies || '').split(',').forEach(function(c){
+      var i = DIR[c.trim()];
+      if (i && i.iso) { var r = regionOfIso(i.iso); if (!seen[r]) { seen[r] = 1; n++; only = r; } } else if (c.trim()) missing = true;
+    });
+    if (!n) return null;
+    if (n > 1) return 'Global';
+    if (only === 'Other') return 'Global';
+    return missing ? null : only;   // some company unknown: keep the stored region unless it already conflicts
+  }
   function macroOf(item) {
+    var fromCos = macroFromCompanies(item); if (fromCos) return fromCos;
     var k = norm(item.macroRegion).trim();
     if (k === 'eu' || k === 'europe') return 'EU';
     if (k === 'north america' || k === 'na') return 'North America';
@@ -632,8 +651,15 @@
   }
   function shareToggle(slug, btn) {
     var item = itemBySlug(slug); if (!item) return;
-    if (navigator.share) { navigator.share({ title: item.title, text: item.title, url: shareUrlOf(item) }).catch(function(){}); return; }
-    var row = btn.closest('.card').querySelector('.r-share'); row.classList.toggle('open'); postH();
+    var row = btn.closest('.card').querySelector('.r-share');
+    function openRow() { row.classList.toggle('open'); postH(); }
+    // Native share sheet is blocked inside a cross-origin iframe (Wix embed) unless the iframe allows it, so fall back to the buttons row.
+    if (navigator.share && window.self === window.top) {
+      try { navigator.share({ title: item.title, text: item.title, url: shareUrlOf(item) }).catch(function(e){ if (!e || e.name !== 'AbortError') openRow(); }); }
+      catch (e) { openRow(); }
+      return;
+    }
+    openRow();
   }
   function postH() { try { setTimeout(function(){ parent.postMessage({ type: 'FEED_HEIGHT', h: document.documentElement.scrollHeight }, '*'); }, 60); } catch (e) {} }
   window.addEventListener('resize', postH);
