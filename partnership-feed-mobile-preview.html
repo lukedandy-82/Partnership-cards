@@ -59,6 +59,8 @@
   .cat-bar .lbl, .date-bar .lbl, .stage-bar .lbl, .region-nav .lbl { flex: none; width: 64px; margin: 0; font: 700 10px var(--mono, monospace); text-transform: uppercase; letter-spacing: .06em; color: #666; margin-right: 2px; }
   .sbtn2 { padding: 4px 11px; border-radius: 20px; font-size: 11px; font-weight: 500; border: 1px solid #d4d4d0; background: #fff; color: #444; cursor: pointer; font-family: inherit; }
   .sbtn2.active { background: #0f5f6b; color: #fff; border-color: #0f5f6b; }
+  .sbtn2.sb-col { background: var(--st-bg); color: var(--st-ink); border-color: var(--st-line); font-weight: 600; }
+  .sbtn2.sb-col.active { background: var(--st); color: #fff; border-color: var(--st); }
   .sbtn2.dim { opacity: .4; }
   .sbtn2 .cc { opacity:.6; font-size:10px; margin-left:3px; font-family:'IBM Plex Mono', monospace; }
   .sim li b { font-weight: 600; }
@@ -201,7 +203,7 @@
   .sbtn.wa, .wa { background: #167a41; } .sbtn.lnk, .lnk { background: #17707d; }
   .r-ctry { justify-content: space-between; flex-wrap: nowrap; gap: 10px; }
   .ctry-txt { min-width: 0; overflow-wrap: anywhere; }
-  .stage { flex: none; font: 700 10px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: #0f5f6b; background: #e3f4f6; border: 1px solid #9fd3da; border-radius: 999px; padding: 2px 8px; white-space: nowrap; }
+  .stage { flex: none; font: 700 10px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--st-ink, #0f5f6b); background: var(--st-bg, #e3f4f6); border: 1px solid var(--st-line, #9fd3da); border-radius: 999px; padding: 2px 8px; white-space: nowrap; }
   .eu-mark { width: 20px; height: 20px; border-radius: 5px; background: #fff; padding: 1px; flex: none; display: block; }
   .eu { padding-left: 5px; }
   .cbtn.eu-f { display: inline-flex; align-items: center; gap: 6px; padding-left: 6px; }
@@ -371,6 +373,8 @@
     }).join('');
   }
   var CAT_COLORS = {AI:'#6d28d9',Cloud:'#0369a1',Payments:'#0f766e',Fintech:'#0e7490',Energy:'#b45309',Automotive:'#be123c',Defence:'#475569',Retail:'#be185d',Space:'#4338ca',SaaS:'#1d4ed8',Ecommerce:'#a21caf',Logistics:'#4d7c0f',Healthcare:'#047857','Healthcare & Real Estate':'#047857',Sport:'#c2410c'};
+  var STAGE_COLORS = {'Letter of Intent':'#6b7280','MoU':'#a16207','Signed':'#0f5f6b','Launched':'#15803d','Expanded':'#166534','Acquisition':'#7c2d12','Regulatory approval':'#1e3a8a'};
+  function stageVars(g) { var c = STAGE_COLORS[g] || '#0f5f6b'; return '--st:' + c + ';--st-ink:' + mixHex(c, '#101010', 0.3) + ';--st-bg:' + mixHex(c, '#ffffff', 0.88) + ';--st-line:' + mixHex(c, '#ffffff', 0.55) + ';'; }
   function lines(v) { return Array.isArray(v) ? v : String(v || '').split('\n').map(function(x){ return x.trim(); }).filter(Boolean); }
   function insight(title, arr) {
     if (!arr.length) return '';
@@ -559,7 +563,7 @@
       var extra = Object.keys(sc).filter(function(k){ return !known[k]; }).map(function(k){ return { id: k, blurb: 'Not in stage-convention.json' }; });
       STAGES.stages.concat(extra).forEach(function(g){
         var n = sc[g.id] || 0;
-        sh += '<button class="sbtn2' + (activeStage === g.id ? ' active' : '') + (n === 0 && activeStage !== g.id ? ' dim' : '') + '" data-g="' + esc(g.id) + '" title="' + esc(g.blurb) + '">' + esc(g.id) + '<span class="cc">' + n + '</span></button>';
+        sh += '<button class="sbtn2 sb-col' + (activeStage === g.id ? ' active' : '') + (n === 0 && activeStage !== g.id ? ' dim' : '') + '" style="' + stageVars(g.id) + '" data-g="' + esc(g.id) + '" title="' + esc(g.blurb) + '">' + esc(g.id) + '<span class="cc">' + n + '</span></button>';
       });
       sb.innerHTML = sh; wrapOpts(sb);
       sb.querySelectorAll('.sbtn2').forEach(function(b){ b.onclick = function(){ var g = b.getAttribute('data-g'); if (g === 'all') { activeStage = 'all'; render(); } else filterStage(g); }; });
@@ -650,7 +654,7 @@
         + '<div class="r-chips">' + chips + '</div>'
         + '<p class="r-sum" onclick="this.classList.toggle(\'open\');postH()">' + esc(item.summary) + '</p>'
         + '<div class="r-meta">' + (item.category ? '<span class="cat">' + esc(item.category) + '</span>' : '') + euSlot + '<span>' + esc(item.announcedDate || '') + '</span></div>'
-        + '<div class="r-ctry"><span class="ctry-txt">' + countriesOf(item) + '</span>' + (stageOf(item) ? '<span class="stage" title="' + esc((STAGES.stages.filter(function(g){ return g.id === stageOf(item); })[0] || {}).blurb || 'Deal stage') + '">' + esc(stageOf(item)) + '</span>' : '') + '</div>'
+        + '<div class="r-ctry"><span class="ctry-txt">' + countriesOf(item) + '</span>' + (stageOf(item) ? '<span class="stage" style="' + stageVars(stageOf(item)) + '" title="' + esc((STAGES.stages.filter(function(g){ return g.id === stageOf(item); })[0] || {}).blurb || 'Deal stage') + '">' + esc(stageOf(item)) + '</span>' : '') + '</div>'
         + '<div class="r-ins">' + ins + '</div>'
         + '<div class="r-act">' + (img ? '<a class="btn" href="' + esc(shareUrlOf(item)) + '" target="_blank" rel="noopener">View card &#8599;</a>' : '') + (src ? '<a class="src" href="' + esc(src) + '" target="_blank" rel="noopener">&#8599; ' + esc(item.sourceName || 'Source') + '</a>' : '') + '<button class="share-toggle" type="button" onclick="shareToggle(\'' + sl + '\',this)">Share</button></div>'
         + '<div class="r-share"><button class="sbtn li" onclick="doShare(\'li\',\'' + sl + '\',this)">LinkedIn</button><button class="sbtn x" onclick="doShare(\'x\',\'' + sl + '\',this)">X</button><button class="sbtn wa" onclick="doShare(\'wa\',\'' + sl + '\',this)">WhatsApp</button><button class="sbtn lnk" onclick="doShare(\'link\',\'' + sl + '\',this)">Copy link</button><button class="sbtn cap" onclick="doShare(\'caption\',\'' + sl + '\',this)" title="Copies a ready-to-post caption with the link">Caption</button></div>'
