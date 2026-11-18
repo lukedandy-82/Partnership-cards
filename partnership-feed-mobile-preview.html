@@ -49,6 +49,8 @@
     background: #fff; color: #555; cursor: pointer; transition: all 0.1s;
     text-transform: uppercase; letter-spacing: 0.05em; font-family: 'IBM Plex Sans', sans-serif; }
   .cbtn.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+  .cbtn-col { background: var(--cat-bg); color: var(--cat-ink); border-color: var(--cat-line); font-weight: 600; }
+  .cbtn-col.active { background: var(--cat); color: #fff; border-color: var(--cat); }
   .flbl { background:#fff; padding: 8px 16px 0; font: 700 10px var(--mono, monospace); text-transform: uppercase; letter-spacing: .06em; color: #666; }
   .date-bar { align-items: center; }
   .dbtn .cc { background: rgba(0,0,0,.08); border-radius: 8px; padding: 0 5px; margin-left: 6px; font: 10px var(--mono, monospace); }
@@ -533,7 +535,8 @@
     var html = '<button class="cbtn' + (activeCat === 'all' ? ' active' : '') + '" data-c="all">All' + (loaded ? '<span class="cc">' + total + '</span>' : '') + '</button>';
     list.forEach(function(c){
       var n = counts[c] || 0;
-      html += '<button class="cbtn' + (activeCat === c ? ' active' : '') + (loaded && n === 0 ? ' dim' : '') + '" data-c="' + esc(c) + '">' + esc(c) + (loaded ? '<span class="cc">' + n + '</span>' : '') + '</button>';
+      var col = CAT_COLORS[c] || '#475569';
+      html += '<button class="cbtn cbtn-col' + (activeCat === c ? ' active' : '') + (loaded && n === 0 ? ' dim' : '') + '" style="--cat:' + col + ';--cat-ink:' + mixHex(col, '#101010', 0.38) + ';--cat-bg:' + mixHex(col, '#ffffff', 0.88) + ';--cat-line:' + mixHex(col, '#ffffff', 0.62) + '" data-c="' + esc(c) + '">' + esc(c) + (loaded ? '<span class="cc">' + n + '</span>' : '') + '</button>';
     });
     var euN = 0; allItems.forEach(function(i){ if (passes(i, 'eu') && isEuTech(i)) euN++; });
     html += '<span class="tipwrap"><button class="cbtn eu-f' + (activeEu ? ' active' : '') + (loaded && euN === 0 && !activeEu ? ' dim' : '') + '" id="eu-filter" aria-describedby="eu-tip"><img class="eu-mark" src="assets/eustack-mark.png" width="20" height="20" alt="">Build EUStack' + (loaded ? '<span class="cc">' + euN + '</span>' : '') + '</button>'
