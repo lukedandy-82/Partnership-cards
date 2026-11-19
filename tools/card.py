@@ -16,7 +16,7 @@ def build(c):
     def col(x,items): return f'<div class="col"><div class="ch" style="background:{x["color"]}">{E(x["name"])}</div>'+''.join(f'<div class="b"><span class="n">{i+1}</span><span>{E(t)}</span></div>' for i,t in enumerate(items))+'</div>'
     gets=col(cs[0],c['gets'][0])+'<div class="dv"></div>'+col(cs[1],c['gets'][1])
     impl=''.join(f'<div class="b2"><span class="n">{i+1}</span><span>{E(t)}</span></div>' for i,t in enumerate(c['implications']))
-    ppl=''.join(f'<div class="p"><div class="av" style="background:{x["color"]}">{E("".join(w[0] for w in p[0].replace("Dr. ","").split()[:2]))}</div><div><div class="pn" style="background:{x["color"]}">{E(p[0])}</div><div class="pr">{E(p[1])}</div></div></div>' for x,p in zip(cs,c['people']))
+    ppl=''.join(f'<div class="p"><div class="av" style="background:{x["color"]}">{E("?" if p[0].startswith("Not ") else "".join(w[0] for w in p[0].replace("Dr. ","").split()[:2]))}</div><div><div class="pn" style="background:{x["color"]}">{E(p[0])}</div><div class="pr">{E(p[1])}</div></div></div>' for x,p in zip(cs,c['people']))
     mk=c.get('markets')
     mkt=''
     if mk:
