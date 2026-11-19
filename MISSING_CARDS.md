@@ -67,7 +67,6 @@
 
 ## Companies without a website (chip not clickable)
 
-- Verda
 - Ignite Next
 - Roboneers
 - M Technologies
