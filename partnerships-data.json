@@ -16,6 +16,9 @@
     "whoCanReplicate": "Vodafone could pair its German and UK networks with an energy and compute partner for a bid of its own.\nKPN could bring Dutch connectivity together with a data-centre and energy partner in a bid for a site in the Netherlands.\nProximus could offer Belgian connectivity and sovereign hosting to a consortium bid.",
     "dealStage": "Letter of Intent",
     "similarDeals": "ÆTHER Consortium | European AI Gigafactory bid in Strasbourg | https://www.gctechallies.com/deal/sipearl-2crsi-dassault-systemes-nhood-socomec-projex-aether-infrastructures-2026-07-08 | sipearl-2crsi-dassault-systemes-nhood-socomec-projex-aether-infrastructures-2026-07-08 | Same segment · AI data centres\nTelefónica × European Commission × EURO-3C | 70+ organisations unite for a sovereign European cloud continuum | https://www.gctechallies.com/deal/telefonica-european-commission-euro-3c-consortium-2026-03-03 | telefonica-european-commission-euro-3c-consortium-2026-03-03 | Same segment · AI data centres",
+    "industry": "Cloud/AI infra",
+    "segment": "AI data centres",
+    "dealModel": "Consortium / multi-party programme",
     "slug": "nokia-nscale-skeleton-technologies-telia-verda-2026-11-16",
     "shareUrl": "https://www.gctechallies.com/deal/nokia-nscale-skeleton-technologies-telia-verda-2026-11-16"
   },
@@ -36,6 +39,9 @@
     "whoCanReplicate": "Mistral AI could arrange tokenised agent payments with European schemes such as Wero and Bancontact.\nMeta could add card-network payment tokens to purchases made through Meta AI.",
     "dealStage": "Launched",
     "similarDeals": "Visa Agentic Ready | 21 European Banks Launch AI Agent Payment Programme | https://www.gctechallies.com/deal/visa-barclays-hsbc-uk-commerzbank-revolut-santander-nexi-raiffeisen-dz-bank-nationwide-2026-03-17 | visa-barclays-hsbc-uk-commerzbank-revolut-santander-nexi-raiffeisen-dz-bank-nationwide-2026-03-17 | Same segment · checkout and wallets\nUber × Revolut | Revolut Pay and RevPoints at Uber Checkout Across Europe | https://www.gctechallies.com/deal/uber-revolut-2026-11-11 | uber-revolut-2026-11-11 | Same segment · checkout and wallets",
+    "industry": "Payments",
+    "segment": "checkout and wallets",
+    "dealModel": "Product integration",
     "slug": "openai-american-express-mastercard-visa-2026-11-13",
     "shareUrl": "https://www.gctechallies.com/deal/openai-american-express-mastercard-visa-2026-11-13"
   },
@@ -56,6 +62,9 @@
     "whoCanReplicate": "Sonnen could pair its energy-management software with a US cell supplier to enter commercial storage.\nSocomec, the French power-equipment group, could partner with a US cell maker for American commercial and industrial projects.",
     "dealStage": "Signed",
     "similarDeals": "Altris × Draslovka | Europe's first industrial sodium-ion cathode supply chain | https://www.gctechallies.com/deal/altris-ab-draslovka-a-s-2026-07-01 | altris-ab-draslovka-a-s-2026-07-01 | Same segment · energy storage\nFlexGen and Eos | US storage integrator and battery maker enter the European market with first deals | https://energy-storage.news/us-bess-integrator-flexgen-ldes-tech-provider-eos-enter-european-market-with-first-deals |  | Same approach · US–Europe market entry",
+    "industry": "Energy",
+    "segment": "energy storage",
+    "dealModel": "Distribution / market entry",
     "slug": "fenecon-a123-systems-2026-11-12",
     "shareUrl": "https://www.gctechallies.com/deal/fenecon-a123-systems-2026-11-12"
   },
@@ -76,6 +85,9 @@
     "whoCanReplicate": "bunq could pair its rewards programme with a mobility or delivery platform such as Bolt.\nWise could offer a checkout-rewards tie with a travel or delivery platform.\nFreenow by Lyft could add a neobank wallet at checkout alongside its Checkout.com-powered payments.",
     "dealStage": "Expanded",
     "similarDeals": "European Payments Council × Lidl and Decathlon | Wero expands retail payments to France and Belgium | https://www.gctechallies.com/deal/european-payments-council-wero-lidl-decathlon-2026-03-01 | european-payments-council-wero-lidl-decathlon-2026-03-01 | Same segment · checkout and wallets\nAdyen × Starbucks | In-store payments across 940+ European stores | https://www.gctechallies.com/deal/adyen-starbucks-2026-02-13 | adyen-starbucks-2026-02-13 | Same segment · checkout and wallets\nOpenAI × Amex, Mastercard and Visa | ChatGPT Wallet for Agent Payments | https://www.gctechallies.com/deal/openai-american-express-mastercard-visa-2026-11-13 | openai-american-express-mastercard-visa-2026-11-13 | Same segment · checkout and wallets",
+    "industry": "Payments",
+    "segment": "checkout and wallets",
+    "dealModel": "Distribution / market entry",
     "slug": "uber-revolut-2026-11-11",
     "shareUrl": "https://www.gctechallies.com/deal/uber-revolut-2026-11-11"
   },
@@ -96,6 +108,9 @@
     "whoCanReplicate": "Xero could embed business accounts and cards in its software; its Revolut Business tie covers cross-border payments only.\nVisma, with small-business customers across the Nordics and the Netherlands, could add accounts through a banking-as-a-service provider.\nDATEV in Germany could do the same with a German bank partner.",
     "dealStage": "Signed",
     "similarDeals": "Barclays × Sage | Embedded finance partnership for UK SMEs | https://www.gctechallies.com/deal/barclays-sage-2026-03-17 | barclays-sage-2026-03-17 | Same segment · embedded finance\nSantander × Xero | Next-gen small business banking service | https://ffnews.com/newsarticle/xero-and-santander-announce-next-gen-small-business-banking-service/ |  | Same segment · embedded finance\nAdyen × ROLLER | ROLLER Capital: Embedded Finance for Leisure & Entertainment Venues | https://www.gctechallies.com/deal/adyen-roller-2026-05-28 | adyen-roller-2026-05-28 | Same segment · embedded finance",
+    "industry": "Payments",
+    "segment": "embedded finance",
+    "dealModel": "Product integration",
     "slug": "sage-adyen-mastercard-2026-11-10",
     "shareUrl": "https://www.gctechallies.com/deal/sage-adyen-mastercard-2026-11-10"
   },
@@ -116,6 +131,9 @@
     "whoCanReplicate": "Garmin could buy or partner with an AI-first primary-care provider; its health tie-ups so far are with hospitals and senior-care wearables.\nPolar could do the same for its European users.\nPhilips could pair its wearables and monitoring with a clinical service for European patients.",
     "dealStage": "Acquisition",
     "similarDeals": "Oura × Galen AI | Wearable maker buys an AI health companion that reads medical records, announced April 2026 | https://the5krunner.com/2026/04/19/oura-acquires-galen-ai/ |  | Same company · Oura adds AI care\nWithings × Function Health | Wearable and home-device data linked to 160+ clinical lab tests | https://hitconsultant.net/2026/10/22/withings-function-integrate-daily-connected-biometrics-160-clinical-lab-tests/ |  | Same segment · consumer health devices and clinical services\nWix × K Health | AI front door for health systems | https://www.gctechallies.com/deal/wix-k-health-2026-10-22 | wix-k-health-2026-10-22 | Same segment · digital and consumer health",
+    "industry": "Healthcare",
+    "segment": "digital and consumer health",
+    "dealModel": "Acquisition",
     "slug": "oura-counsel-health-2026-11-10",
     "shareUrl": "https://www.gctechallies.com/deal/oura-counsel-health-2026-11-10"
   },
@@ -136,6 +154,9 @@
     "whoCanReplicate": "Equinor could pair Norwegian power with a technology partner for an AI compute site.\nStatkraft could bring its hydropower to an AI campus with a technology or investment partner.\nØrsted could pair offshore wind with a data-centre developer for an AI compute site.",
     "dealStage": "Signed",
     "similarDeals": "Bain Capital × AQ Compute | Green AI data-centre buildout across Europe | https://www.gctechallies.com/deal/bain-capital-aq-compute-2026-04-01 | bain-capital-aq-compute-2026-04-01 | Same segment · AI data centres\nNokia, Nscale, Skeleton, Telia and Verda | AI Gigafactory Northern Consortium | https://www.gctechallies.com/deal/nokia-nscale-skeleton-technologies-telia-verda-2026-11-16 | nokia-nscale-skeleton-technologies-telia-verda-2026-11-16 | Same segment · AI data centres",
+    "industry": "Cloud/AI infra",
+    "segment": "AI data centres",
+    "dealModel": "Strategic investment",
     "slug": "softbank-group-grab-holdings-petros-2026-11-09",
     "shareUrl": "https://www.gctechallies.com/deal/softbank-group-grab-holdings-petros-2026-11-09"
   },
@@ -156,6 +177,9 @@
     "whoCanReplicate": "Adyen could acquire a BNPL specialist; its Billie tie covers business-to-business BNPL only.\nCheckout.com could buy a European BNPL provider to add lending to its acquiring.\nStripe could buy a European BNPL specialist, building on its existing Klarna and Affirm integrations.",
     "dealStage": "Acquisition",
     "similarDeals": "OpenAI × Amex, Mastercard and Visa | ChatGPT Wallet for Agent Payments | https://www.gctechallies.com/deal/openai-american-express-mastercard-visa-2026-11-13 | openai-american-express-mastercard-visa-2026-11-13 | Same segment · checkout and wallets\nUber × Revolut | Revolut Pay and RevPoints at Uber Checkout Across Europe | https://www.gctechallies.com/deal/uber-revolut-2026-11-11 | uber-revolut-2026-11-11 | Same segment · checkout and wallets",
+    "industry": "Payments",
+    "segment": "checkout and wallets",
+    "dealModel": "Distribution / market entry",
     "slug": "nexi-affirm-ratepay-2026-11-09",
     "shareUrl": "https://www.gctechallies.com/deal/nexi-affirm-ratepay-2026-11-09"
   },
@@ -176,6 +200,9 @@
     "whoCanReplicate": "Warner Bros. Discovery, which has used AWS and Google Cloud for other AI work, could sign a custom-model alliance for its franchises.\nParamount could do the same with a creative-software vendor.\nLVMH, which has used Google for personalised customer experiences, could train custom image models on its brand assets.",
     "dealStage": "Signed",
     "similarDeals": "Disney × OpenAI | $1B equity investment and licensed characters for Sora video generation | https://www.thewrap.com/disney-sora-openai-licensing-deal |  | Same segment · media and AI",
+    "industry": "Media",
+    "segment": "media and AI",
+    "dealModel": "Licensing / model deployment",
     "slug": "adobe-the-walt-disney-company-2026-11-09",
     "shareUrl": "https://www.gctechallies.com/deal/adobe-the-walt-disney-company-2026-11-09"
   },
@@ -196,6 +223,9 @@
     "whoCanReplicate": "Axelera AI, the Dutch maker of edge AI chips, could join a rack-scale ecosystem with an operator partner.\nOpenchip in Spain could take the role Rebellions plays in a European sovereign stack.\nKPN could pair with a local chip maker and a global interconnect supplier for a Dutch sovereign AI stack.",
     "dealStage": "Letter of Intent",
     "similarDeals": "Synopsys × OpenAI | GPT-Synopsys Chip-Design Model with Outcome-Based Revenue Share | https://www.gctechallies.com/deal/synopsys-openai-2026-09-30 | synopsys-openai-2026-09-30 | Same segment · AI chips and design\nIBM × Arm | Dual-Architecture Enterprise Computing for AI Workloads | https://www.gctechallies.com/deal/ibm-arm-2026-04-02 | ibm-arm-2026-04-02 | Same segment · AI chips and design",
+    "industry": "Semiconductors",
+    "segment": "AI chips and design",
+    "dealModel": "Licensing / model deployment",
     "slug": "nvidia-rebellions-sk-telecom-2026-11-08",
     "shareUrl": "https://www.gctechallies.com/deal/nvidia-rebellions-sk-telecom-2026-11-08"
   },
@@ -216,6 +246,9 @@
     "whoCanReplicate": "SumUp could add BNPL options for small merchants with a European provider; its recent partnerships are with Form3 and Adyen.\nNuvei could do the same for its mid-market merchants in Europe.\nPaysafe could add a BNPL provider's dispute and FX tools to its merchant offer.",
     "dealStage": "Expanded",
     "similarDeals": "Getnet × Nayax | Unattended payments across Iberia and Latin America | https://www.gctechallies.com/deal/getnet-nayax-2026-09-30 | getnet-nayax-2026-09-30 | Same segment · checkout and wallets\nOpenAI × Amex, Mastercard and Visa | ChatGPT Wallet for Agent Payments | https://www.gctechallies.com/deal/openai-american-express-mastercard-visa-2026-11-13 | openai-american-express-mastercard-visa-2026-11-13 | Same segment · checkout and wallets",
+    "industry": "Payments",
+    "segment": "checkout and wallets",
+    "dealModel": "Product integration",
     "slug": "klarna-mollie-2026-11-03",
     "shareUrl": "https://www.gctechallies.com/deal/klarna-mollie-2026-11-03"
   },
@@ -236,6 +269,9 @@
     "whoCanReplicate": "QatarEnergy and Petronas could pair a US model vendor with a local compute partner in the same way.\nEquinor and Petrobras have the data volumes and in-house AI teams to sign comparable platform deals.\nMining groups such as Rio Tinto and BHP, with similar planning and valuation workloads.",
     "dealStage": "Signed",
     "similarDeals": "IFS × Anthropic | Industrial AI solutions for energy and asset-heavy industries | https://tradearabia.com/News/330427/IFS-partners-with-Anthropic-to-develop-powerful-Industrial-AI-solutions |  | Same segment · AI in energy\nTotalEnergies × Mistral AI | Joint lab building frontier AI for upstream energy | https://energydigital.com/news/totalenergies-mistral-team-up-to-create-oil-exploration-ai | totalenergies-mistral-ai-2026-09-15 | Same segment · AI in energy",
+    "industry": "Energy",
+    "segment": "AI in energy",
+    "dealModel": "Licensing / model deployment",
     "slug": "adnoc-openai-g42-2026-11-02",
     "shareUrl": "https://www.gctechallies.com/deal/adnoc-openai-g42-2026-11-02"
   },
@@ -256,6 +292,9 @@
     "whoCanReplicate": "Diageo runs a five-year SAP and IBM programme across 180 countries with no hyperscaler partner named; a unified data foundation is the open step before any agents.\nPuig has many brands serving one consumer and no group-level cloud partner found in public sources, so a data-first sequence is still open.",
     "dealStage": "Signed",
     "similarDeals": "Unilever | Five-year Google Cloud deal for data platforms and AI | https://computerweekly.com/news/366639143/Unilever-adds-more-Google-Cloud-as-backbone-for-AI |  | Same industry · consumer brands\nLVMH | Google Cloud data and AI platform across its maisons | https://blog.google/products/google-cloud/lvmh/ |  | Same industry · consumer brands\nAmorepacific | Expanded AWS partnership for company-wide AI | https://www.apgroup.com/int/en/news/2026-05-22-1.html |  | Same industry · consumer brands",
+    "industry": "Retail/Ecommerce",
+    "segment": "retail technology and AI",
+    "dealModel": "Distribution / market entry",
     "slug": "estee-lauder-companies-microsoft-2026-10-30",
     "shareUrl": "https://www.gctechallies.com/deal/estee-lauder-companies-microsoft-2026-10-30"
   },
@@ -276,6 +315,9 @@
     "whoCanReplicate": "The EIB could sign similar bank partnerships for defence-adjacent or quantum SMEs with Santander or Crédit Agricole.\nNational development banks such as Bpifrance and KfW can mirror it for their own space strategies.\nESA's investor forum partners, such as Seraphim and Expansion Ventures, can pair equity with these debt lines.",
     "dealStage": "Launched",
     "similarDeals": "",
+    "industry": "Payments",
+    "segment": "payment rails and cross-border",
+    "dealModel": "Consortium / multi-party programme",
     "slug": "eib-deutsche-bank-2026-10-30",
     "shareUrl": "https://www.gctechallies.com/deal/eib-deutsche-bank-2026-10-30"
   },
@@ -296,6 +338,9 @@
     "whoCanReplicate": "Stellantis could license its in-house STLA software components to other makers the same way.\nHyundai and Toyota hold software assets that could be sold across partners.\nPolestar and Volvo Cars, which already share software with Google and Nvidia, could license their own assistant.",
     "dealStage": "Expanded",
     "similarDeals": "",
+    "industry": "Automotive",
+    "segment": "vehicle software and chips",
+    "dealModel": "Joint venture",
     "slug": "rivian-volkswagen-group-2026-10-29",
     "shareUrl": "https://www.gctechallies.com/deal/rivian-volkswagen-group-2026-10-29"
   },
@@ -316,6 +361,9 @@
     "whoCanReplicate": "Thales and Sopra Steria could pair with a European model provider for defence and critical-infrastructure clients.\nDeutsche Telekom's T-Systems and Telefónica Tech can offer the same arrangement to their own security customers.\nSAP could use a design-partner model with Mistral for compliance workflows in its enterprise base.",
     "dealStage": "Signed",
     "similarDeals": "Sophos × OpenAI | Frontier AI security for managed service providers | https://www.channelinsider.com/security/sophos-openai-partner-frontier-ai-msps/ |  | Same segment · AI models for enterprise and government\nPwC × OpenAI | Expanded AI-powered cyber defense capabilities | https://www.pwc.com/us/en/about-us/newsroom/press-releases/pwc-openai-cyber-defense-capabilities.html |  | Same segment · AI models for enterprise and government",
+    "industry": "Enterprise AI",
+    "segment": "AI models for enterprise and government",
+    "dealModel": "Licensing / model deployment",
     "slug": "orange-cyberdefense-mistral-ai-2026-10-29",
     "shareUrl": "https://www.gctechallies.com/deal/orange-cyberdefense-mistral-ai-2026-10-29"
   },
@@ -336,6 +384,9 @@
     "whoCanReplicate": "BMW and Mercedes-Benz could fix their zonal chip suppliers in the same way.\nStellantis and Renault have the platform scale to justify group-wide silicon agreements.\nToyota and Hyundai could use the same approach for their next-generation platforms.",
     "dealStage": "Signed",
     "similarDeals": "",
+    "industry": "Automotive",
+    "segment": "vehicle software and chips",
+    "dealModel": "Product integration",
     "slug": "volkswagen-group-nxp-semiconductors-2026-10-26",
     "shareUrl": "https://www.gctechallies.com/deal/volkswagen-group-nxp-semiconductors-2026-10-26"
   },
@@ -356,6 +407,9 @@
     "whoCanReplicate": "Shopify and Squarespace could pair with clinical AI firms in adjacent regulated sectors.\nAda Health and Doctolib could partner with a web platform for European health systems.\nSalesforce Health Cloud could package a similar front door for payers and providers.",
     "dealStage": "Signed",
     "similarDeals": "Atlantic Health × K Health | PatientGPT as an AI digital front door for a health system | https://hitconsultant.net/2026/08/11/atlantic-health-k-health-launch-patientgpt-ai-digital-front-door/ |  | Same segment · digital and consumer health",
+    "industry": "Healthcare",
+    "segment": "digital and consumer health",
+    "dealModel": "Product integration",
     "slug": "wix-k-health-2026-10-22",
     "shareUrl": "https://www.gctechallies.com/deal/wix-k-health-2026-10-22"
   },
@@ -376,6 +430,9 @@
     "whoCanReplicate": "NEC and Hitachi could join a European cloud such as Open Telekom Cloud or Scaleway.\nTelefónica Tech and Orange Business can pair with Asian hardware makers for sovereign offers.\nSamsung and LG could extend device and server ties to STACKIT-style clouds.",
     "dealStage": "Signed",
     "similarDeals": "BT × STACKIT | Network links for sovereign cloud access | https://www.pulse.bot/telecom/news/bt-stackit-team-on-data-sovereignty-push-ab1bc30b-c090-414a-a6c4-a99809fc705c/ |  | Same segment · sovereign cloud\nOVHcloud × LTM | Sovereign AI cloud in Europe | https://itbrief.co.uk/story/ovhcloud-ltm-team-up-on-sovereign-ai-cloud-in-europe |  | Same segment · sovereign cloud",
+    "industry": "Cloud/AI infra",
+    "segment": "sovereign cloud",
+    "dealModel": "Supply or compute contract",
     "slug": "fujitsu-schwarz-digits-2026-10-22",
     "shareUrl": "https://www.gctechallies.com/deal/fujitsu-schwarz-digits-2026-10-22"
   },
@@ -396,6 +453,9 @@
     "whoCanReplicate": "Nubank and Monzo have the transaction history to train their own foundation models.\nBBVA and ING can build one on shared data across their European retail banks.\nKlarna and Wise could apply the approach to payments and credit decisions.",
     "dealStage": "Launched",
     "similarDeals": "European financial institutions × Nvidia | Open models to build proprietary intelligence | https://blogs.nvidia.com/blog/european-financial-services-organizations-open-models-proprietary-intelligence/ |  | Same segment · AI in banking\nJapanese mega banks × Nvidia | Financial intelligence built on Nvidia AI | https://gamesbeat.com/japanese-mega-banks-build-financial-intelligence-with-nvidia-ai/ |  | Same segment · AI in banking",
+    "industry": "Payments",
+    "segment": "AI in banking",
+    "dealModel": "Supply or compute contract",
     "slug": "revolut-nvidia-2026-10-21",
     "shareUrl": "https://www.gctechallies.com/deal/revolut-nvidia-2026-10-21"
   },
@@ -416,6 +476,9 @@
     "whoCanReplicate": "Mistral AI and Cohere could sell through more than one hyperscaler marketplace.\nMeta's Llama and xAI's Grok could widen distribution through Marketplace listings.\nSAP and ServiceNow could resell third-party models on several clouds.",
     "dealStage": "Launched",
     "similarDeals": "Anthropic × Microsoft | Claude models generally available in Microsoft Foundry | https://redmondmag.com/articles/2026/07/02/anthropic-claude-goes-ga-in-microsoft-foundry.aspx |  | Same segment · AI compute deals",
+    "industry": "Cloud/AI infra",
+    "segment": "AI compute deals",
+    "dealModel": "Product integration",
     "slug": "openai-google-cloud-2026-10-21",
     "shareUrl": "https://www.gctechallies.com/deal/openai-google-cloud-2026-10-21"
   },
@@ -436,6 +499,9 @@
     "whoCanReplicate": "FreeNow, owned by Lyft, could choose a driving stack and vehicle supplier in the same way.\nCabify and Heetch can pair with Chinese or US vehicle makers.\nPublic-transport operators such as Arriva and Transdev could pilot robotaxi fleets on Nvidia's platform.",
     "dealStage": "Signed",
     "similarDeals": "BYD, Geely, Isuzu and Nissan × Nvidia | Adopt NVIDIA DRIVE Hyperion for Level 4 vehicles | https://nvidianews.nvidia.com/news/drive-hyperion-level-4 |  | Same segment · autonomous driving and mobility",
+    "industry": "Automotive",
+    "segment": "autonomous driving and mobility",
+    "dealModel": "Product integration",
     "slug": "bolt-nvidia-lucid-2026-10-21",
     "shareUrl": "https://www.gctechallies.com/deal/bolt-nvidia-lucid-2026-10-21"
   },
@@ -456,6 +522,9 @@
     "whoCanReplicate": "Welltower and Ventas own hospital and care real estate and could sell a half-stake to a sovereign or pension investor to cut debt.\nCofinimmo-style European healthcare landlords outside the Aedifica merger could use the same manager-plus-capital-partner structure.",
     "dealStage": "Signed",
     "similarDeals": "Healthpeak × Brookfield | $2.1B outpatient medical real estate venture | https://www.credaily.com/?p=220204 |  | Same segment · healthcare real estate\nCPP Investments × IRA Capital | Pension fund backs US medical real estate joint venture | https://www.benefitsandpensionsmonitor.com/news/industry-news/a/393006 |  | Same segment · healthcare real estate",
+    "industry": "Healthcare",
+    "segment": "healthcare real estate",
+    "dealModel": "Joint venture",
     "slug": "primary-health-properties-gic-2026-10-19",
     "shareUrl": "https://www.gctechallies.com/deal/primary-health-properties-gic-2026-10-19"
   },
@@ -476,6 +545,9 @@
     "whoCanReplicate": "CaixaBank and Sabadell serve large Spanish SME bases and could bundle a cross-border payments specialist the way Getnet has; we found no comparable announcement from either.\nMillennium bcp and Novo Banco could do the same for Portuguese exporters, and we found no comparable partner announced.",
     "dealStage": "Signed",
     "similarDeals": "XTransfer × BBVA | Cross-border payments across Latin America and Europe | https://financialit.net/news/payments/xtransfer-partners-bbva-advancing-cross-border-payments-across-latin-america-and |  | Same segment · payment rails and cross-border",
+    "industry": "Payments",
+    "segment": "payment rails and cross-border",
+    "dealModel": "Distribution / market entry",
     "slug": "pingpong-getnet-2026-10-19",
     "shareUrl": "https://www.gctechallies.com/deal/pingpong-getnet-2026-10-19"
   },
@@ -496,6 +568,9 @@
     "whoCanReplicate": "Telia, Swisscom and Proximus could form a Nordic or Alpine bloc.\nAirbus and Thales Alenia Space could propose constellations to such a group.\nAsian groups such as NTT Docomo and SK Telecom could organise similar bids.",
     "dealStage": "Letter of Intent",
     "similarDeals": "Vodafone × AST SpaceMobile | 'SatCo' joint venture for a European direct-to-device service | https://www.satellitetoday.com/connectivity/2025/06/30/vodafone-and-ast-spacemobile-european-joint-venture-satco-plans-d2d-offering-in-2026/ |  | Same segment · space and satellites",
+    "industry": "Defence/Space",
+    "segment": "space and satellites",
+    "dealModel": "Consortium / multi-party programme",
     "slug": "deutsche-telekom-orange-telefonica-vodafone-2026-10-19",
     "shareUrl": "https://www.gctechallies.com/deal/deutsche-telekom-orange-telefonica-vodafone-2026-10-19"
   },
@@ -516,6 +591,9 @@
     "whoCanReplicate": "Entergy and Dominion Energy can offer similar structures where Meta and Amazon build campuses.\nSouthern Company and Xcel Energy could use the same GenCo approach in their territories.\nUtilities in Europe such as Iberdrola and Enel can structure comparable agreements with hyperscalers.",
     "dealStage": "Signed",
     "similarDeals": "Chevron × Microsoft | 20-year power deal | https://convergedigest.com/chevron-signs-20-year-power-deal-with-microsoft/ |  | Same segment · power for data centres",
+    "industry": "Energy",
+    "segment": "power for data centres",
+    "dealModel": "Supply or compute contract",
     "slug": "nisource-microsoft-2026-10-16",
     "shareUrl": "https://www.gctechallies.com/deal/nisource-microsoft-2026-10-16"
   },
@@ -536,6 +614,9 @@
     "whoCanReplicate": "BMW designs its own driver-assistance software and could adopt an Nvidia full stack like Volvo's.\nRenault, with a software-defined vehicle plan but no Nvidia Hyperion deal that we found, could follow.",
     "dealStage": "Expanded",
     "similarDeals": "",
+    "industry": "Automotive",
+    "segment": "autonomous driving and mobility",
+    "dealModel": "Product integration",
     "slug": "volvo-cars-nvidia-2026-10-15",
     "shareUrl": "https://www.gctechallies.com/deal/volvo-cars-nvidia-2026-10-15"
   },
@@ -556,6 +637,9 @@
     "whoCanReplicate": "Infineon could anchor a similar programme for power-semiconductor startups near its Dresden fab.\nX-FAB could do so for specialty-foundry ventures.",
     "dealStage": "Signed",
     "similarDeals": "Synopsys × Ignite Next | Joins the scale-up programme for deep-tech innovation | https://iconnect007.com/article/148489/ignite-next-welcomes-synopsys-to-its-scaleup-program-for-deep-tech-innovation/148486/ein |  | Same segment · chip manufacturing\nSiemens × Cloudberry VC | Collaboration to accelerate European deep-tech innovation | https://news.siemens.com/de-de/siemens-cre8ventures-cloudberry-vc/ |  | Same segment · chip manufacturing",
+    "industry": "Semiconductors",
+    "segment": "chip manufacturing",
+    "dealModel": "Product integration",
     "slug": "suss-microtec-ignite-next-2026-10-13",
     "shareUrl": "https://www.gctechallies.com/deal/suss-microtec-ignite-next-2026-10-13"
   },
@@ -576,6 +660,9 @@
     "whoCanReplicate": "Hema, the Dutch variety retailer, could hand a regional franchise to a partner that already runs malls and logistics in the Balkans.\nRituals could do the same for its home and body-care stores.",
     "dealStage": "Expanded",
     "similarDeals": "",
+    "industry": "Retail/Ecommerce",
+    "segment": "retail expansion and deals",
+    "dealModel": "Distribution / market entry",
     "slug": "balfin-group-flying-tiger-copenhagen-2026-10-13",
     "shareUrl": "https://www.gctechallies.com/deal/balfin-group-flying-tiger-copenhagen-2026-10-13"
   },
@@ -596,6 +683,9 @@
     "whoCanReplicate": "Nissan has said it is open to collaboration with Honda in India, and could pool platforms and plants the same way.\nRenault, with Chennai plant capacity shared with Nissan, could offer it as an export base to a partner.",
     "dealStage": "Expanded",
     "similarDeals": "Honda × Tata Technologies | Honda outsources new car platform development to India | https://www.segmenty.com/GenerateNewsStaticJsps/Honda_outsources_new_car_platform_development_to_India_s_Tata_Technologies.html |  | Same segment · vehicle manufacturing partnerships",
+    "industry": "Automotive",
+    "segment": "vehicle manufacturing partnerships",
+    "dealModel": "Joint venture",
     "slug": "tata-motors-stellantis-2026-10-12",
     "shareUrl": "https://www.gctechallies.com/deal/tata-motors-stellantis-2026-10-12"
   },
@@ -616,6 +706,9 @@
     "whoCanReplicate": "Apple has no announced nuclear supply deal and could contract uprate capacity the way Google did.\nCoreWeave has fast-growing AI data-centre load and no nuclear contract that we found.",
     "dealStage": "Signed",
     "similarDeals": "Amazon × Talen Energy | 960 MW nuclear-powered data centre campus supply | https://enkiai.com/nuclear/amazon-talen-energy-data-center/ |  | Same segment · power for data centres",
+    "industry": "Energy",
+    "segment": "power for data centres",
+    "dealModel": "Supply or compute contract",
     "slug": "google-constellation-energy-2026-10-06",
     "shareUrl": "https://www.gctechallies.com/deal/google-constellation-energy-2026-10-06"
   },
@@ -636,6 +729,9 @@
     "whoCanReplicate": "Patria, the Finnish armoured-vehicle maker, could pair its platforms with a Ukrainian integrator; we found no such deal.\nLeonardo could do the same with its Italian land-systems base.",
     "dealStage": "Expanded",
     "similarDeals": "Quantum Systems × Tencore | Co-production of 2,000 Termit UGVs | https://euro-sd.com/2026/06/news/land/51687/quantum-systems-and-tencore-to-co-produce-2000-termit-ugvs/ |  | Same segment · defence industry\nTencore × Shark Robotics | Joint venture for UGVs | https://euromaidanpress.com/2026/04/23/ugv-makers-tencore-of-ukraine-and-shark-robotics-of-france-sign-joint-venture/ |  | Same segment · defence industry",
+    "industry": "Defence/Space",
+    "segment": "defence industry",
+    "dealModel": "Product integration",
     "slug": "arx-robotics-roboneers-2026-10-05",
     "shareUrl": "https://www.gctechallies.com/deal/arx-robotics-roboneers-2026-10-05"
   },
@@ -656,6 +752,9 @@
     "whoCanReplicate": "Hexagon could pair a model lab with outcome-linked revenue in design and simulation software.\nPTC could tie a model partner to measured design savings in industrial software.",
     "dealStage": "Signed",
     "similarDeals": "",
+    "industry": "Semiconductors",
+    "segment": "AI chips and design",
+    "dealModel": "Licensing / model deployment",
     "slug": "synopsys-openai-2026-09-30",
     "shareUrl": "https://www.gctechallies.com/deal/synopsys-openai-2026-09-30"
   },
@@ -676,6 +775,9 @@
     "whoCanReplicate": "Adyen covers many European markets and could pair with an unattended-payments specialist.\nCielo could do the same for vending and kiosk operators in Brazil.",
     "dealStage": "Signed",
     "similarDeals": "DNA Payments × OnePlusTwo | Self-service kiosk solutions for hospitality and retail | https://ffnews.com/newsarticle/fintech/dna-payments-and-oneplustwo-partner-to-expand-self-service-kiosks-and-solutions-for-hospitality-and-retail/ |  | Same segment · checkout and wallets\nIngenico × Arrive | Payments for parking and transit | https://thepaypers.com/payments/news/ingenico-and-arrive-partner-on-payments-for-parking-and-transit |  | Same segment · checkout and wallets\nWorldline × Evermart | Smarter, healthier unattended retail | https://worldline.com/en/home/main-navigation/resources/all-customer-stories/worldline-evermart-pioneering-the-future-of-smarter-healthier-unattended-retail-solutions |  | Same segment · checkout and wallets",
+    "industry": "Payments",
+    "segment": "checkout and wallets",
+    "dealModel": "Product integration",
     "slug": "getnet-nayax-2026-09-30",
     "shareUrl": "https://www.gctechallies.com/deal/getnet-nayax-2026-09-30"
   },
@@ -696,6 +798,9 @@
     "whoCanReplicate": "EBA Clearing could pick an orchestration vendor for euro tokenised deposits.\nPay.UK could do the same for the UK's retail payments rails.",
     "dealStage": "Signed",
     "similarDeals": "JPMorgan, Citi, Bank of America and Wells Fargo | Plan a tokenized deposit network for 2027 | https://www.theblock.co/news/business/2026-06-04-jpmorgan-citi-major-banks-tokenized-deposit-network-403701 |  | Same segment · payment rails and cross-border",
+    "industry": "Payments",
+    "segment": "payment rails and cross-border",
+    "dealModel": "Distribution / market entry",
     "slug": "the-clearing-house-quant-2026-09-24",
     "shareUrl": "https://www.gctechallies.com/deal/the-clearing-house-quant-2026-09-24"
   },
@@ -716,6 +821,9 @@
     "whoCanReplicate": "Schüller could roll out an AI planner across its dealers.\nNolte Küchen could do the same.",
     "dealStage": "Signed",
     "similarDeals": "Häcker × Cyncly | Winner Flex order check for kitchen dealers | https://www.cyncly.com/en/resources/news/winner-flex-hacker-order-check |  | Same segment · retail technology and AI",
+    "industry": "Retail/Ecommerce",
+    "segment": "retail technology and AI",
+    "dealModel": "Product integration",
     "slug": "nobilia-coohom-2026-09-23",
     "shareUrl": "https://www.gctechallies.com/deal/nobilia-coohom-2026-09-23"
   },
@@ -736,6 +844,9 @@
     "whoCanReplicate": "Eni has its own supercomputer and could fund a European AI lab.\nRepsol has similar in-house computing and could do the same.",
     "dealStage": "Signed",
     "similarDeals": "IFS × Anthropic | Industrial AI solutions for energy and asset-heavy industries | https://tradearabia.com/News/330427/IFS-partners-with-Anthropic-to-develop-powerful-Industrial-AI-solutions |  | Same segment · AI in energy",
+    "industry": "Energy",
+    "segment": "AI in energy",
+    "dealModel": "Licensing / model deployment",
     "slug": "totalenergies-mistral-ai-2026-09-15",
     "shareUrl": "https://www.gctechallies.com/deal/totalenergies-mistral-ai-2026-09-15"
   },
@@ -756,6 +867,9 @@
     "whoCanReplicate": "Computacenter could build a network practice on a similar partner in Europe.\nOrange Business Services could do the same for its enterprise customers.",
     "dealStage": "Signed",
     "similarDeals": "",
+    "industry": "Enterprise AI",
+    "segment": "enterprise AI platforms",
+    "dealModel": "Distribution / market entry",
     "slug": "netbox-labs-presidio-2026-09-15",
     "shareUrl": "https://www.gctechallies.com/deal/netbox-labs-presidio-2026-09-15"
   },
@@ -776,6 +890,9 @@
     "whoCanReplicate": "SES could consolidate constellation replenishment with one prime contractor.\nSpace Norway could place orders in the same way.",
     "dealStage": "Signed",
     "similarDeals": "Thales Alenia Space × IRIS² | €500M initial tranche to make digital payloads for 330 IRIS² LEO satellites | https://satnews.com/2026/09/10/thales-alenia-space-secures-e500-million-initial-tranche-to-manufacture-digital-payloads-for-330-iris%c2%b2-leo-satellites/ |  | Same segment · space and satellites",
+    "industry": "Defence/Space",
+    "segment": "space and satellites",
+    "dealModel": "Strategic investment",
     "slug": "eutelsat-airbus-defence-and-space-2026-09-10",
     "shareUrl": "https://www.gctechallies.com/deal/eutelsat-airbus-defence-and-space-2026-09-10"
   },
@@ -796,6 +913,9 @@
     "whoCanReplicate": "Teradata could embed a European model for regulated customers.\nDremio could do the same for air-gapped lakehouses.",
     "dealStage": "Signed",
     "similarDeals": "Databricks × Mistral AI | Mistral models integrated into the Databricks data intelligence platform | https://futurecio.tech/mistral-ais-models-integrate-into-the-databricks-data-intelligence-platform/ |  | Same segment · enterprise AI platforms",
+    "industry": "Enterprise AI",
+    "segment": "enterprise AI platforms",
+    "dealModel": "Licensing / model deployment",
     "slug": "cloudera-mistral-ai-2026-09-10",
     "shareUrl": "https://www.gctechallies.com/deal/cloudera-mistral-ai-2026-09-10"
   },
@@ -816,6 +936,9 @@
     "whoCanReplicate": "SES could sell hosted capacity to other Earth-observation companies.\nViasat could do the same.",
     "dealStage": "Signed",
     "similarDeals": "Loft Orbital × SmartSat CRC | Wildfire detection application onboard an AI-enabled satellite | https://www.satellitetoday.com/imagery-and-sensing/2026/02/18/loft-orbital-smartsat-crc-to-demonstrate-wildfire-detection-technology/ |  | Same segment · space and satellites",
+    "industry": "Defence/Space",
+    "segment": "space and satellites",
+    "dealModel": "Supply or compute contract",
     "slug": "eutelsat-ororatech-2026-09-09",
     "shareUrl": "https://www.gctechallies.com/deal/eutelsat-ororatech-2026-09-09"
   },
@@ -836,6 +959,9 @@
     "whoCanReplicate": "IONOS could seek a RISE listing as a European provider.\nScaleway could do the same.",
     "dealStage": "Launched",
     "similarDeals": "SAP × S3NS (Thales) | Sovereign cloud in France with Thales as first strategic customer | https://www.aviation-defence-universe.com/sap-and-s3ns-accelerate-trusted-cloud-adoption-in-france-with-thales-as-first-strategic-customer/ |  | Same segment · sovereign cloud\nAll for One × STACKIT | Sovereign SAP cloud built on STACKIT | https://www.channelpartner.de/article/4243349/souverane-sap-cloud-all-for-one-setzt-auf-stackit.html |  | Same segment · sovereign cloud",
+    "industry": "Cloud/AI infra",
+    "segment": "sovereign cloud",
+    "dealModel": "Licensing / model deployment",
     "slug": "schwarz-digits-sap-2026-09-08",
     "shareUrl": "https://www.gctechallies.com/deal/schwarz-digits-sap-2026-09-08"
   },
@@ -856,6 +982,9 @@
     "whoCanReplicate": "Navantia could pair with a European shipbuilder on underwater systems.\nDamen could do so for naval programmes.",
     "dealStage": "MoU",
     "similarDeals": "Saab × PGZ | Strategic naval-domain collaboration | https://www.navalnews.com/?p=86852 |  | Same segment · defence industry\nNaval Group × METLEN | Submarine and frigate projects | https://www.pulse.bot/defense/news/naval-group-and-metlen-team-up-on-submarine-and-frigate-projects-2d2a4ac6-0fe2-425e-bab9-47a1eb149f14 |  | Same segment · defence industry",
+    "industry": "Defence/Space",
+    "segment": "defence industry",
+    "dealModel": "Product integration",
     "slug": "tkms-fincantieri-2026-09-01",
     "shareUrl": "https://www.gctechallies.com/deal/tkms-fincantieri-2026-09-01"
   },
@@ -876,6 +1005,9 @@
     "whoCanReplicate": "Telia could roll out one vendor's AI across service and network operations; we found no comparable Google Cloud announcement.\nSwisscom could do the same for its enterprise and contact-centre base.",
     "dealStage": "Expanded",
     "similarDeals": "Google Cloud × Liberty Global | Five-year deal | https://www.rcrwireless.com/20260209/ai/google-cloud-liberty-global-deal |  | Same segment · network and telco cloud\nOpenAI × Deutsche Telekom | AI partnership to develop new services | https://www.telecomtv.com/content/ai/dt-teams-up-with-openai-to-develop-new-services-54494 |  | Same segment · network and telco cloud",
+    "industry": "Cloud/AI infra",
+    "segment": "network and telco cloud",
+    "dealModel": "Distribution / market entry",
     "slug": "google-cloud-verizon-2026-08-24",
     "shareUrl": "https://www.gctechallies.com/deal/google-cloud-verizon-2026-08-24"
   },
@@ -896,6 +1028,9 @@
     "whoCanReplicate": "Lightspeed could pair its point-of-sale base in Europe with an AI services firm for agentic ordering.\nZonal, the UK hospitality technology group, could tie its customers to a digital experience partner the same way.",
     "dealStage": "Signed",
     "similarDeals": "Papa Johns × Google Cloud | First to deploy a Google Cloud AI ordering agent | https://foodondemand.com/01132026/papa-johns-first-to-deploy-google-cloud-ai-ordering-agent/ |  | Same segment · retail technology and AI",
+    "industry": "Retail/Ecommerce",
+    "segment": "retail technology and AI",
+    "dealModel": "Supply or compute contract",
     "slug": "deliverect-bounteous-2026-08-24",
     "shareUrl": "https://www.gctechallies.com/deal/deliverect-bounteous-2026-08-24"
   },
@@ -916,6 +1051,9 @@
     "whoCanReplicate": "Thunes could add a European clearing bank to speed settlement into its mobile-wallet network.\nFlutterwave could do the same for Africa-Europe corridors.",
     "dealStage": "Signed",
     "similarDeals": "",
+    "industry": "Payments",
+    "segment": "payment rails and cross-border",
+    "dealModel": "Supply or compute contract",
     "slug": "terrapay-deutsche-bank-2026-08-21",
     "shareUrl": "https://www.gctechallies.com/deal/terrapay-deutsche-bank-2026-08-21"
   },
@@ -936,6 +1074,9 @@
     "whoCanReplicate": "AMD could back power developers to speed sites for its Instinct customers.\nNebius, building AI capacity in Europe, could take a similar stake in a power developer.",
     "dealStage": "Signed",
     "similarDeals": "",
+    "industry": "Cloud/AI infra",
+    "segment": "AI data centres",
+    "dealModel": "Strategic investment",
     "slug": "nvidia-cloverleaf-infrastructure-2026-08-21",
     "shareUrl": "https://www.gctechallies.com/deal/nvidia-cloverleaf-infrastructure-2026-08-21"
   },
@@ -956,6 +1097,9 @@
     "whoCanReplicate": "Standard Chartered could offer settlement banking to a wallet scheme across Asia and Africa.\nDBS could do so for Southeast Asian corridors.",
     "dealStage": "Expanded",
     "similarDeals": "Hang Seng Bank × Alipay+ | Banking push through the Alipay+ network | https://www.finews.asia/finance/45009-alipay-plus-hang-seng-bank-hong-kong-cross-border-payments |  | Same segment · payment rails and cross-border",
+    "industry": "Payments",
+    "segment": "payment rails and cross-border",
+    "dealModel": "Distribution / market entry",
     "slug": "bank-of-china-hong-kong-ant-international-2026-08-20",
     "shareUrl": "https://www.gctechallies.com/deal/bank-of-china-hong-kong-ant-international-2026-08-20"
   },
@@ -976,6 +1120,9 @@
     "whoCanReplicate": "Bolt, Europe's home-grown ride-hailing platform, could sign a fleet-supply deal with an autonomous-driving provider.\nCabify could do the same in Spain.",
     "dealStage": "Expanded",
     "similarDeals": "Lyft × Baidu | Robotaxi service in Europe | https://heise.de/-10509404 |  | Same segment · autonomous driving and mobility\nWeRide × Uber | Spain's first robotaxi service | https://technode.com/2026/06/03/weride-and-uber-to-launch-spains-first-robotaxi-service/ |  | Same segment · autonomous driving and mobility",
+    "industry": "Automotive",
+    "segment": "autonomous driving and mobility",
+    "dealModel": "Distribution / market entry",
     "slug": "pony-ai-uber-2026-08-14",
     "shareUrl": "https://www.gctechallies.com/deal/pony-ai-uber-2026-08-14"
   },
@@ -996,6 +1143,9 @@
     "whoCanReplicate": "Capgemini could become a lead integrator for a healthcare AI platform in Europe.\nNTT DATA could do the same for health systems in the UK and the Gulf.",
     "dealStage": "Signed",
     "similarDeals": "",
+    "industry": "Healthcare",
+    "segment": "digital and consumer health",
+    "dealModel": "Distribution / market entry",
     "slug": "innovaccer-mastek-2026-08-13",
     "shareUrl": "https://www.gctechallies.com/deal/innovaccer-mastek-2026-08-13"
   },
@@ -1016,6 +1166,9 @@
     "whoCanReplicate": "Valeo could pair its vehicle sensor business with a foundry for next-generation chips.\nHensoldt could secure supply of specialised sensors through a manufacturing partner.",
     "dealStage": "Signed",
     "similarDeals": "",
+    "industry": "Semiconductors",
+    "segment": "chip manufacturing",
+    "dealModel": "Joint venture",
     "slug": "sony-tsmc-2026-08-10",
     "shareUrl": "https://www.gctechallies.com/deal/sony-tsmc-2026-08-10"
   },
@@ -1036,6 +1189,9 @@
     "whoCanReplicate": "Kensa Heat Pumps could seek public equity to scale UK manufacturing.\nTepeo could do the same for electric thermal storage.",
     "dealStage": "Signed",
     "similarDeals": "",
+    "industry": "Energy",
+    "segment": "power generation and hydrogen",
+    "dealModel": "Strategic investment",
     "slug": "great-british-energy-naked-energy-2026-08-06",
     "shareUrl": "https://www.gctechallies.com/deal/great-british-energy-naked-energy-2026-08-06"
   },
@@ -1056,6 +1212,9 @@
     "whoCanReplicate": "ING could sign a European frontier-lab partnership of its own.\nRabobank could do the same for its cooperative banking operations.",
     "dealStage": "Signed",
     "similarDeals": "La Banque Postale × Mistral AI | Strategic partnership to accelerate AI | https://www.lapostegroupe.com/en/news/la-banque-postale-signs-a-strategic-partnership-with-mistral-ai-to-accelerate-progress-in-ai |  | Same segment · AI in banking\nBNP Paribas × Mistral AI | Extended partnership for generative AI deployment across the group | https://group.bnpparibas/en/press-release/bnp-paribas-and-mistral-ai-extend-their-partnership-to-support-the-next-phase-of-generative-ai-deployment-within-the-group |  | Same segment · AI in banking",
+    "industry": "Payments",
+    "segment": "AI in banking",
+    "dealModel": "Licensing / model deployment",
     "slug": "abn-amro-mistral-ai-2026-08-06",
     "shareUrl": "https://www.gctechallies.com/deal/abn-amro-mistral-ai-2026-08-06"
   },
@@ -1076,6 +1235,9 @@
     "whoCanReplicate": "Intesa Sanpaolo could restructure its own IT outsourcing around a single systems integrator.\nBPCE could do the same for its IT subsidiaries.",
     "dealStage": "Acquisition",
     "similarDeals": "",
+    "industry": "Payments",
+    "segment": "AI in banking",
+    "dealModel": "Acquisition",
     "slug": "unicredit-accenture-ibm-2026-08-04",
     "shareUrl": "https://www.gctechallies.com/deal/unicredit-accenture-ibm-2026-08-04"
   },
@@ -1096,6 +1258,9 @@
     "whoCanReplicate": "X-FAB, the German foundry, could partner with a post-quantum chip designer.\nTower Semiconductor could do the same.",
     "dealStage": "MoU",
     "similarDeals": "",
+    "industry": "Semiconductors",
+    "segment": "chip manufacturing",
+    "dealModel": "Product integration",
     "slug": "sealsq-globalfoundries-2026-08-03",
     "shareUrl": "https://www.gctechallies.com/deal/sealsq-globalfoundries-2026-08-03"
   },
@@ -1116,6 +1281,9 @@
     "whoCanReplicate": "Okta could host identity services on a sovereign European cloud.\nFortinet could do the same for its security platform.",
     "dealStage": "Signed",
     "similarDeals": "CrowdStrike × Schwarz Digits | Sovereign cybersecurity platform on STACKIT | https://schwarz-digits.de/en/presse/archive/2026/crowdstrike-schwarz-digits-strategic-partnership-ai-native-sovereign-cybersecurity-platform-stackit |  | Same segment · sovereign cloud\nDeutsche Telekom × Palo Alto Networks | Data-sovereign cyber defence managed service | https://euro-security.de/en/deutsche-telekom-and-palo-alto-networks-launch-data-sovereign-cyber-defence-managed-service/ |  | Same segment · sovereign cloud",
+    "industry": "Cloud/AI infra",
+    "segment": "sovereign cloud",
+    "dealModel": "Distribution / market entry",
     "slug": "zscaler-schwarz-digits-2026-07-28",
     "shareUrl": "https://www.gctechallies.com/deal/zscaler-schwarz-digits-2026-07-28"
   },
@@ -1136,6 +1304,9 @@
     "whoCanReplicate": "Intracom Defense could set up a similar production company with a local manufacturer in another member state.\nTheon International could do the same for optics and vehicle systems.",
     "dealStage": "Signed",
     "similarDeals": "AeroVironment × Eyeonix | Greek joint venture to expand a European defence footprint | https://defenceleaders.com/news/aerovironment-launches-greek-joint-venture-with-eyeonix/ |  | Same segment · defence industry\nRheinmetall × ELVO | Truck assembly in Greece | https://thedefensepost.com/2026/05/06/rheinmetall-elvo-greece-truck-assembly/ |  | Same segment · defence industry",
+    "industry": "Defence/Space",
+    "segment": "defence industry",
+    "dealModel": "Joint venture",
     "slug": "metlen-energy-resources-m-technologies-houtris-2026-07-23",
     "shareUrl": "https://www.gctechallies.com/deal/metlen-energy-resources-m-technologies-houtris-2026-07-23"
   },
@@ -1156,6 +1327,9 @@
     "whoCanReplicate": "Renault has been reported pushing an EU-China sourcing deal and could offer Spanish plant capacity to a Chinese partner.\nVolkswagen has been reported weighing Chinese tie-ups for underused plants.",
     "dealStage": "Signed",
     "similarDeals": "Nissan × Chery | Sunderland plant to make Chery vehicles | https://www2.yicaiglobal.com/news/chinese-automakers-turn-to-global-idle-capacity-as-chery-partners-with-nissan |  | Same approach · Chinese brand manufacturing in Europe\nStellantis × Leapmotor | Zaragoza production of Leapmotor models | https://www.stellantis.com/en/news/press-releases/2026/may/stellantis-and-leapmotor-announce-their-intention-to-take-their-strategic-partnership-to-the-next-level | stellantis-leapmotor-leapmotor-international-2026-05-08 | Same segment · vehicle manufacturing partnerships",
+    "industry": "Automotive",
+    "segment": "vehicle manufacturing partnerships",
+    "dealModel": "Joint venture",
     "slug": "ford-motor-company-geely-automobile-holdings-2026-07-23",
     "shareUrl": "https://www.gctechallies.com/deal/ford-motor-company-geely-automobile-holdings-2026-07-23"
   },
@@ -1176,6 +1350,9 @@
     "whoCanReplicate": "Deutsche Telekom could fund a European lab's compute in return for distribution.\nTelefónica could do the same.",
     "dealStage": "Signed",
     "similarDeals": "",
+    "industry": "Enterprise AI",
+    "segment": "AI models for enterprise and government",
+    "dealModel": "Licensing / model deployment",
     "slug": "microsoft-mistral-ai-2026-07-21",
     "shareUrl": "https://www.gctechallies.com/deal/microsoft-mistral-ai-2026-07-21"
   },
@@ -1196,6 +1373,9 @@
     "whoCanReplicate": "Saab could pair its payload and sensor business with a drone maker in a joint company.\nThales could do the same.",
     "dealStage": "Launched",
     "similarDeals": "",
+    "industry": "Defence/Space",
+    "segment": "defence industry",
+    "dealModel": "Joint venture",
     "slug": "leonardo-baykar-lba-systems-2026-07-21",
     "shareUrl": "https://www.gctechallies.com/deal/leonardo-baykar-lba-systems-2026-07-21"
   },
@@ -1216,6 +1396,9 @@
     "whoCanReplicate": "Airbus could back a robotics start-up to automate aircraft assembly.\nStellantis could do the same for its plants.",
     "dealStage": "Signed",
     "similarDeals": "",
+    "industry": "Enterprise AI",
+    "segment": "industrial robotics",
+    "dealModel": "Strategic investment",
     "slug": "humanoid-schaeffler-bosch-sap-nvidia-siemens-prime-movers-lab-2026-07-21",
     "shareUrl": "https://www.gctechallies.com/deal/humanoid-schaeffler-bosch-sap-nvidia-siemens-prime-movers-lab-2026-07-21"
   },
@@ -1236,6 +1419,9 @@
     "whoCanReplicate": "Leclanché could pursue defence-grade lithium-ion contracts for submarines.\nVarta could do the same.",
     "dealStage": "Signed",
     "similarDeals": "",
+    "industry": "Defence/Space",
+    "segment": "defence industry",
+    "dealModel": "Supply or compute contract",
     "slug": "saft-totalenergies-naval-group-2026-07-20",
     "shareUrl": "https://www.gctechallies.com/deal/saft-totalenergies-naval-group-2026-07-20"
   },
@@ -1256,6 +1442,9 @@
     "whoCanReplicate": "Nebius could ramp an alternative GPU supplier at scale.\nScaleway could do the same.",
     "dealStage": "Expanded",
     "similarDeals": "Meta × AMD | Multi-year deal for 6 GW of AI GPU deployment | https://www.verdict.co.uk/meta-signs-multi-year-deal-amd/ |  | Same segment · AI compute deals",
+    "industry": "Cloud/AI infra",
+    "segment": "AI compute deals",
+    "dealModel": "Supply or compute contract",
     "slug": "amd-microsoft-azure-2026-07-20",
     "shareUrl": "https://www.gctechallies.com/deal/amd-microsoft-azure-2026-07-20"
   },
@@ -1276,6 +1465,9 @@
     "whoCanReplicate": "Swedbank could adopt a single VoP provider across euro and Nordic schemes.\nSEB could do the same.",
     "dealStage": "Signed",
     "similarDeals": "Finance Denmark × SurePay | Nationwide Verification of Payee service | https://www.openbankingexpo.com/news/finance-denmark-chooses-surepay-to-rollout-nationwide-vop-service/ |  | Same segment · payment rails and cross-border\nBelgian banks × SurePay | Preferred scheme vendor for Verification of Payee | https://ffnews.com/newsarticle/paytech/belgian-banks-choose-surepay-as-verification-of-payee-vop-preferred-scheme-vendor/ |  | Same segment · payment rails and cross-border",
+    "industry": "Payments",
+    "segment": "payment rails and cross-border",
+    "dealModel": "Distribution / market entry",
     "slug": "noba-bank-group-tieto-banktech-bank-norwegian-nordax-bank-2026-07-14",
     "shareUrl": "https://www.gctechallies.com/deal/noba-bank-group-tieto-banktech-bank-norwegian-nordax-bank-2026-07-14"
   },
@@ -1296,6 +1488,9 @@
     "whoCanReplicate": "Uniper could pair its hydrogen pipeline with an Austrian or Nordic hydro utility; we found no cross-border JV announced.\nEnBW could split a large electrolyser project with a hydro-rich partner the same way.",
     "dealStage": "Regulatory approval",
     "similarDeals": "BP × Iberdrola | Spain's largest green hydrogen project | https://www.pv-magazine.com/2026/03/06/the-hydrogen-stream-bp-and-iberdrola-set-to-commission-spains-largest-project/ |  | Same segment · power generation and hydrogen",
+    "industry": "Energy",
+    "segment": "power generation and hydrogen",
+    "dealModel": "Joint venture",
     "slug": "ewe-ag-ewe-hydrogen-gmbh-verbund-ag-verbund-green-hydrogen-gmbh-2026-07-09",
     "shareUrl": "https://www.gctechallies.com/deal/ewe-ag-ewe-hydrogen-gmbh-verbund-ag-verbund-green-hydrogen-gmbh-2026-07-09"
   },
@@ -1316,6 +1511,9 @@
     "whoCanReplicate": "Telecom Italia could assemble a national consortium with Italian partners; we found no announced Italian bid.\nLeonardo could anchor a bid with its supercomputing and defence-AI work.",
     "dealStage": "Regulatory approval",
     "similarDeals": "Telefónica-led consortium | Spain's bid for an EU-backed AI Gigafactory | https://www.telcotitans.com/telefonica-leads-spains-bid-for-eu-backed-ai-gigafactory/9385.article |  | Same segment · AI data centres\nDeutsche Telekom and Schwarz Group | Joint German AI Gigafactory discussion | https://www.telecomtv.com/content/telcos-and-ai-channel/dt-eyes-leading-role-in-eu-s-ai-gigafactory-project-53095/ |  | Same segment · AI data centres",
+    "industry": "Cloud/AI infra",
+    "segment": "AI data centres",
+    "dealModel": "Consortium / multi-party programme",
     "slug": "sipearl-2crsi-dassault-systemes-nhood-socomec-projex-aether-infrastructures-2026-07-08",
     "shareUrl": "https://www.gctechallies.com/deal/sipearl-2crsi-dassault-systemes-nhood-socomec-projex-aether-infrastructures-2026-07-08"
   },
@@ -1336,6 +1534,9 @@
     "whoCanReplicate": "Société Générale could partner with a developer to distribute new homes through its branches; we found no comparable announcement.\nBanco Sabadell could do the same in Spain.",
     "dealStage": "Letter of Intent",
     "similarDeals": "Intesa Sanpaolo Casa × Abitare Co | Real estate agreement for new housing opportunities | https://www.firstonline.info/en/immobiliare-tra-intesa-sanpaolo-casa-e-abitare-co-un-accordo-per-creare-nuove-opportunita-di-sviluppo/ |  | Same industry · real estate distribution",
+    "industry": "Real estate",
+    "segment": "real estate distribution",
+    "dealModel": "Joint venture",
     "slug": "groupe-bpce-nexity-iselection-perl-bpce-solutions-immobilieres-2026-07-02",
     "shareUrl": "https://www.gctechallies.com/deal/groupe-bpce-nexity-iselection-perl-bpce-solutions-immobilieres-2026-07-02"
   },
@@ -1356,6 +1557,9 @@
     "whoCanReplicate": "NaMeX in Rome could build a similar axis to Marseille.\nTOP-IX in Turin could link to Lyon the same way.",
     "dealStage": "Signed",
     "similarDeals": "DE-CIX × Mass-IX | One-hop interconnect access between exchanges | https://www.de-cix.net/en/about-de-cix/media/press-releases/de-cix-and-mass-ix-enable-one-hop-interconnect-access |  | Same industry · network infrastructure",
+    "industry": "Cloud/AI infra",
+    "segment": "network and telco cloud",
+    "dealModel": "Product integration",
     "slug": "ielo-mix-milan-internet-exchange-2026-07-01",
     "shareUrl": "https://www.gctechallies.com/deal/ielo-mix-milan-internet-exchange-2026-07-01"
   },
@@ -1376,6 +1580,9 @@
     "whoCanReplicate": "Umicore has cathode plants and a PowerCo JV for lithium-ion, and we found no sodium-ion line announced.\nBASF Battery Materials runs a cathode plant at Schwarzheide and could convert capacity for sodium-ion.",
     "dealStage": "Signed",
     "similarDeals": "Alfen × CATL | 5 GWh sodium-ion battery storage deployment in Europe | https://www.pv-magazine.com/2026/07/16/alfen-catl-to-deploy-5-gwh-of-sodium-ion-battery-storage-in-europe/ |  | Same segment · energy storage",
+    "industry": "Energy",
+    "segment": "energy storage",
+    "dealModel": "Supply or compute contract",
     "slug": "altris-ab-draslovka-a-s-2026-07-01",
     "shareUrl": "https://www.gctechallies.com/deal/altris-ab-draslovka-a-s-2026-07-01"
   },
@@ -1396,6 +1603,9 @@
     "whoCanReplicate": "ABB could sign a strategic equipment-partner role with a large data-centre investor.\nSiemens could do the same with its electrification business.",
     "dealStage": "Signed",
     "similarDeals": "Vertiv × GreenScale | AI-ready data centre platforms across Europe | https://gcn.com/vertiv-partners-greenscale-ai-capable-data-centre/16844 |  | Same segment · AI data centres\nLegrand × Start Campus | Strategic alliance for next-generation data centres in Portugal | https://www.legrand.com/datacenter/ae-en/reference-projects/start-campus-and-legrand-strategic-alliance-for-sustainable-innovation-in-next-generation-data-centers |  | Same segment · AI data centres",
+    "industry": "Cloud/AI infra",
+    "segment": "AI data centres",
+    "dealModel": "Supply or compute contract",
     "slug": "softbank-group-schneider-electric-2026-05-30",
     "shareUrl": "https://www.gctechallies.com/deal/softbank-group-schneider-electric-2026-05-30"
   },
@@ -1416,6 +1626,9 @@
     "whoCanReplicate": "Mollie could seek direct membership of a national scheme where it sells locally.\nSumUp could do the same for small merchants; we found no direct BLIK membership for either.",
     "dealStage": "Launched",
     "similarDeals": "Mollie × EPI | Becomes a principal member to accelerate Wero adoption | https://www.crowdfundinsider.com/2026/01/257280-fintech-mollie-becomes-european-payments-initiative-principal-member/ |  | Same segment · payment rails and cross-border\nWorldpay × EPI | Joins the European Payments Initiative to enable Wero for merchants | https://www.worldpay.com/en-AU/press-releases/worldpay-now-gp-joins-epi-to-enable-wero-payments-for-merchants |  | Same segment · payment rails and cross-border",
+    "industry": "Payments",
+    "segment": "payment rails and cross-border",
+    "dealModel": "Distribution / market entry",
     "slug": "checkout-com-blik-2026-05-29",
     "shareUrl": "https://www.gctechallies.com/deal/checkout-com-blik-2026-05-29"
   },
@@ -1436,6 +1649,9 @@
     "whoCanReplicate": "Mistral AI could pursue a multi-gigawatt custom-chip agreement with a European cloud; we found none announced.\nCohere could secure dedicated compute at scale the same way.",
     "dealStage": "Signed",
     "similarDeals": "Meta × AMD | 6 GW AI compute partnership expansion | https://www.abiresearch.com/market-research/insight/7787505-amd-expands-partnership-with-meta-on-6-gw-?hsLang=en |  | Same segment · AI compute deals",
+    "industry": "Cloud/AI infra",
+    "segment": "AI compute deals",
+    "dealModel": "Strategic investment",
     "slug": "anthropic-amazon-google-broadcom-2026-05-28",
     "shareUrl": "https://www.gctechallies.com/deal/anthropic-amazon-google-broadcom-2026-05-28"
   },
@@ -1456,6 +1672,9 @@
     "whoCanReplicate": "Safran could deploy a sovereign model across its engines and defence business; we found no announcement.\nSiemens could do the same for its industrial software.",
     "dealStage": "Signed",
     "similarDeals": "Dassault Aviation × Thales cortAIx | Strategic partnership for sovereign AI in future air combat | https://www.thalesgroup.com/en/news-centre/press-releases/dassault-aviation-and-cortaix-sign-strategic-partnership-sovereign-ai |  | Same segment · AI models for enterprise and government",
+    "industry": "Enterprise AI",
+    "segment": "AI models for enterprise and government",
+    "dealModel": "Licensing / model deployment",
     "slug": "airbus-mistral-ai-2026-05-28",
     "shareUrl": "https://www.gctechallies.com/deal/airbus-mistral-ai-2026-05-28"
   },
@@ -1476,6 +1695,9 @@
     "whoCanReplicate": "Edenred could pair its corporate payments business with an orchestration specialist.\nPayhawk could partner with a travel-payments group the same way; we found no comparable announcement from either.",
     "dealStage": "Signed",
     "similarDeals": "Conferma Pay × Mesh | Unifying fragmented travel payments | https://meshpayments.com/press/conferma-and-mesh-join-forces-to-eliminate-fragmented-travel-payments/ |  | Same segment · B2B payments",
+    "industry": "Payments",
+    "segment": "payment rails and cross-border",
+    "dealModel": "Product integration",
     "slug": "airplus-international-kresus-technologies-mastercard-2026-05-28",
     "shareUrl": "https://www.gctechallies.com/deal/airplus-international-kresus-technologies-mastercard-2026-05-28"
   },
@@ -1496,6 +1718,9 @@
     "whoCanReplicate": "Mollie could add embedded financing for software partners; we found no equivalent announced.\nSumUp could do the same for the small venues it serves.",
     "dealStage": "Launched",
     "similarDeals": "Worldline × YouLend | Cash advance for Europe's SMBs | https://ffnews.com/newsarticle/worldline-and-youlend-launch-cash-advance-to-unlock-fast-seamless-capital-for-europes-smbs/ |  | Same segment · embedded finance",
+    "industry": "Payments",
+    "segment": "embedded finance",
+    "dealModel": "Distribution / market entry",
     "slug": "adyen-roller-2026-05-28",
     "shareUrl": "https://www.gctechallies.com/deal/adyen-roller-2026-05-28"
   },
@@ -1516,6 +1741,9 @@
     "whoCanReplicate": "Datadog could buy an agent-governance start-up to extend monitoring.\nElastic could do the same for its security business.",
     "dealStage": "Acquisition",
     "similarDeals": "Okta × Permiso | AI agent identity security for about $200M | https://techcrunch.com/2026/07/30/okta-buys-ai-security-startup-permiso-source-says-for-about-200m/ |  | Same segment · enterprise AI platforms\nCrowdStrike × SGNL | Real-time identity security for $740M | https://www.theregister.com/2026/01/08/crowdstrikes_740m_sgnl_deal_proves/ |  | Same segment · enterprise AI platforms",
+    "industry": "Enterprise AI",
+    "segment": "enterprise AI platforms",
+    "dealModel": "Acquisition",
     "slug": "snowflake-natoma-2026-05-27",
     "shareUrl": "https://www.gctechallies.com/deal/snowflake-natoma-2026-05-27"
   },
@@ -1536,6 +1764,9 @@
     "whoCanReplicate": "MongoDB could commit to a large multi-year cloud spend in exchange for chip and marketplace benefits.\nElastic could do the same.",
     "dealStage": "Signed",
     "similarDeals": "ServiceNow × Google Cloud | $1.2 billion cloud contract | https://www.verdict.co.uk/google-cloud-contract-servicenow/ |  | Same segment · enterprise AI platforms",
+    "industry": "Enterprise AI",
+    "segment": "enterprise AI platforms",
+    "dealModel": "Product integration",
     "slug": "snowflake-amazon-web-services-aws-2026-05-27",
     "shareUrl": "https://www.gctechallies.com/deal/snowflake-amazon-web-services-aws-2026-05-27"
   },
@@ -1556,6 +1787,9 @@
     "whoCanReplicate": "SSE could consolidate on one AI-enabled platform for its operations.\nOctopus Energy sells its own Kraken platform, so it is less likely; Iberdrola's UK arm could.",
     "dealStage": "Signed",
     "similarDeals": "E.ON × SAP | Uses SAP S/4HANA to modernise the grid with AI | https://www.pulse.bot/ai/news/how-eon-uses-sap-s4hana-to-modernise-the-grid-with-ai-60fc22f8-c470-49da-8884-06450f98669b/ |  | Same segment · AI in energy",
+    "industry": "Energy",
+    "segment": "AI in energy",
+    "dealModel": "Product integration",
     "slug": "centrica-sap-se-british-gas-2026-05-27",
     "shareUrl": "https://www.gctechallies.com/deal/centrica-sap-se-british-gas-2026-05-27"
   },
@@ -1576,6 +1810,9 @@
     "whoCanReplicate": "Infosys could seek a dollar-committed programme with a hyperscaler; we found none announced.\nWipro could do the same.",
     "dealStage": "Signed",
     "similarDeals": "PwC × Anthropic | Expanded alliance across 364,000 professionals | https://www.prnewswire.com/news-releases/anthropic-and-pwc-expand-alliance-driving-impact-across-client-work-and-the-firm-302772321.html | anthropic-pwc-2026-05-14 | Same segment · AI consulting alliances",
+    "industry": "Enterprise AI",
+    "segment": "AI consulting alliances",
+    "dealModel": "Product integration",
     "slug": "ey-microsoft-2026-05-21",
     "shareUrl": "https://www.gctechallies.com/deal/ey-microsoft-2026-05-21"
   },
@@ -1596,6 +1833,9 @@
     "whoCanReplicate": "Southern Company could secure gas supply through a producer purchase; we found no comparable acquisition.\nAEP could do the same.",
     "dealStage": "Acquisition",
     "similarDeals": "Vistra × Cogentrix | 5.5 GW gas generation acquisition for about $4.7B | https://www.utilitydive.com/news/vistra-cogentrix-natural-gas-energydeal-data-centers/808854/ |  | Same approach · power-generation acquisition",
+    "industry": "Energy",
+    "segment": "power generation and hydrogen",
+    "dealModel": "Acquisition",
     "slug": "nextera-energy-caliber-resource-partners-quantum-capital-group-2026-05-20",
     "shareUrl": "https://www.gctechallies.com/deal/nextera-energy-caliber-resource-partners-quantum-capital-group-2026-05-20"
   },
@@ -1616,6 +1856,9 @@
     "whoCanReplicate": "Capgemini could sign a firm-wide alliance with a model lab.\nWipro could do the same; we found no Anthropic alliance announced by either.",
     "dealStage": "Expanded",
     "similarDeals": "EY × Microsoft | $1B+ five-year enterprise AI initiative | https://news.microsoft.com/source/2026/05/21/ey-and-microsoft-announce-global-initiative-to-help-clients-scale-ai-enterprisewide-value-creation-and-move-beyond-experimentation/ | ey-microsoft-2026-05-21 | Same segment · AI consulting alliances",
+    "industry": "Enterprise AI",
+    "segment": "AI consulting alliances",
+    "dealModel": "Product integration",
     "slug": "anthropic-pwc-2026-05-14",
     "shareUrl": "https://www.gctechallies.com/deal/anthropic-pwc-2026-05-14"
   },
@@ -1636,6 +1879,9 @@
     "whoCanReplicate": "Mistral AI could set up a services vehicle with a European private-equity group.\nCohere could do the same; we found no comparable vehicle.",
     "dealStage": "Signed",
     "similarDeals": "Anthropic × Blackstone, Goldman Sachs | Enterprise AI joint venture | https://fortune.com/2026/05/04/anthropic-claude-consulting-industry-joint-venture-blackstone-goldman-sachs/ |  | Same segment · AI consulting alliances",
+    "industry": "Enterprise AI",
+    "segment": "AI consulting alliances",
+    "dealModel": "Strategic investment",
     "slug": "openai-tpg-2026-05-11",
     "shareUrl": "https://www.gctechallies.com/deal/openai-tpg-2026-05-11"
   },
@@ -1656,6 +1902,9 @@
     "whoCanReplicate": "Bain Capital could buy a regional marketplace; we found no comparable 2026 deal.\nCinven could do the same.",
     "dealStage": "Acquisition",
     "similarDeals": "EQT × Adevinta Spain | Acquisition of Spanish classifieds assets | https://www.onlinemarketplaces.com/articles/eqt-agrees-to-acquire-adevintas-spanish-assets/ |  | Same approach · marketplace acquisition",
+    "industry": "Retail/Ecommerce",
+    "segment": "retail expansion and deals",
+    "dealModel": "Acquisition",
     "slug": "blackstone-skroutz-cvc-capital-partners-2026-05-11",
     "shareUrl": "https://www.gctechallies.com/deal/blackstone-skroutz-cvc-capital-partners-2026-05-11"
   },
@@ -1676,6 +1925,9 @@
     "whoCanReplicate": "Renault has been reported pushing an EU-China sourcing deal and could offer plant capacity.\nVolkswagen has been reported weighing Chinese tie-ups for underused plants.",
     "dealStage": "Expanded",
     "similarDeals": "Nissan × Chery | Sunderland plant to make Chery vehicles | https://www2.yicaiglobal.com/news/chinese-automakers-turn-to-global-idle-capacity-as-chery-partners-with-nissan |  | Same approach · Chinese brand manufacturing in Europe\nFord × Geely | Valencia manufacturing JV | https://media.ford.com/content/fordmedia/feu/en/news/2026/07/23/ford-geely-valencia-manufacturing-joint-venture.html | ford-motor-company-geely-automobile-holdings-2026-07-23 | Same segment · vehicle manufacturing partnerships",
+    "industry": "Automotive",
+    "segment": "vehicle manufacturing partnerships",
+    "dealModel": "Joint venture",
     "slug": "stellantis-leapmotor-leapmotor-international-2026-05-08",
     "shareUrl": "https://www.gctechallies.com/deal/stellantis-leapmotor-leapmotor-international-2026-05-08"
   },
@@ -1696,6 +1948,9 @@
     "whoCanReplicate": "Qualcomm could dual-source future mobile chips; we found no signed Intel Foundry deal.\nBroadcom could place custom accelerator volume with a US foundry for supply security; we found no announcement.",
     "dealStage": "MoU",
     "similarDeals": "",
+    "industry": "Semiconductors",
+    "segment": "chip manufacturing",
+    "dealModel": "Strategic investment",
     "slug": "apple-intel-2026-05-08",
     "shareUrl": "https://www.gctechallies.com/deal/apple-intel-2026-05-08"
   },
@@ -1716,6 +1971,9 @@
     "whoCanReplicate": "Grant Thornton could fund a ServiceNow agent practice of its own; we found no comparable announcement.\nMazars could do the same for finance and procurement workflows in Europe.",
     "dealStage": "Signed",
     "similarDeals": "DXC × ServiceNow | Agentic AI across core business functions | https://www.consulting.us/news/13240/dxc-partners-with-servicenow-to-integrate-agentic-ai-across-core-business-functions |  | Same segment · AI consulting alliances",
+    "industry": "Enterprise AI",
+    "segment": "AI consulting alliances",
+    "dealModel": "Product integration",
     "slug": "kpmg-servicenow-2026-05-06",
     "shareUrl": "https://www.gctechallies.com/deal/kpmg-servicenow-2026-05-06"
   },
@@ -1736,6 +1994,9 @@
     "whoCanReplicate": "QatarEnergy could pair its operating data with an enterprise AI platform; we found no comparable announcement.\nPetrobras could do the same for deepwater operations.",
     "dealStage": "Signed",
     "similarDeals": "ADNOC × Microsoft | Co-develop and deploy AI agents across operations | https://www.thenationalnews.com/business/energy/2025/11/02/adnoc-signs-microsoft-deal-to-co-develop-and-deploy-ai-agents-across-its-operations |  | Same segment · AI in energy",
+    "industry": "Energy",
+    "segment": "AI in energy",
+    "dealModel": "Product integration",
     "slug": "ibm-aramco-2026-05-05",
     "shareUrl": "https://www.gctechallies.com/deal/ibm-aramco-2026-05-05"
   },
@@ -1756,6 +2017,9 @@
     "whoCanReplicate": "Bosch could buy a tabular or time-series model lab for industrial data; we found no such deal.\nDeutsche Telekom could do the same for its enterprise customer base.",
     "dealStage": "Acquisition",
     "similarDeals": "Schneider Electric × Cognite | $3.1B cash acquisition to scale industrial AI | https://siliconangle.com/2026/06/30/schneider-electric-acquires-cognite-3-1b-industrial-ai-push/ |  | Same approach · AI acquisitions\nSiemens × Canopus AI | Acquires AI-driven metrology firm | https://news.siemens.com/pl-pl/siemens-acquires-canopus-ai/ |  | Same approach · AI acquisitions\nMistral AI × Emmi AI | Buys Vienna physics-AI start-up for industrial pitch | https://thenextweb.com/news/mistral-emmi-ai-physics-vienna-industrial |  | Same approach · AI acquisitions",
+    "industry": "Enterprise AI",
+    "segment": "enterprise AI platforms",
+    "dealModel": "Acquisition",
     "slug": "sap-prior-labs-2026-05-04",
     "shareUrl": "https://www.gctechallies.com/deal/sap-prior-labs-2026-05-04"
   },
@@ -1776,6 +2040,9 @@
     "whoCanReplicate": "Cohere could take its private deployments to Canadian and UK classified networks; we found no such agreement.\nHelsing could bring models onto German and NATO classified networks.",
     "dealStage": "Signed",
     "similarDeals": "Mistral AI × French armed forces ministry | Framework agreement for defence AI | https://www.thestar.com.my/tech/tech-news/2026/01/08/france039s-armed-forces-ministry-awards-mistral-ai-framework-agreement |  | Same segment · defence industry",
+    "industry": "Defence/Space",
+    "segment": "defence industry",
+    "dealModel": "Consortium / multi-party programme",
     "slug": "pentagon-openai-google-microsoft-nvidia-aws-spacex-oracle-reflection-ai-2026-05-01",
     "shareUrl": "https://www.gctechallies.com/deal/pentagon-openai-google-microsoft-nvidia-aws-spacex-oracle-reflection-ai-2026-05-01"
   },
@@ -1796,6 +2063,9 @@
     "whoCanReplicate": "Uniper could combine its gas and storage fleet with an oil-and-gas major's capital; we found no such JV.\nCentrica could do the same for its UK flexible generation.",
     "dealStage": "Launched",
     "similarDeals": "",
+    "industry": "Energy",
+    "segment": "power generation and hydrogen",
+    "dealModel": "Joint venture",
     "slug": "eph-totalenergies-2026-04-29",
     "shareUrl": "https://www.gctechallies.com/deal/eph-totalenergies-2026-04-29"
   },
@@ -1816,6 +2086,9 @@
     "whoCanReplicate": "Evroc could raise growth capital on a sovereign-cloud pitch of its own; we found no equivalent round.\nSesterce could do the same in France.",
     "dealStage": "Signed",
     "similarDeals": "Nscale | €1.7 billion Series C to build AI compute infrastructure | https://bebeez.eu/2026/03/09/nscale-secures-e1-7-billion-series-c-to-build-global-ai-compute-infrastructure/ |  | Same segment · AI data centres",
+    "industry": "Cloud/AI infra",
+    "segment": "AI data centres",
+    "dealModel": "Strategic investment",
     "slug": "verda-investors-2026-04-24",
     "shareUrl": "https://www.gctechallies.com/deal/verda-investors-2026-04-24"
   },
@@ -1836,6 +2109,9 @@
     "whoCanReplicate": "Pay.UK could align a digital pound with existing open payment standards; the Bank of England is still consulting.\nSIX Group could do the same for a Swiss digital franc.",
     "dealStage": "Signed",
     "similarDeals": "EPI × EuroPA partners | Cooperation MoU on pan-European payment interoperability | https://empsa.org/en/news/2026-02-02-bancomat-bizum-epi-sibs-and-vipps-mobilepay-sign-mou |  | Same segment · payment rails and cross-border",
+    "industry": "Payments",
+    "segment": "payment rails and cross-border",
+    "dealModel": "Consortium / multi-party programme",
     "slug": "ecb-ecpc-nexo-standards-berlin-group-2026-04-24",
     "shareUrl": "https://www.gctechallies.com/deal/ecb-ecpc-nexo-standards-berlin-group-2026-04-24"
   },
@@ -1856,6 +2132,9 @@
     "whoCanReplicate": "Bolt could sign black cab drivers in London; we found no such programme.\nWheely could add licensed black cabs to its London chauffeur service.",
     "dealStage": "Acquisition",
     "similarDeals": "",
+    "industry": "Automotive",
+    "segment": "autonomous driving and mobility",
+    "dealModel": "Acquisition",
     "slug": "lyft-gett-2026-04-23",
     "shareUrl": "https://www.gctechallies.com/deal/lyft-gett-2026-04-23"
   },
@@ -1876,6 +2155,9 @@
     "whoCanReplicate": "OVHcloud could offer Rubin-based instances to European enterprises; we found no announced order.\nTelia could do the same for Nordic sovereign AI.",
     "dealStage": "Expanded",
     "similarDeals": "",
+    "industry": "Cloud/AI infra",
+    "segment": "AI compute deals",
+    "dealModel": "Supply or compute contract",
     "slug": "nvidia-google-cloud-2026-04-22",
     "shareUrl": "https://www.gctechallies.com/deal/nvidia-google-cloud-2026-04-22"
   },
@@ -1896,6 +2178,9 @@
     "whoCanReplicate": "Roche could sign an enterprise-wide agentic AI deal with a hyperscaler; we found no announcement.\nBayer could do the same across its crop science and pharma divisions.",
     "dealStage": "Signed",
     "similarDeals": "Bristol Myers Squibb × Anthropic | Enterprise-wide AI adoption across R&D and global workflows | https://fiercepharma.com/pharma/bristol-myers-taps-anthropic-claude-enterprise-wide-ai-adoption-speed-drug-rd-global |  | Same segment · pharma and AI",
+    "industry": "Healthcare",
+    "segment": "pharma and AI",
+    "dealModel": "Licensing / model deployment",
     "slug": "merck-google-cloud-2026-04-22",
     "shareUrl": "https://www.gctechallies.com/deal/merck-google-cloud-2026-04-22"
   },
@@ -1916,6 +2201,9 @@
     "whoCanReplicate": "SAP could fund partners to build agents on its AI platform; we found no fund of this size.\nServiceNow could do the same for its partner network.",
     "dealStage": "Launched",
     "similarDeals": "",
+    "industry": "Enterprise AI",
+    "segment": "AI consulting alliances",
+    "dealModel": "Consortium / multi-party programme",
     "slug": "google-cloud-accenture-deloitte-mckinsey-bcg-2026-04-22",
     "shareUrl": "https://www.gctechallies.com/deal/google-cloud-accenture-deloitte-mckinsey-bcg-2026-04-22"
   },
@@ -1936,6 +2224,9 @@
     "whoCanReplicate": "Bigblue could pair with an Italian marketplace agency for French and Spanish expansion; we found no such deal.\nCubyn could do the same.",
     "dealStage": "Signed",
     "similarDeals": "",
+    "industry": "Retail/Ecommerce",
+    "segment": "retail expansion and deals",
+    "dealModel": "Distribution / market entry",
     "slug": "salesupply-brandon-group-2026-04-17",
     "shareUrl": "https://www.gctechallies.com/deal/salesupply-brandon-group-2026-04-17"
   },
@@ -1956,6 +2247,9 @@
     "whoCanReplicate": "Twint could connect Swiss mobile payments to the European network; we found no agreement.\nSwish could do the same for Swedish payments.",
     "dealStage": "Launched",
     "similarDeals": "",
+    "industry": "Payments",
+    "segment": "payment rails and cross-border",
+    "dealModel": "Distribution / market entry",
     "slug": "bancomat-epi-sibs-mb-way-2026-04-17",
     "shareUrl": "https://www.gctechallies.com/deal/bancomat-epi-sibs-mb-way-2026-04-17"
   },
@@ -1976,6 +2270,9 @@
     "whoCanReplicate": "Renault could consolidate AI and cloud with one hyperscaler; we found no five-year deal announced.\nBMW could do the same for its production network.",
     "dealStage": "Signed",
     "similarDeals": "Renault Group × Google Cloud | Multi-year deal for data-led digital transformation | https://www.computerweekly.com/news/252485915/Renault-signs-multi-year-deal-with-Google-Cloud-to-accelerate-data-led-digital-transformation |  | Same segment · vehicle software and chips",
+    "industry": "Automotive",
+    "segment": "vehicle software and chips",
+    "dealModel": "Product integration",
     "slug": "stellantis-microsoft-2026-04-16",
     "shareUrl": "https://www.gctechallies.com/deal/stellantis-microsoft-2026-04-16"
   },
@@ -1996,6 +2293,9 @@
     "whoCanReplicate": "Hg could put its European software portfolio on one AI platform; we found no announcement.\nPermira could do the same.",
     "dealStage": "Signed",
     "similarDeals": "Vista Equity Partners × Google Cloud | Partnership to accelerate enterprise agentic AI across its portfolio | https://www.vistaequitypartners.com/news/google-cloud-and-vista-equity-partners-form-partnership-to-accelerate-enterprise-agentic-ai-adoption-and-innovation/ |  | Same approach · PE firm × cloud AI\nClearlake × OpenAI | AI across 50+ portfolio companies | https://ai2.work/blog/clearlake-taps-openai-to-push-ai-across-50-portfolio-companies |  | Same approach · PE firm × cloud AI",
+    "industry": "Enterprise AI",
+    "segment": "AI consulting alliances",
+    "dealModel": "Product integration",
     "slug": "thoma-bravo-google-cloud-2026-04-15",
     "shareUrl": "https://www.gctechallies.com/deal/thoma-bravo-google-cloud-2026-04-15"
   },
@@ -2016,6 +2316,9 @@
     "whoCanReplicate": "Quantum Systems could bid for loitering-munition work from its recon-drone base; we found no award.\nHensoldt could supply seekers and sensors to drone makers.",
     "dealStage": "Signed",
     "similarDeals": "Helsing and Stark Defence × Bundeswehr | €536M order for strike drones | https://thedefensepost.com/2026/02/26/germany-stark-helsing-drones/ |  | Same segment · defence industry",
+    "industry": "Defence/Space",
+    "segment": "defence industry",
+    "dealModel": "Supply or compute contract",
     "slug": "rheinmetall-bundeswehr-2026-04-15",
     "shareUrl": "https://www.gctechallies.com/deal/rheinmetall-bundeswehr-2026-04-15"
   },
@@ -2036,6 +2339,9 @@
     "whoCanReplicate": "Indra could lead an EDF consortium that includes Ukrainian subcontractors; we found no such project.\nSaab could do the same for Nordic consortia.",
     "dealStage": "Signed",
     "similarDeals": "",
+    "industry": "Defence/Space",
+    "segment": "defence industry",
+    "dealModel": "Consortium / multi-party programme",
     "slug": "european-commission-634-defence-entities-2026-04-15",
     "shareUrl": "https://www.gctechallies.com/deal/european-commission-634-defence-entities-2026-04-15"
   },
@@ -2056,6 +2362,9 @@
     "whoCanReplicate": "Stord could enter Europe through a local warehouse partner; we found no announced deal.\nShipMonk could do the same.",
     "dealStage": "Signed",
     "similarDeals": "West Coast Prep 3PL × Internel | US–Europe fulfilment partnership for global e-commerce growth | https://lifestyle.filmtelevisionauditions.com/?p=97424 |  | Same segment · fulfilment and market entry",
+    "industry": "Logistics",
+    "segment": "fulfilment and market entry",
+    "dealModel": "Supply or compute contract",
     "slug": "capacity-llc-widem-logistics-2026-04-15",
     "shareUrl": "https://www.gctechallies.com/deal/capacity-llc-widem-logistics-2026-04-15"
   },
@@ -2076,6 +2385,9 @@
     "whoCanReplicate": "Roche could sign an enterprise-wide AI deal with a model lab; we found no announcement.\nGSK could do the same across R&D and manufacturing.",
     "dealStage": "Signed",
     "similarDeals": "Bristol Myers Squibb × Anthropic | Enterprise-wide AI adoption across R&D and global workflows | https://fiercepharma.com/pharma/bristol-myers-taps-anthropic-claude-enterprise-wide-ai-adoption-speed-drug-rd-global |  | Same segment · pharma and AI",
+    "industry": "Healthcare",
+    "segment": "pharma and AI",
+    "dealModel": "Supply or compute contract",
     "slug": "novo-nordisk-openai-2026-04-14",
     "shareUrl": "https://www.gctechallies.com/deal/novo-nordisk-openai-2026-04-14"
   },
@@ -2096,6 +2408,9 @@
     "whoCanReplicate": "Panattoni could form a pan-European platform with a pension investor; we found no such venture.\nVGP could do the same for its development pipeline in Central Europe.",
     "dealStage": "Launched",
     "similarDeals": "Cadillac Fairview × Boreal IM | €3bn European logistics joint venture | https://realassets.ipe.com/news/cadillac-fairview-boreal-im-buy-debut-assets-for-3bn-european-logistics-jv/10060135.article |  | Same segment · logistics property\nMaple Eight × European partner | $1 billion logistics joint venture | https://www.benefitsandpensionsmonitor.com/news/industry-news/maple-eight-fund-teams-up-with-european-firm-to-form-1-billion-logistics-joint-venture/393348 |  | Same segment · logistics property",
+    "industry": "Logistics",
+    "segment": "logistics property",
+    "dealModel": "Joint venture",
     "slug": "prologis-la-caisse-2026-04-09",
     "shareUrl": "https://www.gctechallies.com/deal/prologis-la-caisse-2026-04-09"
   },
@@ -2116,6 +2431,9 @@
     "whoCanReplicate": "Crusoe could sign a multi-year dedicated-capacity contract with a hyperscaler; we found no such announcement.\nLambda could do the same.",
     "dealStage": "Expanded",
     "similarDeals": "Microsoft × Nebius | $17.4B AI infrastructure deal | https://convergedigest.com/nebius-inks-17-4b-deal-with-microsoft-for-ai-infrastructure/ |  | Same segment · AI compute deals",
+    "industry": "Cloud/AI infra",
+    "segment": "AI compute deals",
+    "dealModel": "Supply or compute contract",
     "slug": "meta-coreweave-2026-04-09",
     "shareUrl": "https://www.gctechallies.com/deal/meta-coreweave-2026-04-09"
   },
@@ -2136,6 +2454,9 @@
     "whoCanReplicate": "Temu could automate competitive pricing intelligence across EU markets; we found no announcement.\nAllegro could do the same across its Central European markets.",
     "dealStage": "Launched",
     "similarDeals": "",
+    "industry": "Retail/Ecommerce",
+    "segment": "retail technology and AI",
+    "dealModel": "Distribution / market entry",
     "slug": "joybuy-competera-2026-04-09",
     "shareUrl": "https://www.gctechallies.com/deal/joybuy-competera-2026-04-09"
   },
@@ -2156,6 +2477,9 @@
     "whoCanReplicate": "LatentView could expand its Google Cloud practice with trained specialists; we found no comparable announcement.\nMphasis could do the same for banking clients.",
     "dealStage": "Expanded",
     "similarDeals": "Capgemini × Google Cloud | AI Enterprise Hub for agentic AI transformation | https://www.capgemini.com/news/press-releases/capgemini-unveils-google-cloud-ai-enterprise-hub-to-accelerate-agentic-ai-enterprise-transformation/ |  | Same segment · AI consulting alliances\nQuantiphi × Google Cloud | Launch partner for Gemini Enterprise for Financial Services | https://www.googlecloudpresscorner.com/2026-08-25-Quantiphi-Named-a-Launch-Partner-for-Gemini-Enterprise-for-Financial-Services |  | Same segment · AI consulting alliances",
+    "industry": "Enterprise AI",
+    "segment": "AI consulting alliances",
+    "dealModel": "Distribution / market entry",
     "slug": "tredence-google-cloud-2026-04-06",
     "shareUrl": "https://www.gctechallies.com/deal/tredence-google-cloud-2026-04-06"
   },
@@ -2176,6 +2500,9 @@
     "whoCanReplicate": "Dell could pair Arm processors with its enterprise storage and AI servers; we found no announcement.\nCisco could do the same for its network and AI infrastructure.",
     "dealStage": "Signed",
     "similarDeals": "",
+    "industry": "Semiconductors",
+    "segment": "AI chips and design",
+    "dealModel": "Licensing / model deployment",
     "slug": "ibm-arm-2026-04-02",
     "shareUrl": "https://www.gctechallies.com/deal/ibm-arm-2026-04-02"
   },
@@ -2196,6 +2523,9 @@
     "whoCanReplicate": "Zopa could trial explainable AI agents in customer support; we found no such pilot.\nStarling could do the same.",
     "dealStage": "Launched",
     "similarDeals": "Incore Bank | Pilots agentic AI for onboarding and risk checks | https://www.crowdfundinsider.com/2026/09/305897-switzerlands-incore-bank-pilots-agentic-ai-to-enhance-digital-onboarding-and-automate-risk-checks/ |  | Same segment · AI in banking\nABN AMRO × Mistral AI | Sovereign AI Banking Partnership | https://www.gctechallies.com/deal/abn-amro-mistral-ai-2026-08-06 | abn-amro-mistral-ai-2026-08-06 | Same segment · AI in banking\nSolaris × SBI Group | Europe’s First AI-Native Bank Transformation | https://www.gctechallies.com/deal/solaris-sbi-group-2026-03-20 | solaris-sbi-group-2026-03-20 | Same segment · AI in banking",
+    "industry": "Payments",
+    "segment": "AI in banking",
+    "dealModel": "Distribution / market entry",
     "slug": "lhv-bank-gradient-labs-2026-04-01",
     "shareUrl": "https://www.gctechallies.com/deal/lhv-bank-gradient-labs-2026-04-01"
   },
@@ -2216,6 +2546,9 @@
     "whoCanReplicate": "Ardian could back a data centre development platform in Europe; we found no such deal.\nMacquarie could do the same.",
     "dealStage": "Acquisition",
     "similarDeals": "CVC DIF × firstcolo | Majority stake in a German data centre operator | https://www.cvc.com/media/news/2026/cvc-dif-to-acquire-leading-german-data-centre-operator-firstcolo-from-cube-infrastructure-managers/ |  | Same approach · data-centre stakes\nPartners Group × AVK | Majority stake with a $1 billion investment | https://datacentrereview.com/2026/08/partners-group-takes-majority-stake-in-avk-with-1-billion-investment/ |  | Same approach · data-centre stakes",
+    "industry": "Cloud/AI infra",
+    "segment": "AI data centres",
+    "dealModel": "Supply or compute contract",
     "slug": "bain-capital-aq-compute-2026-04-01",
     "shareUrl": "https://www.gctechallies.com/deal/bain-capital-aq-compute-2026-04-01"
   },
@@ -2236,6 +2569,9 @@
     "whoCanReplicate": "Telesat could supply Canadian-built capacity once Canada and the EU conclude IRIS² talks.\nViasat's UK arm could do the same if the UK agrees terms.",
     "dealStage": "Signed",
     "similarDeals": "MDA Space × IRIS² | Antenna systems agreement for 66 early-delivery satellites | https://defence-industry.eu/canadas-mda-space-joins-europes-iris%C2%B2-programme-with-antenna-systems-agreement-for-66-early-delivery-satellites/ |  | Same segment · space and satellites",
+    "industry": "Defence/Space",
+    "segment": "space and satellites",
+    "dealModel": "Consortium / multi-party programme",
     "slug": "european-union-norway-iceland-2026-03-26",
     "shareUrl": "https://www.gctechallies.com/deal/european-union-norway-iceland-2026-03-26"
   },
@@ -2256,6 +2592,9 @@
     "whoCanReplicate": "GLS could partner with a national postal operator for last-mile coverage in a market where it is not scaled; we found no such JV.\nPostNL could do the same.",
     "dealStage": "Regulatory approval",
     "similarDeals": "",
+    "industry": "Logistics",
+    "segment": "fulfilment and market entry",
+    "dealModel": "Joint venture",
     "slug": "dhl-ecommerce-correios-de-portugal-2026-03-26",
     "shareUrl": "https://www.gctechallies.com/deal/dhl-ecommerce-correios-de-portugal-2026-03-26"
   },
@@ -2276,6 +2615,9 @@
     "whoCanReplicate": "Swan could rebuild its processes around AI under EU AI Act and DORA; we found no such announcement.\nGriffin could do the same in the UK.",
     "dealStage": "Launched",
     "similarDeals": "Vilja × evroc | Agentic AI for European banks | https://thepaypers.com/fintech/news/vilja-and-evroc-partner-to-bring-agentic-ai-to-european-banks |  | Same segment · AI in banking",
+    "industry": "Payments",
+    "segment": "AI in banking",
+    "dealModel": "Product integration",
     "slug": "solaris-sbi-group-2026-03-20",
     "shareUrl": "https://www.gctechallies.com/deal/solaris-sbi-group-2026-03-20"
   },
@@ -2296,6 +2638,9 @@
     "whoCanReplicate": "American Express could run a similar issuer programme for agent payments in Europe; we found no announcement.\nAdyen could do the same on the acquiring side.",
     "dealStage": "Launched",
     "similarDeals": "Worldline × ING × Mastercard | Live end-to-end European agentic payment in production | https://www.mastercard.com/news/europe/en/newsroom/press-releases/en/2026/worldline-ing-and-mastercard-complete-a-live-end-to-end-european-agentic-payment-in-production/ |  | Same segment · checkout and wallets",
+    "industry": "Payments",
+    "segment": "checkout and wallets",
+    "dealModel": "Consortium / multi-party programme",
     "slug": "visa-barclays-hsbc-uk-commerzbank-revolut-santander-nexi-raiffeisen-dz-bank-nationwide-2026-03-17",
     "shareUrl": "https://www.gctechallies.com/deal/visa-barclays-hsbc-uk-commerzbank-revolut-santander-nexi-raiffeisen-dz-bank-nationwide-2026-03-17"
   },
@@ -2316,6 +2661,9 @@
     "whoCanReplicate": "Mistral AI could run an SME programme through Orange or La Poste in France; we found no such scheme.\nAnthropic could do the same with merchants on Shopify.",
     "dealStage": "Launched",
     "similarDeals": "Bank of Ireland × Google | 10,000 AI scholarships for SMEs | https://www.shelflife.ie/?p=72580 |  | Same approach · SME AI programmes",
+    "industry": "Retail/Ecommerce",
+    "segment": "retail technology and AI",
+    "dealModel": "Distribution / market entry",
     "slug": "openai-booking-com-2026-03-17",
     "shareUrl": "https://www.gctechallies.com/deal/openai-booking-com-2026-03-17"
   },
@@ -2336,6 +2684,9 @@
     "whoCanReplicate": "Mistral AI could reach European governments through AWS's European sovereign cloud; we found no such listing.\nCohere could do the same for Canadian public-sector buyers.",
     "dealStage": "Signed",
     "similarDeals": "",
+    "industry": "Enterprise AI",
+    "segment": "AI models for enterprise and government",
+    "dealModel": "Supply or compute contract",
     "slug": "openai-aws-us-government-2026-03-17",
     "shareUrl": "https://www.gctechallies.com/deal/openai-aws-us-government-2026-03-17"
   },
@@ -2356,6 +2707,9 @@
     "whoCanReplicate": "Adyen could buy or build stablecoin payout capability for merchants; we found no such deal.\nNexi could do the same for its European acquiring base.",
     "dealStage": "Acquisition",
     "similarDeals": "Stripe × Bridge | $1.1 billion acquisition of a stablecoin platform | https://www.theblock.co/amp/post/322144/stripe-acquires-stablecoin-platform-bridge-for-1-1-billion-in-cryptos-largest-acquisition-techcrunch |  | Same segment · payment rails and cross-border",
+    "industry": "Payments",
+    "segment": "payment rails and cross-border",
+    "dealModel": "Acquisition",
     "slug": "mastercard-bvnk-2026-03-17",
     "shareUrl": "https://www.gctechallies.com/deal/mastercard-bvnk-2026-03-17"
   },
@@ -2376,6 +2730,9 @@
     "whoCanReplicate": "Deutsche Bank could launch a virtual card offer for European corporates; we found no announcement.\nBNP Paribas could do the same.",
     "dealStage": "Launched",
     "similarDeals": "Visa × Banqup | E-invoicing and e-payment integration for EU rules | https://www.pymnts.com/partnerships/2026/visa-and-banqup-team-to-meet-new-eu-e-invoicing-rules/ |  | Same segment · payment rails and cross-border",
+    "industry": "Payments",
+    "segment": "payment rails and cross-border",
+    "dealModel": "Distribution / market entry",
     "slug": "jpmorgan-payments-mastercard-2026-03-17",
     "shareUrl": "https://www.gctechallies.com/deal/jpmorgan-payments-mastercard-2026-03-17"
   },
@@ -2396,6 +2753,9 @@
     "whoCanReplicate": "Metro Bank could embed its accounts in an accounting platform; we found no announcement.\nVirgin Money could do the same.",
     "dealStage": "Signed",
     "similarDeals": "HSBC UK × Sage | Tax reporting for small businesses ahead of Making Tax Digital | https://ffnews.com/newsarticle/fintech/hsbc-uk-and-sage-simplify-tax-reporting-for-small-businesses-ahead-of-making-tax-digital/ |  | Same segment · embedded finance\nSantander × Xero | Next-gen small business banking service | https://ffnews.com/newsarticle/xero-and-santander-announce-next-gen-small-business-banking-service/ |  | Same segment · embedded finance",
+    "industry": "Payments",
+    "segment": "embedded finance",
+    "dealModel": "Product integration",
     "slug": "barclays-sage-2026-03-17",
     "shareUrl": "https://www.gctechallies.com/deal/barclays-sage-2026-03-17"
   },
@@ -2416,6 +2776,9 @@
     "whoCanReplicate": "Worldline could adopt a network-run acceptance layer for its European acquiring; we found no such deal.\nGlobal Payments could do the same.",
     "dealStage": "Expanded",
     "similarDeals": "Elavon × Bancontact Company | Bancontact acquirer licence agreement | https://mondovisione.com/news/elavon-and-bancontact-company-sign-bancontact-acquirer-license-agreement-new-p-2026320 |  | Same segment · payment rails and cross-border",
+    "industry": "Payments",
+    "segment": "payment rails and cross-border",
+    "dealModel": "Distribution / market entry",
     "slug": "visa-fiserv-2026-03-16",
     "shareUrl": "https://www.gctechallies.com/deal/visa-fiserv-2026-03-16"
   },
@@ -2436,6 +2799,9 @@
     "whoCanReplicate": "Dassault Systèmes could build agents for engineering software on shared infrastructure; we found no such adoption.\nWorkday could do the same for HR and finance agents.",
     "dealStage": "Signed",
     "similarDeals": "",
+    "industry": "Enterprise AI",
+    "segment": "enterprise AI platforms",
+    "dealModel": "Consortium / multi-party programme",
     "slug": "nvidia-salesforce-adobe-sap-servicenow-siemens-cisco-crowdstrike-atlassian-2026-03-16",
     "shareUrl": "https://www.gctechallies.com/deal/nvidia-salesforce-adobe-sap-servicenow-siemens-cisco-crowdstrike-atlassian-2026-03-16"
   },
@@ -2456,6 +2822,9 @@
     "whoCanReplicate": "Applied Digital could win a long-term hyperscaler lease; we found no new anchor.\nHut 8 could do the same.",
     "dealStage": "Signed",
     "similarDeals": "Microsoft × IREN | $9.7B AI cloud contract | https://convergedigest.com/iren-secures-9-7b-ai-cloud-contract-with-microsoft/?amp=1 |  | Same segment · AI compute deals",
+    "industry": "Cloud/AI infra",
+    "segment": "AI compute deals",
+    "dealModel": "Supply or compute contract",
     "slug": "meta-nebius-nvidia-2026-03-16",
     "shareUrl": "https://www.gctechallies.com/deal/meta-nebius-nvidia-2026-03-16"
   },
@@ -2476,6 +2845,9 @@
     "whoCanReplicate": "Swisscom could lead a federated sovereign cloud initiative in Switzerland; we found no announcement.\nTelenor could do the same for the Nordics.",
     "dealStage": "Signed",
     "similarDeals": "",
+    "industry": "Cloud/AI infra",
+    "segment": "AI data centres",
+    "dealModel": "Consortium / multi-party programme",
     "slug": "telefonica-european-commission-euro-3c-consortium-2026-03-03",
     "shareUrl": "https://www.gctechallies.com/deal/telefonica-european-commission-euro-3c-consortium-2026-03-03"
   },
@@ -2496,6 +2868,9 @@
     "whoCanReplicate": "Greencore could gain from a UK–EU food and farm standards deal; talks are still under way.\nCranswick could do the same for its pork exports.",
     "dealStage": "Signed",
     "similarDeals": "",
+    "industry": "Retail/Ecommerce",
+    "segment": "retail expansion and deals",
+    "dealModel": "Consortium / multi-party programme",
     "slug": "european-union-switzerland-2026-03-02",
     "shareUrl": "https://www.gctechallies.com/deal/european-union-switzerland-2026-03-02"
   },
@@ -2516,6 +2891,9 @@
     "whoCanReplicate": "Carrefour could add Wero in France and Belgium; we found no announcement.\nColruyt could do the same in Belgium.",
     "dealStage": "Expanded",
     "similarDeals": "",
+    "industry": "Payments",
+    "segment": "checkout and wallets",
+    "dealModel": "Consortium / multi-party programme",
     "slug": "european-payments-council-wero-lidl-decathlon-2026-03-01",
     "shareUrl": "https://www.gctechallies.com/deal/european-payments-council-wero-lidl-decathlon-2026-03-01"
   },
@@ -2536,6 +2914,9 @@
     "whoCanReplicate": "Visma could move its software units to a sovereign European cloud; we found no such announcement.\nNexi could do the same for its Nordic payment services.",
     "dealStage": "Signed",
     "similarDeals": "",
+    "industry": "Cloud/AI infra",
+    "segment": "sovereign cloud",
+    "dealModel": "Supply or compute contract",
     "slug": "tieto-orange-business-2026-02-27",
     "shareUrl": "https://www.gctechallies.com/deal/tieto-orange-business-2026-02-27"
   },
@@ -2556,6 +2937,9 @@
     "whoCanReplicate": "Mistral AI could take strategic capital with cloud distribution from a hyperscaler; we found no such deal.\nCohere could do the same.",
     "dealStage": "Signed",
     "similarDeals": "",
+    "industry": "Cloud/AI infra",
+    "segment": "AI compute deals",
+    "dealModel": "Strategic investment",
     "slug": "openai-amazon-aws-2026-02-27",
     "shareUrl": "https://www.gctechallies.com/deal/openai-amazon-aws-2026-02-27"
   },
@@ -2576,6 +2960,9 @@
     "whoCanReplicate": "Atos could pair with a European model lab for sovereign AI projects; we found no such alliance.\nInfosys could do the same for European clients.",
     "dealStage": "Signed",
     "similarDeals": "Capgemini × Mistral AI | Partnership to adopt new frontier generative AI models | https://www.capgemini.com/pt-en/news/press-releases/capgemini-partners-with-mistral-ai-to-spearhead-the-adoption-of-new-frontier-generative-ai-models/ |  | Same segment · AI consulting alliances\nSopra Steria × Mistral AI | Partnership to offer advanced AI solutions | https://soprasteria.com/newsroom/press-releases/details/sopra-steria-and-mistral-ai-partner-to-offer-advanced-ai-solutions |  | Same segment · AI consulting alliances",
+    "industry": "Enterprise AI",
+    "segment": "AI consulting alliances",
+    "dealModel": "Licensing / model deployment",
     "slug": "accenture-mistral-ai-2026-02-26",
     "shareUrl": "https://www.gctechallies.com/deal/accenture-mistral-ai-2026-02-26"
   },
@@ -2596,6 +2983,9 @@
     "whoCanReplicate": "Costa Coffee could consolidate in-store payments on one platform; we found no announcement.\nPret A Manger could do the same across its European shops.",
     "dealStage": "Launched",
     "similarDeals": "",
+    "industry": "Payments",
+    "segment": "checkout and wallets",
+    "dealModel": "Product integration",
     "slug": "adyen-starbucks-2026-02-13",
     "shareUrl": "https://www.gctechallies.com/deal/adyen-starbucks-2026-02-13"
   },
@@ -2616,6 +3006,9 @@
     "whoCanReplicate": "Workday could embed a frontier model's voice and agents in HR and finance workflows; we found no such deal.\nZendesk could do the same for customer service.",
     "dealStage": "Expanded",
     "similarDeals": "Salesforce × Anthropic | Claude partnership launched as 'Claudeforce' | https://ecommercenews.co.nz/story/salesforce-anthropic-launch-claudeforce-partnership |  | Same segment · enterprise AI platforms",
+    "industry": "Enterprise AI",
+    "segment": "enterprise AI platforms",
+    "dealModel": "Licensing / model deployment",
     "slug": "openai-servicenow-2026-01-22",
     "shareUrl": "https://www.gctechallies.com/deal/openai-servicenow-2026-01-22"
   }
