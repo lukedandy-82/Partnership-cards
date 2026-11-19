@@ -387,8 +387,7 @@
     return '<details class="ins sim"><summary>Similar Deals</summary><ul>' + arr.map(function(t){
       var p = t.split('|').map(function(x){ return x.trim(); }), u = safeUrl(p[2]), own = p[3] && itemBySlug(p[3]);
       var link = own ? ' <a href="#deal-' + esc(p[3]) + '" data-goto="' + esc(p[3]) + '">our card &#8595;</a>' : (u ? ' <a href="' + esc(u) + '" target="_blank" rel="noopener">source &#8599;</a>' : '');
-      var why = p[4] ? ' <span class="why">' + esc(p[4]) + '</span>' : '';
-      return '<li><b>' + esc(p[0]) + '</b>' + (p[1] ? ': ' + esc(p[1]) : '') + link + why + '</li>';
+      return '<li><b>' + esc(p[0]) + '</b>' + (p[1] ? ': ' + esc(p[1]) : '') + link + '</li>';
     }).join('') + '</ul></details>';
   }
   function toast(msg) { var t = document.getElementById('toast'); t.textContent = msg; t.className = 'show'; setTimeout(function(){ t.className = ''; }, 1800); }
