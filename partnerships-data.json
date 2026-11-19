@@ -176,9 +176,9 @@
     "whoIsImpacted": "Klarna, which competes for the same German and Austrian merchants.\nPayPal, whose Pay Later products meet a US BNPL specialist with a European base.\nRiverty (Bertelsmann), which competes in German invoice and instalment payments.",
     "whoCanReplicate": "Adyen could acquire a BNPL specialist; its Billie tie covers business-to-business BNPL only.\nCheckout.com could buy a European BNPL provider to add lending to its acquiring.\nStripe could buy a European BNPL specialist, building on its existing Klarna and Affirm integrations.",
     "dealStage": "Acquisition",
-    "similarDeals": "OpenAI × Amex, Mastercard and Visa | ChatGPT Wallet for Agent Payments | https://www.gctechallies.com/deal/openai-american-express-mastercard-visa-2026-11-13 | openai-american-express-mastercard-visa-2026-11-13 | Same segment · checkout and wallets\nUber × Revolut | Revolut Pay and RevPoints at Uber Checkout Across Europe | https://www.gctechallies.com/deal/uber-revolut-2026-11-11 | uber-revolut-2026-11-11 | Same segment · checkout and wallets",
+    "similarDeals": "Klarna × Mollie | Dispute Management and Consumer FX for European Merchants | https://www.gctechallies.com/deal/klarna-mollie-2026-11-03 | klarna-mollie-2026-11-03 | Same segment · BNPL and consumer credit\nKlarna × Worldline | Klarna's BNPL added at Worldline-handled online and in-store checkouts across Europe | https://www.pymnts.com/bnpl/2026/klarna-bets-on-worldline-partnership-to-sustain-bnpl-growth/ | | Same segment · BNPL and consumer credit\nAffirm × Stripe | Affirm financing offered to Stripe merchants in the UK from July 2026 | https://www.pulse.bot/fintech/news/affirm-launches-uk-bnpl-partnership-with-stripe-3559ee23-f4b9-4c62-ab07-b8c847634def/ | | Same segment · BNPL and consumer credit",
     "industry": "Payments",
-    "segment": "checkout and wallets",
+    "segment": "BNPL and consumer credit",
     "dealModel": "Distribution / market entry",
     "slug": "nexi-affirm-ratepay-2026-11-09",
     "shareUrl": "https://www.gctechallies.com/deal/nexi-affirm-ratepay-2026-11-09"
@@ -245,9 +245,9 @@
     "whoIsImpacted": "Checkout.com and Stripe, rival acquirers competing for the same European merchants, which now face Mollie offering Klarna with dispute handling and FX.\nAfterpay (Block) and PayPal Pay Later, which sell a BNPL option at the same checkouts.\nSmaller BNPL players such as Scalapay and Alma, who lack Mollie's reach among small merchants.",
     "whoCanReplicate": "SumUp could add BNPL options for small merchants with a European provider; its recent partnerships are with Form3 and Adyen.\nNuvei could do the same for its mid-market merchants in Europe.\nPaysafe could add a BNPL provider's dispute and FX tools to its merchant offer.",
     "dealStage": "Expanded",
-    "similarDeals": "Getnet × Nayax | Unattended payments across Iberia and Latin America | https://www.gctechallies.com/deal/getnet-nayax-2026-09-30 | getnet-nayax-2026-09-30 | Same segment · checkout and wallets\nOpenAI × Amex, Mastercard and Visa | ChatGPT Wallet for Agent Payments | https://www.gctechallies.com/deal/openai-american-express-mastercard-visa-2026-11-13 | openai-american-express-mastercard-visa-2026-11-13 | Same segment · checkout and wallets",
+    "similarDeals": "Nexi × Affirm | Ratepay Sale and DACH Partnership MoU | https://www.gctechallies.com/deal/nexi-affirm-ratepay-2026-11-09 | nexi-affirm-ratepay-2026-11-09 | Same segment · BNPL and consumer credit\nKlarna × Worldline | Klarna's BNPL added at Worldline-handled online and in-store checkouts across Europe | https://www.pymnts.com/bnpl/2026/klarna-bets-on-worldline-partnership-to-sustain-bnpl-growth/ | | Same segment · BNPL and consumer credit\nAffirm × Stripe | Affirm financing offered to Stripe merchants in the UK from July 2026 | https://www.pulse.bot/fintech/news/affirm-launches-uk-bnpl-partnership-with-stripe-3559ee23-f4b9-4c62-ab07-b8c847634def/ | | Same segment · BNPL and consumer credit",
     "industry": "Payments",
-    "segment": "checkout and wallets",
+    "segment": "BNPL and consumer credit",
     "dealModel": "Product integration",
     "slug": "klarna-mollie-2026-11-03",
     "shareUrl": "https://www.gctechallies.com/deal/klarna-mollie-2026-11-03"
