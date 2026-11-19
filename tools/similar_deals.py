@@ -7,20 +7,35 @@ tag('Payments|checkout',[1,3,10,129,33,7,125,114])
 tag('Payments|embedded',[4,74,119,73,66])
 tag('Payments|rails',[23,45,47,63,70,91,97,117,118,120,34,13])
 tag('Payments|bankAI',[52,113,19,53,109])
-tag('Energy',[2,25,30,36,51,64,68,77,79,89,11,86])
-tag('Automotive',[14,16,21,26,29,48,57,83,98,92])
-tag('Defence/Space',[24,31,38,40,42,56,59,61,88,100,101,111])
+tag('Energy|storage',[2,68])
+tag('Energy|datacentre power',[25,30])
+tag('Energy|generation',[64,79,89,51])
+tag('Energy|AI',[11,36,77,86])
+tag('Automotive|autonomy',[21,26,48,92])
+tag('Automotive|software and chips',[14,16,98])
+tag('Automotive|manufacturing',[29,57,83])
+tag('Defence/Space|space',[24,38,40,111])
+tag('Defence/Space|defence industry',[31,42,56,59,61,100,101,88])
 tag('Healthcare|digital',[5,17,49])
 tag('Healthcare|pharma',[94,103])
 tag('Healthcare|realestate',[22])
-tag('Retail/Ecommerce',[28,35,44,82,96,106,115,12,124])
+tag('Retail/Ecommerce|tech and AI',[35,12,106,44,115])
+tag('Retail/Ecommerce|expansion',[28,96,82,124])
 tag('Media',[8])
-tag('Logistics',[102,104,112])
-tag('Semiconductors',[9,27,32,50,84,54,108])
-tag('Cloud/AI infra',[0,6,18,20,41,43,46,62,65,69,71,90,93,105,110,122,123,126,127,67,55])
-tag('Enterprise AI',[15,37,39,58,72,75,76,78,80,81,85,87,95,99,107,116,121,128,130,60])
+tag('Logistics|fulfilment',[102,112])
+tag('Logistics|property',[104])
+tag('Semiconductors|manufacturing',[50,84,27,54])
+tag('Semiconductors|chips and design',[9,32,108])
+tag('Cloud/AI infra|datacentres',[0,6,46,65,69,110,90,123])
+tag('Cloud/AI infra|compute deals',[105,122,71,127,62,93,20])
+tag('Cloud/AI infra|sovereign cloud',[18,41,55,126])
+tag('Cloud/AI infra|network',[67,43])
+tag('Enterprise AI|consulting',[78,80,85,95,107,128,81,99])
+tag('Enterprise AI|platforms',[37,75,76,121,130,87,39])
+tag('Enterprise AI|models',[15,58,72,116])
+tag('Enterprise AI|robotics',[60])
 assert len(T)==len(D)
-LBL={'Payments|checkout':'checkout and wallets','Payments|embedded':'finance inside business software','Payments|rails':'payment rails and cross-border','Payments|bankAI':'AI in banking','Energy':'energy','Automotive':'automotive and mobility','Defence/Space':'defence and space','Healthcare|digital':'digital and consumer health','Healthcare|pharma':'pharma and AI','Healthcare|realestate':'healthcare real estate','Retail/Ecommerce':'retail and ecommerce','Media':'media and AI','Logistics':'logistics','Semiconductors':'semiconductors','Cloud/AI infra':'AI infrastructure and cloud','Enterprise AI':'enterprise AI and software'}
+LBL={'Payments|checkout':'checkout and wallets','Payments|embedded':'finance inside business software','Payments|rails':'payment rails and cross-border','Payments|bankAI':'AI in banking','Energy|storage':'energy storage','Energy|datacentre power':'power for data centres','Energy|generation':'power generation and hydrogen','Energy|AI':'AI in energy','Automotive|autonomy':'autonomous driving and mobility','Automotive|software and chips':'vehicle software and chips','Automotive|manufacturing':'vehicle manufacturing partnerships','Defence/Space|space':'space and satellites','Defence/Space|defence industry':'defence industry','Healthcare|digital':'digital and consumer health','Healthcare|pharma':'pharma and AI','Healthcare|realestate':'healthcare real estate','Retail/Ecommerce|tech and AI':'retail technology and AI','Retail/Ecommerce|expansion':'retail expansion and deals','Media':'media and AI','Logistics|fulfilment':'fulfilment and market entry','Logistics|property':'logistics property','Semiconductors|manufacturing':'chip manufacturing','Semiconductors|chips and design':'AI chips and design','Cloud/AI infra|datacentres':'AI data centres','Cloud/AI infra|compute deals':'AI compute deals','Cloud/AI infra|sovereign cloud':'sovereign cloud','Cloud/AI infra|network':'network and telco cloud','Enterprise AI|consulting':'AI consulting alliances','Enterprise AI|platforms':'enterprise AI platforms','Enterprise AI|models':'AI models for enterprise and government','Enterprise AI|robotics':'industrial robotics'}
 V=lambda t:t.split('|')[0]
 slug2i={x['slug']:i for i,x in enumerate(D)}
 def score(i,j):
@@ -48,8 +63,7 @@ for i,x in enumerate(D):
         own=p[3] in slug2i
         if own:
             j=slug2i[p[3]]
-            ok = V(T[i])==V(T[j]) and (V(T[i])!='Payments' or T[i]==T[j] or T[i]=='Payments|bankAI' and False or T[i]==T[j])
-            if V(T[i])!='Payments': ok = V(T[i])==V(T[j])
+            ok = T[i]==T[j] or (V(T[i])==V(T[j]) and sum(1 for k in T if T[k]==T[i])<3)
             if i in PIN or not ok:
                 if not (i in PIN and j in PIN[i]): rem.append(p[0]); continue
             out.append((j,p))
@@ -62,12 +76,12 @@ for i,(out,rem) in res.items():
     have={D[j]['slug'] for j,p in out if j is not None}
     items=[]
     for j,p in out:
-        why=label(i,j) if j is not None else (p[4] if p[4] else 'Same industry · '+LBL[T[i]])
+        why=label(i,j) if j is not None else (p[4] if (p[4].startswith('Same approach') or i==5) else 'Same segment · '+LBL[T[i]])
         if j is not None: items.append(line(j,why)) if False else items.append(' | '.join(p[:4]+[why]))
         else: items.append(' | '.join(p[:3]+['']+[why]))
     pinned=[j for j in PIN.get(i,[]) if D[j]['slug'] not in have]
     need=max(0,(2 if (rem or pinned) else 0)-len(items)) if i not in PIN else max(0,3-len(items))
-    cands=sorted([j for j in range(len(D)) if j!=i and D[j]['slug'] not in have and score(i,j)>=0 and (V(T[i]) not in ('Payments','Healthcare') or T[i]==T[j])],key=lambda j:-score(i,j))
+    cands=sorted([j for j in range(len(D)) if j!=i and D[j]['slug'] not in have and score(i,j)>=0 and (T[i]==T[j] or sum(1 for k in T if T[k]==T[i])<3)],key=lambda j:-score(i,j))
     adds=pinned+[j for j in cands if j not in pinned][:max(0,need-len(pinned))] if need or pinned else []
     for j in adds: items.append(line(j,label(i,j)))
     final[i]=(items,rem,[D[j]['title'][:40] for j in adds])
