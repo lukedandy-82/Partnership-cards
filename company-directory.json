@@ -28,7 +28,7 @@
   "country": "United States"
  },
  "AQ Compute": {
-  "site": "aqcompute.com",
+  "site": "www.aqcompute.com",
   "iso": "no",
   "country": "Norway"
  },
@@ -162,7 +162,7 @@
   "country": "Norway"
  },
  "Bank of China (Hong Kong)": {
-  "site": "bochk.com",
+  "site": "www.bochk.com",
   "iso": "hk",
   "country": "Hong Kong"
  },
@@ -352,7 +352,7 @@
   "country": "European Union"
  },
  "EIB": {
-  "site": "eib.org",
+  "site": "www.eib.org",
   "iso": "lu",
   "country": "Luxembourg"
  },
@@ -371,12 +371,12 @@
   "country": "European Union"
  },
  "EWE AG": {
-  "site": "ewe.com",
+  "site": "www.ewe.com",
   "iso": "de",
   "country": "Germany"
  },
  "EWE Hydrogen GmbH": {
-  "site": "ewe.com",
+  "site": "www.ewe.com",
   "iso": "de",
   "country": "Germany"
  },
@@ -441,7 +441,7 @@
   "country": "United Arab Emirates"
  },
  "GIC": {
-  "site": "gic.com.sg",
+  "site": "www.gic.com.sg",
   "iso": "sg",
   "country": "Singapore"
  },
@@ -564,7 +564,7 @@
   "country": "Canada"
  },
  "Leapmotor": {
-  "site": "leapmotor.com",
+  "site": "www.leapmotor.com",
   "iso": "cn",
   "country": "China"
  },
@@ -726,7 +726,7 @@
   "country": "Norway"
  },
  "Novo Nordisk": {
-  "site": "novonordisk.com",
+  "site": "www.novonordisk.com",
   "iso": "dk",
   "country": "Denmark"
  },
@@ -795,7 +795,7 @@
   "country": "United Kingdom"
  },
  "Prime Movers Lab": {
-  "site": "primemoverslab.com",
+  "site": "www.primemoverslab.com",
   "iso": "us",
   "country": "United States"
  },
@@ -870,7 +870,7 @@
   "country": "Germany"
  },
  "SBI Group": {
-  "site": "sbigroup.co.jp",
+  "site": "www.sbigroup.co.jp",
   "iso": "jp",
   "country": "Japan"
  },
@@ -895,7 +895,7 @@
   "country": "Germany"
  },
  "Saft": {
-  "site": "saftbatteries.com",
+  "site": "www.saftbatteries.com",
   "iso": "fr",
   "country": "France"
  },
@@ -919,7 +919,7 @@
   "country": "Spain"
  },
  "Schaeffler": {
-  "site": "schaeffler.com",
+  "site": "www.schaeffler.com",
   "iso": "de",
   "country": "Germany"
  },
@@ -929,7 +929,7 @@
   "country": "France"
  },
  "Schwarz Digits": {
-  "site": "schwarz-digits.de",
+  "site": "www.schwarz-digits.de",
   "iso": "de",
   "country": "Germany"
  },
@@ -954,7 +954,7 @@
   "country": "Greece"
  },
  "Snowflake": {
-  "site": "snowflake.com",
+  "site": "www.snowflake.com",
   "iso": "us",
   "country": "United States"
  },
@@ -993,12 +993,12 @@
   "country": "Switzerland"
  },
  "Synopsys": {
-  "site": "synopsys.com",
+  "site": "www.synopsys.com",
   "iso": "us",
   "country": "United States"
  },
  "TKMS": {
-  "site": "tkms.com",
+  "site": "www.tkms.com",
   "iso": "de",
   "country": "Germany"
  },
@@ -1013,7 +1013,7 @@
   "country": "Taiwan"
  },
  "Tata Motors": {
-  "site": "tatamotors.com",
+  "site": "www.tatamotors.com",
   "iso": "in",
   "country": "India"
  },
@@ -1083,7 +1083,8 @@
  },
  "Verda": {
   "iso": "fi",
-  "country": "Finland"
+  "country": "Finland",
+  "site": "verda.com"
  },
  "Verizon": {
   "site": "verizon.com",
@@ -1111,7 +1112,7 @@
   "country": "Sweden"
  },
  "Wero": {
-  "site": "wero-wallet.eu",
+  "site": "www.wero-wallet.eu",
   "iso": "eu",
   "country": "European Union"
  },
@@ -1230,7 +1231,7 @@
   "country": "Germany"
  },
  "A123 Systems": {
-  "site": "a123systems.com",
+  "site": "www.a123systems.com",
   "iso": "us",
   "country": "United States"
  },

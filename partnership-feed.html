@@ -64,6 +64,7 @@
   .sbtn2.dim { opacity: .4; }
   .sbtn2 .cc { opacity:.6; font-size:10px; margin-left:3px; font-family:'IBM Plex Mono', monospace; }
   .sim li b { font-weight: 600; }
+  .sim .why { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: .02em; padding: 1px 6px; margin-left: 6px; border-radius: 3px; background: var(--chip); border: 1px solid var(--line); color: var(--ink-3); vertical-align: 1px; white-space: nowrap; }
   .sim li a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
   .date-bar { display: flex; gap: 6px; flex-wrap: wrap; padding: 10px 16px; background: #fff; border-bottom: 1px solid #e8e8e4; }
   .dbtn { padding: 4px 11px; border-radius: 20px; font-size: 11px; font-weight: 500; border: 1px solid #d4d4d0;
@@ -380,13 +381,14 @@
     if (!arr.length) return '';
     return '<details class="ins"><summary>' + title + '</summary><ul>' + arr.map(function(t){ return '<li>' + esc(t) + '</li>'; }).join('') + '</ul></details>';
   }
-  // similarDeals: one line per company, "Company | what they did | https://source" (source optional).
+  // similarDeals: one line per deal, "Company | what they did | https://source | our-card slug (optional) | why it is similar (optional)".
   function similar(v) {
     var arr = lines(v); if (!arr.length) return '';
     return '<details class="ins sim"><summary>Similar Deals</summary><ul>' + arr.map(function(t){
       var p = t.split('|').map(function(x){ return x.trim(); }), u = safeUrl(p[2]), own = p[3] && itemBySlug(p[3]);
       var link = own ? ' <a href="#deal-' + esc(p[3]) + '" data-goto="' + esc(p[3]) + '">our card &#8595;</a>' : (u ? ' <a href="' + esc(u) + '" target="_blank" rel="noopener">source &#8599;</a>' : '');
-      return '<li><b>' + esc(p[0]) + '</b>' + (p[1] ? ': ' + esc(p[1]) : '') + link + '</li>';
+      var why = p[4] ? ' <span class="why">' + esc(p[4]) + '</span>' : '';
+      return '<li><b>' + esc(p[0]) + '</b>' + (p[1] ? ': ' + esc(p[1]) : '') + link + why + '</li>';
     }).join('') + '</ul></details>';
   }
   function toast(msg) { var t = document.getElementById('toast'); t.textContent = msg; t.className = 'show'; setTimeout(function(){ t.className = ''; }, 1800); }
