@@ -95,7 +95,7 @@
     "whoIsImpacted": "High-street banks such as BNP Paribas and Crédit Agricole, whose small-business current accounts now compete with an embedded one.\nBusiness-banking fintechs such as Qonto and Shine, which sell the same account and card bundle with accounting links.\nOther accounting vendors without a banking partner, such as Cegid in France.",
     "whoCanReplicate": "Xero could embed business accounts and cards in its software; its Revolut Business tie covers cross-border payments only.\nVisma, with small-business customers across the Nordics and the Netherlands, could add accounts through a banking-as-a-service provider.\nDATEV in Germany could do the same with a German bank partner.",
     "dealStage": "Signed",
-    "similarDeals": "Barclays × Sage | Embedded finance partnership for UK SMEs | https://www.gctechallies.com/deal/barclays-sage-2026-03-17 | barclays-sage-2026-03-17 | Same segment · finance inside business software\nAdyen × ROLLER | ROLLER Capital: Embedded Finance for Leisure & Entertainment Venues | https://www.gctechallies.com/deal/adyen-roller-2026-05-28 | adyen-roller-2026-05-28 | Same segment · finance inside business software\nAirPlus × Kresus Technologies × Mastercard | B2B Tail Spend Automation Alliance | https://www.gctechallies.com/deal/airplus-international-kresus-technologies-mastercard-2026-05-28 | airplus-international-kresus-technologies-mastercard-2026-05-28 | Same segment · finance inside business software",
+    "similarDeals": "Barclays × Sage | Embedded finance partnership for UK SMEs | https://www.gctechallies.com/deal/barclays-sage-2026-03-17 | barclays-sage-2026-03-17 | Same segment · embedded finance\nAdyen × ROLLER | ROLLER Capital: Embedded Finance for Leisure & Entertainment Venues | https://www.gctechallies.com/deal/adyen-roller-2026-05-28 | adyen-roller-2026-05-28 | Same segment · embedded finance\nAirPlus × Kresus Technologies × Mastercard | B2B Tail Spend Automation Alliance | https://www.gctechallies.com/deal/airplus-international-kresus-technologies-mastercard-2026-05-28 | airplus-international-kresus-technologies-mastercard-2026-05-28 | Same segment · embedded finance",
     "slug": "sage-adyen-mastercard-2026-11-10",
     "shareUrl": "https://www.gctechallies.com/deal/sage-adyen-mastercard-2026-11-10"
   },
@@ -1475,7 +1475,7 @@
     "whoIsImpacted": "Pleo and Payhawk, spend-management fintechs selling to the same finance teams.\nProcurement platforms that handle tail spend by catalogue.\nCorporate card issuers without a tail-spend product.",
     "whoCanReplicate": "Edenred could pair its corporate payments business with an orchestration specialist.\nPayhawk could partner with a travel-payments group the same way; we found no comparable announcement from either.",
     "dealStage": "Signed",
-    "similarDeals": "Conferma Pay × Mesh | Unifying fragmented travel payments | https://meshpayments.com/press/conferma-and-mesh-join-forces-to-eliminate-fragmented-travel-payments/ |  | Same segment · finance inside business software",
+    "similarDeals": "Conferma Pay × Mesh | Unifying fragmented travel payments | https://meshpayments.com/press/conferma-and-mesh-join-forces-to-eliminate-fragmented-travel-payments/ |  | Same segment · embedded finance",
     "slug": "airplus-international-kresus-technologies-mastercard-2026-05-28",
     "shareUrl": "https://www.gctechallies.com/deal/airplus-international-kresus-technologies-mastercard-2026-05-28"
   },
@@ -1495,7 +1495,7 @@
     "whoIsImpacted": "Stripe Capital and Shopify Capital, which compete as embedded lenders for small merchants.\nTraditional SME lenders that find borrowers slowly.\nRival leisure-venue software with no financing partner.",
     "whoCanReplicate": "Mollie could add embedded financing for software partners; we found no equivalent announced.\nSumUp could do the same for the small venues it serves.",
     "dealStage": "Launched",
-    "similarDeals": "Worldline × YouLend | Cash advance for Europe's SMBs | https://ffnews.com/newsarticle/worldline-and-youlend-launch-cash-advance-to-unlock-fast-seamless-capital-for-europes-smbs/ |  | Same segment · finance inside business software",
+    "similarDeals": "Worldline × YouLend | Cash advance for Europe's SMBs | https://ffnews.com/newsarticle/worldline-and-youlend-launch-cash-advance-to-unlock-fast-seamless-capital-for-europes-smbs/ |  | Same segment · embedded finance",
     "slug": "adyen-roller-2026-05-28",
     "shareUrl": "https://www.gctechallies.com/deal/adyen-roller-2026-05-28"
   },
@@ -2395,7 +2395,7 @@
     "whoIsImpacted": "Xero, whose bank partners also target UK small businesses.\nIntuit's QuickBooks, competing for the same SME accounting base.\nChallenger banks without an accounting-software link.",
     "whoCanReplicate": "Metro Bank could embed its accounts in an accounting platform; we found no announcement.\nVirgin Money could do the same.",
     "dealStage": "Signed",
-    "similarDeals": "HSBC UK × Sage | Tax reporting for small businesses ahead of Making Tax Digital | https://ffnews.com/newsarticle/fintech/hsbc-uk-and-sage-simplify-tax-reporting-for-small-businesses-ahead-of-making-tax-digital/ |  | Same segment · finance inside business software\nSantander × Xero | Next-gen small business banking service | https://ffnews.com/newsarticle/xero-and-santander-announce-next-gen-small-business-banking-service/ |  | Same segment · finance inside business software",
+    "similarDeals": "HSBC UK × Sage | Tax reporting for small businesses ahead of Making Tax Digital | https://ffnews.com/newsarticle/fintech/hsbc-uk-and-sage-simplify-tax-reporting-for-small-businesses-ahead-of-making-tax-digital/ |  | Same segment · embedded finance\nSantander × Xero | Next-gen small business banking service | https://ffnews.com/newsarticle/xero-and-santander-announce-next-gen-small-business-banking-service/ |  | Same segment · embedded finance",
     "slug": "barclays-sage-2026-03-17",
     "shareUrl": "https://www.gctechallies.com/deal/barclays-sage-2026-03-17"
   },
