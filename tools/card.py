@@ -21,7 +21,7 @@ def build(c):
     mkt=''
     if mk:
         its=''.join((f'<span class="mk">'+(f'<img class="fl" src="{flag(x["iso"])}">' if x.get('iso') else '')+f'{E(x["name"])}</span>') for x in mk)
-        mkt=f'<div class="mkrow"><span class="mkl">MARKETS SERVED</span>{its}</div>'
+        mkt=f'<div class="band"><span class="ico">&#9678;</span>MARKETS SERVED</div><div class="mkrow">{its}</div>'
     tint=mix(cs[0]['color'],'#0c1b4a',0.22)
     return f'''<html><head><meta charset=utf-8><style>
 *{{box-sizing:border-box;margin:0;padding:0}}
@@ -36,8 +36,8 @@ body{{width:1200px;font-family:Inter,sans-serif;color:#eaf4ff;background:#0a1a4a
 .chip{{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:20px;border:2px solid #fff;border-radius:10px;padding:9px 22px;text-transform:uppercase}}
 .fl{{width:30px;height:22px;border-radius:3px;object-fit:cover;box-shadow:0 0 0 1px rgba(255,255,255,.55)}}
 .x{{font-size:30px;font-weight:800}}
-h1{{font-size:38px;font-weight:700;margin-bottom:10px}}.sub{{font-size:23px;color:#b8cfe8;line-height:1.35;max-width:1050px;margin:0 auto}}
-.mkrow{{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;margin-top:18px}}.mkl{{color:#27a9bb;font-size:14px;font-weight:700;letter-spacing:.08em}}.mk{{display:inline-flex;align-items:center;gap:8px;background:#0b2a5c;border:2px solid #27a9bb;border-radius:20px;padding:5px 16px;font-size:18px;font-weight:600;color:#eaf4ff}}.mk .fl{{width:26px;height:18px}}
+h1{{font-size:38px;font-weight:700;margin-bottom:10px}}.sub{{font-size:26px;font-weight:500;color:#d4e4f6;color:#b8cfe8;line-height:1.35;max-width:1050px;margin:0 auto}}
+.mkrow{{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:16px 28px 18px}}.mkl{{color:#27a9bb;font-size:14px;font-weight:700;letter-spacing:.08em}}.mk{{display:inline-flex;align-items:center;gap:8px;background:#0b2a5c;border:2px solid #27a9bb;border-radius:20px;padding:5px 16px;font-size:18px;font-weight:600;color:#eaf4ff}}.mk .fl{{width:26px;height:18px}}
 .band{{height:40px;background:#16277a;display:flex;align-items:center;padding:0 28px;font-size:19px;font-weight:700;letter-spacing:.03em;gap:14px;border-left:0}}
 .band:before{{content:"";width:7px;height:24px;background:#27a9bb;margin-left:-28px;margin-right:6px;border-radius:0 3px 3px 0}}
 .ico{{width:26px;height:26px;border:2px solid #5bd5e5;border-radius:50%;color:#5bd5e5;font-size:14px;display:flex;align-items:center;justify-content:center}}
@@ -60,9 +60,9 @@ h1{{font-size:38px;font-weight:700;margin-bottom:10px}}.sub{{font-size:23px;colo
 .ft img{{height:56px}}.ft .t{{margin-left:20px;flex:1}}.ft b{{display:block;font-size:26px}}.ft span{{color:#27a9bb;font-size:19px}}.ft i{{font-style:normal;color:#6f8fb4;font-size:19px}}
 </style></head><body>
 <div class="top"><div class="pills"><div class="pill cat">{E(c['category'])}</div><div class="pill">{E(c['region'])}</div></div><div class="dt">Announced<b>{E(c['date'])}</b></div></div>
-<div class="hero"><div class="stage">{E(c['stage'].upper())}</div><div class="chips">{chips}</div><h1>{E(c['title'])}</h1><div class="sub">{E(c['sub'])}</div>{mkt}</div>
+<div class="hero"><div class="stage">{E(c['stage'].upper())}</div><div class="chips">{chips}</div><div class="sub">{E(c['sub'])}</div></div>
 <div class="sec"><div class="band"><span class="ico">#</span>KEY METRICS</div><div class="ms">{metrics}</div>
-<div class="band"><span class="ico">⇄</span>WHAT EACH GETS</div><div class="gets">{gets}</div>
+{mkt}<div class="band"><span class="ico">⇄</span>WHAT EACH GETS</div><div class="gets">{gets}</div>
 <div class="band"><span class="ico">→</span>STRATEGIC IMPLICATIONS</div><div class="impl">{impl}</div></div>
 <div class="ppl"><div class="pl">KEY PEOPLE</div><div class="pr2">{ppl}</div></div>
 <div class="ft"><img src="{logo()}"><div class="t"><b>GcTechAllies</b><span>Weekly Partnership Digest</span></div><i>gctechallies.com/partnerships</i></div>
