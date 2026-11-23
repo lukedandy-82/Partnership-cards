@@ -3,7 +3,8 @@ D=json.load(open('partnerships-data.json'))
 T={}
 def tag(v,idx):
     for i in idx: T[i]=v
-tag('Payments|checkout',[1,3,129,33,125,114])
+tag('Payments|checkout',[3,129,33,125])
+tag('Payments|agentic',[1,114])
 tag('Payments|bnpl',[7,10])
 tag('Payments|embedded',[4,74,119])
 tag('Real estate|distribution',[66])
@@ -37,7 +38,7 @@ tag('Enterprise AI|platforms',[37,75,76,121,130,87,39])
 tag('Enterprise AI|models',[15,58,72,116])
 tag('Enterprise AI|robotics',[60])
 assert len(T)==len(D)
-LBL={'Payments|checkout':'checkout and wallets','Payments|bnpl':'BNPL and consumer credit','Payments|embedded':'embedded finance','Payments|rails':'payment rails and cross-border','Payments|bankAI':'AI in banking','Energy|storage':'energy storage','Energy|datacentre power':'power for data centres','Energy|generation':'power generation and hydrogen','Energy|AI':'AI in energy','Automotive|autonomy':'autonomous driving and mobility','Automotive|software and chips':'vehicle software and chips','Automotive|manufacturing':'vehicle manufacturing partnerships','Defence/Space|space':'space and satellites','Defence/Space|defence industry':'defence industry','Healthcare|digital':'digital and consumer health','Healthcare|pharma':'pharma and AI','Healthcare|realestate':'healthcare real estate','Retail/Ecommerce|tech and AI':'retail technology and AI','Retail/Ecommerce|expansion':'retail expansion and deals','Media':'media and AI','Real estate|distribution':'real estate distribution','Logistics|fulfilment':'fulfilment and market entry','Logistics|property':'logistics property','Semiconductors|manufacturing':'chip manufacturing','Semiconductors|chips and design':'AI chips and design','Cloud/AI infra|datacentres':'AI data centres','Cloud/AI infra|compute deals':'AI compute deals','Cloud/AI infra|sovereign cloud':'sovereign cloud','Cloud/AI infra|network':'network and telco cloud','Enterprise AI|consulting':'AI consulting alliances','Enterprise AI|platforms':'enterprise AI platforms','Enterprise AI|models':'AI models for enterprise and government','Enterprise AI|robotics':'industrial robotics'}
+LBL={'Payments|agentic':'agentic payments','Payments|checkout':'checkout and wallets','Payments|bnpl':'BNPL and consumer credit','Payments|embedded':'embedded finance','Payments|rails':'payment rails and cross-border','Payments|bankAI':'AI in banking','Energy|storage':'energy storage','Energy|datacentre power':'power for data centres','Energy|generation':'power generation and hydrogen','Energy|AI':'AI in energy','Automotive|autonomy':'autonomous driving and mobility','Automotive|software and chips':'vehicle software and chips','Automotive|manufacturing':'vehicle manufacturing partnerships','Defence/Space|space':'space and satellites','Defence/Space|defence industry':'defence industry','Healthcare|digital':'digital and consumer health','Healthcare|pharma':'pharma and AI','Healthcare|realestate':'healthcare real estate','Retail/Ecommerce|tech and AI':'retail technology and AI','Retail/Ecommerce|expansion':'retail expansion and deals','Media':'media and AI','Real estate|distribution':'real estate distribution','Logistics|fulfilment':'fulfilment and market entry','Logistics|property':'logistics property','Semiconductors|manufacturing':'chip manufacturing','Semiconductors|chips and design':'AI chips and design','Cloud/AI infra|datacentres':'AI data centres','Cloud/AI infra|compute deals':'AI compute deals','Cloud/AI infra|sovereign cloud':'sovereign cloud','Cloud/AI infra|network':'network and telco cloud','Enterprise AI|consulting':'AI consulting alliances','Enterprise AI|platforms':'enterprise AI platforms','Enterprise AI|models':'AI models for enterprise and government','Enterprise AI|robotics':'industrial robotics'}
 V=lambda t:t.split('|')[0]
 slug2i={x['slug']:i for i,x in enumerate(D)}
 def score(i,j):
@@ -54,6 +55,7 @@ def short(x):
 def line(j,why):
     s,desc=short(D[j]); return f"{s} | {desc} | https://www.gctechallies.com/deal/{D[j]['slug']} | {D[j]['slug']} | {why}"
 PIN={3:[129,125]}  # user-approved pins
+EXCL={(1,3),(3,1)}  # user: Uber x Revolut does not belong with OpenAI wallet
 OVER={ 2:'KEEP', 8:'KEEP'}
 res={}
 for i,x in enumerate(D):
@@ -65,7 +67,7 @@ for i,x in enumerate(D):
         own=p[3] in slug2i
         if own:
             j=slug2i[p[3]]
-            ok = T[i]==T[j] or (V(T[i])==V(T[j]) and sum(1 for k in T if T[k]==T[i])<3)
+            ok = (i,j) not in EXCL and (T[i]==T[j] or (V(T[i])==V(T[j]) and sum(1 for k in T if T[k]==T[i])<3))
             if i in PIN or not ok:
                 if not (i in PIN and j in PIN[i]): rem.append(p[0]); continue
             out.append((j,p))
@@ -83,7 +85,7 @@ for i,(out,rem) in res.items():
         else: items.append(' | '.join(p[:3]+['']+[why]))
     pinned=[j for j in PIN.get(i,[]) if D[j]['slug'] not in have]
     need=max(0,(2 if (rem or pinned) else 0)-len(items)) if i not in PIN else max(0,3-len(items))
-    cands=sorted([j for j in range(len(D)) if j!=i and D[j]['slug'] not in have and score(i,j)>=0 and (T[i]==T[j] or sum(1 for k in T if T[k]==T[i])<3)],key=lambda j:-score(i,j))
+    cands=sorted([j for j in range(len(D)) if j!=i and D[j]['slug'] not in have and score(i,j)>=0 and (i,j) not in EXCL and (T[i]==T[j] or sum(1 for k in T if T[k]==T[i])<3)],key=lambda j:-score(i,j))
     adds=pinned+[j for j in cands if j not in pinned][:max(0,need-len(pinned))] if need or pinned else []
     for j in adds: items.append(line(j,label(i,j)))
     final[i]=(items,rem,[D[j]['title'][:40] for j in adds])
